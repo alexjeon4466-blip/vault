@@ -1,0 +1,304 @@
+# Log — LLM Wiki v2
+
+> append-only 작업 일지. 기존 항목을 수정하지 말고 새 항목을 아래에 추가한다.
+
+## [2026-06-05] archive,create | v1 archive and v2 initialized
+
+- 입력 자료: 사용자 설계 답변, 기존 vault 구조, `AGENTS.md`, `LLM_WIKI_PLAYBOOK.md`, `index.md`, `log.md`
+- 이동 문서: `wiki/` → `_archive/wiki_v1/`
+- 생성/수정 문서: `SCHEMA.md`, `AGENTS.md`, `CLAUDE.md`, `LLM_WIKI_PLAYBOOK.md`, `index.md`, `log.md`, `_templates/`, 새 `wiki/` 구조
+- 핵심 변경: 기존 정리형 v1을 보존하고, 강독의 휘발성 방지 + 책 사이 연결 + 희곡 창작/퇴고 순환을 목적으로 하는 v2 구조를 시작함.
+- 확인 필요: `시지프신화`, `부활`, `관계란`은 원본 기반으로 새로 작성한 뒤 v1과 비교할 것.
+## [2026-06-05] update | 시지프신화·부활 책카드 및 질문형 노트 갱신
+
+- 원본 기반 작성: `wiki/bookclub/books/시지프신화/00_책카드.md`, `wiki/bookclub/books/부활/00_책카드.md`
+- 갱신 문서: `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`
+- 비교 반영: `_archive/wiki_v1/bookclub/books/시지프신화/00_책카드_draft.md`, `_archive/wiki_v1/bookclub/books/부활/00_책카드_draft.md`
+- 핵심 변경: v1의 추상 주제 링크를 v2의 질문형 노트 중심 연결로 재배치하고, 카뮈/톨스토이의 차이를 `자각`, `제도`, `언어`, `부조리` 질문으로 정리함.
+- 다음 작업: `관계란` 원본 기반 작품카드 완성 후 위 질문형 노트와 다시 연결.
+
+## [2026-06-05] update | 관계란 작품카드 v2 및 질문형 노트 연결
+
+- 원본 기반 작성: `wiki/writing/plays/관계란/00_작품카드.md`
+- 참고 원고: `script/관계란_12고.md`, `script/관계란_4고.md`, `_archive/wiki_v1/writing/revisions/관계란_4고-12고.md`
+- 갱신 문서: `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`
+- 갱신 문서: `index.md`
+- 핵심 변경: 12고의 현재/과거 교차 구조, 병원 창구/서류/관계란 이미지, “사랑했어요 / 그건 법적 관계가 아닙니다”의 충돌, 마지막 “이름 같은 거 있으면”의 청각적 메아리를 기준으로 작품카드 v2를 완성함.
+- 다음 작업: `관계란` 5~11고 중간 개작 흐름을 읽고 revision-note v2 작성, 리딩/합평 메모가 있으면 관객 이해와 사건의 힘 섹션 보강.
+
+## [2026-06-05] update | 저는, 작품카드 v2 및 자기소개 질문 노트 생성
+
+- 원본 기반 작성: `wiki/writing/plays/저는/00_작품카드.md`
+- 참고 원고: `script/저는_전체_v8.md`, `script/저는_전체_v6_4.md`, `script/저는_v3.md`, `script/저는_초고.md`
+- 생성 문서: `wiki/shared/questions/나는 왜 나를 소개하지 못하는가.md`
+- 갱신 문서: `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `index.md`
+- 핵심 변경: “저는” 커서, 자기소개서의 문턱, 스크린/앱의 과잉 연결, 야구 기록과 자기서사 불능, 엄마 전화의 마지막 문장을 기준으로 작품카드 v2를 작성함.
+- 다음 작업: `저는,` v3→v8 개작 흐름을 revision-note v2로 정리하거나 낭독용/연출안 PDF를 확인해 무대성·스크린 사용을 보강.
+
+
+## [2026-06-06] update | 무진기행 단편집 책카드 v2 및 부끄러움 질문 노트 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/무진기행/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가.md`
+- 참고 원본: `bookclub/석촌호수책모임/무진기행/무진기행_북클럽_파트1.md`, `무진기행_2.md`, `서울 1964년 겨울_1.md`, `생명연습_2.md`, `서울의달빛0장_2.md`
+- 비교 반영: `_archive/wiki_v1/bookclub/books/무진기행/00_선집_index_draft.md` 및 작품별 draft
+- 갱신 문서: `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `index.md`
+- 핵심 변경: 김승옥 선집을 “예민하지만 책임지지 못하는 사람들”, “부끄러움이 행동이 되지 못하는 경우”, “도시적 감수성이 윤리로 실패하는 과정”으로 v2 질문망에 연결함.
+- 다음 작업: 표제작 「무진기행」 또는 「서울 1964년 겨울」 개별 v2 카드로 확장 가능.
+
+## [2026-06-06] update | 소송 책카드 v2 및 집행/답 없음 질문 노트 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/소송/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/왜 답이 없는데도 죽음은 집행되는가.md`
+- 참고 원본: `bookclub/석촌호수책모임/소송-카프카/소송_북클럽_파트1.md`, `소송_북클럽_파트2_전체.md`, `소송_북클럽_파트3 (1).md`, `Kafka-research-1.md`, `Kafka-research-2.md`
+- 갱신 문서: `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `index.md`
+- 핵심 변경: 카프카 『소송』을 “죄명 없는 절차”, “법의 내면화”, “법은 붙잡지 않는다, K가 돌아선다”, “답 없음에도 집행되는 죽음”의 축으로 v2 질문망에 연결함.
+- 다음 작업: 「법 앞에서」 우화 개별 해설, 카뮈/카프카 비교 lecture-script, 또는 `한국이란 무엇인가` 책카드로 확장 가능.
+
+## [2026-06-06] create | 「법 앞에서」 개별 해설 및 카뮈/카프카 비교 스크립트 생성
+
+- 생성 문서: `wiki/bookclub/books/소송/01_법앞에서_우화해설.md`
+- 생성 문서: `wiki/bookclub/lectures/카뮈와_카프카_부조리_비교.md`
+- 갱신 문서: `wiki/bookclub/books/소송/00_책카드.md`, `index.md`
+- 핵심 변경: 「법 앞에서」을 “닫힌 문”이 아니라 “자기만을 위해 열린 문 앞에서 허락만 기다리는 구조”로 개별 해설하고, 카뮈의 부조리/반항/의식과 카프카의 절차/기다림/자기복종을 비교하는 강의형 스크립트를 추가함.
+- 다음 작업: `한국이란 무엇인가` 원본을 읽고 책카드 v2 및 한국/공동체/정체성 계열 질문형 노트로 확장.
+
+## [2026-06-06] prepare | 한국이란 무엇인가 책카드 작성 브리프 생성
+
+- 생성 문서: `wiki/bookclub/books/한국이란무엇인가/00_작성브리프.md`
+- 갱신 문서: `index.md`
+- 참고 원본: `bookclub/석촌호수책모임/한국이란 무엇인가/한국이란무엇인가_파트1.md`, `한국이란무엇인가_파트2_1부.md`, `한국이란무엇인가_파트2_2부.md`, `한국이란무엇인가_파트3.md`
+- 핵심 변경: 다음 책카드 v2 작성을 위해 김영민 작가론, “움직이는 과녁” 관점, 한국을 이해해온 언어의 실패, 기억/망각·성군 없음·식민 체험·민주주의/시민사회·비평적 한계의 축을 정리함.
+- 다음 작업: `wiki/bookclub/books/한국이란무엇인가/00_책카드.md` 작성 및 필요 시 `공동체는 무엇을 기억하고 무엇을 잊는가` 계열 질문형 노트 생성.
+
+## [2026-06-06] update | 한국이란 무엇인가 책카드 v2 및 공동체 기억 질문 노트 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/한국이란무엇인가/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`
+- 갱신 문서: `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가.md`, `index.md`
+- 참고 원본: `bookclub/석촌호수책모임/한국이란 무엇인가/한국이란무엇인가_파트1.md`, `한국이란무엇인가_파트2_1부.md`, `한국이란무엇인가_파트2_2부.md`, `한국이란무엇인가_파트2_3부.md`, `한국이란무엇인가_파트3.md`, `wiki/bookclub/books/한국이란무엇인가/00_작성브리프.md`
+- 핵심 변경: 김영민의 『한국이란 무엇인가』를 “한국의 본질” 정의가 아니라 기억/망각, 법 위에 올라서려는 권력, 선진국의 정신적 허허벌판, 관념으로서의 한국, 인간성의 멸망, 기꺼이 살고 싶은 곳을 묻는 33개의 물음표로 정리하고 기존 질문망에 연결함.
+- 다음 작업: 필요 시 `한국이란 무엇인가` lecture-script 또는 `관념으로서의 한국`/`인간보다 인간성이 먼저 죽는가` 계열 질문형 노트로 확장.
+
+## [2026-06-06] update | 예감은 틀리지 않는다 책카드 v2 및 기억/책임 질문 노트 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/예감은틀리지않는다/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가.md`
+- 갱신 문서: `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가.md`, `index.md`
+- 참고 원본: `bookclub/석촌호수책모임/예감은 틀리지 않는다/줄리언반스_파트1_stranger_v4.md`, `줄리언반스_1부_부제1-3_정리본.md`, `줄리언반스_1부_부제4-9_정리본.md`, `줄리언반스_1부_부제10-12_정리본.md`, `줄리언반스_Part2_Section1-3.md`, `줄리언반스_Part2_Section4-6.md`, `줄리언반스_Part2_Section7-8.md`
+- 핵심 변경: 줄리언 반스의 『예감은 틀리지 않는다』를 부정확한 기억, 불충분한 기록, 살아남은 자의 회고, 자기 편지의 귀환, 회한, 책임의 사슬, 거대한 혼란의 축으로 정리하고 기존 질문망에 연결함.
+- 다음 작업: 필요 시 『예감은 틀리지 않는다』 lecture-script 또는 `기록은 무엇을 남기는가` 계열 질문형 노트로 확장.
+
+## [2026-06-06] update | 브람스를 좋아하세요 책카드 v2 및 필요/습관 질문 노트 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/브람스를좋아하세요/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/사랑은 왜 필요와 습관이 되는가.md`
+- 갱신 문서: `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가.md`, `index.md`
+- 참고 원본: `bookclub/석촌호수책모임/브람스를 좋아하세요/brahms_part1_final.md`, `1-4장_2.md`, `5-8장_1.md`, `9-11장_1.md`, `12-14장_1.md`, `15-18장_1.md`
+- 핵심 변경: 프랑수아즈 사강의 『브람스를 좋아하세요』를 “현재의 사랑이 오래된 관계의 리듬과 삶의 문법을 이기지 못하는 소설”로 정리하고, 사랑받음/필요됨, 브람스라는 자기감각의 질문, 로제의 반복과 시몽의 현재를 기존 질문망에 연결함.
+- 다음 작업: 필요 시 `브람스를 좋아하세요` 제목 질문 close-reading 또는 사강/반스 시간 감각 비교 lecture-script로 확장.
+
+## [2026-06-06] update | 브람스를 좋아하세요 제목 질문 해설 및 사강/반스 비교 강의 생성
+
+- 생성 문서: `wiki/bookclub/books/브람스를좋아하세요/01_브람스를좋아하세요_질문해설.md`
+- 생성 문서: `wiki/bookclub/lectures/사강과_반스_시간과_회한_비교.md`
+- 갱신 문서: `wiki/bookclub/books/브람스를좋아하세요/00_책카드.md`, `index.md`, `log.md`
+- 핵심 변경: 「브람스를 좋아하세요?」라는 제목 질문을 음악 취향에서 자기감각·삶의 형식의 질문으로 확장하고, 사강의 시간은 몸/리듬에 남고 반스의 시간은 종이/책임으로 돌아온다는 비교 강의 축을 만들었다.
+- 다음 작업: 필요 시 이 두 문서를 바탕으로 북클럽용 구어체 강의 스크립트 또는 유튜브 쇼츠 후보 문장으로 재가공.
+
+## [2026-06-06] update | 현재 희망 없음 작품카드 v2 및 희망/직업명 질문 노트 생성
+
+- 원본 기반 작성: `wiki/writing/plays/현재희망없음/00_작품카드.md`
+- 생성 문서: `wiki/shared/questions/희망은 왜 직업명이 되는가.md`
+- 갱신 문서: `wiki/shared/questions/나는 왜 나를 소개하지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `index.md`
+- 참고 원본: `script/현재희망없음_전체_v7.md`, `현재희망없음_전체_v4.md`, `현재희망없음_전체_v1.md`, `02_희곡_현재희망없음.pdf`, `01_신청서_전용수_현재희망없음.pdf`
+- 핵심 변경: 「현재 희망 없음」을 “희망 없음”의 세대론이 아니라 희망이 직업명·정확한 문구·제출 완료 상태로 번역될 때 생기는 균열로 정리하고, 온점·오류 메시지·프린터·잎사귀 앞면/뒷면을 작품의 중심 장치로 연결함.
+- 다음 작업: 필요 시 `현재 희망 없음` 리딩/퇴고노트 또는 `저는,`과 묶은 자기소개/희망 제출 비교 노트로 확장.
+
+## [2026-06-06] update | 집 작품카드 v2 및 집/병 질문 노트 생성
+
+- 원본 기반 작성: `wiki/writing/plays/집/00_작품카드.md`
+- 생성 문서: `wiki/shared/questions/집은 언제 병이 되는가.md`
+- 갱신 문서: `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/희망은 왜 직업명이 되는가.md`, `index.md`
+- 참고 원본: `script/집_개작본21.md`, `집_개작본19.md`, `집_개작본.md`, `집_합평.hwp`, `집_전용수_260513.pdf`, `집_전용수_수정.pdf`, `집_전용수.pdf`, `집_초고.pdf`
+- 핵심 변경: 「집」을 무좀/진균 의인화의 기발함이 아니라, 나에게 집인 장소가 타인에게 병이 되는 윤리적 난점으로 정리하고, 환경 개선·이전·소독·명도·사물 누적이 거주를 퇴거로 바꾸는 절차를 기존 질문망에 연결함.
+- 다음 작업: 필요 시 `집` 리딩/퇴고노트 또는 「관계란」과 묶은 `칸/절차/퇴거` 비교 노트로 확장.
+
+## [2026-06-06] update | 무진기행 재작성 및 운명/제자리 책카드 v2 생성
+
+- 원본 기반 갱신: `wiki/bookclub/books/무진기행/00_책카드.md`
+- 원본 기반 작성: `wiki/bookclub/books/우리가운명이라고불렀던것들/00_책카드.md`, `wiki/bookclub/books/제자리에있다는것/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/우연은 왜 운명처럼 느껴지는가.md`, `wiki/shared/questions/제자리는 누가 정하는가.md`
+- 갱신 문서: `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/집은 언제 병이 되는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `index.md`
+- 참고 원본: `bookclub/석촌호수책모임/무진기행/*_북클럽_파트2.md`, `김승옥_단편집_북클럽_파트3.md`, `bookclub/석촌호수책모임/우리가_운명이라고_불렀던_것들/우리가_운명이라고_불렀던_것들_파트1.docx`, `파트2_통합_파트1_운명이라는착각.md`, `bookclub/석촌호수책모임/제자리에있다는것/제자리에있다는것_파트1_v2.docx`, `제자리에있다는것_파트2 (1).docx`
+- 핵심 변경: 김승옥 선집은 “도달 실패”와 “불편함과 함께 읽기” 축으로 재작성하고, 클라인은 우연을 운명으로 읽는 뇌/확률/자유의 문제로, 마랭은 제자리의 안정과 통제·몸/목소리/환대의 문제로 기존 질문망에 연결함.
+- 다음 작업: 필요 시 「서울 1964년 겨울」과 『우리가 운명이라고 불렀던 것들』을 묶은 `우연히 만난 사람에게 어디까지 책임져야 하는가` 강의형 노트로 확장.
+
+
+## [2026-06-06] update | 종이동물원·Get the Picture·센스의 철학·코뿔소 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/종이동물원/00_책카드.md`, `wiki/bookclub/books/getthepicture/00_책카드.md`, `wiki/bookclub/books/센스의철학/00_책카드.md`, `wiki/bookclub/books/코뿔소/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `wiki/shared/questions/취향은 어떻게 권력이 되는가.md`, `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`
+- 갱신 문서: `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/종이동물원/*`, `bookclub/석촌호수책모임/Get the picture/get_the_picture_part2_section2.md`, `bookclub/석촌호수책모임/센스의철학/*`, `bookclub/석촌호수책모임/코뿔소/코뿔소 - 외젠 이오네스코.docx`
+- 핵심 변경: 켄 리우는 기억의 매개와 책임, 보스커는 취향/시장/자기 안목, 지바는 의미 이전의 리듬과 센스, 이오네스코는 좋은 말이 코뿔소화의 합리화가 되는 과정을 중심으로 기존 질문망에 연결함.
+- 다음 작업: 필요 시 네 권을 묶은 `취향·동조·매개·리듬` 비교 lecture-script 또는 『종이 동물원』 개별 단편 해설로 확장.
+
+## [2026-06-06] update | 사람, 장소, 환대 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/사람장소환대/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`
+- 갱신 문서: `wiki/shared/questions/제자리는 누가 정하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/집은 언제 병이 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/사람, 장소, 환대/사람_장소_환대_파트1.md`, `bookclub/석촌호수책모임/사람, 장소, 환대/프롤로그 “그림자”로 사람을 다시 보기.md`, `bookclub/석촌호수책모임/사람, 장소, 환대/_사람, 장소, 환대_ 김현경.docx`
+- 핵심 변경: 김현경의 사람/장소/환대 개념을 사람자격·성원권·의례·모욕·굴욕·절대적 환대의 축으로 정리하고, 기존 자리/제도/언어/집 질문망에 “사람은 어떻게 사람 아닌 것이 되는가”를 연결함.
+- 다음 작업: 필요 시 『사람, 장소, 환대』와 「관계란」을 묶은 `병원 창구와 성원권` 강의형 노트로 확장.
+
+## [2026-06-06] update | 사탄탱고 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/사탄탱고/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/구원은 왜 기다림을 더 깊게 만드는가.md`
+- 갱신 문서: `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/왜 답이 없는데도 죽음은 집행되는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/사탄탱고/_사탄탱고_ 크러스너호르커이 라슬로.md`, `bookclub/석촌호수책모임/사탄탱고/사탄탱고 사전리서치1.txt`, `bookclub/석촌호수책모임/사탄탱고/사탄탱고 사전리서치2.txt`
+- 핵심 변경: 『사탄탱고』를 “거짓 구원자 한 명”의 이야기보다, 구원 약속을 제공하는 자와 기다림에 발을 맞추는 공동체가 함께 만드는 탱고로 정리하고, 희망·죄책·장례비·시범 경제·보고서·감시망의 연결을 기존 질문망에 추가함.
+- 다음 작업: 필요 시 『사탄탱고』와 『소송』을 묶은 `기다림과 절차` 비교 lecture-script 또는 에슈티케 장면 개별 해설로 확장.
+
+## [2026-06-06] update | 서사의 위기 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/서사의위기/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`
+- 갱신 문서: `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`, `wiki/shared/questions/나는 왜 나를 소개하지 못하는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/서사의위기/_서사의 위기_ 한병철.pdf`, `bookclub/석촌호수책모임/서사의위기/서사의위기1-2장.pdf`, `bookclub/석촌호수책모임/서사의위기/서사의위기_3장_정리본.docx`, `bookclub/석촌호수책모임/서사의위기/서사의위기_4-5장_정리.md.pdf`, `bookclub/석촌호수책모임/서사의위기/서사의위기_6-7장_정리.docx`, `bookclub/석촌호수책모임/서사의위기/서사의위기_8-10장_정리.docx`
+- 핵심 변경: 『서사의 위기』를 정보 과잉 비판보다, 삶이 이야기로 익을 시간·거리·경청·타자성을 잃어버리는 과정으로 정리하고, `정보는 왜 이야기가 되지 못하는가`를 새 질문 노트로 추가함.
+- 다음 작업: 필요 시 『서사의 위기』와 「저는,」을 묶은 자기소개/플랫폼 자기서사 비교 lecture-script 또는 6장 중심의 `좋아요는 어떻게 충격을 끝내는가` 해설 노트로 확장.
+
+## [2026-06-06] update | 서사의 위기 확장 노트 2건 생성
+
+- 생성 문서: `wiki/bookclub/lectures/서사의위기와_저는_자기서사_비교.md`, `wiki/bookclub/books/서사의위기/01_좋아요는_어떻게_충격을_끝내는가.md`
+- 갱신 문서: `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/writing/plays/저는/00_작품카드.md`, `index.md`, `log.md`
+- 참고 원본: `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/writing/plays/저는/00_작품카드.md`, `bookclub/석촌호수책모임/서사의위기/서사의위기_6-7장_정리.docx`
+- 핵심 변경: 『서사의 위기』의 정보/서사 구분으로 「저는,」의 자기소개 불능을 읽는 비교 lecture-script를 만들고, 6장 `충격에서 좋아요로`를 `좋아요`가 충격을 이야기로 자라지 못하게 하는 반응 버튼이라는 축으로 개별 해설함.
+- 다음 작업: 필요 시 `경청은 어떻게 사람을 회복시키는가` 8–9장 확장 노트 또는 『서사의 위기』×『센스의 철학』 비교 독서로 확장.
+
+## [2026-06-06] update | 서사의 위기 8–9장·센스의 철학 비교 확장
+
+- 생성 문서: `wiki/bookclub/books/서사의위기/02_경청은_어떻게_사람을_회복시키는가.md`, `wiki/bookclub/lectures/서사의위기와_센스의철학_의미를_늦추는_두가지_방법.md`
+- 갱신 문서: `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/bookclub/books/센스의철학/00_책카드.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/서사의위기/서사의위기_8-10장_정리.docx`, `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/bookclub/books/센스의철학/00_책카드.md`
+- 핵심 변경: 8–9장을 경청이 정보를 추출하지 않고 사람이 자기 고통을 자기 속도로 이야기하게 만드는 환대라는 축으로 해설하고, 『서사의 위기』와 『센스의 철학』을 `의미를 늦추는 두 가지 방법`—이야기/경청의 시간과 리듬/배열의 감각—으로 비교함.
+- 다음 작업: 필요 시 『서사의 위기』 10장 `스토리셀링`을 자기소개서·브랜딩·마케팅 언어와 연결하는 추가 해설로 확장.
+
+## [2026-06-06] update | 서사의 위기 10장 스토리셀링 해설 생성
+
+- 생성 문서: `wiki/bookclub/books/서사의위기/03_스토리셀링은_어떻게_자기서사를_상품으로_바꾸는가.md`
+- 갱신 문서: `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/writing/plays/저는/00_작품카드.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/나는 왜 나를 소개하지 못하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/서사의위기/서사의위기_8-10장_정리.docx`, `wiki/bookclub/books/서사의위기/00_책카드.md`, `wiki/writing/plays/저는/00_작품카드.md`
+- 핵심 변경: 10장 `스토리셀링`을 이야기의 귀환이 아니라 삶을 감동·정체성·차별화 문구로 압축해 판매 가능한 자기서사로 만드는 기술로 해설하고, 자소서·퍼스널 브랜딩·마케팅 언어가 「저는,」의 자기소개 불능과 어떻게 연결되는지 정리함.
+- 다음 작업: 필요 시 『서사의 위기』 전체를 북클럽 진행용 종합 강의안으로 재구성하거나, 「저는,」 revision-note v2로 확장.
+
+## [2026-06-06] update | 작별하지 않는다 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/작별하지않는다/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/작별은 언제 애도가 아니라 지움이 되는가.md`
+- 갱신 문서: `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/작별하지않는다/_작별하지 않는다_ 한강.md`, `bookclub/석촌호수책모임/작별하지않는다/we do not part pre-1.pdf`, `bookclub/석촌호수책모임/작별하지않는다/we do not part_1.docx`, `bookclub/석촌호수책모임/작별하지않는다/we do not part_2-1.docx`, `bookclub/석촌호수책모임/작별하지않는다/we do not part_3.docx`
+- 핵심 변경: 『작별하지 않는다』를 제주 4·3의 죽은 자들을 과거로 정리하지 않고 눈·피·새·불꽃·자료·통증을 통해 산 자의 현재에 계속 접속시키는 소설로 정리하고, 작별 불가능성을 애도의 윤리로 되받는 질문 `작별은 언제 애도가 아니라 지움이 되는가`를 새로 추가함.
+- 다음 작업: 필요 시 1부 손가락 봉합 장면을 `피가 멈추지 않게 하는 기억` 개별 해설로 확장하거나, 『작별하지 않는다』×『한국이란 무엇인가』 제주 4·3/광주/국가서사 강의형 스크립트로 확장.
+
+## [2026-06-06] create | 작별하지 않는다 확장 후보 2건 생성
+
+- 생성 문서: `wiki/bookclub/books/작별하지않는다/01_피가_멈추지_않게_하는_기억.md`
+- 생성 문서: `wiki/bookclub/lectures/작별하지않는다와_한국이란무엇인가_국가는_무엇을_기억해야_하는가.md`
+- 갱신 문서: `wiki/bookclub/books/작별하지않는다/00_책카드.md`, `wiki/bookclub/books/한국이란무엇인가/00_책카드.md`, `wiki/shared/questions/작별은 언제 애도가 아니라 지움이 되는가.md`, `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/작별하지않는다/_작별하지 않는다_ 한강.md`, `wiki/bookclub/books/작별하지않는다/00_책카드.md`, `wiki/bookclub/books/한국이란무엇인가/00_책카드.md`
+- 핵심 변경: 손가락 봉합 장면을 “피가 멈추지 않게 해야 신경이 산다”는 기억/통증/애도의 윤리로 개별 해설하고, 『작별하지 않는다』와 『한국이란 무엇인가』를 제주 4·3·광주·국가서사·인간성의 신경이라는 축으로 비교하는 강의형 스크립트를 추가함.
+- 다음 작업: 필요 시 『작별하지 않는다』×『서사의 위기』를 경청·증언·정보 처리 비교 강의형 스크립트로 확장하거나, 「관계란」의 유품 수령/공식 작별 문제를 revision-note로 확장.
+
+## [2026-06-06] create | 괴테는 모든 것을 말했다 책카드 v2 생성
+
+- 생성 문서: `wiki/bookclub/books/괴테는모든것을말했다/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/말은 언제 출처보다 삶으로 진짜가 되는가.md`
+- 갱신 문서: `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/괴테는 모든 것을 말했다/_괴테는 모든 것을 말했다_ 스즈키 유이.docx`
+- 핵심 변경: 『괴테는 모든 것을 말했다』를 출처 불명 괴테 명언 추적을 통해 말의 진짜성이 원전의 권위와 삶 속 도착 사이에서 흔들리고 다시 살아나는 소설로 정리하고, 새 질문 `말은 언제 출처보다 삶으로 진짜가 되는가`를 추가함.
+- 다음 작업: 필요 시 `잼 같은 세계와 샐러드 같은 세계` close-reading note나 『괴테는 모든 것을 말했다』×『서사의 위기』 정보/이야기 비교 lecture-script로 확장.
+
+## [2026-06-06] create | 무진기행 개별 카드·작별/서사 비교·질문 노트·흰 고래 책카드 생성
+
+- 생성 문서: `wiki/bookclub/books/무진기행/02_무진기행_개별카드.md`, `wiki/bookclub/books/무진기행/03_서울_1964년_겨울_개별카드.md`, `wiki/bookclub/books/무진기행/04_생명연습_개별카드.md`, `wiki/bookclub/books/무진기행/05_서울의_달빛_0장_개별카드.md`
+- 생성 문서: `wiki/bookclub/lectures/작별하지않는다와_서사의위기_기억은_정보가_아니라_서사다.md`
+- 생성 문서: `wiki/shared/questions/제도와 책임은 어떻게 서로를 밀어내는가.md`, `wiki/shared/questions/자기기만은 어떻게 양심의 언어를 빌리는가.md`, `wiki/shared/questions/죄와 구원은 왜 서로를 닮는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/사랑은 사람을 향하는가 이미지를 소유하는가.md`
+- 원본 기반 작성: `wiki/bookclub/books/흰고래의흼에대하여/00_책카드.md`
+- 참고 원본: `bookclub/석촌호수책모임/무진기행/*_북클럽_파트2.md`, `wiki/bookclub/books/작별하지않는다/00_책카드.md`, `wiki/bookclub/books/서사의위기/00_책카드.md`, `bookclub/석촌호수책모임/흰 고래의 흼에 대하여/흰 고래의 흼에 대하여 - 홍한별.docx`, `bookclub/석촌호수책모임/흰 고래의 흼에 대하여/흰 고래의 흼에 대하여 사전리서치.md`
+- 갱신 문서: `index.md`, `log.md`
+- 핵심 변경: 사용자가 지정한 순서대로 김승옥 네 단편의 개별 v2 카드, 『작별하지 않는다』×『서사의 위기』 비교 강의, 제도/자기기만/죄와 구원/기록 계열 질문 노트, 홍한별 『흰 고래의 흼에 대하여』 책카드 v2를 생성하고 다음 작성 후보를 완료 상태에 맞게 재정리함.
+- 다음 작업: `저는,` v3→v8 revision-note v2 또는 『흰 고래의 흼에 대하여』×『서사의 위기』 AI/평균 문장 비교 강의로 확장 가능.
+## [2026-06-06] create | 1984 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/1984/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가.md`
+- 갱신 문서: `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/1984/1984 사전리서치.pdf`, `bookclub/석촌호수책모임/1984/1984 인용구+감상및해설.pdf`, `bookclub/석촌호수책모임/1984/《1984》 독서모임 파트2_ 책 내용 분석.pdf`
+- 핵심 변경: 조지 오웰의 『1984』를 감시사회 일반론보다, 권력이 언어·기록·기억·사랑·공포를 차례로 장악해 개인이 자기 내면까지 권력의 문장으로 말하게 만드는 소설로 정리하고, 새 질문 `권력은 어떻게 언어와 기억을 다시 쓰는가`를 추가함.
+- 다음 작업: 필요 시 `2+2=4라고 말할 자유` 개별 해설 또는 『1984』×『소송』/『서사의 위기』 비교 lecture-script로 확장 가능.
+## [2026-06-06] create | 1984 비교 강의형 스크립트 2건 생성
+
+- 생성 문서: `wiki/bookclub/lectures/1984와_소송_죄명없는절차와_사상죄.md`
+- 생성 문서: `wiki/bookclub/lectures/1984와_서사의위기_정보독점과_정보과잉.md`
+- 갱신 문서: `wiki/bookclub/books/1984/00_책카드.md`, `wiki/bookclub/books/소송/00_책카드.md`, `wiki/bookclub/books/서사의위기/00_책카드.md`, `index.md`, `log.md`
+- 참고 원본: `wiki/bookclub/books/1984/00_책카드.md`, `wiki/bookclub/books/소송/00_책카드.md`, `wiki/bookclub/books/서사의위기/00_책카드.md`
+- 핵심 변경: 『1984』×『소송』은 죄명 없는 절차와 사상죄를 통해 권력이 인간을 피고인/자기검열자로 만드는 차이를 비교했고, 『1984』×『서사의 위기』는 정보 독점과 정보 과잉이 서로 다른 방식으로 현실 판단의 시간을 무너뜨리는 과정을 비교함.
+- 다음 작업: 필요 시 『1984』 `2+2=4라고 말할 자유` 개별 해설 또는 『1984』×『코뿔소』 집단 감정/구호 비교 강의형 스크립트로 확장 가능.
+
+
+## [2026-06-06] create | 1984 2+2=4 해설 및 1984×코뿔소 비교 강의 생성
+
+- 생성 문서: `wiki/bookclub/books/1984/01_2더하기2는4라고말할자유.md`
+- 생성 문서: `wiki/bookclub/lectures/1984와_코뿔소_집단감정과_좋은말의폭력.md`
+- 갱신 문서: `wiki/bookclub/books/1984/00_책카드.md`, `wiki/bookclub/books/코뿔소/00_책카드.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가.md`, `index.md`
+- 핵심 변경: `2+2=4라고 말할 자유`를 표현의 자유보다 공동 현실을 지키는 최소 판단의 자유로 읽고, 『1984』의 2분 증오/구호와 『코뿔소』의 논리·업무·자율·관용·아름다움이 판단을 마비시키는 과정을 비교 강의로 확장함.
+- 다음 작업: `저는,` v3→v8 개작 흐름 revision-note v2 또는 `저는,` 낭독용/연출안 PDF 기반 무대성 보강.
+
+## [2026-06-06] update | 고래는 물에서 숨 쉬지 않는다·달리기를 말할 때 내가 하고 싶은 말 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/고래는물에서숨쉬지않는다/00_책카드.md`
+- 원본 기반 작성: `wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드.md`
+- 생성 문서: `wiki/shared/questions/불완전함은 어떻게 결함이 아니라 조건이 되는가.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`
+- 갱신 문서: `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`, `wiki/shared/questions/우연은 왜 운명처럼 느껴지는가.md`, `wiki/shared/questions/제자리는 누가 정하는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/고래는_물에서_숨_쉬지_않는다/고래는_물에서_숨_쉬지_않는다_파트1.md.pdf`, `고래는_물에서_숨_쉬지_않는다_파트2.docx`, `bookclub/석촌호수책모임/달리기를 말할 때 내가 하고 싶은 말/_달리기를 말할 때 내가 하고 싶은 말_ 무라카미 하루키.pdf`
+- 핵심 변경: 돕슨의 책은 자연선택을 완벽한 설계가 아니라 경로의존적 수선과 충분히 좋은 타협의 과정으로, 하루키의 책은 달리기를 통해 글쓰기·고독·노화·지속을 말하는 장거리 루틴의 철학으로 정리함.
+- 다음 작업: `고래의 숨과 인간의 요통` 경로의존성 해설 노트, 또는 하루키×센스의철학 반복/변주 비교 강의형 스크립트로 확장 가능.
+
+## [2026-06-07] create | 하루키×센스·고래×하루키 비교 강의 생성
+
+- 생성 문서: `wiki/bookclub/lectures/달리기와_센스의철학_반복과_변주의_리듬.md`
+- 생성 문서: `wiki/bookclub/lectures/고래와_달리기_충분히좋은해법과_지속가능한루틴.md`
+- 생성 문서: `wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가.md`
+- 갱신 문서: `wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드.md`, `wiki/bookclub/books/고래는물에서숨쉬지않는다/00_책카드.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/불완전함은 어떻게 결함이 아니라 조건이 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드.md`, `wiki/bookclub/books/센스의철학/00_책카드.md`, `wiki/bookclub/books/고래는물에서숨쉬지않는다/00_책카드.md`
+- 핵심 변경: 하루키×센스 강의는 반복을 생활 루틴과 미학적 변주의 두 층위로 비교했고, 고래×하루키 강의는 자연의 충분히 좋은 적응과 인간의 지속 가능한 루틴을 완벽함보다 오래 작동하는 해법의 관점으로 묶었다.
+- 다음 작업: 필요 시 `고래의 숨과 인간의 요통` 경로의존성 개별 해설 노트 또는 두 비교 강의를 유튜브용 구어체 대본/쇼츠 문장으로 재가공.
+
+## [2026-06-07] create | 심문 작품카드 v2 및 돌봄/선택 질문 노트 생성
+
+- 원본 기반 작성: `wiki/writing/plays/심문/00_작품카드.md`
+- 생성 문서: `wiki/shared/questions/돌봄은 언제 선택을 대신하는가.md`
+- 갱신 문서: `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `index.md`, `log.md`
+- 참고 원본: `script/심문_퇴고_신춘33.pdf`, `script/심문_전용수_개작3.pdf`, `script/심문_전용수.pdf`
+- 핵심 변경: 「심문」을 AI 존엄사 찬반극이 아니라, 증거영상으로 사실은 이미 확정된 사건 앞에서 심문 절차가 남겨진 사람의 미해결 애도와 돌봄의 경계를 드러내는 2인극으로 정리함. 중심 장치는 제조번호/이름, 차가운 손과 마지막 손, 247일과 248일째, 기록 장치와 병원 영상, 검사의 아버지 상실이다.
+- 다음 작업: 필요 시 `심문` 개작1→신춘33 흐름을 revision-note v2로 정리하거나, 「심문」×『사람, 장소, 환대』를 사람자격/환대/기계 돌봄 비교 노트로 확장.
+
+## [2026-06-11] create | 백지 앞에서 책카드 v2 생성
+
+- 원본 기반 작성: `wiki/bookclub/books/백지앞에서/00_책카드.md`
+- 갱신 문서: `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/백지앞에서/백지앞에서_파트1.md`, `파트2_검수본.md`, `백지앞에서_파트2_174517.md`, `백지앞에서_파트2_그날이후.md`, `백지앞에서_파트2_인간과동물사이.md`, `백지앞에서_파트2_겨울과달리기.md`, `백지앞에서_파트2_혼자사는연습.md`, `백지앞에서_파트2_못생겼다는느낌.md`
+- 핵심 변경: 최은영의 『백지 앞에서』를 자기 수치심과 병과 외로움을 쓰는 자리에서 출발해, 타인의 고통을 외면하지도 소유하지도 않는 듣기와 책임의 윤리로 확장되는 산문집으로 정리함. 중심 장치는 백지, 일기장, 병원 번호, 수감번호 174517, 기억교실, `벌써`라는 부사, 길고양이 밥자리다.
+- 다음 작업: `들을 수 없는 존재는 책임질 수도 없다` 개별 해설 노트 또는 『백지 앞에서』×『작별하지 않는다』 기억/애도/듣기 비교 강의형 스크립트로 확장 가능.
+
+## [2026-06-11] create | 백지 앞에서×작별하지 않는다 비교 강의 생성
+
+- 생성 문서: `wiki/bookclub/lectures/백지앞에서와_작별하지않는다_기억은_사람을_다시_사람으로_부르는가.md`
+- 갱신 문서: `wiki/bookclub/books/백지앞에서/00_책카드.md`, `wiki/bookclub/books/작별하지않는다/00_책카드.md`, `wiki/shared/questions/작별은 언제 애도가 아니라 지움이 되는가.md`, `index.md`, `log.md`
+- 참고 원본: `wiki/bookclub/books/백지앞에서/00_책카드.md`, `wiki/bookclub/books/작별하지않는다/00_책카드.md`, `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/작별은 언제 애도가 아니라 지움이 되는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`
+- 핵심 변경: 『작별하지 않는다』의 눈·피·빈 새장·활주로 아래 유골 같은 감각적 기억과 『백지 앞에서』의 수감번호 174517·기억교실·`벌써`라는 부사·듣기의 윤리를 묶어, 기억을 저장이 아니라 지워진 사람을 다시 사람으로 부르는 응답의 행위로 정리함.
+- 다음 작업: `들을 수 없는 존재는 책임질 수도 없다` 개별 해설 노트 또는 「관계란」의 유품 수령/애도 형식 문제를 revision-note로 확장 가능.

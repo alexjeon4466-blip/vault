@@ -1,0 +1,29 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+~$*
+
+# Obsidian local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/logs/
+.obsidian/trash/
+.trash/
+
+# Local REST API credentials / generated plugin backups
+.obsidian/plugins/obsidian-local-rest-api/data.json
+.obsidian/plugins/obsidian-local-rest-api/.backup-*/
+
+# Generated graph artifacts (regenerable)
+.understand-anything/intermediate/
+
+# Generic secrets if ever added
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
