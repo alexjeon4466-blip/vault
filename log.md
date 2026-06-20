@@ -583,3 +583,11 @@
 - 갱신 문서: `wiki/bookclub/books/궤도/00_책카드.md`, `wiki/writing/notes/여기_있어도_됩니까.md`, `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `index.md`, `log.md`
 - 핵심 변경: `등의 자국`은 몸이 머문 흔적을 환대의 증거로, `자리가 남아 있습니다`는 좌석/수용 정보와 실제 환대의 차이로, `문은 닫지 않겠습니다`는 말 대신 열린 문으로 응답하는 장면으로 정리했다.
 - 다음 작업: `불은 끄지 않겠습니다`, `돌아오셔도 됩니다`, `아직 따뜻합니다`, `잔여 좌석 1` 같은 후속 장면으로 이어갈 수 있다.
+
+
+## [2026-06-20] create | 불은 끄지 않겠습니다 외 4개 후속 장면 생성
+
+- 생성 문서: `wiki/writing/notes/불은_끄지_않겠습니다.md`, `wiki/writing/notes/돌아오셔도_됩니다.md`, `wiki/writing/notes/아직_따뜻합니다.md`, `wiki/writing/notes/잔여_좌석_1.md`
+- 갱신 문서: `wiki/bookclub/books/궤도/00_책카드.md`, `wiki/writing/notes/문은_닫지_않겠습니다.md`, `wiki/writing/notes/등의_자국.md`, `wiki/writing/notes/자리가_남아_있습니다.md`, 질문망 6개, `index.md`, `log.md`
+- 핵심 변경: 열린 문/불/복귀 허락/온기/좌석 수를 통해 환대가 말보다 공간·시간·감각·제도 언어에서 어떻게 드러나거나 실패하는지 확장했다.
+- 다음 작업: `자동 소등을 해제했습니다`, `설명하지 않으셔도 됩니다`, `체온은 저장되지 않습니다`, `좌석을 선택해 주세요` 같은 후속 장면으로 이어갈 수 있다.
