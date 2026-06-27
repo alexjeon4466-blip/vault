@@ -1267,3 +1267,12 @@
 - 검증: `checked_files 283`, `wiki_files 280`, `broken_wikilinks 0`, `missing_frontmatter 0`, `placeholder_hits 0`.
 - 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
 
+## [2026-06-27] checkpoint | 작업 체크포인트 저장
+
+- 갱신 문서: `wiki/shared/maps/클로드_북클럽_창작_진행_체크리스트.md`, `log.md`
+- 현재 상태: Claude 대화 기록 위키화는 구조화/자기지도/북클럽-창작 연결 지도/우선 책카드/초고 후보 확장까지 진행. `회의록에는 없습니다`와 `수정된 보호자`는 낭독 리듬 개작까지 묶음 완료.
+- 다음 작업: [[wiki/writing/draft-candidates/이름표를_떼지_못하는_사람|이름표를 떼지 못하는 사람]] 첫 장면 3~5쪽 확장.
+- 검증: `checked_files 283`, `wiki_files 280`, `broken_wikilinks 0`, `missing_frontmatter 0`, `placeholder_hits 0`.
+- 작업과 무관한 untracked: `script/설명란_부족/`, `script/콜센터/`.
+- 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
+
