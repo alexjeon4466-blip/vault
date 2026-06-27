@@ -1276,3 +1276,12 @@
 - 작업과 무관한 untracked: `script/설명란_부족/`, `script/콜센터/`.
 - 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
 
+## [2026-06-27] update | 노인과 바다 책카드 v2 생성
+
+- 생성 문서: `wiki/bookclub/books/노인과바다/00_책카드.md`
+- 생성 문서: `output/reports/claude-history/extracts/노인과바다.md`
+- 갱신 문서: `wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가.md`, `wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/불완전함은 어떻게 결함이 아니라 조건이 되는가.md`, `wiki/shared/maps/클로드_북클럽_창작_연결_정밀독해.md`, `wiki/shared/maps/클로드_북클럽_창작_진행_체크리스트.md`, `index.md`, `log.md`
+- 핵심 변경: 『노인과 바다』를 승리/패배의 단순 판정이 아니라, 세계가 성과를 거의 다 먹어치운 뒤에도 행위와 기술과 버팀이 완전히 패배로 환원되지 않는 구조로 정리했다. Claude 대화에서 나온 마놀린→올린, 존엄/통제권 대사 연결도 희곡 장치로 보존했다.
+- 다음 작업: `김애란 작품군` 책카드 또는 기존 책카드 보강 큐.
+- 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
+
