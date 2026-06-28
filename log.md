@@ -1426,4 +1426,10 @@
 - 갱신 문서: `wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/관심은 어떻게 현실을 다시 렌더링하는가.md`, `wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가.md`, `index.md`, `log.md`
 - 참고 원본: `bookclub/석촌호수책모임/사생활의 역사 - 데이비드 빈센트.md`
 - 핵심 변경: 『사생활의 역사』를 사생활의 자연권 서사가 아니라 문·방·편지·전화·자동차·방송·국가 기록·디지털 네트워크가 바뀔 때마다 `무엇을 누구에게 보여줄지 결정하는 힘`이 새로 협상되어온 역사로 정리했다. 『1984』의 강제 감시와 오늘날의 자발적 투명성, 오델의 관심경제, 디지털 그림자 질문을 연결했다.
+## [2026-06-28] create | 너무 늦은 시간·노동의 배신 책카드 v2 작성
+
+- 생성 문서: `wiki/bookclub/books/너무늦은시간/00_책카드.md`, `wiki/bookclub/books/노동의배신/00_책카드.md`, `wiki/shared/questions/여성혐오는 왜 주지 않는 방식으로 작동하는가.md`, `wiki/shared/questions/일하는데도 왜 가난한가.md`
+- 갱신 문서: `wiki/shared/questions/상투적인 말은 언제 빈말이 아니게 되는가.md`, `wiki/shared/questions/사랑은 왜 필요와 습관이 되는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `wiki/shared/questions/제도와 책임은 어떻게 서로를 밀어내는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `index.md`, `log.md`
+- 참고 원본: `bookclub/석촌호수책모임/_너무 늦은 시간_ 클레어 키건.md`, `bookclub/석촌호수책모임/노동의 배신 - 바바라 에런하이크.md`
+- 핵심 변경: 『너무 늦은 시간』은 여성혐오를 `마땅히 줘야 할 것을 주지 않는` 일상의 인색함으로, 『노동의 배신』은 `일하면 가난에서 벗어난다`는 믿음을 반박하며 저임금 노동이 몸·시간·선택지·존엄을 담보로 잡는 구조로 정리했다.
 
