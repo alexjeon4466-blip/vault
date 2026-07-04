@@ -1,5 +1,0 @@
-Task 1: complete (commit e623e04, review clean — minor: forward-looking imports/KNOWN_TOTALS, used by later tasks)
-NOTE: primary checkout moved to branch original-source-playwriting-notes by external session; dashboard work continues in worktree C:/obsidian/vault/dashboard-wt (main)
-Task 2: complete (commit a4e906c, review clean — minor: _QUALIFIER_RE fullwidth ( not matched, no spec'd case)
-Task 3: complete (commit 1d6e1ee, review clean)
-Task 4: complete (commit 6e1cb19, review clean; fix dispatched for multi-name excluded bullets)
