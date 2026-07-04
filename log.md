@@ -2007,3 +2007,12 @@
 - 출발점: `bookclub/석촌호수책모임/_이반 데니소비치, 수용소의 하루_ 알렉산드르 솔제니친.md`.
 - 중심 해석: 굴라크의 거대한 폭력을 하루의 기상음·점호·배식·작업·검색·식사·잠자리로 압축하고, 빵을 천천히 먹는 시간·숨겨둔 숟가락·이름 호명·벽돌 줄·거의 행복한 날의 불편한 목록을 존엄의 잔여로 읽음.
 - 갱신: `index.md`, `log.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가.md`.
+
+## [2026-07-04] create | 모순 책카드 및 원본 장치 33개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/모순/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/모순_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/전화벨이_먼저_울리는_쪽.md`, `wiki/writing/notes/지하철_입구를_정하지_않았습니다.md`, `wiki/writing/notes/그날_오후라는_찻집.md`, `wiki/writing/notes/테이프_박스를_뒤져서_음악을_공급합니다.md`, `wiki/writing/notes/우리_어머니하고_이모부입니다.md`, `wiki/writing/notes/상대에_따라_집안일을_숨깁니다.md`, `wiki/writing/notes/비둘기의_보스.md`, `wiki/writing/notes/실용서와_시집.md`, `wiki/writing/notes/접시를_날라오라는_말.md`, `wiki/writing/notes/숨긴_돈을_찾으면_환호합니다.md`, `wiki/writing/notes/두_조각이_맞아야_알아봅니다.md`, `wiki/writing/notes/적당히_찾기_어렵게_숨깁니다.md`, `wiki/writing/notes/상관하지_않겠다는_모독.md`, `wiki/writing/notes/낯선_길의_해질녘.md`, `wiki/writing/notes/최선책보다_차선책.md`, `wiki/writing/notes/셔터_찬스는_한_번뿐.md`, `wiki/writing/notes/착하고_착한_사람.md`, `wiki/writing/notes/불행을_극대화하는_사람.md`, `wiki/writing/notes/불행_해결에_신명이_납니다.md`, `wiki/writing/notes/인생계획표를_사랑하는_사람.md`, `wiki/writing/notes/좋은_밤은_예약이_필요합니다.md`, `wiki/writing/notes/감정을_편집하고_왜곡합니다.md`, `wiki/writing/notes/나를_놓치고_싶지_않습니다.md`, `wiki/writing/notes/사랑을_맞은_뒤의_황폐함.md`, `wiki/writing/notes/한없이_달릴_수는_없습니다.md`, `wiki/writing/notes/사는_법을_잊어버렸습니다.md`, `wiki/writing/notes/나를_가두지_말라고_쳤습니다.md`, `wiki/writing/notes/맞지_않는_옷입니다.md`, `wiki/writing/notes/스파게티와_과장법.md`, `wiki/writing/notes/사랑이_아니라_불행의_종류를_고릅니다.md`, `wiki/writing/notes/마지막_모습을_수정해_줘.md`, `wiki/writing/notes/무덤속처럼_평온한_삶.md`, `wiki/writing/notes/내게_없었던_것을_선택합니다.md`
+- 출발점: `bookclub/석촌호수책모임/모순 - 양귀자.md`.
+- 중심 해석: 『모순』을 사랑/안정 중 하나를 고르는 성장담이 아니라, 상반되어 보이던 삶들이 같은 방식으로 감정을 편집하고 불행을 감당한다는 사실을 깨달은 뒤 어떤 행복/불행의 종류를 택할지 묻는 작품으로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`, `wiki/shared/questions/자기기만은 어떻게 양심의 언어를 빌리는가.md`, `wiki/shared/questions/돌봄은 언제 선택을 대신하는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`.
