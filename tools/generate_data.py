@@ -9,7 +9,7 @@ from pathlib import Path
 VAULT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = VAULT_ROOT / "dashboard" / "data.js"
 
-KNOWN_TOTALS = {"scored": 225, "stars": 32, "twins": 113}  # 정합성 경고용 (실패 아님)
+KNOWN_TOTALS = {"scored": 427, "stars": 46, "twins": 308}  # 사이클 2 종료 시점 재보정  # 정합성 경고용 (실패 아님)
 
 
 def read_text(path):
