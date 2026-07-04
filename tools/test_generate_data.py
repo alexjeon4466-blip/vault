@@ -349,5 +349,18 @@ class TestUnscoredAndActions(unittest.TestCase):
         self.assertIn("계속 쓰세요", acts[0]["text"])
 
 
+class TestWriter(unittest.TestCase):
+    def test_write_utf8_and_shape(self):
+        tmp = tempfile.TemporaryDirectory()
+        with tmp:
+            out = Path(tmp.name) / "data.js"
+            g.write_data_js({"generated": "지금", "한글": ["값"]}, out)
+            raw = out.read_bytes()
+            text = raw.decode("utf-8")                    # cp949였다면 여기서 깨짐/예외
+            self.assertTrue(text.startswith("window.VAULT_DATA = {"))
+            self.assertTrue(text.rstrip().endswith(";"))
+            self.assertIn('"한글"', text)                  # ensure_ascii=False
+
+
 if __name__ == "__main__":
     unittest.main()

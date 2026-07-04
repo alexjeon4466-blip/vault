@@ -9,7 +9,7 @@ from pathlib import Path
 VAULT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = VAULT_ROOT / "dashboard" / "data.js"
 
-KNOWN_TOTALS = {"scored": 228, "stars": 33, "twins": 113}  # 정합성 경고용 (실패 아님)
+KNOWN_TOTALS = {"scored": 225, "stars": 32, "twins": 113}  # 정합성 경고용 (실패 아님)
 
 
 def read_text(path):
@@ -476,3 +476,26 @@ def build_data(vault_root):
         if got != want:
             print("경고: %s %d ≠ 기준치 %d (vault 성장이면 정상)" % (label, got, want))
     return data
+
+
+def write_data_js(data, out):
+    out.parent.mkdir(parents=True, exist_ok=True)
+    payload = "window.VAULT_DATA = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n"
+    out.write_text(payload, encoding="utf-8")
+
+
+def main():
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+    data = build_data(VAULT_ROOT)
+    write_data_js(data, OUTPUT)
+    print("생성 완료: %s (채점 %d, 미채점 %d, unparsed %d)"
+          % (OUTPUT, data["cycle"]["coverage"]["scored"],
+             len(data["cycle"]["coverage"]["unscoredFiles"]), len(data["unparsed"])))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
