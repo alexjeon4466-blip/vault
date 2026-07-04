@@ -2005,3 +2005,157 @@
 - 출발점: `bookclub/석촌호수책모임/위대한 개츠비 - F.스콧 피츠제럴드.md`.
 - 중심 해석: 『위대한 개츠비』를 잃어버린 사랑의 비극보다, 돈·이미지·파티·계급 매너를 동원해 과거를 다시 쓰려는 꿈이 현실 사람과 시간 앞에서 무너지고 그 파괴의 쓰레기를 특권층이 남에게 치우게 하는 세계로 읽음.
 - 갱신: `index.md`, `log.md`, `wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`.
+
+## [2026-07-04] create | 백년의 고독 책카드 및 원본 장치 38개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/백년의고독/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/백년의고독_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/손가락으로_가리켜야_했습니다.md`, `wiki/writing/notes/사물에는_영혼이_있습니다.md`, `wiki/writing/notes/악마의_냄새가_납니다.md`, `wiki/writing/notes/저_강_건너에는_희한한_것들이_있습니다.md`, `wiki/writing/notes/죽은_사람이_없어서_행복한_마을.md`, `wiki/writing/notes/죽어서_묻혀야_고향입니다.md`, `wiki/writing/notes/귀향은_과거로_이끌_뿐입니다.md`, `wiki/writing/notes/방향을_잃지_않는_것이_중요합니다.md`, `wiki/writing/notes/얼음은_다이아몬드가_아닙니다.md`, `wiki/writing/notes/말만_할_줄_알면_됩니다.md`, `wiki/writing/notes/죽은_사람은_나타나지_않습니다.md`, `wiki/writing/notes/양심의_가책을_견딜_수_없습니다.md`, `wiki/writing/notes/금화를_금으로_되돌렸습니다.md`, `wiki/writing/notes/잠을_못_자면_이름부터_잊습니다.md`, `wiki/writing/notes/사물에_이름표를_붙입니다.md`, `wiki/writing/notes/학살은_일어나지_않았습니다.md`, `wiki/writing/notes/공식_사망자_수는_13명입니다.md`, `wiki/writing/notes/삼천명은_어디에도_없습니다.md`, `wiki/writing/notes/누가_올_거예요.md`, `wiki/writing/notes/서른두번의_반란.md`, `wiki/writing/notes/은세공만_반복합니다.md`, `wiki/writing/notes/오늘도_월요일입니다.md`, `wiki/writing/notes/나무에_몸을_묶습니다.md`, `wiki/writing/notes/초콜릿을_마시면_떠오릅니다.md`, `wiki/writing/notes/군인들_앞에서_기적은_실패합니다.md`, `wiki/writing/notes/마지막_두_시간에는_공포가_사라졌습니다.md`, `wiki/writing/notes/죽음은_잊혀질_때_옵니다.md`, `wiki/writing/notes/흙을_먹는_아이.md`, `wiki/writing/notes/너무_순수해서_머물_수_없습니다.md`, `wiki/writing/notes/쌍둥이_이름이_바뀝니다.md`, `wiki/writing/notes/같은_이름이_가문을_돌립니다.md`, `wiki/writing/notes/가계도를_다시_봐야_합니다.md`, `wiki/writing/notes/가족은_더_큰_고독을_만듭니다.md`, `wiki/writing/notes/바나나_회사는_가격표로_들어옵니다.md`, `wiki/writing/notes/양피지는_마지막에만_읽힙니다.md`, `wiki/writing/notes/읽는_순간_집이_사라집니다.md`, `wiki/writing/notes/두번째_기회는_없습니다.md`, `wiki/writing/notes/반복되지_않을_것이라고_적혀_있습니다.md`
+- 출발점: `bookclub/석촌호수책모임/백년의 고독 정리.md`.
+- 중심 해석: 『백년의 고독』을 마콘도와 부엔디아 가문의 기이한 가족사가 아니라, 이름 붙이기에서 시작한 세계가 같은 이름·욕망·폭력·망각을 반복하다가 마지막 양피지를 읽는 순간 반복해온 역사를 이해하고 동시에 사라지는 이야기로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 그리스인 조르바 책카드 및 원본 장치 40개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/그리스인조르바/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/그리스인조르바_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/책벌레라고_불렸습니다.md`, `wiki/writing/notes/살아_있는_육신을_찾으러_갑니다.md`, `wiki/writing/notes/왜가_시간을_벌고_있습니다.md`, `wiki/writing/notes/계산_따위는_집어치우고.md`, `wiki/writing/notes/방해되는_손가락을_잘랐습니다.md`, `wiki/writing/notes/산투리는_계약_밖입니다.md`, `wiki/writing/notes/영혼은_5드라크마입니다.md`, `wiki/writing/notes/몸뚱어리도_먹여야_합니다.md`, `wiki/writing/notes/고기와_빵과_포도주가_정신을_만듭니다.md`, `wiki/writing/notes/선동가가_될_겁니까_사업가가_될_겁니까.md`, `wiki/writing/notes/형제처럼은_운영안이_아닙니다.md`, `wiki/writing/notes/오직_조르바만_믿습니다.md`, `wiki/writing/notes/눈뜨게_하려면_책임져야_합니다.md`, `wiki/writing/notes/현미경을_내려놓을_시간입니다.md`, `wiki/writing/notes/앞으로_갓이라고_외쳤습니다.md`, `wiki/writing/notes/냄새로_축복합니다.md`, `wiki/writing/notes/영원은_7천드라크마입니다.md`, `wiki/writing/notes/구원받았다는_말이_질문을_끝냅니다.md`, `wiki/writing/notes/성스러운_구호가_칼이_됩니다.md`, `wiki/writing/notes/문턱에서_지켜본_사람.md`, `wiki/writing/notes/하느님을_용서하지_않겠습니다.md`, `wiki/writing/notes/죽음에_동의하지_않겠습니다.md`, `wiki/writing/notes/인간이라는_기계에_빵을_넣습니다.md`, `wiki/writing/notes/기적이라는_말이_증거를_덮습니다.md`, `wiki/writing/notes/불로_해결하면_증거도_탑니다.md`, `wiki/writing/notes/곡을_하면서_방을_뒤집니다.md`, `wiki/writing/notes/먼저_갖는_사람이_임자입니다.md`, `wiki/writing/notes/눈을_감겨주는_손.md`, `wiki/writing/notes/삼위일체_기둥은_안전계수가_아닙니다.md`, `wiki/writing/notes/고노고가_없었습니다.md`, `wiki/writing/notes/춤을_가르쳐주세요.md`, `wiki/writing/notes/밤에는_춤_아침에는_정리.md`, `wiki/writing/notes/푸른_봉투가_우리를_부릅니다.md`, `wiki/writing/notes/긴_끈을_자르지_못합니다.md`, `wiki/writing/notes/광기가_없으면_되돌아갑니다.md`, `wiki/writing/notes/세_장의_종이가_호출합니다.md`, `wiki/writing/notes/초록빛_돌에_가지_않았습니다.md`, `wiki/writing/notes/창틀을_쥐고_선_채로.md`, `wiki/writing/notes/뜨거운_테라스에_종이를_펼칩니다.md`, `wiki/writing/notes/전설에는_가시가_필요합니다.md`
+- 출발점: `bookclub/석촌호수책모임/_그리스인 조르바_ 니코스 카잔자키스.md`.
+- 중심 해석: 『그리스인 조르바』를 자유로운 남자의 낭만 찬가가 아니라, 몸의 결행과 식사·노동·에로스·춤의 언어를 배우되 그 자유가 절차와 책임 없이 작동할 때 타인의 몸과 공동체를 다치게 하는 긴장으로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 먼저 온 미래 책카드 및 원본 장치 39개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/먼저온미래/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/먼저온미래_원본_창작장치_지도.md`
+- 생성 질문: `wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가.md`
+- 생성 노트: `wiki/writing/notes/식당에서_대충_본_패배.md`, `wiki/writing/notes/달_착륙이라고_불렀습니다.md`, `wiki/writing/notes/이제_끝인가라는_질문.md`, `wiki/writing/notes/예술이라는_말의_뜻이_바뀝니다.md`, `wiki/writing/notes/공존은_강요됩니다.md`, `wiki/writing/notes/당신이_알던_개념을_다시_배워야_합니다.md`, `wiki/writing/notes/기계는_배운대로만_둔다고_믿었습니다.md`, `wiki/writing/notes/실수라고_불렀던_수가_정답이었습니다.md`, `wiki/writing/notes/창의성_판정자가_바뀝니다.md`, `wiki/writing/notes/평가받는_자리로_밀려났습니다.md`, `wiki/writing/notes/노력형에게는_도움이_되었습니다.md`, `wiki/writing/notes/망망대해에_목표선이_생겼습니다.md`, `wiki/writing/notes/구름_위에_인공지능이_있습니다.md`, `wiki/writing/notes/평평하지만_공평하지_않습니다.md`, `wiki/writing/notes/일치율이_개성이_되었습니다.md`, `wiki/writing/notes/한목소리로_거부하지_못합니다.md`, `wiki/writing/notes/사용_여부를_공개하라고_요구합니다.md`, `wiki/writing/notes/피처폰으로는_출근할_수_없습니다.md`, `wiki/writing/notes/기술이_환경이_되었습니다.md`, `wiki/writing/notes/좋은_삶을_모르겠습니다.md`, `wiki/writing/notes/조회수가_재미를_대신합니다.md`, `wiki/writing/notes/기술이_가치를_앞서갔습니다.md`, `wiki/writing/notes/추천은_왜_나왔습니까.md`, `wiki/writing/notes/감사기관은_어디에_있습니까.md`, `wiki/writing/notes/좋은_상상이_시스템이_되어야_합니다.md`, `wiki/writing/notes/어려움이_사라지면_미덕도_사라집니다.md`, `wiki/writing/notes/마찰면이_필요합니다.md`, `wiki/writing/notes/진보에는_브레이크가_필요합니다.md`, `wiki/writing/notes/사탕으로_통제됩니다.md`, `wiki/writing/notes/투명한_감시_요청서.md`, `wiki/writing/notes/한번_죽은_가치는_돌아오지_않습니다.md`, `wiki/writing/notes/금지해도_자존감은_돌아오지_않습니다.md`, `wiki/writing/notes/잊힐_권리처럼_새_권리가_필요합니다.md`, `wiki/writing/notes/가치_합의_칸이_비어_있습니다.md`, `wiki/writing/notes/기술_삼권분립_회의.md`, `wiki/writing/notes/아직까지는_영혼의_선장입니다.md`, `wiki/writing/notes/미래를_바꿀_수_있다고_믿는_일.md`, `wiki/writing/notes/하루만_지나면_잊힐_기사.md`, `wiki/writing/notes/상금으로_글을_지탱했습니다.md`
+- 출발점: `bookclub/석촌호수책모임/_먼저 온 미래_ 장강명.md`.
+- 중심 해석: 『먼저 온 미래』를 AI가 인간을 이긴 사건보다, 인간이 만들고 인정하던 기준·창의성·평가자·직업 의미·좋은 삶의 정의가 AI 질서 안에서 다시 배치되는 과정으로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 섬에 있는 서점 책카드 및 원본 장치 41개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/섬에있는서점/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/섬에있는서점_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/노란_매니큐어가_마르기를_기다립니다.md`, `wiki/writing/notes/전임자의_메모를_먼저_읽습니다.md`, `wiki/writing/notes/섬의_유일한_책방입니다.md`, `wiki/writing/notes/인간은_섬이_아닙니다.md`, `wiki/writing/notes/싫어하는_목록이_길어집니다.md`, `wiki/writing/notes/좋아하는_말은_짧습니다.md`, `wiki/writing/notes/손님들은_단편집을_사려_하지_않습니다.md`, `wiki/writing/notes/당신을_알던_사람들이_죽는_게_싫습니다.md`, `wiki/writing/notes/몰리_클럭을_자르지_못합니다.md`, `wiki/writing/notes/고립이_사랑받지_못한다는_증거가_됩니다.md`, `wiki/writing/notes/적절한_시기가_되어야_책이_옵니다.md`, `wiki/writing/notes/어린이_코너에_아이가_있습니다.md`, `wiki/writing/notes/괴물들이_사는_나라를_펼쳤습니다.md`, `wiki/writing/notes/몇_시간_동안_과거를_생각하지_않았습니다.md`, `wiki/writing/notes/노래쯤_못_불러주랴.md`, `wiki/writing/notes/러브유를_농담으로_받습니다.md`, `wiki/writing/notes/좀더_자기쪽으로_끌어당겼습니다.md`, `wiki/writing/notes/자신은_없지만_기회가_될_겁니다.md`, `wiki/writing/notes/자꾸_저러는군요.md`, `wiki/writing/notes/이런_게_행복인가_보다_했습니다.md`, `wiki/writing/notes/신경쓰기_시작하면_전부_신경쓰게_됩니다.md`, `wiki/writing/notes/장편을_읽을_시간이_어디_있었겠니.md`, `wiki/writing/notes/가장_값진_책이_중간이름이_되었습니다.md`, `wiki/writing/notes/가장_좋아하는_책은_무엇입니까.md`, `wiki/writing/notes/책표지를_가볍게_토닥였습니다.md`, `wiki/writing/notes/왜_울어요_책을_읽고_있었어.md`, `wiki/writing/notes/책등에_적힌_이름을_가리킵니다.md`, `wiki/writing/notes/다른_사람과_감수성을_공유합니다.md`, `wiki/writing/notes/정서적으로는_진실입니다.md`, `wiki/writing/notes/단점을_전부_나열하는_청혼.md`, `wiki/writing/notes/책과_대화와_온_심장을_약속합니다.md`, `wiki/writing/notes/멍청한_뇌가_날아가게_놔두자.md`, `wiki/writing/notes/서류봉투에_테멀레인을_넣어옵니다.md`, `wiki/writing/notes/많은_책을_들여다보아야_합니다.md`, `wiki/writing/notes/실망해야_환호할_수_있습니다.md`, `wiki/writing/notes/싫어하는_것은_쓰기_쉽습니다.md`, `wiki/writing/notes/오직_연결되는_것입니다.md`, `wiki/writing/notes/우리는_단편집입니다.md`, `wiki/writing/notes/한_단어로는_설명되지_않습니다.md`, `wiki/writing/notes/사랑이_장갑으로_들렸습니다.md`, `wiki/writing/notes/당신에게_전해드릴_책이_있습니다.md`
+- 출발점: `bookclub/석촌호수책모임/_섬에 있는 서점_ 개브리얼 제빈.md`.
+- 중심 해석: 『섬에 있는 서점』을 책/서점 찬가가 아니라, 고립된 사람이 취향·상실·재고·영업·입양·추천·오청 같은 물질적 절차를 통과하며 연결을 배우는 이야기로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 현대생활의 발견 책카드 및 원본 장치 43개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/현대생활의발견/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/현대생활의발견_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/결혼은_거래명세서였습니다.md`, `wiki/writing/notes/안정적인_직업이_최고입니다.md`, `wiki/writing/notes/법률사무소에서_탐욕을_베꼈습니다.md`, `wiki/writing/notes/이년의_유예를_받았습니다.md`, `wiki/writing/notes/세번의_사업이_모두_빚이_되었습니다.md`, `wiki/writing/notes/돈_꾸는_게_너무_쉬웠습니다.md`, `wiki/writing/notes/채권자들이_문을_두드립니다.md`, `wiki/writing/notes/오후여섯시에_잠들어_새벽한시에_깨어납니다.md`, `wiki/writing/notes/커피_없이는_글을_쓸_수_없었습니다.md`, `wiki/writing/notes/몸에_좋을_거_하나_없다고_말하며_마십니다.md`, `wiki/writing/notes/소설들을_하나의_큰_그림으로_보려_했습니다.md`, `wiki/writing/notes/등장인물이_다른_파일에서_다시_나옵니다.md`, `wiki/writing/notes/사회생활의_병리학입니다.md`, `wiki/writing/notes/학자인척_말합니다.md`, `wiki/writing/notes/규칙을_누가_만들었습니까.md`, `wiki/writing/notes/부자들의_민주주의입니다.md`, `wiki/writing/notes/돈으로_모든_걸_결정합니다.md`, `wiki/writing/notes/법과_규칙으로_나와바리를_지킵니다.md`, `wiki/writing/notes/어떻게_보일까를_신경씁니다.md`, `wiki/writing/notes/과학적으로_보면_믿어줍니다.md`, `wiki/writing/notes/일하는_인간_생각하는_인간_아무것도_하지_않는_인간.md`, `wiki/writing/notes/휴식은_목적입니다.md`, `wiki/writing/notes/돈이_얼마나_들었는지_들키지_않아야_합니다.md`, `wiki/writing/notes/유지는_사치보다_비쌉니다.md`, `wiki/writing/notes/절약하는_티가_나면_실패입니다.md`, `wiki/writing/notes/의자_하나가_전체를_결정합니다.md`, `wiki/writing/notes/눈에_띄면_이미_실패입니다.md`, `wiki/writing/notes/우아한_삶의_제외_대상_명단.md`, `wiki/writing/notes/말해보고_걸어보고_먹어보고_입어보세요.md`, `wiki/writing/notes/무대위는_우아하고_무대뒤는_빚쟁이입니다.md`, `wiki/writing/notes/발걸음은_신체의_표정입니다.md`, `wiki/writing/notes/문앞에서_작위가_샙니다.md`, `wiki/writing/notes/멈춘뒤에_말문을_엽니다.md`, `wiki/writing/notes/우리를_쇠약하게_하는_것은_확신입니다.md`, `wiki/writing/notes/관찰한_254명과_절반.md`, `wiki/writing/notes/작은_공간을_유지하십시오.md`, `wiki/writing/notes/한순간에_하나의_리듬.md`, `wiki/writing/notes/권태위에_커피를_부으면_권태가_뚜렷해집니다.md`, `wiki/writing/notes/공복의_달고_진한_우유커피.md`, `wiki/writing/notes/도취는_일시적_중독입니다.md`, `wiki/writing/notes/의례가_경고를_덮습니다.md`, `wiki/writing/notes/국가는_보건을_말하며_세금을_걷습니다.md`, `wiki/writing/notes/더_많이_누리고_덜_소진하라.md`
+- 출발점: `bookclub/석촌호수책모임/_현대생활의 발견_ - 오노레 드 발자크.md`.
+- 중심 해석: 『현대생활의 발견』을 현대 사회를 설명하는 생활 교본이 아니라, 돈·이미지·매너·걸음·자극제가 사람의 몸과 시간을 관리하고 배제하는 사회생활의 병리학으로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 매직필 책카드 및 원본 장치 42개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/매직필/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/매직필_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/기름은_많은데_주유구가_열리지_않습니다.md`, `wiki/writing/notes/백년전에는_죽는_병이었습니다.md`, `wiki/writing/notes/특허를_1달러에_넘겼습니다.md`, `wiki/writing/notes/아내를_위해_라이선스를_받으러_갑니다.md`, `wiki/writing/notes/몸에서_몇분만에_사라집니다.md`, `wiki/writing/notes/일주일에_한번이면_됩니다.md`, `wiki/writing/notes/약도_핸드폰처럼_성지가_있습니다.md`, `wiki/writing/notes/사주치를_팔주로_나눕니다.md`, `wiki/writing/notes/한두달_PT와_한달_주사를_비교합니다.md`, `wiki/writing/notes/비만이라는_단어만으로도_싸움이_납니다.md`, `wiki/writing/notes/약을_끊으면_몸이_돌아옵니다.md`, `wiki/writing/notes/정크푸드가_없자_아무것도_먹지_않습니다.md`, `wiki/writing/notes/포만감_피드백이_망가졌습니다.md`, `wiki/writing/notes/바닷물을_마셔서_갈증을_키웠습니다.md`, `wiki/writing/notes/포만감을_되찾아줄_약을_원합니다.md`, `wiki/writing/notes/그냥_벌주는_거_아닙니까.md`, `wiki/writing/notes/고통없이_해결하면_속임수입니까.md`, `wiki/writing/notes/비만의_부작용은_확실히_압니다.md`, `wiki/writing/notes/몸은_살을_지키려고_합니다.md`, `wiki/writing/notes/술생각도_담배생각도_나지_않습니다.md`, `wiki/writing/notes/뇌에_작용하는_것_같습니다.md`, `wiki/writing/notes/만병통치약_같아_보입니다.md`, `wiki/writing/notes/먹는_걸로_스트레스를_풀_수_없게_됐습니다.md`, `wiki/writing/notes/주된_대응_기제가_사라졌습니다.md`, `wiki/writing/notes/보상영역에_구멍이_생겼습니다.md`, `wiki/writing/notes/과식이_해주었던_역할을_묻습니다.md`, `wiki/writing/notes/문제는_원래_있었습니다.md`, `wiki/writing/notes/제대로_먹는_법을_배운_적이_없습니다.md`, `wiki/writing/notes/요리를_못한다는_사실이_창피했습니다.md`, `wiki/writing/notes/몸을_사랑하는_법은_어떻게_합니까.md`, `wiki/writing/notes/내_몸이_할_수_있는_일에_고마워합니다.md`, `wiki/writing/notes/내_의지대로_움직이는_몸.md`, `wiki/writing/notes/비만차별과_건강위험을_구분해야_합니다.md`, `wiki/writing/notes/몸을_받아들이는_것과_감량은_함께_갈_수_있습니다.md`, `wiki/writing/notes/기준이_달라지면_숫자가_달라집니다.md`, `wiki/writing/notes/몸이_버티질_못합니다.md`, `wiki/writing/notes/세번째_선택지가_있습니다.md`, `wiki/writing/notes/해결책은_하늘에서_떨어지지_않습니다.md`, `wiki/writing/notes/먹지_않는_인간이_늘어납니다.md`, `wiki/writing/notes/살을_쉽게_빼면_안된다는_시선.md`, `wiki/writing/notes/장기부작용은_아직_모릅니다.md`, `wiki/writing/notes/먹는약이_편하죠.md`
+- 출발점: `bookclub/석촌호수책모임/매직필 - 요한 하리.md`.
+- 중심 해석: 『매직필』을 GLP-1 비만치료제의 기적/편법 판정이 아니라, 포만감·욕망·낙인·가격·만성관리·보상 기제·식품 환경이 한 사람의 몸 위에서 얽히는 문제로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`, `wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 여행의 이유 책카드 및 원본 장치 43개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/여행의이유/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/여행의이유_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/초등학교때만_여섯번_전학갔습니다.md`, `wiki/writing/notes/구호_암송으로_끝나는_집회.md`, `wiki/writing/notes/믿음이_현실과_맞지_않아_멀미가_났습니다.md`, `wiki/writing/notes/학생회_간부_자리를_벗어던집니다.md`, `wiki/writing/notes/허무주의가_토양이고_개인주의가_실행방식입니다.md`, `wiki/writing/notes/아이를_통해_남겨야_한다는_당위를_믿지_않습니다.md`, `wiki/writing/notes/현금은_손실의_고통을_켭니다.md`, `wiki/writing/notes/카드는_잠시_갔다가_돌아옵니다.md`, `wiki/writing/notes/서명한_서류의_한부분을_손가락으로_짚었습니다.md`, `wiki/writing/notes/난생처음_추방자가_되어_대합실에_앉아있습니다.md`, `wiki/writing/notes/대실패하면_글로_쓰면_됩니다.md`, `wiki/writing/notes/여행에_실패는_없습니다.md`, `wiki/writing/notes/주인공은_늘_어딘가_먼곳으로_떠납니다.md`, `wiki/writing/notes/겉으로_원하는것과_진짜_원하는것.md`, `wiki/writing/notes/편안한_믿음속에_안온하게_살수_있었습니다.md`, `wiki/writing/notes/사회주의_제대로알기_패키지가_삶을_바꿨습니다.md`, `wiki/writing/notes/평범한_회사원은_없습니다.md`, `wiki/writing/notes/여행에서_얻고자_한것은_삶의_생생한_안정감입니다.md`, `wiki/writing/notes/스스로에게_고통을_부여합니다.md`, `wiki/writing/notes/예약된_호텔문을_들어설때_달콤합니다.md`, `wiki/writing/notes/나는_다시_받아들여졌습니다.md`, `wiki/writing/notes/자유의지는_때로_허망합니다.md`, `wiki/writing/notes/슬픔을_흡수한_물건이_없는_방.md`, `wiki/writing/notes/사진_프레임_밖은_기억나지_않습니다.md`, `wiki/writing/notes/모국어가_양수처럼_감싸줍니다.md`, `wiki/writing/notes/여행은_글쓰기에서_멀어지기_위해_떠나는것입니다.md`, `wiki/writing/notes/생각과_경험은_개와_주인같습니다.md`, `wiki/writing/notes/현재안에_머물게_됩니다.md`, `wiki/writing/notes/직접가지_않는다는_점만_빼면_더_낫습니다.md`, `wiki/writing/notes/그래도_우리는_떠납니다.md`, `wiki/writing/notes/믿을만한_정보원이_대신_여행합니다.md`, `wiki/writing/notes/타자를_감수합니다.md`, `wiki/writing/notes/몸의_경험은_언어를_기다립니다.md`, `wiki/writing/notes/그림자를_되찾을_곳으로_돌아가야_합니까.md`, `wiki/writing/notes/불쑥_튀어나와_아무대가없이_도와줍니다.md`, `wiki/writing/notes/낯선이를_신뢰하기로_마음먹습니다.md`, `wiki/writing/notes/국적과_인종이라는_한점이_됩니다.md`, `wiki/writing/notes/입국심사는_질문과_답변입니다.md`, `wiki/writing/notes/내가_누구인지를_잠시_잊으러_떠납니다.md`, `wiki/writing/notes/돌아올_지점을_알고_떠납니다.md`, `wiki/writing/notes/언제든_떠날수_있다는건_내자리가_아니라는뜻입니다.md`, `wiki/writing/notes/여행은_일상의_부재입니다.md`, `wiki/writing/notes/일상이_아닌_여행이_인생의_원점입니다.md`
+- 출발점: `bookclub/석촌호수책모임/여행의 이유 - 김영하.md`.
+- 중심 해석: 『여행의 이유』를 낭만적 이동이 아니라, 낯선 곳에서 거부·환대·분류·실패·기록·언어를 몸으로 겪으며 내가 믿던 세계와 내가 누구인지가 흔들리는 과정으로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 코스모스 책카드 및 원본 장치 42개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/코스모스/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/코스모스_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/지구를_외계행성으로_가정합니다.md`, `wiki/writing/notes/산소와_메탄이_함께_있습니다.md`, `wiki/writing/notes/원주율_안에_작은_원이_나타났습니다.md`, `wiki/writing/notes/화성이_지구와_닮기를_바랐습니다.md`, `wiki/writing/notes/운하처럼_보인_선이_기대가_되었습니다.md`, `wiki/writing/notes/텅빈_공간처럼_보였지만_아닙니다.md`, `wiki/writing/notes/보이는_것은_오퍼센트입니다.md`, `wiki/writing/notes/어디에서나_같은_법칙이_성립합니다.md`, `wiki/writing/notes/먼_은하의_빛도_같은_스펙트럼입니다.md`, `wiki/writing/notes/흰색_광맥은_물이_지나간_흔적입니다.md`, `wiki/writing/notes/그림자로_지구둘레를_쟀습니다.md`, `wiki/writing/notes/사만킬로미터는_정의의_결과였습니다.md`, `wiki/writing/notes/칠십오킬로미터의_측정오차가_남았습니다.md`, `wiki/writing/notes/뮤지엄은_아홉여신의_장소였습니다.md`, `wiki/writing/notes/은행나무는_절과_정원에서_살아남았습니다.md`, `wiki/writing/notes/설계자가_없다는_설명을_받아들이기_어렵습니다.md`, `wiki/writing/notes/타이밍이_맞아야_발견됩니다.md`, `wiki/writing/notes/유전자_가위로_원하는_특성을_고릅니다.md`, `wiki/writing/notes/별자리는_파종과_항해의_도구였습니다.md`, `wiki/writing/notes/천문현상이_권위의_상징이었습니다.md`, `wiki/writing/notes/별을_보는_사람보다_별점을_보는_사람이_많습니다.md`, `wiki/writing/notes/위선을_행하라고_배운적이_없습니다.md`, `wiki/writing/notes/원보다_타원이_진실에_가까웠습니다.md`, `wiki/writing/notes/신성한_완전성보다_관측값입니다.md`, `wiki/writing/notes/만리장성은_생각보다_보이지_않습니다.md`, `wiki/writing/notes/사후에_이름이_붙은_혜성입니다.md`, `wiki/writing/notes/일도_상승이_재앙을_만듭니다.md`, `wiki/writing/notes/일점오도와_이도_사이에서_회의합니다.md`, `wiki/writing/notes/빛은_자유와_발견의_모티프였습니다.md`, `wiki/writing/notes/대항해시대와_보이저가_겹칩니다.md`, `wiki/writing/notes/팔비트_패킷으로_이미지가_왔습니다.md`, `wiki/writing/notes/창백한_푸른_점으로_돌아봤습니다.md`, `wiki/writing/notes/아직도_데이터를_받고_있습니다.md`, `wiki/writing/notes/타이탄은_여전히_유망한_천체입니다.md`, `wiki/writing/notes/카오스에서_코스모스를_만듭니다.md`, `wiki/writing/notes/실험에_대한_혐오감은_어디서_옵니까.md`, `wiki/writing/notes/하늘과_지구를_분리했습니다.md`, `wiki/writing/notes/빛의_속도는_같지만_우리는_같지_않습니다.md`, `wiki/writing/notes/풍선자체가_팽창합니다.md`, `wiki/writing/notes/철기시대에_도착하지_못했습니다.md`, `wiki/writing/notes/도서관의_발견은_대중에게_닿지_못했습니다.md`, `wiki/writing/notes/과학은_모든_사람에게_열려야_합니다.md`
+- 출발점: `bookclub/석촌호수책모임/코스모스 정리.md`.
+- 중심 해석: 『코스모스』를 우주의 장엄함보다 관측·오해·측정·전송·공유 절차로 읽고, 불완전한 신호를 증거로 읽는 책임과 지식 접근성의 문제로 전환함.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/정보는 왜 이야기가 되지 못하는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가.md`, `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 희랍어 시간 책카드 및 원본 장치 54개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/희랍어시간/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/희랍어시간_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/말을_잃은_사람에_대해_씁니다.md`, `wiki/writing/notes/네번을_고쳐쓸때마다_결말이_달라졌습니다.md`, `wiki/writing/notes/언어가_너무_날카롭습니다.md`, `wiki/writing/notes/둘다_이름이_없습니다.md`, `wiki/writing/notes/작가인데_글을_가까이하지_못합니다.md`, `wiki/writing/notes/볼펜_두자루를_손가락에_끼웠습니다.md`, `wiki/writing/notes/언어는_늘_목표를_살짝_빗나갑니다.md`, `wiki/writing/notes/언어는_늘_실패하는_매체입니다.md`, `wiki/writing/notes/우리는_모두_세계를_잃어갑니다.md`, `wiki/writing/notes/고통을_서로_나누는게_사랑입니다.md`, `wiki/writing/notes/내가_이_세상에_존재해도_되는걸까.md`, `wiki/writing/notes/중간태는_행위가_나에게_돌아옵니다.md`, `wiki/writing/notes/내가_탈_배를_내가_준비합니다.md`, `wiki/writing/notes/로고스는_말이자_이성입니다.md`, `wiki/writing/notes/하나의_단어에_모든_의미를_담고싶습니다.md`, `wiki/writing/notes/여자의_서술은_그녀는으로_표시됩니다.md`, `wiki/writing/notes/마지막_챕터는_0번입니다.md`, `wiki/writing/notes/죽은_언어를_배웁니다.md`, `wiki/writing/notes/현실을_훼손하지_않는_순수한_언어를_찾습니다.md`, `wiki/writing/notes/수업내용을_암기해서_칠판에_씁니다.md`, `wiki/writing/notes/희랍어는_다가오는_어둠에_맞서는_무기입니다.md`, `wiki/writing/notes/소리없는_언어가_오갑니다.md`, `wiki/writing/notes/말이_나에게도_칼이_됩니다.md`, `wiki/writing/notes/침묵은_나를_보호하지만_가둡니다.md`, `wiki/writing/notes/말은_진실의_그림자입니다.md`, `wiki/writing/notes/현실은_환인데_피가_흐릅니다.md`, `wiki/writing/notes/아름다운_것은_얻기_어렵습니다.md`, `wiki/writing/notes/흐릿하게_해서_더_안보입니다.md`, `wiki/writing/notes/우리_사이에_칼이_있었네.md`, `wiki/writing/notes/조용하고_사적인_고백으로_받아들입니다.md`, `wiki/writing/notes/칼집속의_칼이_빛납니다.md`, `wiki/writing/notes/다음_단어를_찾지_못한_일분입니다.md`, `wiki/writing/notes/그것이_다시_왔어.md`, `wiki/writing/notes/그렇게_간단하지_않아요.md`, `wiki/writing/notes/숲은_침묵으로_완성되는_말입니다.md`, `wiki/writing/notes/수천개의_바늘로_짠_옷같은_언어.md`, `wiki/writing/notes/혀와_입술과_손의_기억이_만져지지_않습니다.md`, `wiki/writing/notes/언어없이_움직이고_이해했습니다.md`, `wiki/writing/notes/비블리오떼끄가_입술을_깨웠습니다.md`, `wiki/writing/notes/이번_침묵은_죽은뒤의_것_같습니다.md`, `wiki/writing/notes/이번에는_의지로_언어를_되찾고싶습니다.md`, `wiki/writing/notes/생명이라고_쓰고_지웠습니다.md`, `wiki/writing/notes/비가와서_내가_혼자_다녀오는게_좋겠어요.md`, `wiki/writing/notes/처방전이_어디있어요.md`, `wiki/writing/notes/그는_모른다.md`, `wiki/writing/notes/아이의_이름을_부르기_위해_입술을_열었습니다.md`, `wiki/writing/notes/어깨를_안는것이_대화가_됩니다.md`, `wiki/writing/notes/눈을_감고_얼굴을_더듬습니다.md`, `wiki/writing/notes/태양은_가까이서_보면_홍채가_탑니다.md`, `wiki/writing/notes/먼곳에서_흑점들이_폭발합니다.md`, `wiki/writing/notes/거품처럼_가냘프게_둥글게.md`, `wiki/writing/notes/두려웠어요_두렵지_않았어요.md`, `wiki/writing/notes/첫_음절_전에_입술을_축입니다.md`, `wiki/writing/notes/눈을_뜨면_모든것이_사라질_각오.md`
+- 출발점: `bookclub/석촌호수책모임/희랍어 시간 - 한강.md`.
+- 중심 해석: 『희랍어 시간』을 말/빛 상실의 로맨스나 상징 해설이 아니라, 말하기 전의 몸, 죽은 언어의 안전함, 침묵의 보호/감금, 중간태의 되돌아옴, 0번 페이지와 첫 음절의 절차로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 모순 책카드 및 원본 장치 45개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/모순/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/모순_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/내_인생에_온_생애를_걸어야_합니다.md`, `wiki/writing/notes/요구를_충족시키는_것이_좋은점입니다.md`, `wiki/writing/notes/안진진이라는_이름부터_모순입니다.md`, `wiki/writing/notes/손가락_사이로_인생을_흘려보냅니다.md`, `wiki/writing/notes/사랑에_빠지지_않고도_결혼을_선택할수_있습니다.md`, `wiki/writing/notes/인생은_탐구가_아니라_받아들이는것이었습니다.md`, `wiki/writing/notes/남의_불행은_당연하고_내_불행은_납득되지_않습니다.md`, `wiki/writing/notes/나는_당연히_행복해야_할_존재였습니다.md`, `wiki/writing/notes/우리_어머니하고_이모부라고_말했습니다.md`, `wiki/writing/notes/상대에_따라_배경을_숨깁니다.md`, `wiki/writing/notes/비둘기는_조폭보스를_멋있게_봅니다.md`, `wiki/writing/notes/엄마는_실용서_이모는_소설과_시집을_읽습니다.md`, `wiki/writing/notes/한시간_이내에_전화벨이_울릴것입니다.md`, `wiki/writing/notes/만날_지하철_입구를_정하지_않았습니다.md`, `wiki/writing/notes/테이프박스를_뒤져_음악을_공급합니다.md`, `wiki/writing/notes/접시와_쟁반이_쇠사슬이_됩니다.md`, `wiki/writing/notes/회개하는_남편을_위로하며_미래가_굳어집니다.md`, `wiki/writing/notes/숨긴돈을_찾으면_함께_환호합니다.md`, `wiki/writing/notes/두개가_딱_맞아야_서로를_알아봅니다.md`, `wiki/writing/notes/해질녘에는_낯선길에서_헤매면_안됩니다.md`, `wiki/writing/notes/나는_끝내_지고_마는_거야.md`, `wiki/writing/notes/아무상관_하지_않겠다는_말이_모독입니다.md`, `wiki/writing/notes/돈을_적당히_찾기_어렵게_숨깁니다.md`, `wiki/writing/notes/최선책보다_차선책을_더_많이_선택합니다.md`, `wiki/writing/notes/최고의_셔터찬스는_한번뿐입니다.md`, `wiki/writing/notes/착하고_착한_안진진.md`, `wiki/writing/notes/불행을_극대화해야_견디기_쉽습니다.md`, `wiki/writing/notes/인생계획서가_사람보다_먼저입니다.md`, `wiki/writing/notes/감정을_편집하고_왜곡합니다.md`, `wiki/writing/notes/타인들_앞에서_나를_놓치고싶지_않습니다.md`, `wiki/writing/notes/사랑을_맞은후_황폐했습니다.md`, `wiki/writing/notes/한없이_달릴수는_없습니다.md`, `wiki/writing/notes/사는법을_잊어버렸습니다.md`, `wiki/writing/notes/날_가두지_말라고_내_뺨을_쳤습니다.md`, `wiki/writing/notes/여행을_끝내고_나를_알았습니다.md`, `wiki/writing/notes/맞지않는_옷을_입고_있는듯_불편했습니다.md`, `wiki/writing/notes/스파게티에서_어머니의_과장법을_읽습니다.md`, `wiki/writing/notes/그가_더_사랑하는것은_인생계획표입니다.md`, `wiki/writing/notes/좋은밤에는_확실한_예약이_필요합니다.md`, `wiki/writing/notes/떠난_아버지가_몸때문에_돌아옵니다.md`, `wiki/writing/notes/무덤속처럼_평온하게_살고싶지_않았습니다.md`, `wiki/writing/notes/내_마지막_모습을_수정해줘.md`, `wiki/writing/notes/어떤_불행과_행복을_택할지_결정합니다.md`, `wiki/writing/notes/내게_없었던_것을_선택합니다.md`, `wiki/writing/notes/거절하려던_사람을_선택합니다.md`
+- 출발점: `bookclub/석촌호수책모임/모순 - 양귀자.md`.
+- 중심 해석: 『모순』을 행복/불행, 사랑/안정의 선택담으로 단순화하지 않고, 전화벨·숨긴 돈·실용서와 시집·접시와 쟁반·인생계획표·예약 문자·장례 사진 같은 물건을 통해 “선택지에 붙은 불행의 묶음”을 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md`, `wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 코스모스 × 희랍어 시간 비교 해설
+
+- 생성: `wiki/bookclub/lectures/코스모스와_희랍어시간_불완전한_신호를_읽는_법.md`
+- 부제 축: `말 없는 신호와 먼 별빛`, `관측과 침묵`.
+- 중심 해석: 『코스모스』의 먼 별빛·스펙트럼·그림자·패킷과 『희랍어 시간』의 침묵·입술·첫 음절 이전의 몸을 함께 읽어, 완전한 말이나 증거가 오지 않는 세계에서 불완전한 신호를 책임 있게 읽는 윤리를 독서모임 해설로 정리함.
+- 갱신: `wiki/bookclub/books/코스모스/00_책카드.md`, `wiki/bookclub/books/희랍어시간/00_책카드.md`, `index.md`, `log.md`, 관련 질문 노트 4개.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 여행의 이유 × 사람, 장소, 환대 × 모순 비교 해설
+
+- 생성: `wiki/bookclub/lectures/여행의이유와_사람장소환대와_모순_환대는_언제_속박이_되는가.md`
+- 부제 축: `받아들여진다는 것의 양면`, `이름을 불러주는 장소, 돌아오게 만드는 가족`.
+- 중심 해석: 『여행의 이유』의 호텔 리셉션/임시 소속, 『사람, 장소, 환대』의 사람자격/자리/의례, 『모순』의 숨긴 돈/돌아오는 가족/역할 반복을 묶어, 환대가 언제 안식이고 언제 포획이 되는지 독서모임 해설로 정리함.
+- 갱신: 세 책카드, `index.md`, `log.md`, 관련 질문 노트 4개.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 모순 × 희랍어 시간 비교 해설
+
+- 생성: `wiki/bookclub/lectures/모순과_희랍어시간_말은_왜_사람을_구하지_못하는가.md`
+- 부제 축: `착한 말과 날카로운 말`, `말하면 찌르고, 말하지 않으면 갇힌다`.
+- 중심 해석: 『모순』의 착함·괜찮음·자율·예약 같은 생활의 좋은 말과 『희랍어 시간』의 언어 실패·중간태·침묵의 보호/감금을 비교해, 말이 사람을 구하지 못하는 두 층위—부드러운 포획과 날카로운 상처—를 독서모임 해설로 정리함.
+- 갱신: 두 책카드, `index.md`, `log.md`, 관련 질문 노트 4개.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 여행의 이유 × 코스모스 비교 해설
+
+- 생성: `wiki/bookclub/lectures/여행의이유와_코스모스_멀리서_보아야_보이는_것.md`
+- 부제 축: `여행자와 외계 관측자`, `지구를 떠나 지구를 보기`.
+- 중심 해석: 『여행의 이유』의 낯선 곳/노바디/귀환점 문제와 『코스모스』의 지구 외계행성 관측/창백한 푸른 점/8비트 패킷을 비교해, 멀어짐이 어떻게 인식을 열면서도 세부를 압축하고 다시 가까운 책임으로 돌아와야 하는지 독서모임 해설로 정리함.
+- 갱신: 두 책카드, `index.md`, `log.md`, 관련 질문 노트 4개.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+
+## [2026-07-04] create | 모순 × 여행의 이유 비교 해설
+
+- 생성: `wiki/bookclub/lectures/모순과_여행의이유_떠나면_정말_자유로운가.md`
+- 부제 축: `귀환점 있는 여행과 귀환점 없는 삶`, `도망과 탐구 사이`.
+- 중심 해석: 『모순』의 떠남/귀환/차선책/불행 선택과 『여행의 이유』의 노바디 되기·귀환점 있는 여행·돌아갈 곳 없는 이동을 비교해, 떠남이 자유의 증거가 아니라 조건과 귀환점에 의해 달라지는 선택 형식임을 독서모임 해설로 정리함.
+- 갱신: 두 책카드, `index.md`, `log.md`, 관련 질문 노트 4개.
+- 커밋/푸시는 사용자 요청에 따라 보류.
+## [2026-07-04] update | 사이클 2 배치 13–14: 섬에있는서점 41편
+
+- 생성 문서: 평가 쌍둥이 41편
+- 갱신 문서: `wiki/writing/notes/글감_트리아지_지도.md`, `wiki/writing/aesthetics/글감_판정_루브릭.md`(재해석 보완: 동시대화 의무 아님), `log.md`
+- 핵심 변경: 유망★ 2(단점을_전부_나열하는_청혼 — 위험고지서 청혼 / 전임자의_메모를_먼저_읽습니다 — 인수인계 운반체), 유망 21, 병합 18. 신규 계열 반공간/연결(가닥 3종). 4차 생성분 템플릿화 확인 — 고유 3요소 기준 채점으로 전환. 재해석 조건부 3건(장갑 오청 재발명, 테멀레인·몰리 클럭 교체).
+- 다음 작업: 그리스인조르바 40편 (배치 15–16).
+- 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
+## [2026-07-05] update | 사이클 2 배치 15–16: 그리스인조르바 40편
+
+- 생성 문서: 평가 쌍둥이 40편 / 갱신: 트리아지 지도, log
+- 핵심 변경: 유망★ 4(곡을_하면서_방을_뒤집니다, 구원받았다는_말이_질문을_끝냅니다, 문턱에서_지켜본_사람, 죽음에_동의하지_않겠습니다), 유망 24, 병합 12. 신규 계열 몸/결행. 재해석 조건 2건(산투리, 오직_조르바만 — 인명·고유물 제목 교체).
+- 다음 작업: 먼저온미래 39편 (배치 17–18).
+- 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
