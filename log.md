@@ -1996,3 +1996,12 @@
 - 핵심 변경: 트리아지 사이클 대시보드 — 창작 탭(다음 할 일·사이클 진행도·칸반·계열표) + 독서모임 탭(서가·책→창작 흐름). 루브릭 보칙 2에 대시보드 갱신 단계 추가.
 - 다음 작업: 사용하면서 파서 unparsed 항목 관찰, 필요 시 Pages 마스킹 모드(--public).
 - 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
+
+## [2026-07-04] create | 위대한 개츠비 책카드 및 원본 장치 37개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/위대한개츠비/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/위대한개츠비_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/초록_불빛은_건너편에_있습니다.md`, `wiki/writing/notes/손을_뻗는_사람을_누가_보았나.md`, `wiki/writing/notes/판단을_유보하는_버릇.md`, `wiki/writing/notes/그들은_다_썩어빠진_놈들입니다.md`, `wiki/writing/notes/초대가_빈말인_줄_몰랐습니다.md`, `wiki/writing/notes/샌프란시스코는_중서부가_아닙니다.md`, `wiki/writing/notes/올드스포츠가_입에_붙지_않습니다.md`, `wiki/writing/notes/셔츠가_쏟아지는_방.md`, `wiki/writing/notes/목소리는_돈으로_가득_차_있습니다.md`, `wiki/writing/notes/예쁘고_머리나쁜_여자.md`, `wiki/writing/notes/소파만_고정되어_있습니다.md`, `wiki/writing/notes/시내가_텅_빈_것_같았어.md`, `wiki/writing/notes/하이볼로_드릴까요.md`, `wiki/writing/notes/아무도_지키지_않는_규칙.md`, `wiki/writing/notes/쓰레기_계곡은_이름이_없습니다.md`, `wiki/writing/notes/광고판의_눈은_아무것도_하지_않습니다.md`, `wiki/writing/notes/하느님은_광고판입니다.md`, `wiki/writing/notes/사회에_들어갈_수만_있다면.md`, `wiki/writing/notes/파티는_누구를_기다립니까.md`, `wiki/writing/notes/손님들은_장례식에_오지_않습니다.md`, `wiki/writing/notes/올빼미눈만_남았습니다.md`, `wiki/writing/notes/책은_진짜였지만_읽히지_않았습니다.md`, `wiki/writing/notes/과거를_되돌릴_수_있다고요.md`, `wiki/writing/notes/사랑한_적_없다고_말해줘.md`, `wiki/writing/notes/죽어버린_꿈만_고군분투합니다.md`, `wiki/writing/notes/운전자는_내가_될_겁니다.md`, `wiki/writing/notes/마지막_희망을_흔들_수_없었습니다.md`, `wiki/writing/notes/서른살_생일이_갑자기_생각났습니다.md`, `wiki/writing/notes/사고_이야기는_반복되면_희미해집니다.md`, `wiki/writing/notes/검은_핏자국을_찾는_아이들.md`, `wiki/writing/notes/그들이_만든_쓰레기는_다른_사람이_치웁니다.md`, `wiki/writing/notes/보석가게로_들어가는_사람.md`, `wiki/writing/notes/고향은_도덕의_방향입니까.md`, `wiki/writing/notes/조각배는_과거로_떠밀립니다.md`, `wiki/writing/notes/돈이_돈을_버는_사람들.md`, `wiki/writing/notes/남들이_비켜줄_겁니다.md`, `wiki/writing/notes/전화로_동부를_정리합니다.md`
+- 출발점: `bookclub/석촌호수책모임/위대한 개츠비 - F.스콧 피츠제럴드.md`.
+- 중심 해석: 『위대한 개츠비』를 잃어버린 사랑의 비극보다, 돈·이미지·파티·계급 매너를 동원해 과거를 다시 쓰려는 꿈이 현실 사람과 시간 앞에서 무너지고 그 파괴의 쓰레기를 특권층이 남에게 치우게 하는 세계로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가.md`, `wiki/shared/questions/자각은 왜 사건이 되지 못하는가.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`.
