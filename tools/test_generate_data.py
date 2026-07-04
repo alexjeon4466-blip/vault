@@ -360,6 +360,7 @@ class TestWriter(unittest.TestCase):
             self.assertTrue(text.startswith("window.VAULT_DATA = {"))
             self.assertTrue(text.rstrip().endswith(";"))
             self.assertIn('"한글"', text)                  # ensure_ascii=False
+            self.assertNotIn(b"\r", raw)   # Windows CRLF 번역 방지 (newline="")
 
 
 if __name__ == "__main__":

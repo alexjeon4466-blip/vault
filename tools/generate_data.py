@@ -481,7 +481,7 @@ def build_data(vault_root):
 def write_data_js(data, out):
     out.parent.mkdir(parents=True, exist_ok=True)
     payload = "window.VAULT_DATA = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n"
-    out.write_text(payload, encoding="utf-8")
+    out.write_text(payload, encoding="utf-8", newline="")
 
 
 def main():
