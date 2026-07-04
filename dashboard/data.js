@@ -1,23 +1,29 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-04 22:13",
+  "generated": "2026-07-04 22:36",
   "vaultName": "vault",
   "nextActions": [
     {
-      "text": "서가의 새 원고 393편이 트리아지를 기다립니다",
-      "link": null
+      "text": "『수정된 보호자』 개작을 이어서",
+      "link": "wiki/writing/draft-candidates/수정된_보호자"
     },
     {
-      "text": "『공동체/명단』 운반체 지정 필요",
-      "link": null
+      "text": "『폐기 전 확인』 조립을 마저",
+      "link": "wiki/writing/draft-candidates/폐기_전_확인_초고후보"
     },
     {
-      "text": "『한 장짜리 보고서』 처방 대기",
+      "text": "『한 장짜리 보고서』 처방부터",
       "link": "wiki/writing/notes/한_장짜리_보고서"
     }
   ],
+  "bridge": {
+    "book": "경험의멸종",
+    "work": "리뷰를 먼저 읽은 장소",
+    "link": "wiki/writing/notes/리뷰를_먼저_읽은_장소",
+    "phrase": "이제 막 설계에 들어갔습니다"
+  },
   "bookclub": {
     "rawTotal": 327,
-    "deviceMapTotal": 14,
+    "deviceMapTotal": 15,
     "books": [
       {
         "title": "소송",
@@ -456,6 +462,14 @@ window.VAULT_DATA = {
         "lineages": []
       },
       {
+        "title": "섬에있는서점",
+        "cardPath": "wiki/bookclub/books/섬에있는서점/00_책카드",
+        "rawNotes": 1,
+        "derivedNotes": 0,
+        "stars": 0,
+        "lineages": []
+      },
+      {
         "title": "우리가운명이라고불렀던것들",
         "cardPath": "wiki/bookclub/books/우리가운명이라고불렀던것들/00_책카드",
         "rawNotes": 0,
@@ -520,104 +534,6 @@ window.VAULT_DATA = {
       "prescription": "done",
       "label": "사이클 1회차"
     },
-    "batches": [
-      {
-        "no": 1,
-        "phase": "1차",
-        "scored": 16,
-        "star": 2,
-        "promising": 10,
-        "merge": 4
-      },
-      {
-        "no": 2,
-        "phase": "1차",
-        "scored": 19,
-        "star": 3,
-        "promising": 4,
-        "merge": 12
-      },
-      {
-        "no": 3,
-        "phase": "1차",
-        "scored": 17,
-        "star": 1,
-        "promising": 4,
-        "merge": 12
-      },
-      {
-        "no": 4,
-        "phase": "1차",
-        "scored": 20,
-        "star": 1,
-        "promising": 5,
-        "merge": 14
-      },
-      {
-        "no": 5,
-        "phase": "1차",
-        "scored": 36,
-        "star": 6,
-        "promising": 13,
-        "merge": 17
-      },
-      {
-        "no": 6,
-        "phase": "1차",
-        "scored": 11,
-        "star": 7,
-        "promising": 4,
-        "merge": 0
-      },
-      {
-        "no": 7,
-        "phase": "2·3차",
-        "scored": 20,
-        "star": 2,
-        "promising": 14,
-        "merge": 4
-      },
-      {
-        "no": 8,
-        "phase": "2·3차",
-        "scored": 20,
-        "star": 1,
-        "promising": 12,
-        "merge": 7
-      },
-      {
-        "no": 9,
-        "phase": "2·3차",
-        "scored": 20,
-        "star": 1,
-        "promising": 10,
-        "merge": 9
-      },
-      {
-        "no": 10,
-        "phase": "2·3차",
-        "scored": 20,
-        "star": 1,
-        "promising": 13,
-        "merge": 6
-      },
-      {
-        "no": 11,
-        "phase": "2·3차",
-        "scored": 20,
-        "star": 5,
-        "promising": 14,
-        "merge": 1
-      },
-      {
-        "no": 12,
-        "phase": "2·3차",
-        "scored": 6,
-        "star": 2,
-        "promising": 4,
-        "merge": 0
-      }
-    ],
     "coverage": {
       "scored": 225,
       "unscoredFiles": [
@@ -656,6 +572,14 @@ window.VAULT_DATA = {
         {
           "title": "가면을 깨는 백지",
           "link": "wiki/writing/notes/가면을_깨는_백지"
+        },
+        {
+          "title": "가장 값진 책이 중간이름이 되었습니다",
+          "link": "wiki/writing/notes/가장_값진_책이_중간이름이_되었습니다"
+        },
+        {
+          "title": "가장 좋아하는 책은 무엇입니까",
+          "link": "wiki/writing/notes/가장_좋아하는_책은_무엇입니까"
         },
         {
           "title": "가족은 더 큰 고독을 만듭니다",
@@ -746,6 +670,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/고노고가_없었습니다"
         },
         {
+          "title": "고립이 사랑받지 못한다는 증거가 됩니다",
+          "link": "wiki/writing/notes/고립이_사랑받지_못한다는_증거가_됩니다"
+        },
+        {
           "title": "고마움이 의무가 되었습니다",
           "link": "wiki/writing/notes/고마움이_의무가_되었습니다"
         },
@@ -788,6 +716,10 @@ window.VAULT_DATA = {
         {
           "title": "광기가 없으면 되돌아갑니다",
           "link": "wiki/writing/notes/광기가_없으면_되돌아갑니다"
+        },
+        {
+          "title": "괴물들이 사는 나라를 펼쳤습니다",
+          "link": "wiki/writing/notes/괴물들이_사는_나라를_펼쳤습니다"
         },
         {
           "title": "구름 위에 인공지능이 있습니다",
@@ -938,6 +870,14 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/너무_순수해서_머물_수_없습니다"
         },
         {
+          "title": "노란 매니큐어가 마르기를 기다립니다",
+          "link": "wiki/writing/notes/노란_매니큐어가_마르기를_기다립니다"
+        },
+        {
+          "title": "노래쯤 못 불러주랴",
+          "link": "wiki/writing/notes/노래쯤_못_불러주랴"
+        },
+        {
           "title": "노력형에게는 도움이 되었습니다",
           "link": "wiki/writing/notes/노력형에게는_도움이_되었습니다"
         },
@@ -966,6 +906,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/늙은_조연_배우들이_왔습니다"
         },
         {
+          "title": "다른 사람과 감수성을 공유합니다",
+          "link": "wiki/writing/notes/다른_사람과_감수성을_공유합니다"
+        },
+        {
           "title": "다시 나타나지 않겠다는 약속",
           "link": "wiki/writing/notes/다시_나타나지_않겠다는_약속"
         },
@@ -974,8 +918,20 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/다음_일요일은_유익하게"
         },
         {
+          "title": "단점을 전부 나열하는 청혼",
+          "link": "wiki/writing/notes/단점을_전부_나열하는_청혼"
+        },
+        {
           "title": "달 착륙이라고 불렀습니다",
           "link": "wiki/writing/notes/달_착륙이라고_불렀습니다"
+        },
+        {
+          "title": "당신에게 전해드릴 책이 있습니다",
+          "link": "wiki/writing/notes/당신에게_전해드릴_책이_있습니다"
+        },
+        {
+          "title": "당신을 알던 사람들이 죽는 게 싫습니다",
+          "link": "wiki/writing/notes/당신을_알던_사람들이_죽는_게_싫습니다"
         },
         {
           "title": "당신이 알던 개념을 다시 배워야 합니다",
@@ -1034,6 +990,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/뜨거운_테라스에_종이를_펼칩니다"
         },
         {
+          "title": "러브유를 농담으로 받습니다",
+          "link": "wiki/writing/notes/러브유를_농담으로_받습니다"
+        },
+        {
           "title": "마음은 단죄의 대상이 아닙니다",
           "link": "wiki/writing/notes/마음은_단죄의_대상이_아닙니다"
         },
@@ -1070,6 +1030,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/만장일치가_아니면_가지_않습니다"
         },
         {
+          "title": "많은 책을 들여다보아야 합니다",
+          "link": "wiki/writing/notes/많은_책을_들여다보아야_합니다"
+        },
+        {
           "title": "말 없는 구간만 남았습니다",
           "link": "wiki/writing/notes/말_없는_구간만_남았습니다"
         },
@@ -1088,6 +1052,14 @@ window.VAULT_DATA = {
         {
           "title": "먼저 갖는 사람이 임자입니다",
           "link": "wiki/writing/notes/먼저_갖는_사람이_임자입니다"
+        },
+        {
+          "title": "멍청한 뇌가 날아가게 놔두자",
+          "link": "wiki/writing/notes/멍청한_뇌가_날아가게_놔두자"
+        },
+        {
+          "title": "몇 시간 동안 과거를 생각하지 않았습니다",
+          "link": "wiki/writing/notes/몇_시간_동안_과거를_생각하지_않았습니다"
         },
         {
           "title": "모든 청중이 배지를 달았습니다",
@@ -1112,6 +1084,10 @@ window.VAULT_DATA = {
         {
           "title": "목소리는 돈으로 가득 차 있습니다",
           "link": "wiki/writing/notes/목소리는_돈으로_가득_차_있습니다"
+        },
+        {
+          "title": "몰리 클럭을 자르지 못합니다",
+          "link": "wiki/writing/notes/몰리_클럭을_자르지_못합니다"
         },
         {
           "title": "몸뚱어리도 먹여야 합니다",
@@ -1262,6 +1238,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/사람됨은_스트리밍입니다"
         },
         {
+          "title": "사랑이 장갑으로 들렸습니다",
+          "link": "wiki/writing/notes/사랑이_장갑으로_들렸습니다"
+        },
+        {
           "title": "사랑한 만큼 아픈 것입니다",
           "link": "wiki/writing/notes/사랑한_만큼_아픈_것입니다"
         },
@@ -1366,6 +1346,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/서랍에_잠근_법원_그림"
         },
         {
+          "title": "서류봉투에 테멀레인을 넣어옵니다",
+          "link": "wiki/writing/notes/서류봉투에_테멀레인을_넣어옵니다"
+        },
+        {
           "title": "서른두번의 반란",
           "link": "wiki/writing/notes/서른두번의_반란"
         },
@@ -1376,6 +1360,10 @@ window.VAULT_DATA = {
         {
           "title": "선동가가 될 겁니까 사업가가 될 겁니까",
           "link": "wiki/writing/notes/선동가가_될_겁니까_사업가가_될_겁니까"
+        },
+        {
+          "title": "섬의 유일한 책방입니다",
+          "link": "wiki/writing/notes/섬의_유일한_책방입니다"
         },
         {
           "title": "성스러운 구호가 칼이 됩니다",
@@ -1406,6 +1394,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/손가락으로_가리켜야_했습니다"
         },
         {
+          "title": "손님들은 단편집을 사려 하지 않습니다",
+          "link": "wiki/writing/notes/손님들은_단편집을_사려_하지_않습니다"
+        },
+        {
           "title": "손님들은 장례식에 오지 않습니다",
           "link": "wiki/writing/notes/손님들은_장례식에_오지_않습니다"
         },
@@ -1434,6 +1426,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/식당에서_대충_본_패배"
         },
         {
+          "title": "신경쓰기 시작하면 전부 신경쓰게 됩니다",
+          "link": "wiki/writing/notes/신경쓰기_시작하면_전부_신경쓰게_됩니다"
+        },
+        {
           "title": "신성함은 충전해야 합니다",
           "link": "wiki/writing/notes/신성함은_충전해야_합니다"
         },
@@ -1442,8 +1438,20 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/실내화_주머니를_들고_돌아갔습니다"
         },
         {
+          "title": "실망해야 환호할 수 있습니다",
+          "link": "wiki/writing/notes/실망해야_환호할_수_있습니다"
+        },
+        {
           "title": "실수라고 불렀던 수가 정답이었습니다",
           "link": "wiki/writing/notes/실수라고_불렀던_수가_정답이었습니다"
+        },
+        {
+          "title": "싫어하는 것은 쓰기 쉽습니다",
+          "link": "wiki/writing/notes/싫어하는_것은_쓰기_쉽습니다"
+        },
+        {
+          "title": "싫어하는 목록이 길어집니다",
+          "link": "wiki/writing/notes/싫어하는_목록이_길어집니다"
         },
         {
           "title": "쌍둥이 이름이 바뀝니다",
@@ -1522,6 +1530,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/어려움이_사라지면_미덕도_사라집니다"
         },
         {
+          "title": "어린이 코너에 아이가 있습니다",
+          "link": "wiki/writing/notes/어린이_코너에_아이가_있습니다"
+        },
+        {
           "title": "얼굴은 인터페이스입니다",
           "link": "wiki/writing/notes/얼굴은_인터페이스입니다"
         },
@@ -1586,6 +1598,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/오래_말해서_사실이_되었습니다"
         },
         {
+          "title": "오직 연결되는 것입니다",
+          "link": "wiki/writing/notes/오직_연결되는_것입니다"
+        },
+        {
           "title": "오직 조르바만 믿습니다",
           "link": "wiki/writing/notes/오직_조르바만_믿습니다"
         },
@@ -1606,6 +1622,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/옳음의_경고음"
         },
         {
+          "title": "왜 울어요 책을 읽고 있었어",
+          "link": "wiki/writing/notes/왜_울어요_책을_읽고_있었어"
+        },
+        {
           "title": "왜가 시간을 벌고 있습니다",
           "link": "wiki/writing/notes/왜가_시간을_벌고_있습니다"
         },
@@ -1624,6 +1644,10 @@ window.VAULT_DATA = {
         {
           "title": "우리가 청소하면 부자입니다",
           "link": "wiki/writing/notes/우리가_청소하면_부자입니다"
+        },
+        {
+          "title": "우리는 단편집입니다",
+          "link": "wiki/writing/notes/우리는_단편집입니다"
         },
         {
           "title": "운전자는 내가 될 겁니다",
@@ -1658,6 +1682,10 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/이니셜만_남아_있습니다"
         },
         {
+          "title": "이런 게 행복인가 보다 했습니다",
+          "link": "wiki/writing/notes/이런_게_행복인가_보다_했습니다"
+        },
+        {
           "title": "이름 대신 숫자로 불렸습니다",
           "link": "wiki/writing/notes/이름_대신_숫자로_불렸습니다"
         },
@@ -1672,6 +1700,10 @@ window.VAULT_DATA = {
         {
           "title": "이제 당신은 혼자입니다",
           "link": "wiki/writing/notes/이제_당신은_혼자입니다"
+        },
+        {
+          "title": "인간은 섬이 아닙니다",
+          "link": "wiki/writing/notes/인간은_섬이_아닙니다"
         },
         {
           "title": "인간이라는 기계에 빵을 넣습니다",
@@ -1730,8 +1762,16 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/잊힐_권리처럼_새_권리가_필요합니다"
         },
         {
+          "title": "자꾸 저러는군요",
+          "link": "wiki/writing/notes/자꾸_저러는군요"
+        },
+        {
           "title": "자백은 도움의 형식입니다",
           "link": "wiki/writing/notes/자백은_도움의_형식입니다"
+        },
+        {
+          "title": "자신은 없지만 기회가 될 겁니다",
+          "link": "wiki/writing/notes/자신은_없지만_기회가_될_겁니다"
         },
         {
           "title": "잘해야 떠나지 않습니다",
@@ -1742,12 +1782,24 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/잠을_못_자면_이름부터_잊습니다"
         },
         {
+          "title": "장편을 읽을 시간이 어디 있었겠니",
+          "link": "wiki/writing/notes/장편을_읽을_시간이_어디_있었겠니"
+        },
+        {
           "title": "저 강 건너에는 희한한 것들이 있습니다",
           "link": "wiki/writing/notes/저_강_건너에는_희한한_것들이_있습니다"
         },
         {
+          "title": "적절한 시기가 되어야 책이 옵니다",
+          "link": "wiki/writing/notes/적절한_시기가_되어야_책이_옵니다"
+        },
+        {
           "title": "전설에는 가시가 필요합니다",
           "link": "wiki/writing/notes/전설에는_가시가_필요합니다"
+        },
+        {
+          "title": "전임자의 메모를 먼저 읽습니다",
+          "link": "wiki/writing/notes/전임자의_메모를_먼저_읽습니다"
         },
         {
           "title": "전화로 동부를 정리합니다",
@@ -1764,6 +1816,10 @@ window.VAULT_DATA = {
         {
           "title": "정격전류가 다릅니다",
           "link": "wiki/writing/notes/정격전류가_다릅니다"
+        },
+        {
+          "title": "정서적으로는 진실입니다",
+          "link": "wiki/writing/notes/정서적으로는_진실입니다"
         },
         {
           "title": "정육점 칼을 달빛에 비춥니다",
@@ -1812,6 +1868,14 @@ window.VAULT_DATA = {
         {
           "title": "존엄을 지킬 수단",
           "link": "wiki/writing/notes/존엄을_지킬_수단"
+        },
+        {
+          "title": "좀더 자기쪽으로 끌어당겼습니다",
+          "link": "wiki/writing/notes/좀더_자기쪽으로_끌어당겼습니다"
+        },
+        {
+          "title": "좋아하는 말은 짧습니다",
+          "link": "wiki/writing/notes/좋아하는_말은_짧습니다"
         },
         {
           "title": "좋은 삶을 모르겠습니다",
@@ -1910,12 +1974,24 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/창틀을_쥐고_선_채로"
         },
         {
+          "title": "책과 대화와 온 심장을 약속합니다",
+          "link": "wiki/writing/notes/책과_대화와_온_심장을_약속합니다"
+        },
+        {
+          "title": "책등에 적힌 이름을 가리킵니다",
+          "link": "wiki/writing/notes/책등에_적힌_이름을_가리킵니다"
+        },
+        {
           "title": "책벌레라고 불렸습니다",
           "link": "wiki/writing/notes/책벌레라고_불렸습니다"
         },
         {
           "title": "책은 진짜였지만 읽히지 않았습니다",
           "link": "wiki/writing/notes/책은_진짜였지만_읽히지_않았습니다"
+        },
+        {
+          "title": "책표지를 가볍게 토닥였습니다",
+          "link": "wiki/writing/notes/책표지를_가볍게_토닥였습니다"
         },
         {
           "title": "처음 오면 누구나 숨이 막힙니다",
@@ -2112,6 +2188,10 @@ window.VAULT_DATA = {
         {
           "title": "학살은 일어나지 않았습니다",
           "link": "wiki/writing/notes/학살은_일어나지_않았습니다"
+        },
+        {
+          "title": "한 단어로는 설명되지 않습니다",
+          "link": "wiki/writing/notes/한_단어로는_설명되지_않습니다"
         },
         {
           "title": "한 사람과 여섯 사람의 위험",

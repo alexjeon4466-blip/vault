@@ -347,22 +347,56 @@ class TestUnscoredAndActions(unittest.TestCase):
             titles = [x["title"] for x in r]
             self.assertEqual(titles, ["새 글감"])   # 쌍둥이·제외·지도 자신 전부 빠짐, 표시명은 공백
 
-    def test_next_actions_rules(self):
+    def test_next_actions_prioritizes_near_stage(self):
+        # 무대에 가장 가까운 원고(개작)가 히어로가 되고, 링크를 가진다
         unscored = [{"title": "n%d" % i, "link": None} for i in range(12)]
-        lineages = [{"name": "기록 — 보정 체인", "carrier": None, "stars": 1,
-                     "members": 3, "parts": 5, "state": "설계"}]
-        cards = [{"title": "라벨 없음", "lineage": "기록", "star": True,
-                  "state": "설계", "link": None}]
-        acts = g.compute_next_actions(unscored, lineages, cards)
-        self.assertEqual(len(acts), 3)
-        self.assertIn("12편이 트리아지를 기다립니다", acts[0]["text"])
-        self.assertIn("보정 체인", acts[1]["text"])
-        self.assertIn("라벨 없음", acts[2]["text"])
+        cards = [
+            {"title": "수정된 보호자", "lineage": "기록", "star": True,
+             "state": "개작", "link": "wiki/writing/x"},
+            {"title": "한 장짜리 보고서", "lineage": "기록", "star": True,
+             "state": "설계", "link": "wiki/writing/y"},
+        ]
+        acts = g.compute_next_actions(unscored, [], cards)
+        self.assertIn("수정된 보호자", acts[0]["text"])   # 개작이 최우선
+        self.assertEqual(acts[0]["link"], "wiki/writing/x")  # 히어로는 링크를 가진다
+        self.assertNotIn("트리아지", acts[0]["text"])       # 백로그 숫자는 히어로가 아니다
+
+    def test_next_actions_backlog_is_last_resort(self):
+        # 다른 행동이 없을 때만 백로그가 등장
+        acts = g.compute_next_actions([{"title": "n%d" % i, "link": None} for i in range(12)], [], [])
+        self.assertEqual(len(acts), 1)
+        self.assertIn("12편", acts[0]["text"])
 
     def test_next_actions_empty(self):
         acts = g.compute_next_actions([], [], [])
         self.assertEqual(len(acts), 1)
         self.assertIn("계속 쓰세요", acts[0]["text"])
+
+
+class TestBridge(unittest.TestCase):
+    def test_compute_bridge(self):
+        cards = [{"title": "출처 확인 중인 위로", "state": "설계", "star": True,
+                  "link": "wiki/writing/notes/출처_확인_중인_위로", "lineage": "진짜/출처"}]
+        work_book = {"출처_확인_중인_위로": "혼모노"}
+        b = g.compute_bridge(cards, work_book)
+        self.assertEqual(b["book"], "혼모노")
+        self.assertEqual(b["work"], "출처 확인 중인 위로")
+        self.assertEqual(b["link"], "wiki/writing/notes/출처_확인_중인_위로")
+
+    def test_compute_bridge_prefers_near_stage(self):
+        cards = [
+            {"title": "설계작", "state": "설계", "star": True,
+             "link": "wiki/writing/notes/설계작", "lineage": "x"},
+            {"title": "개작작", "state": "개작", "star": True,
+             "link": "wiki/writing/notes/개작작", "lineage": "y"},
+        ]
+        b = g.compute_bridge(cards, {"설계작": "책A", "개작작": "책B"})
+        self.assertEqual(b["work"], "개작작")   # 무대에 더 가까운 쪽
+
+    def test_compute_bridge_none_when_no_book(self):
+        cards = [{"title": "책없는작", "state": "개작", "star": True,
+                  "link": "wiki/writing/notes/책없는작", "lineage": "z"}]
+        self.assertIsNone(g.compute_bridge(cards, {}))
 
 
 class TestWriter(unittest.TestCase):

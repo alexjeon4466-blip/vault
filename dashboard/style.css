@@ -20,20 +20,21 @@ nav { margin-left: auto; }
   transition: color .15s ease-out, border-color .15s ease-out; }
 .tab-btn:hover { border-color: var(--line-high); }
 .tab-btn.active { color: var(--text); border-color: var(--muted); }
-h2 { font-size: 16px; margin: 36px 0 10px; color: var(--muted); font-weight: 600; text-wrap: balance; }
+h2 { font-size: 16px; margin: 40px 0 12px; color: var(--muted); font-weight: 600; text-wrap: balance; }
 h3 { text-wrap: balance; }
 #no-data { max-width: 520px; margin: 18vh auto; text-align: center; color: var(--text); }
-#warn-banner { background: var(--alert); color: #fff; padding: 8px 20px; margin: 12px auto;
-  max-width: 1200px; }
+#no-data .path { color: var(--star); }
+#warn-banner { background: var(--alert); color: #fff; font-weight: 600; padding: 8px 20px;
+  margin: 12px auto; max-width: 1200px; }
 table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
 th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; }
 a { color: var(--text); }
-a:hover { color: #fff; }
+a:hover { color: var(--star); }
 :focus-visible { outline: 1px solid var(--star); outline-offset: 2px; }
 .star { color: var(--star); }
 .star-quiet { color: var(--muted); }
 
-/* ── 오늘의 한 걸음 (히어로: 화면에서 앰버가 닿는 첫 자리) ── */
+/* ── 오늘의 한 걸음 (히어로: 앰버가 닿는 첫 자리) ── */
 #next-hero { margin-top: 40px; max-width: 72ch; }
 .hero-label { color: var(--star); font-size: 13px; margin-bottom: 6px; }
 .hero-sentence { font-size: 22px; font-weight: 600; line-height: 1.45; text-wrap: balance; }
@@ -41,8 +42,14 @@ a:hover { color: #fff; }
 .hero-rest { margin-top: 14px; color: var(--muted); }
 .hero-rest > div { padding: 2px 0; }
 
-/* ── 서가 (문장이 곧 표시) ── */
-#shelf { margin-top: 32px; color: var(--text); max-width: 72ch; }
+/* ── 두 세계의 다리 ── */
+#bridge { margin-top: 16px; max-width: 72ch; }
+.bridge-line { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.bridge-line a { color: var(--text); text-decoration-color: var(--line-high);
+  text-underline-offset: 3px; }
+
+/* ── 서가 문장 (미채점 = 쌓인 원고) ── */
+#shelf { margin-top: 28px; color: var(--text); max-width: 72ch; }
 #shelf details { margin-top: 6px; }
 #shelf .waiting-list { columns: 3 220px; column-gap: 24px; margin-top: 10px; }
 #shelf .waiting-list > div { padding: 1px 0; font-size: 13px; color: var(--muted);
@@ -50,33 +57,42 @@ a:hover { color: #fff; }
 #shelf .waiting-list a { color: var(--muted); }
 
 /* 사이클 칩 */
-#stepper { display: flex; gap: 8px; margin: 14px 0 0; flex-wrap: wrap; }
+#stepper { display: flex; gap: 8px; margin: 16px 0 0; flex-wrap: wrap; }
 .step { padding: 4px 12px; border: 1px solid var(--line); border-radius: 20px;
   color: var(--muted); font-size: 13px; }
 .step.done { border-color: var(--ok); color: var(--text); }
 
-/* ── 무대로 가는 원고 (칸반) ── */
-#kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.kanban-col { background: var(--panel); border: 1px solid var(--line); padding: 10px; min-height: 60px; }
-.kanban-col h3 { margin: 0 0 10px; font-size: 13px; color: var(--muted); font-weight: 600; }
-.kanban-card { border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px;
-  margin-bottom: 6px; font-size: 13px; background: var(--bg);
-  transition: border-color .15s ease-out; }
-.kanban-card:hover { border-color: var(--line-high); }
-.kanban-empty { color: var(--muted); font-size: 13px; }
-.kanban-more { font-size: 13px; }
-.kanban-more summary { color: var(--muted); cursor: pointer; padding: 2px 0; }
-.tags { color: var(--muted); font-size: 12px; }
+/* ── 무대까지의 거리 (선반): 무대에 가까울수록 위, 가까운 선반만 앰버 ── */
+#stage-shelves { border-top: 1px solid var(--line); }
+.shelf { display: flex; gap: 16px; align-items: baseline;
+  padding: 12px 0; border-bottom: 1px solid var(--line); }
+.shelf-label { flex: none; width: 116px; }
+.shelf-label > span { display: block; }
+.shelf-note { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.shelf-works { flex: 1; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+.shelf-empty { color: var(--muted); font-size: 13px; }
+/* 무대 코앞 선반: 크게, 앰버 별, 계열 부제 */
+.shelf-near { padding: 16px 0; }
+.shelf-near .shelf-label > span { font-size: 15px; color: var(--text); }
+.work-near { font-size: 16px; }
+.work-near .work-lin { display: block; color: var(--muted); font-size: 12px; margin-top: 1px; }
+/* 먼 선반: 잔잔한 나열 */
+.work { font-size: 14px; color: var(--text); }
+.shelf:not(.shelf-near) .work { color: var(--muted); font-size: 13px; }
+.shelf:not(.shelf-near) .work a { color: var(--muted); }
+.shelf-more { flex-basis: 100%; margin-top: 4px; }
+.shelf-more summary { color: var(--muted); cursor: pointer; font-size: 13px; }
+.shelf-more .work { display: inline-block; margin: 2px 14px 2px 0; }
 
-/* 병합 후보: 호버 뒤가 아니라 펼치면 문장으로 */
-#mergers { margin-top: 12px; }
+/* 병합 후보: 펼치면 문장 */
+#mergers { margin-top: 20px; }
 #mergers summary { color: var(--muted); cursor: pointer; }
 #mergers li { margin: 4px 0; color: var(--muted); font-size: 14px; }
 #mergers li b { color: var(--text); font-weight: 600; }
 
 /* ── 계열 서랍 ── */
-td.no-carrier { color: var(--warn); }
-.lineage-note { display: block; color: var(--dim); font-size: 12px; }
+td.no-carrier { color: var(--muted); font-style: italic; }
+.lineage-note { display: block; color: var(--muted); font-size: 12px; }
 #lineages details summary { color: var(--muted); cursor: pointer; padding: 6px 0; }
 
 /* ── 독서모임 ── */
@@ -88,14 +104,16 @@ td.no-carrier { color: var(--warn); }
 .book-card:hover { border-color: var(--line-high); }
 .book-card.unmined .book-title { color: var(--muted); }
 .flow-row { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
-.flow-label { width: 180px; flex: none; font-size: 13px; overflow: hidden; text-overflow: ellipsis;
+.flow-label { width: 200px; flex: none; font-size: 13px; overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
 .flow-bar { height: 14px; background: var(--ok); }
+.tags { color: var(--muted); font-size: 12px; }
 details { color: var(--muted); }
 summary:hover { color: var(--text); }
 
 @media (max-width: 760px) {
-  #kanban { grid-template-columns: repeat(2, 1fr); }
+  .shelf { flex-direction: column; gap: 4px; }
+  .shelf-label { width: auto; }
   .hero-sentence { font-size: 19px; }
 }
 @media (prefers-reduced-motion: reduce) {

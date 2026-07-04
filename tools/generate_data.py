@@ -393,23 +393,58 @@ def compute_unscored(vault_root, twins, entries, excluded):
     return out
 
 
+_STAGE_ORDER = {"개작": 0, "조립": 1, "설계": 2, "대기": 3}
+
+
 def compute_next_actions(unscored, lineages, cards):
+    """히어로는 원자적이고 실행 가능한 한 걸음이어야 한다. 무대에 가까운 원고 먼저,
+    백로그 숫자는 마지막 수단(서가 문장이 이미 그것을 말한다)."""
     acts = []
-    if len(unscored) >= 10:
-        acts.append({"text": "서가의 새 원고 %d편이 트리아지를 기다립니다" % len(unscored), "link": None})
-    for lin in lineages:
-        if len(acts) >= 3:
-            break
-        if lin["carrier"] is None and lin["stars"] > 0:
-            acts.append({"text": "『%s』 운반체 지정 필요" % lin["name"], "link": None})
+    # 1. 무대에 가장 가까운 원고 — 이어서 할 일, 링크를 가진다
+    for state, verb in (("개작", "개작을 이어서"), ("조립", "조립을 마저")):
+        for c in cards:
+            if len(acts) >= 3:
+                break
+            if c["state"] == state:
+                acts.append({"text": "『%s』 %s" % (c["title"], verb), "link": c.get("link")})
+                break
+    # 2. 설계 단계의 유망★ — 처방부터
     for c in cards:
         if len(acts) >= 3:
             break
         if c["state"] == "설계" and c["star"]:
-            acts.append({"text": "『%s』 처방 대기" % c["title"], "link": c["link"]})
+            acts.append({"text": "『%s』 처방부터" % c["title"], "link": c.get("link")})
+            break
+    # 3. 운반체 미정 계열
+    for lin in lineages:
+        if len(acts) >= 3:
+            break
+        if lin["carrier"] is None and lin["stars"] > 0:
+            acts.append({"text": "『%s』 계열 운반체 지정" % lin["name"], "link": None})
+    # 4. 백로그 — 다른 할 일이 하나도 없을 때만
+    if not acts and len(unscored) >= 10:
+        acts.append({"text": "새 원고 %d편 트리아지" % len(unscored), "link": None})
     if not acts:
         acts.append({"text": "당장 할 일 없음 — 계속 쓰세요.", "link": None})
     return acts[:3]
+
+
+_BRIDGE_PHRASE = {"개작": "무대에 오르고 있습니다", "조립": "무대로 향합니다",
+                  "설계": "이제 막 설계에 들어갔습니다", "대기": "차례를 기다립니다"}
+
+
+def compute_bridge(cards, work_book):
+    """두 세계의 다리: 무대에 가장 가까운 원고가 어느 책에서 자랐는지 한 문장으로.
+    책을 역추적할 수 있는 첫 원고를 고른다(개작→조립→설계 순)."""
+    for c in sorted(cards, key=lambda c: _STAGE_ORDER.get(c["state"], 9)):
+        link = c.get("link")
+        if not link:
+            continue
+        book = work_book.get(link.split("/")[-1])
+        if book:
+            return {"book": book, "work": c["title"], "link": link,
+                    "phrase": _BRIDGE_PHRASE.get(c["state"], "무대로 향합니다")}
+    return None
 
 
 _COUNTED = {"유망★", "유망", "병합", "보류", "제외"}
@@ -440,23 +475,6 @@ def build_data(vault_root):
         e = triage["entries"].get(stem)
         return {"verdict": e["verdict"], "lineage": e["lineage"]} if e else None
 
-    # 배치 집계 (지도 배치 소속 + 쌍둥이 우선 판정)
-    batch_tally = {}
-    for stem, e in triage["entries"].items():
-        v = verdict_of(stem)["verdict"]
-        if v not in _COUNTED:
-            continue
-        t = batch_tally.setdefault(e["batch"], {"star": 0, "promising": 0, "merge": 0})
-        if v == "유망★":
-            t["star"] += 1
-        elif v == "유망":
-            t["promising"] += 1
-        else:
-            t["merge"] += 1
-    batches = [{"no": no, "phase": ("1차" if no <= 6 else "2·3차"),
-                "scored": t["star"] + t["promising"] + t["merge"], **t}
-               for no, t in sorted(batch_tally.items())]
-
     all_scored = {s for s in (set(twins) | set(triage["entries"]))
                   if (verdict_of(s) or {}).get("verdict") in _COUNTED}
     unscored = compute_unscored(vault_root, twins, triage["entries"], triage["excluded"])
@@ -469,15 +487,24 @@ def build_data(vault_root):
         columns.get(c["state"], columns["설계"]).append(
             {"title": c["title"], "lineage": c["lineage"], "star": c["star"], "link": c["link"]})
 
+    # 원고 → 책 역인덱스 (다리 문장용): 노트 sources가 가리키는 책카드 경로로 매핑
+    book_title_by_key = {b["cardPath"]: b["title"] for b in bookclub["books"]}
+    work_book = {}
+    for stem, srcs in note_sources.items():
+        for s in srcs:
+            if s in book_title_by_key:
+                work_book.setdefault(stem, book_title_by_key[s])
+                break
+
     data = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "vaultName": vault_root.name,
         "nextActions": compute_next_actions(unscored, lmap["lineages"], lmap["cards"]),
+        "bridge": compute_bridge(lmap["cards"], work_book),
         "bookclub": bookclub,
         "cycle": {
             "stages": {"triage": "done" if not unscored else "pending",
                        "lineage": "done", "prescription": "done", "label": "사이클 1회차"},
-            "batches": batches,
             "coverage": {"scored": len(all_scored), "unscoredFiles": unscored},
         },
         "pipeline": {"columns": columns, "mergers": lmap["mergers"]},

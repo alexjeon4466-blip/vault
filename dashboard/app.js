@@ -71,6 +71,15 @@
     $("next-hero").appendChild(rest);
   }
 
+  // ── 두 세계의 다리: 어떤 책이 어떤 원고가 되어 무대로 가는지 한 문장. ──
+  if (d.bridge) {
+    var br = el("div", "bridge-line");
+    br.appendChild(el("span", null, "『" + d.bridge.book + "』에서 자란 "));
+    br.appendChild(noteEl("『" + d.bridge.work + "』", d.bridge.link));
+    br.appendChild(el("span", null, "가 " + d.bridge.phrase + "."));
+    $("bridge").appendChild(br);
+  }
+
   // ── 서가: 미채점은 결손이 아니라 아직 읽지 않은 원고 더미다. ──
   var cov = d.cycle.coverage, un = cov.unscoredFiles.length;
   var shelfLine = el("div");
@@ -101,32 +110,43 @@
     $("stepper").appendChild(el("span", cls, s[1]));
   });
 
-  // ── 무대로 가는 원고 (칸반): 설계는 5장까지, 나머지는 서랍.
-  //    앰버 ★는 무대 근처(조립·개작)에만 — 핀스포트 규칙. ──
-  var NEAR_STAGE = { "조립": true, "개작": true };
-  function cardEl(c, colName) {
-    var card = el("div", "kanban-card");
-    if (c.star) card.appendChild(el("span", NEAR_STAGE[colName] ? "star" : "star-quiet", "★ "));
-    card.appendChild(noteEl(c.title, c.link));
-    card.appendChild(el("div", "tags", c.lineage || ""));
-    return card;
+  // ── 무대까지의 거리: 칸반(생산성 앱 문법)이 아니라 무대에 가까운 순으로
+  //    쌓인 선반. 무대 코앞(개작·조립)만 핀스포트 앰버 ★를 받는다. ──
+  var SHELVES = [
+    { key: "개작", label: "개작 중", note: "무대 코앞", near: true },
+    { key: "조립", label: "조립 중", note: null, near: true },
+    { key: "대기", label: "차례 대기", note: null, near: false },
+    { key: "설계", label: "설계 단계", note: null, near: false }
+  ];
+  function workEl(c, near) {
+    var w = el("span", "work" + (near ? " work-near" : ""));
+    if (c.star && near) w.appendChild(el("span", "star", "★ "));
+    w.appendChild(noteEl(c.title, c.link));
+    if (near && c.lineage) w.appendChild(el("small", "work-lin", c.lineage));
+    return w;
   }
-  ["설계", "대기", "조립", "개작"].forEach(function (colName) {
-    var col = el("div", "kanban-col");
-    col.appendChild(el("h3", null, colName));
-    var cards = d.pipeline.columns[colName] || [];
-    if (!cards.length) {
-      col.appendChild(el("div", "kanban-empty", "비어 있음"));
+  SHELVES.forEach(function (sh) {
+    var cards = d.pipeline.columns[sh.key] || [];
+    var shelf = el("div", "shelf" + (sh.near ? " shelf-near" : ""));
+    var lab = el("div", "shelf-label");
+    lab.appendChild(el("span", null, sh.label));
+    var count = cards.length;
+    lab.appendChild(el("small", "shelf-note", sh.note || (count + "편")));
+    shelf.appendChild(lab);
+    var works = el("div", "shelf-works");
+    if (!count) {
+      works.appendChild(el("span", "shelf-empty", "아직 없음"));
     }
-    var LIMIT = 5;
-    cards.slice(0, LIMIT).forEach(function (c) { col.appendChild(cardEl(c, colName)); });
-    if (cards.length > LIMIT) {
-      var more = el("details", "kanban-more");
-      more.appendChild(el("summary", null, "…" + (cards.length - LIMIT) + "편이 더 설계 중"));
-      cards.slice(LIMIT).forEach(function (c) { more.appendChild(cardEl(c, colName)); });
-      col.appendChild(more);
+    var LIMIT = sh.near ? count : 6;   // 무대 근처는 전부, 먼 선반은 6편 + 서랍
+    cards.slice(0, LIMIT).forEach(function (c) { works.appendChild(workEl(c, sh.near)); });
+    if (count > LIMIT) {
+      var more = el("details", "shelf-more");
+      more.appendChild(el("summary", null, "…그리고 " + (count - LIMIT) + "편 더"));
+      cards.slice(LIMIT).forEach(function (c) { more.appendChild(workEl(c, false)); });
+      works.appendChild(more);
     }
-    $("kanban").appendChild(col);
+    shelf.appendChild(works);
+    $("stage-shelves").appendChild(shelf);
   });
 
   // 병합 후보: 호버 뒤에 숨기지 않고 펼치면 문장으로
