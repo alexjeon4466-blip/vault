@@ -1989,3 +1989,10 @@
 - 출발점: `wiki/bookclub/books/사람장소환대/00_책카드.md`와 원본 강독 자료(`사람_장소_환대_파트1.md`, `프롤로그 “그림자”로 사람을 다시 보기.md`, `_사람, 장소, 환대_ 김현경.md`).
 - 원칙: 기존 자리/그늘/공동체 묶음 글감과 중복하지 않고, 원본의 사람자격·그림자·의례·모욕·자선/우정·절대적 환대·신성함 개념을 작은 절차와 무대 물성으로 전환함.
 - 갱신: `wiki/bookclub/books/사람장소환대/00_책카드.md`, `wiki/writing/maps/사람장소환대_원본_창작장치_지도.md`, `index.md`, `log.md`.
+
+## [2026-07-04] create | Vault 대시보드 v1
+
+- 생성 문서: `tools/generate_data.py`, `tools/test_generate_data.py`, `tools/대시보드_갱신.bat`, `dashboard/` (index.html, app.js, style.css, data.js)
+- 핵심 변경: 트리아지 사이클 대시보드 — 창작 탭(다음 할 일·사이클 진행도·칸반·계열표) + 독서모임 탭(서가·책→창작 흐름). 루브릭 보칙 2에 대시보드 갱신 단계 추가.
+- 다음 작업: 사용하면서 파서 unparsed 항목 관찰, 필요 시 Pages 마스킹 모드(--public).
+- 백업: 개인 GitHub push는 하지 않고 로컬 커밋만 유지한다.
