@@ -133,6 +133,55 @@ def stem_from_cell(cell):
     return name.strip()
 
 
+def _find_col(header, name):
+    for i, cell in enumerate(header):
+        if name in cell:
+            return i
+    return None
+
+
+def parse_triage_map(text, unparsed):
+    """배치 섹션(## 배치 N)만 파싱. 섹션 내 표 중 헤더에 '판정' 열이 있는 표만 글감 표."""
+    entries, excluded = {}, set()
+    for sec in re.split(r'(?m)^## ', text):
+        header_line = sec.split("\n", 1)[0]
+        m = re.match(r'배치\s*(\d+)', header_line)
+        if not m:
+            continue
+        batch_no = int(m.group(1))
+        # 「대상 아님」 하위 섹션에서 제외 목록 수집
+        for sub in re.split(r'(?m)^### ', sec)[1:]:
+            if "대상 아님" not in sub.split("\n", 1)[0]:
+                continue
+            for link in re.finditer(r'\[\[([^\]|]+)', sub):
+                excluded.add(link.group(1).split("/")[-1].strip())
+            for bullet in re.finditer(r'(?m)^-\s+([^\[\s—-][^—\n]*?)(?:\s+—|$)', sub):
+                excluded.add(bullet.group(1).strip())
+        for table in extract_tables(sec):
+            header = table[0]
+            v_idx = _find_col(header, "판정")
+            if v_idx is None:
+                continue                       # 집계표·계열 보조표 자동 배제
+            l_idx = _find_col(header, "계열")
+            for row in table[1:]:
+                if len(row) <= v_idx:
+                    unparsed.append({"file": "글감_트리아지_지도.md",
+                                     "reason": "배치 %d 행 열 부족: %s" % (batch_no, row[:1])})
+                    continue
+                stem = stem_from_cell(row[0])
+                verdict, qualifier = parse_verdict_cell(row[v_idx])
+                if verdict is None:
+                    unparsed.append({"file": "글감_트리아지_지도.md",
+                                     "reason": "배치 %d 판정 해석 실패: %s" % (batch_no, stem)})
+                    continue
+                lineage = None
+                if l_idx is not None and len(row) > l_idx:
+                    lineage = re.split(r'[.(（]', row[l_idx].replace("*", ""))[0].strip() or None
+                entries[stem] = {"verdict": verdict, "qualifier": qualifier,
+                                 "lineage": lineage, "batch": batch_no}
+    return {"entries": entries, "excluded": excluded}
+
+
 def scan_twins(vault_root, unparsed):
     """type: writing-note-evaluation 파일만 쌍둥이로 인정 (파일명 글롭만으로는 이중 계상)."""
     twins = {}

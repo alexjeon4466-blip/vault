@@ -129,5 +129,63 @@ class TestScanTwins(unittest.TestCase):
             self.assertIn("판정", unparsed[0]["reason"])
 
 
+TRIAGE_FIXTURE = """# 글감 트리아지 지도
+
+## 배치 1 — notes 1~20 (2026-07-04)
+
+| 글감 | A1 A2 A3 | B1 B2 B3 B4 B5 | 판정 | 가장 약한 축 / 한 줄 사유 | 계열(가) |
+|---|---|---|---|---|---|
+| [[wiki/writing/notes/3_8초_지연_scored|3.8초 지연]] | △ △ △ | ✕ ✕ ✕ ✕ ○ | **병합** | 독백 | 통신/지연 |
+| [[wiki/writing/notes/거울을_옮기는_사람|거울을 옮기는 사람]] | — | — | **진행 중** | 활성 | 돌봄/반복 |
+
+### 배치 1 대상 아님 (메타/작업 파일 — 개명·채점 제외)
+
+- [[wiki/writing/notes/수많은_일인칭]] — 메타
+- 설명란_부족 — 진행 중 원고
+
+### 배치 1에서 보이기 시작한 계열
+
+| 계열 | 글감 수 | 비고 |
+|---|---|---|
+| 통신/지연 | 1 | 초기 |
+
+## 배치 12 — 신규 노트 101~106 (2026-07-04, 최종 잔여분)
+
+| 글감 | 판정 | 한 줄 사유 | 계열 |
+|---|---|---|---|
+| 왜요 | 유망(소품) | 한 단어 | 말/작별·노동 |
+| 주정으로_처리하지_마세요 | **유망★** | 자기강화 루프 | 기록-발언 운반체 후보 |
+
+## 전체 트리아지 완료 (2026-07-04)
+
+| 구분 | notes | draft-candidates | 합계 |
+|---|---|---|---|
+| 유망★ | 13 | 8 | **21** |
+"""
+
+
+class TestTriageMap(unittest.TestCase):
+    def test_parse(self):
+        unparsed = []
+        r = g.parse_triage_map(TRIAGE_FIXTURE, unparsed)
+        e = r["entries"]
+        # 배치 1 (6열 위키링크 형식)
+        self.assertEqual(e["3_8초_지연"]["verdict"], "병합")
+        self.assertEqual(e["3_8초_지연"]["lineage"], "통신/지연")
+        self.assertEqual(e["3_8초_지연"]["batch"], 1)
+        self.assertEqual(e["거울을_옮기는_사람"]["verdict"], "진행 중")
+        # 배치 12 (4열 플레인 형식)
+        self.assertEqual(e["왜요"]["verdict"], "유망")
+        self.assertEqual(e["왜요"]["qualifier"], "소품")
+        self.assertEqual(e["주정으로_처리하지_마세요"]["verdict"], "유망★")
+        self.assertEqual(e["주정으로_처리하지_마세요"]["batch"], 12)
+        # 오탐 배제: 집계표(판정 열 없음)와 계열 보조표의 행이 글감으로 오인되지 않음
+        self.assertNotIn("유망★", e)
+        self.assertNotIn("통신/지연", e)
+        # 대상 아님 수집 (위키링크·플레인 양쪽)
+        self.assertIn("수많은_일인칭", r["excluded"])
+        self.assertIn("설명란_부족", r["excluded"])
+
+
 if __name__ == "__main__":
     unittest.main()
