@@ -199,5 +199,63 @@ class TestTriageMap(unittest.TestCase):
         self.assertIn("설명란_부족", r["excluded"])
 
 
+LINEAGE_FIXTURE = """# 글감 계열·병합 지도
+
+## 계열 지도
+
+### 1. 기록 — 유류품/애도
+
+| 역할 | 글감 | 상태 |
+|---|---|---|
+| 운반체 | [[wiki/writing/draft-candidates/폐기_전_확인_초고후보_scored|폐기 전 확인]] ★ | 조립 |
+| 독립 가능 | [[wiki/writing/notes/라벨_없음_scored|라벨 없음]] ★ | 설계 |
+| 비트 | 고작이라는_말 | 부품 |
+
+### 3. 기록 — 보정 체인
+
+기록이 좋아질수록 사람이 사라지는 극. **운반체 없음 → 신규 극 후보.**
+
+| 역할 | 글감 | 상태 |
+|---|---|---|
+| 체인 순서 | 잡음이_제거되었습니다 | 부품 |
+
+## 병합 후보 요약
+
+| # | 병합 극 | 재료 | 다음 행동 |
+|---|---|---|---|
+| A | 유류품 인계극 | 한_장짜리_보고서 + 그건_관련이 | 차별화 확인 후 2단계 처방 |
+| H | 공동 수리 극 | 상호_번역_작업대 ★ × 공동_수리_허가 | 재해석 후 2부 구조 설계 |
+"""
+
+
+class TestLineageMap(unittest.TestCase):
+    def test_lineages(self):
+        unparsed = []
+        r = g.parse_lineage_map(LINEAGE_FIXTURE, unparsed)
+        by_name = {x["name"]: x for x in r["lineages"]}
+        rec = by_name["기록 — 유류품/애도"]
+        self.assertEqual(rec["carrier"], "폐기 전 확인")
+        self.assertEqual(rec["stars"], 2)
+        self.assertEqual(rec["members"], 2)     # 부품 제외
+        self.assertEqual(rec["parts"], 1)
+        self.assertEqual(rec["state"], "조립")   # 운반체의 상태
+        self.assertIsNone(by_name["기록 — 보정 체인"]["carrier"])  # 운반체 없음 선언
+
+    def test_mergers_only_from_summary_table(self):
+        unparsed = []
+        r = g.parse_lineage_map(LINEAGE_FIXTURE, unparsed)
+        ids = [m["id"] for m in r["mergers"]]
+        self.assertEqual(ids, ["A", "H"])
+        self.assertEqual(r["mergers"][1]["nextAction"], "재해석 후 2부 구조 설계")
+
+    def test_kanban_cards(self):
+        unparsed = []
+        r = g.parse_lineage_map(LINEAGE_FIXTURE, unparsed)
+        titles = {(c["title"], c["state"]) for c in r["cards"]}
+        self.assertIn(("폐기 전 확인", "조립"), titles)
+        self.assertIn(("라벨 없음", "설계"), titles)          # ★라서 설계 카드 포함
+        self.assertNotIn(("고작이라는_말", "부품"), titles)   # 부품은 카드 아님
+
+
 if __name__ == "__main__":
     unittest.main()

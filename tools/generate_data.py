@@ -209,3 +209,75 @@ def scan_twins(vault_root, unparsed):
             "path": "wiki/writing/notes/" + stem,
         }
     return twins
+
+
+_CARD_STATES = {"개작", "조립", "대기"}
+
+
+def _clean_title(cell):
+    """셀에서 표시용 제목: 위키링크 별칭 우선, 없으면 타깃 스템, 플레인은 그대로."""
+    m = re.search(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', cell)
+    if m:
+        return (m.group(2) or m.group(1).split("/")[-1]).strip()
+    return cell.replace("*", "").replace("★", "").strip()
+
+
+def _link_from_cell(cell):
+    m = re.search(r'\[\[([^\]|]+)', cell)
+    if m:
+        path = m.group(1).strip()
+        return path[:-len("_scored")] if path.endswith("_scored") else path
+    return None
+
+
+def parse_lineage_map(text, unparsed):
+    lineages, cards = [], []
+    for sec in re.split(r'(?m)^### ', text)[1:]:
+        header = sec.split("\n", 1)[0].strip()
+        m = re.match(r'(?:\d+\.\s*)?(.+)$', header)
+        name = m.group(1).strip() if m else header
+        carrier, stars, members, parts, state = None, sec.count("★"), 0, 0, "설계"
+        no_carrier = "운반체 없음" in sec
+        try:
+            for table in extract_tables(sec):
+                head = table[0]
+                if _find_col(head, "역할") is None:
+                    continue
+                for row in table[1:]:
+                    if len(row) < 3:
+                        continue
+                    role, item, st = row[0], row[1], row[2].replace("*", "").strip()
+                    if "부품" in role or st == "부품":
+                        parts += 1
+                        continue
+                    members += 1
+                    star = "★" in item
+                    if "운반체" in role and not no_carrier:
+                        carrier = _clean_title(item)
+                        state = st or "설계"
+                    if st in _CARD_STATES or (st == "설계" and star):
+                        cards.append({"title": _clean_title(item),
+                                      "lineage": name, "star": star,
+                                      "state": st or "설계",
+                                      "link": _link_from_cell(item)})
+        except Exception as exc:  # 관대한 파싱: 섹션 단위로만 실패
+            unparsed.append({"file": "글감_계열_병합_지도.md",
+                             "reason": "계열 섹션 파싱 실패(%s): %s" % (name, exc)})
+            continue
+        lineages.append({"name": name, "carrier": carrier, "stars": stars,
+                         "members": members, "parts": parts, "state": state})
+    mergers = []
+    summary = text.split("## 병합 후보 요약", 1)
+    if len(summary) == 2:
+        for table in extract_tables(summary[1]):
+            head = table[0]
+            if _find_col(head, "다음 행동") is None:
+                continue
+            for row in table[1:]:
+                if len(row) >= 4:
+                    mergers.append({"id": row[0].strip(), "title": _clean_title(row[1]),
+                                    "nextAction": row[3].replace("*", "").strip()})
+            break
+    else:
+        unparsed.append({"file": "글감_계열_병합_지도.md", "reason": "병합 후보 요약 표 없음"})
+    return {"lineages": lineages, "mergers": mergers, "cards": cards}
