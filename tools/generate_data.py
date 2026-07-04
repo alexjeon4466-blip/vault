@@ -356,3 +356,123 @@ def scan_books(vault_root, note_sources, verdict_of):
                           "lineages": [k for k, _ in top]})
     books.sort(key=lambda b: (-b["derivedNotes"], b["title"]))
     return {"rawTotal": raw_total, "deviceMapTotal": len(device_maps), "books": books}
+
+
+MAP_SELF = "글감_트리아지_지도"
+
+
+def compute_unscored(vault_root, twins, entries, excluded):
+    out = []
+    notes = vault_root / "wiki" / "writing" / "notes"
+    if not notes.is_dir():
+        return out
+    for p in sorted(notes.glob("*.md")):
+        stem = p.stem
+        if stem.endswith("_scored") or stem == MAP_SELF:
+            continue
+        if stem in twins or stem in entries or stem in excluded:
+            continue
+        if parse_frontmatter(read_text(p)).get("type") != "writing-note":
+            continue
+        out.append({"title": stem, "link": "wiki/writing/notes/" + stem})
+    return out
+
+
+def compute_next_actions(unscored, lineages, cards):
+    acts = []
+    if len(unscored) >= 10:
+        acts.append({"text": "다음 트리아지 사이클 돌릴 때 (%d편 대기)" % len(unscored), "link": None})
+    for lin in lineages:
+        if len(acts) >= 3:
+            break
+        if lin["carrier"] is None and lin["stars"] > 0:
+            acts.append({"text": "『%s』 운반체 지정 필요" % lin["name"], "link": None})
+    for c in cards:
+        if len(acts) >= 3:
+            break
+        if c["state"] == "설계" and c["star"]:
+            acts.append({"text": "『%s』 처방 대기" % c["title"], "link": c["link"]})
+    if not acts:
+        acts.append({"text": "당장 할 일 없음 — 계속 쓰세요.", "link": None})
+    return acts[:3]
+
+
+_COUNTED = {"유망★", "유망", "병합", "보류", "제외"}
+
+
+def build_data(vault_root):
+    unparsed = []
+    twins = scan_twins(vault_root, unparsed)
+
+    triage_path = vault_root / "wiki" / "writing" / "notes" / "글감_트리아지_지도.md"
+    triage = ({"entries": {}, "excluded": set()} if not triage_path.is_file()
+              else parse_triage_map(read_text(triage_path), unparsed))
+    if not triage_path.is_file():
+        unparsed.append({"file": "글감_트리아지_지도.md", "reason": "파일 없음"})
+
+    lmap_path = vault_root / "wiki" / "shared" / "maps" / "글감_계열_병합_지도.md"
+    lmap = ({"lineages": [], "mergers": [], "cards": []} if not lmap_path.is_file()
+            else parse_lineage_map(read_text(lmap_path), unparsed))
+    if not lmap_path.is_file():
+        unparsed.append({"file": "글감_계열_병합_지도.md", "reason": "파일 없음"})
+
+    # 판정 병합: 쌍둥이 우선 (배치 5 복원 17편에서 실제 발동)
+    def verdict_of(stem):
+        if stem in twins:
+            t = twins[stem]
+            lin = t["lineage"] or (triage["entries"].get(stem) or {}).get("lineage")
+            return {"verdict": t["verdict"], "lineage": lin}
+        e = triage["entries"].get(stem)
+        return {"verdict": e["verdict"], "lineage": e["lineage"]} if e else None
+
+    # 배치 집계 (지도 배치 소속 + 쌍둥이 우선 판정)
+    batch_tally = {}
+    for stem, e in triage["entries"].items():
+        v = verdict_of(stem)["verdict"]
+        if v not in _COUNTED:
+            continue
+        t = batch_tally.setdefault(e["batch"], {"star": 0, "promising": 0, "merge": 0})
+        if v == "유망★":
+            t["star"] += 1
+        elif v == "유망":
+            t["promising"] += 1
+        else:
+            t["merge"] += 1
+    batches = [{"no": no, "phase": ("1차" if no <= 6 else "2·3차"),
+                "scored": t["star"] + t["promising"] + t["merge"], **t}
+               for no, t in sorted(batch_tally.items())]
+
+    all_scored = {s for s in (set(twins) | set(triage["entries"]))
+                  if (verdict_of(s) or {}).get("verdict") in _COUNTED}
+    unscored = compute_unscored(vault_root, twins, triage["entries"], triage["excluded"])
+
+    note_sources = scan_note_sources(vault_root)
+    bookclub = scan_books(vault_root, note_sources, verdict_of)
+
+    columns = {"설계": [], "대기": [], "조립": [], "개작": []}
+    for c in lmap["cards"]:
+        columns.get(c["state"], columns["설계"]).append(
+            {"title": c["title"], "lineage": c["lineage"], "star": c["star"], "link": c["link"]})
+
+    data = {
+        "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "vaultName": vault_root.name,
+        "nextActions": compute_next_actions(unscored, lmap["lineages"], lmap["cards"]),
+        "bookclub": bookclub,
+        "cycle": {
+            "stages": {"triage": "done" if not unscored else "pending",
+                       "lineage": "done", "prescription": "done", "label": "사이클 1회차"},
+            "batches": batches,
+            "coverage": {"scored": len(all_scored), "unscoredFiles": unscored},
+        },
+        "pipeline": {"columns": columns, "mergers": lmap["mergers"]},
+        "lineages": sorted(lmap["lineages"], key=lambda x: (-x["stars"], x["name"])),
+        "unparsed": unparsed,
+    }
+    total_stars = sum(1 for s in all_scored if verdict_of(s)["verdict"] == "유망★")
+    for label, got, want in (("채점 총계", len(all_scored), KNOWN_TOTALS["scored"]),
+                             ("유망★ 총계", total_stars, KNOWN_TOTALS["stars"]),
+                             ("쌍둥이 수", len(twins), KNOWN_TOTALS["twins"])):
+        if got != want:
+            print("경고: %s %d ≠ 기준치 %d (vault 성장이면 정상)" % (label, got, want))
+    return data

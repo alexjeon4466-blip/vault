@@ -316,5 +316,38 @@ class TestBooks(unittest.TestCase):
             self.assertEqual(by_title["궤도"]["derivedNotes"], 0)  # 미채굴
 
 
+class TestUnscoredAndActions(unittest.TestCase):
+    def test_unscored(self):
+        tmp, root = make_vault({
+            "wiki/writing/notes/새_글감.md": "---\ntype: writing-note\n---\n# 새 글감\n",
+            "wiki/writing/notes/왜요.md": "---\ntype: writing-note\n---\n# 왜요\n",
+            "wiki/writing/notes/왜요_scored.md": TWIN,
+            "wiki/writing/notes/수많은_일인칭.md": "---\ntype: writing-note\n---\n# 메타\n",
+            "wiki/writing/notes/글감_트리아지_지도.md": "---\ntype: writing-note\n---\n# 지도\n",
+        })
+        with tmp:
+            r = g.compute_unscored(root, twins={"왜요": {}}, entries={},
+                                   excluded={"수많은_일인칭"})
+            titles = [x["title"] for x in r]
+            self.assertEqual(titles, ["새_글감"])   # 쌍둥이·제외·지도 자신 전부 빠짐
+
+    def test_next_actions_rules(self):
+        unscored = [{"title": "n%d" % i, "link": None} for i in range(12)]
+        lineages = [{"name": "기록 — 보정 체인", "carrier": None, "stars": 1,
+                     "members": 3, "parts": 5, "state": "설계"}]
+        cards = [{"title": "라벨 없음", "lineage": "기록", "star": True,
+                  "state": "설계", "link": None}]
+        acts = g.compute_next_actions(unscored, lineages, cards)
+        self.assertEqual(len(acts), 3)
+        self.assertIn("12편 대기", acts[0]["text"])
+        self.assertIn("보정 체인", acts[1]["text"])
+        self.assertIn("라벨 없음", acts[2]["text"])
+
+    def test_next_actions_empty(self):
+        acts = g.compute_next_actions([], [], [])
+        self.assertEqual(len(acts), 1)
+        self.assertIn("계속 쓰세요", acts[0]["text"])
+
+
 if __name__ == "__main__":
     unittest.main()
