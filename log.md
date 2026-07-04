@@ -1998,3 +1998,12 @@
 - 출발점: `bookclub/석촌호수책모임/희랍어 시간 - 한강.md`.
 - 중심 해석: 언어는 칼·바늘옷·그림자처럼 실패하지만, 발음 전의 몸·죽은 언어 수업·칠판을 외워 쓰는 손·모르는 채 가까이 있음 속에서 관계의 시간을 만든다.
 - 갱신: `index.md`, `log.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`.
+
+## [2026-07-04] create | 이반 데니소비치 책카드 및 원본 장치 31개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/이반데니소비치수용소의하루/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/이반데니소비치_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/레일을_두드리는_기상음.md`, `wiki/writing/notes/성에가_두_마디_두께입니다.md`, `wiki/writing/notes/기상소리를_놓친_적이_없습니다.md`, `wiki/writing/notes/변기통_나가는_소리가_없습니다.md`, `wiki/writing/notes/오늘_하루만_통과하면_됩니다.md`, `wiki/writing/notes/빵은_빨리_먹지_않습니다.md`, `wiki/writing/notes/비밀_숟가락.md`, `wiki/writing/notes/감자_한_알이_들어_있습니다.md`, `wiki/writing/notes/죽_한_그릇을_더_먹었습니다.md`, `wiki/writing/notes/숟가락은_몸수색을_통과해야_합니다.md`, `wiki/writing/notes/번호로_불리고_이름으로_부릅니다.md`, `wiki/writing/notes/작업반장의_눈치.md`, `wiki/writing/notes/일을_끝내는_소리가_났는데도.md`, `wiki/writing/notes/벽돌줄이_맞아야_합니다.md`, `wiki/writing/notes/추위를_이기려고_일합니다.md`, `wiki/writing/notes/창문을_막는_작업.md`, `wiki/writing/notes/영창에_가지_않은_감사.md`, `wiki/writing/notes/진정서_같은_기도.md`, `wiki/writing/notes/자유를_왜_원합니까.md`, `wiki/writing/notes/남은_날짜를_세지_않습니다.md`, `wiki/writing/notes/거의_행복한_날.md`, `wiki/writing/notes/삼천육백오십삼일.md`, `wiki/writing/notes/걸리면_안_된다는_시선.md`, `wiki/writing/notes/줄칼_조각은_무사했습니다.md`, `wiki/writing/notes/체자리_순번을_맡아줬습니다.md`, `wiki/writing/notes/잎담배를_샀습니다.md`, `wiki/writing/notes/찌뿌드드하던_몸이_나았습니다.md`, `wiki/writing/notes/문이_열려도_수용소입니다.md`, `wiki/writing/notes/편안한_감옥을_원합니까.md`, `wiki/writing/notes/반복되는_지옥의_루틴.md`, `wiki/writing/notes/행복_기준표.md`
+- 출발점: `bookclub/석촌호수책모임/_이반 데니소비치, 수용소의 하루_ 알렉산드르 솔제니친.md`.
+- 중심 해석: 굴라크의 거대한 폭력을 하루의 기상음·점호·배식·작업·검색·식사·잠자리로 압축하고, 빵을 천천히 먹는 시간·숨겨둔 숟가락·이름 호명·벽돌 줄·거의 행복한 날의 불편한 목록을 존엄의 잔여로 읽음.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/반복은 어떻게 삶을 지탱하는가.md`, `wiki/shared/questions/제도는 인간을 어떻게 지우는가.md`, `wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가.md`, `wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가.md`.
