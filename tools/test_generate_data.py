@@ -186,6 +186,18 @@ class TestTriageMap(unittest.TestCase):
         self.assertIn("수많은_일인칭", r["excluded"])
         self.assertIn("설명란_부족", r["excluded"])
 
+    def test_excluded_multi_name_bullet(self):
+        text = (
+            "## 배치 5 — notes (2026-07-04)\n\n"
+            "### 배치 5 대상 아님 (기법 노트 — 개명·채점 제외)\n\n"
+            "- `좋은_마찰을_무대에_남기는_법`, `침묵을_설명하지_않고_들리게_하는_법` — 기법 노트\n"
+            "- 설명란_부족 — 진행 중 원고\n"
+        )
+        r = g.parse_triage_map(text, [])
+        self.assertIn("좋은_마찰을_무대에_남기는_법", r["excluded"])
+        self.assertIn("침묵을_설명하지_않고_들리게_하는_법", r["excluded"])
+        self.assertIn("설명란_부족", r["excluded"])
+
 
 if __name__ == "__main__":
     unittest.main()

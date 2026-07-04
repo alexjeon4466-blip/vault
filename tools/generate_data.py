@@ -156,7 +156,12 @@ def parse_triage_map(text, unparsed):
             for link in re.finditer(r'\[\[([^\]|]+)', sub):
                 excluded.add(link.group(1).split("/")[-1].strip())
             for bullet in re.finditer(r'(?m)^-\s+([^\[\s—-][^—\n]*?)(?:\s+—|$)', sub):
-                excluded.add(bullet.group(1).strip())
+                # Split on commas, strip backticks and whitespace from each piece
+                text_part = bullet.group(1).strip()
+                for piece in text_part.split(','):
+                    piece = piece.strip().strip('`').strip()
+                    if piece and '[[' not in piece:
+                        excluded.add(piece)
         for table in extract_tables(sec):
             header = table[0]
             v_idx = _find_col(header, "판정")
