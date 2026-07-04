@@ -256,6 +256,27 @@ class TestLineageMap(unittest.TestCase):
         self.assertIn(("라벨 없음", "설계"), titles)          # ★라서 설계 카드 포함
         self.assertNotIn(("고작이라는_말", "부품"), titles)   # 부품은 카드 아님
 
+    def test_headerless_role_table(self):
+        text = ("### 24. 공동 작업 (신규)\n\n"
+                "| 독립 가능 | 귀환_좌표_변경(관제팀) | 설계 |\n"
+                "|---|---|---|\n"
+                "| 부품 | 관측만으로는_구조가_아닙니다 | 부품 |\n")
+        r = g.parse_lineage_map(text, [])
+        rec = [x for x in r["lineages"] if x["name"].startswith("공동 작업")][0]
+        self.assertEqual(rec["members"], 1)
+        self.assertEqual(rec["parts"], 1)
+
+    def test_stars_counted_from_rows_only(self):
+        text = ("### 19. 노동 — 몸/비용 (신규) — ★ 3편 밀집\n\n"
+                "| 역할 | 글감 | 상태 |\n"
+                "|---|---|---|\n"
+                "| 운반체 | 교대자를_찾으셔야_합니다 ★ (휴식의 비용 전가 — 메모) | 설계 |\n"
+                "| 독립 강자 | 시간을_견딘_것은_누구입니까 ★ | 설계 |\n")
+        r = g.parse_lineage_map(text, [])
+        rec = r["lineages"][0]
+        self.assertEqual(rec["stars"], 2)          # 헤더의 ★는 세지 않음
+        self.assertEqual(rec["carrier"], "교대자를_찾으셔야_합니다")   # 괄호 주석 제거
+
 
 if __name__ == "__main__":
     unittest.main()

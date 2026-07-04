@@ -214,12 +214,17 @@ def scan_twins(vault_root, unparsed):
 _CARD_STATES = {"개작", "조립", "대기"}
 
 
+_ROLE_KEYWORDS = ("운반체", "독립", "병합 짝", "부품", "비트", "체인", "교차", "재해석", "소품")
+
+
 def _clean_title(cell):
     """셀에서 표시용 제목: 위키링크 별칭 우선, 없으면 타깃 스템, 플레인은 그대로."""
     m = re.search(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', cell)
     if m:
         return (m.group(2) or m.group(1).split("/")[-1]).strip()
-    return cell.replace("*", "").replace("★", "").strip()
+    plain = cell.replace("*", "").replace("★", "").strip()
+    plain = re.split(r'\(|（|\s+—\s+', plain)[0].strip()
+    return plain
 
 
 def _link_from_cell(cell):
@@ -236,17 +241,23 @@ def parse_lineage_map(text, unparsed):
         header = sec.split("\n", 1)[0].strip()
         m = re.match(r'(?:\d+\.\s*)?(.+)$', header)
         name = m.group(1).strip() if m else header
-        carrier, stars, members, parts, state = None, sec.count("★"), 0, 0, "설계"
+        carrier, stars, members, parts, state = None, 0, 0, 0, "설계"
         no_carrier = "운반체 없음" in sec
         try:
             for table in extract_tables(sec):
                 head = table[0]
                 if _find_col(head, "역할") is None:
-                    continue
-                for row in table[1:]:
+                    if head and any(kw in head[0] for kw in _ROLE_KEYWORDS):
+                        data_rows = table
+                    else:
+                        continue
+                else:
+                    data_rows = table[1:]
+                for row in data_rows:
                     if len(row) < 3:
                         continue
                     role, item, st = row[0], row[1], row[2].replace("*", "").strip()
+                    stars += item.count("★")
                     if "부품" in role or st == "부품":
                         parts += 1
                         continue
