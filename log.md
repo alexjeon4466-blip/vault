@@ -1989,3 +1989,12 @@
 - 출발점: `wiki/bookclub/books/사람장소환대/00_책카드.md`와 원본 강독 자료(`사람_장소_환대_파트1.md`, `프롤로그 “그림자”로 사람을 다시 보기.md`, `_사람, 장소, 환대_ 김현경.md`).
 - 원칙: 기존 자리/그늘/공동체 묶음 글감과 중복하지 않고, 원본의 사람자격·그림자·의례·모욕·자선/우정·절대적 환대·신성함 개념을 작은 절차와 무대 물성으로 전환함.
 - 갱신: `wiki/bookclub/books/사람장소환대/00_책카드.md`, `wiki/writing/maps/사람장소환대_원본_창작장치_지도.md`, `index.md`, `log.md`.
+
+## [2026-07-04] create | 희랍어 시간 책카드 및 원본 장치 33개 노트 승격
+
+- 생성 책카드: `wiki/bookclub/books/희랍어시간/00_책카드.md`
+- 생성 지도: `wiki/writing/maps/희랍어시간_원본_창작장치_지도.md`
+- 생성 노트: `wiki/writing/notes/칼은_아직_칼집에_있습니다.md`, `wiki/writing/notes/그것이_다시_왔습니다.md`, `wiki/writing/notes/그렇게_간단하지_않아요.md`, `wiki/writing/notes/숲은_입술이_닫히는_말입니다.md`, `wiki/writing/notes/말이_너무_또렷하게_들립니다.md`, `wiki/writing/notes/바늘로_짠_옷을_입었습니다.md`, `wiki/writing/notes/언어_없이_이해했습니다.md`, `wiki/writing/notes/비블리오테크가_먼저_움직였습니다.md`, `wiki/writing/notes/모르는_언어라서_말할_수_있었습니다.md`, `wiki/writing/notes/죽은_언어_재활반.md`, `wiki/writing/notes/한_단어_안에_모두_넣을_수_없습니다.md`, `wiki/writing/notes/중간태_신청서.md`, `wiki/writing/notes/말이_나에게_돌아옵니다.md`, `wiki/writing/notes/칠판을_외워서_씁니다.md`, `wiki/writing/notes/안경_없이_출석을_부릅니다.md`, `wiki/writing/notes/보이지_않는_선생님.md`, `wiki/writing/notes/로고스는_그림자입니다.md`, `wiki/writing/notes/흐릿해서_더_못_읽습니다.md`, `wiki/writing/notes/아름다운_것은_어렵습니다.md`, `wiki/writing/notes/캄캄한_칼집_속의_빛.md`, `wiki/writing/notes/생명이라고_쓰고_지웠습니다.md`, `wiki/writing/notes/왼손을_빼내는_사람.md`, `wiki/writing/notes/처방전이_어디_있어요.md`, `wiki/writing/notes/그는_모른다.md`, `wiki/writing/notes/아이의_이름을_부르지_못했습니다.md`, `wiki/writing/notes/눈을_감고_얼굴을_찾습니다.md`, `wiki/writing/notes/태양_사진은_보지_못합니다.md`, `wiki/writing/notes/맞닿은_심장들이_어긋납니다.md`, `wiki/writing/notes/처음으로_거품_같은_소리.md`, `wiki/writing/notes/0번부터_시작합니다.md`, `wiki/writing/notes/혀끝으로_입술을_축입니다.md`, `wiki/writing/notes/모든_것이_사라질_각오.md`, `wiki/writing/notes/수업은_발음보다_기다림입니다.md`
+- 출발점: `bookclub/석촌호수책모임/희랍어 시간 - 한강.md`.
+- 중심 해석: 언어는 칼·바늘옷·그림자처럼 실패하지만, 발음 전의 몸·죽은 언어 수업·칠판을 외워 쓰는 손·모르는 채 가까이 있음 속에서 관계의 시간을 만든다.
+- 갱신: `index.md`, `log.md`, `wiki/shared/questions/언어는 왜 관계를 구하지 못하는가.md`, `wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가.md`, `wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가.md`, `wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md`.
