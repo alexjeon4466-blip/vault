@@ -2,6 +2,7 @@
 import unittest
 from pathlib import Path
 import sys
+import tempfile
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import generate_data as g
 
@@ -83,6 +84,49 @@ class TestTable(unittest.TestCase):
         self.assertEqual(len(tables), 1)
         self.assertEqual(tables[0][0], ["글감", "판정"])   # 헤더 행
         self.assertEqual(len(tables[0]), 3)                  # 구분선 제외 헤더+데이터 2
+
+
+def make_vault(files):
+    """dict{상대경로: 내용} → 임시 vault 루트 Path. 호출자가 TemporaryDirectory 관리."""
+    tmp = tempfile.TemporaryDirectory()
+    root = Path(tmp.name)
+    for rel, content in files.items():
+        p = root / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(content, encoding="utf-8")
+    return tmp, root
+
+
+TWIN = ('---\ntype: writing-note-evaluation\nsources:\n  - "wiki/writing/notes/왜요.md"\n---\n'
+        '# 왜요 — 평가 완료\n- 판정: **유망** (소품 규격) / 채점: A1○\n- 계열: 말/작별 · 노동 교차.\n')
+FAKE_TWIN = ('---\ntype: writing-note\n---\n# 1차 개명 원본\n- 판정: **유망** 처방이 본문에 있음\n')
+
+
+class TestScanTwins(unittest.TestCase):
+    def test_type_gate_and_extraction(self):
+        tmp, root = make_vault({
+            "wiki/writing/notes/왜요_scored.md": TWIN,
+            "wiki/writing/notes/관심_지도_scored.md": FAKE_TWIN,   # type이 달라 무시돼야 함
+        })
+        with tmp:
+            unparsed = []
+            twins = g.scan_twins(root, unparsed)
+            self.assertIn("왜요", twins)
+            self.assertNotIn("관심_지도", twins)      # 이중 계상 방지 (스펙 파싱 규칙 1)
+            self.assertEqual(twins["왜요"]["verdict"], "유망")
+            self.assertEqual(twins["왜요"]["lineage"], "말/작별 · 노동 교차")
+            self.assertEqual(twins["왜요"]["path"], "wiki/writing/notes/왜요")
+            self.assertEqual(unparsed, [])
+
+    def test_missing_verdict_goes_unparsed(self):
+        broken = '---\ntype: writing-note-evaluation\n---\n# 깨진 쌍둥이\n판정 줄이 없다\n'
+        tmp, root = make_vault({"wiki/writing/notes/깨짐_scored.md": broken})
+        with tmp:
+            unparsed = []
+            twins = g.scan_twins(root, unparsed)
+            self.assertNotIn("깨짐", twins)
+            self.assertEqual(len(unparsed), 1)
+            self.assertIn("판정", unparsed[0]["reason"])
 
 
 if __name__ == "__main__":

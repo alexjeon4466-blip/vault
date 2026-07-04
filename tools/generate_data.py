@@ -131,3 +131,27 @@ def stem_from_cell(cell):
     if name.endswith("_scored"):
         name = name[:-len("_scored")]
     return name.strip()
+
+
+def scan_twins(vault_root, unparsed):
+    """type: writing-note-evaluation 파일만 쌍둥이로 인정 (파일명 글롭만으로는 이중 계상)."""
+    twins = {}
+    notes = vault_root / "wiki" / "writing" / "notes"
+    if not notes.is_dir():
+        return twins
+    for p in sorted(notes.glob("*_scored.md")):
+        text = read_text(p)
+        if parse_frontmatter(text).get("type") != "writing-note-evaluation":
+            continue
+        stem = p.stem[:-len("_scored")]
+        verdict, qualifier = extract_verdict(text)
+        if verdict is None:
+            unparsed.append({"file": p.name, "reason": "쌍둥이에서 판정 추출 실패"})
+            continue
+        twins[stem] = {
+            "verdict": verdict,
+            "qualifier": qualifier,
+            "lineage": extract_lineage(text),   # 부재 시 None — 지도 폴백은 build_data에서
+            "path": "wiki/writing/notes/" + stem,
+        }
+    return twins
