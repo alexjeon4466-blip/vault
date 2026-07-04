@@ -101,6 +101,13 @@ TWIN = ('---\ntype: writing-note-evaluation\nsources:\n  - "wiki/writing/notes/�
         '# 왜요 — 평가 완료\n- 판정: **유망** (소품 규격) / 채점: A1○\n- 계열: 말/작별 · 노동 교차.\n')
 FAKE_TWIN = ('---\ntype: writing-note\n---\n# 1차 개명 원본\n- 판정: **유망** 처방이 본문에 있음\n')
 
+NOTE_WITH_BOOK = ('---\ntype: writing-note\nsources:\n'
+                  '  - "wiki/bookclub/books/혼모노/00_책카드.md"\n'
+                  '  - "bookclub/석촌호수책모임/_혼모노_ 성해나.md"\n---\n# 노트\n')
+DEVICE_MAP = ('---\ntype: writing-map\nsources:\n'
+              '  - "bookclub/석촌호수책모임/_혼모노_ 성해나.md"\n'
+              '  - "wiki/bookclub/books/혼모노/00_책카드.md"\n---\n# 지도\n')
+
 
 class TestScanTwins(unittest.TestCase):
     def test_type_gate_and_extraction(self):
@@ -276,6 +283,37 @@ class TestLineageMap(unittest.TestCase):
         rec = r["lineages"][0]
         self.assertEqual(rec["stars"], 2)          # 헤더의 ★는 세지 않음
         self.assertEqual(rec["carrier"], "교대자를_찾으셔야_합니다")   # 괄호 주석 제거
+
+
+class TestBooks(unittest.TestCase):
+    def _root(self):
+        return make_vault({
+            "wiki/bookclub/books/혼모노/00_책카드.md": "---\ntype: book-card\n---\n# 혼모노\n",
+            "wiki/bookclub/books/궤도/00_책카드.md": "---\ntype: book-card\n---\n# 궤도\n",
+            "wiki/writing/notes/바나나맛_진짜.md": NOTE_WITH_BOOK,
+            "wiki/writing/notes/바나나맛_진짜_scored.md": TWIN,  # sources 스캔에서 제외돼야 함
+            "wiki/writing/maps/혼모노_원본_창작장치_지도.md": DEVICE_MAP,
+            "bookclub/석촌호수책모임/_혼모노_ 성해나.md": "로우 데이터",
+            "bookclub/석촌호수책모임/모임기록.md": "로우 데이터 2",
+            "bookclub/석촌호수책모임/표지.webp": "binary-ish",   # md 아님 → rawTotal 제외
+        })
+
+    def test_book_linkage(self):
+        tmp, root = self._root()
+        with tmp:
+            sources = g.scan_note_sources(root)
+            self.assertIn("바나나맛_진짜", sources)
+            self.assertNotIn("바나나맛_진짜_scored", sources)
+            verdicts = {"바나나맛_진짜": {"verdict": "유망★", "lineage": "진짜/출처"}}
+            r = g.scan_books(root, sources, lambda s: verdicts.get(s))
+            self.assertEqual(r["rawTotal"], 2)          # .md만
+            self.assertEqual(r["deviceMapTotal"], 1)
+            by_title = {b["title"]: b for b in r["books"]}
+            self.assertEqual(by_title["혼모노"]["derivedNotes"], 1)
+            self.assertEqual(by_title["혼모노"]["stars"], 1)
+            self.assertEqual(by_title["혼모노"]["rawNotes"], 1)   # 장치 지도 교량
+            self.assertEqual(by_title["혼모노"]["lineages"], ["진짜/출처"])
+            self.assertEqual(by_title["궤도"]["derivedNotes"], 0)  # 미채굴
 
 
 if __name__ == "__main__":

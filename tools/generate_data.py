@@ -292,3 +292,67 @@ def parse_lineage_map(text, unparsed):
     else:
         unparsed.append({"file": "글감_계열_병합_지도.md", "reason": "병합 후보 요약 표 없음"})
     return {"lineages": lineages, "mergers": mergers, "cards": cards}
+
+
+def scan_note_sources(vault_root):
+    """원본 글감 노트(type: writing-note, _scored 아님)의 정규화 sources."""
+    out = {}
+    notes = vault_root / "wiki" / "writing" / "notes"
+    if not notes.is_dir():
+        return out
+    for p in sorted(notes.glob("*.md")):
+        if p.stem.endswith("_scored"):
+            continue
+        fm = parse_frontmatter(read_text(p))
+        if fm.get("type") != "writing-note":
+            continue
+        srcs = fm.get("sources")
+        if isinstance(srcs, list) and srcs:
+            out[p.stem] = [normalize_source(s) for s in srcs]
+    return out
+
+
+def scan_books(vault_root, note_sources, verdict_of):
+    books_dir = vault_root / "wiki" / "bookclub" / "books"
+    raw_dir = vault_root / "bookclub" / "석촌호수책모임"
+    maps_dir = vault_root / "wiki" / "writing" / "maps"
+    raw_total = len(list(raw_dir.rglob("*.md"))) if raw_dir.is_dir() else 0
+    device_maps = sorted(maps_dir.glob("*_원본_창작장치_지도.md")) if maps_dir.is_dir() else []
+
+    # 장치 지도 = 로우↔책카드 교량: 책 키 → 로우 소스 수
+    raw_bridge = {}
+    for p in device_maps:
+        fm = parse_frontmatter(read_text(p))
+        srcs = [normalize_source(s) for s in fm.get("sources", []) if isinstance(fm.get("sources"), list)]
+        card_keys = [s for s in srcs if s.startswith("wiki/bookclub/books/")]
+        raws = [s for s in srcs if s.startswith("bookclub/")]
+        for key in card_keys:
+            raw_bridge[key] = raw_bridge.get(key, 0) + len(raws)
+
+    books = []
+    if books_dir.is_dir():
+        for d in sorted(books_dir.iterdir()):
+            card = d / "00_책카드.md"
+            if not d.is_dir() or not card.is_file():
+                continue
+            key = "wiki/bookclub/books/%s/00_책카드" % d.name
+            derived, stars, lineage_count = 0, 0, {}
+            for stem, srcs in note_sources.items():
+                if key not in srcs:
+                    continue
+                derived += 1
+                info = verdict_of(stem)
+                if info:
+                    if info.get("verdict") == "유망★":
+                        stars += 1
+                    lin = info.get("lineage")
+                    if lin:
+                        lineage_count[lin] = lineage_count.get(lin, 0) + 1
+            top = sorted(lineage_count.items(), key=lambda kv: (-kv[1], kv[0]))[:3]
+            books.append({"title": d.name,
+                          "cardPath": key,
+                          "rawNotes": raw_bridge.get(key, 0),
+                          "derivedNotes": derived, "stars": stars,
+                          "lineages": [k for k, _ in top]})
+    books.sort(key=lambda b: (-b["derivedNotes"], b["title"]))
+    return {"rawTotal": raw_total, "deviceMapTotal": len(device_maps), "books": books}
