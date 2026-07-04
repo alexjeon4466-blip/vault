@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vault 대시보드</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="no-data">
+  <h1>데이터 없음</h1>
+  <p><code>tools\대시보드_갱신.bat</code>을 실행하세요.</p>
+</div>
+<div id="app" hidden>
+  <header>
+    <h1>Vault 대시보드</h1>
+    <span id="generated"></span>
+    <nav>
+      <button class="tab-btn active" data-tab="creation">창작</button>
+      <button class="tab-btn" data-tab="bookclub">독서모임</button>
+    </nav>
+  </header>
+  <div id="warn-banner" hidden></div>
+  <main>
+    <section id="tab-creation">
+      <div id="next-actions"></div>
+      <h2>사이클 진행도</h2>
+      <div id="stepper"></div>
+      <div id="coverage"></div>
+      <div id="batches"></div>
+      <h2>집필 파이프라인</h2>
+      <div id="kanban"></div>
+      <div id="mergers"></div>
+      <h2>계열별 현황</h2>
+      <div id="lineages"></div>
+      <div id="footnote"></div>
+    </section>
+    <section id="tab-bookclub" hidden>
+      <div id="bc-summary"></div>
+      <h2>책 서가</h2>
+      <div id="bc-shelf"></div>
+      <h2>책 → 창작 흐름 (상위 10권)</h2>
+      <div id="bc-flow"></div>
+    </section>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
