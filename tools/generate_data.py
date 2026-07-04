@@ -217,14 +217,29 @@ _CARD_STATES = {"개작", "조립", "대기"}
 _ROLE_KEYWORDS = ("운반체", "독립", "병합 짝", "부품", "비트", "체인", "교차", "재해석", "소품")
 
 
+def display_title(stem):
+    """파일 스템 → 사람용 제목. 언더스코어는 기계의 흔적이라 화면에 내보내지 않는다."""
+    return stem.replace("_", " ").strip()
+
+
+def split_lineage_name(raw):
+    """계열 헤더에서 이름과 괄호 주석을 분리. 이름 속 '—'는 보존한다."""
+    m = re.match(r'^(.*?)\s*[（(](.*)$', raw)
+    if not m:
+        return raw.strip(), None
+    name = m.group(1).strip()
+    ann = re.sub(r'\s+', ' ', m.group(2).replace(")", " ").replace("）", " ")).strip(" —-·")
+    return name, (ann or None)
+
+
 def _clean_title(cell):
     """셀에서 표시용 제목: 위키링크 별칭 우선, 없으면 타깃 스템, 플레인은 그대로."""
     m = re.search(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', cell)
     if m:
-        return (m.group(2) or m.group(1).split("/")[-1]).strip()
+        return display_title((m.group(2) or m.group(1).split("/")[-1]).strip())
     plain = cell.replace("*", "").replace("★", "").strip()
     plain = re.split(r'\(|（|\s+—\s+', plain)[0].strip()
-    return plain
+    return display_title(plain)
 
 
 def _link_from_cell(cell):
@@ -240,7 +255,7 @@ def parse_lineage_map(text, unparsed):
     for sec in re.split(r'(?m)^### ', text)[1:]:
         header = sec.split("\n", 1)[0].strip()
         m = re.match(r'(?:\d+\.\s*)?(.+)$', header)
-        name = m.group(1).strip() if m else header
+        name, annotation = split_lineage_name(m.group(1).strip() if m else header)
         carrier, stars, members, parts, state = None, 0, 0, 0, "설계"
         no_carrier = "운반체 없음" in sec
         try:
@@ -275,8 +290,8 @@ def parse_lineage_map(text, unparsed):
             unparsed.append({"file": "글감_계열_병합_지도.md",
                              "reason": "계열 섹션 파싱 실패(%s): %s" % (name, exc)})
             continue
-        lineages.append({"name": name, "carrier": carrier, "stars": stars,
-                         "members": members, "parts": parts, "state": state})
+        lineages.append({"name": name, "annotation": annotation, "carrier": carrier,
+                         "stars": stars, "members": members, "parts": parts, "state": state})
     mergers = []
     summary = text.split("## 병합 후보 요약", 1)
     if len(summary) == 2:
@@ -374,7 +389,7 @@ def compute_unscored(vault_root, twins, entries, excluded):
             continue
         if parse_frontmatter(read_text(p)).get("type") != "writing-note":
             continue
-        out.append({"title": stem, "link": "wiki/writing/notes/" + stem})
+        out.append({"title": display_title(stem), "link": "wiki/writing/notes/" + stem})
     return out
 
 

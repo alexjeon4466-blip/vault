@@ -272,6 +272,8 @@ class TestLineageMap(unittest.TestCase):
         rec = [x for x in r["lineages"] if x["name"].startswith("공동 작업")][0]
         self.assertEqual(rec["members"], 1)
         self.assertEqual(rec["parts"], 1)
+        self.assertEqual(rec["name"], "공동 작업")
+        self.assertEqual(rec["annotation"], "신규")
 
     def test_stars_counted_from_rows_only(self):
         text = ("### 19. 노동 — 몸/비용 (신규) — ★ 3편 밀집\n\n"
@@ -282,7 +284,21 @@ class TestLineageMap(unittest.TestCase):
         r = g.parse_lineage_map(text, [])
         rec = r["lineages"][0]
         self.assertEqual(rec["stars"], 2)          # 헤더의 ★는 세지 않음
-        self.assertEqual(rec["carrier"], "교대자를_찾으셔야_합니다")   # 괄호 주석 제거
+        self.assertEqual(rec["carrier"], "교대자를 찾으셔야 합니다")   # 괄호 주석·언더스코어 제거
+        self.assertEqual(rec["name"], "노동 — 몸/비용")               # 주석은 name에서 분리
+        self.assertEqual(rec["annotation"], "신규 — ★ 3편 밀집")
+
+
+class TestDisplay(unittest.TestCase):
+    def test_display_title(self):
+        self.assertEqual(g.display_title("교대자를_찾으셔야_합니다"), "교대자를 찾으셔야 합니다")
+        self.assertEqual(g.display_title("왜요"), "왜요")
+
+    def test_split_lineage_name(self):
+        self.assertEqual(
+            g.split_lineage_name("진짜/출처 (신규 — 혼모노×괴테 유입, 최대 신규 계열)"),
+            ("진짜/출처", "신규 — 혼모노×괴테 유입, 최대 신규 계열"))
+        self.assertEqual(g.split_lineage_name("기록 — 유류품/애도"), ("기록 — 유류품/애도", None))
 
 
 class TestBooks(unittest.TestCase):
@@ -329,7 +345,7 @@ class TestUnscoredAndActions(unittest.TestCase):
             r = g.compute_unscored(root, twins={"왜요": {}}, entries={},
                                    excluded={"수많은_일인칭"})
             titles = [x["title"] for x in r]
-            self.assertEqual(titles, ["새_글감"])   # 쌍둥이·제외·지도 자신 전부 빠짐
+            self.assertEqual(titles, ["새 글감"])   # 쌍둥이·제외·지도 자신 전부 빠짐, 표시명은 공백
 
     def test_next_actions_rules(self):
         unscored = [{"title": "n%d" % i, "link": None} for i in range(12)]
