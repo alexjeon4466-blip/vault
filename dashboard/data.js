@@ -1,6 +1,6 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-04 20:43",
-  "vaultName": "dashboard-wt",
+  "generated": "2026-07-04 21:06",
+  "vaultName": "vault",
   "nextActions": [
     {
       "text": "다음 트리아지 사이클 돌릴 때 (239편 대기)",
