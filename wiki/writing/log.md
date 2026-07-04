@@ -1,3 +1,12 @@
+---
+type: writing-log
+status: stable
+created: "2026-07-04"
+updated: "2026-07-04"
+visibility: private
+title: "Writing log"
+---
+
 ## [2026-07-04] update | 3단계 계열·병합 지도 — 2·3차분 확장
 
 - 갱신 문서: `wiki/shared/maps/글감_계열_병합_지도.md`, `wiki/writing/notes/글감_트리아지_지도.md`(누계 정정: 유망★12 유망67 병합27)
