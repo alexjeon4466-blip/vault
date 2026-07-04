@@ -15,31 +15,29 @@
   <header>
     <h1>Vault 대시보드</h1>
     <span id="generated"></span>
-    <nav>
-      <button class="tab-btn active" data-tab="creation">창작</button>
-      <button class="tab-btn" data-tab="bookclub">독서모임</button>
+    <nav role="tablist" aria-label="대시보드 영역">
+      <button class="tab-btn active" data-tab="creation" role="tab" aria-selected="true" aria-controls="tab-creation">창작</button>
+      <button class="tab-btn" data-tab="bookclub" role="tab" aria-selected="false" aria-controls="tab-bookclub">독서모임</button>
     </nav>
   </header>
   <div id="warn-banner" hidden></div>
   <main>
-    <section id="tab-creation">
-      <div id="next-actions"></div>
-      <h2>사이클 진행도</h2>
+    <section id="tab-creation" role="tabpanel">
+      <div id="next-hero"></div>
+      <div id="shelf"></div>
       <div id="stepper"></div>
-      <div id="coverage"></div>
-      <div id="batches"></div>
-      <h2>집필 파이프라인</h2>
+      <h2>무대로 가는 원고</h2>
       <div id="kanban"></div>
       <div id="mergers"></div>
-      <h2>계열별 현황</h2>
+      <h2>계열 서랍</h2>
       <div id="lineages"></div>
       <div id="footnote"></div>
     </section>
-    <section id="tab-bookclub" hidden>
+    <section id="tab-bookclub" role="tabpanel" hidden>
       <div id="bc-summary"></div>
       <h2>책 서가</h2>
       <div id="bc-shelf"></div>
-      <h2>책 → 창작 흐름 (상위 10권)</h2>
+      <h2>가장 많은 글감을 낳은 책들</h2>
       <div id="bc-flow"></div>
     </section>
   </main>

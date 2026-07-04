@@ -355,7 +355,7 @@ class TestUnscoredAndActions(unittest.TestCase):
                   "state": "설계", "link": None}]
         acts = g.compute_next_actions(unscored, lineages, cards)
         self.assertEqual(len(acts), 3)
-        self.assertIn("12편 대기", acts[0]["text"])
+        self.assertIn("12편이 트리아지를 기다립니다", acts[0]["text"])
         self.assertIn("보정 체인", acts[1]["text"])
         self.assertIn("라벨 없음", acts[2]["text"])
 

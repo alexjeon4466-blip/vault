@@ -27,89 +27,90 @@
     return e;
   }
 
-  // 탭
+  // 탭 (role=tab / aria-selected)
   var btns = document.querySelectorAll(".tab-btn");
   btns.forEach(function (b) {
     b.addEventListener("click", function () {
-      btns.forEach(function (x) { x.classList.remove("active"); });
+      btns.forEach(function (x) {
+        x.classList.remove("active");
+        x.setAttribute("aria-selected", "false");
+      });
       b.classList.add("active");
+      b.setAttribute("aria-selected", "true");
       $("tab-creation").hidden = b.dataset.tab !== "creation";
       $("tab-bookclub").hidden = b.dataset.tab !== "bookclub";
     });
   });
 
-  // 경고 배너 (unparsed >= 10 승격)
+  // 경고 배너 (unparsed >= 10 = 파서 파손 신호 — 방화막의 유일한 용도)
   if (d.unparsed.length >= 10) {
     $("warn-banner").hidden = false;
     $("warn-banner").textContent =
       "파서 경고: 분류 안 됨 " + d.unparsed.length + "건 — 파서 점검 필요";
   }
 
-  // 0. 다음 할 일
-  d.nextActions.forEach(function (a) {
-    var item = el("div", "strip-item");
-    item.appendChild(a.link ? noteEl(a.text, a.link) : el("span", null, a.text));
-    $("next-actions").appendChild(item);
-  });
+  // ── 오늘의 한 걸음: 이 화면이 존재하는 이유. 첫 번째 제안 하나만 크게. ──
+  var acts = d.nextActions;
+  $("next-hero").appendChild(el("div", "hero-label", "오늘의 한 걸음"));
+  var hero = el("div", "hero-sentence");
+  if (acts.length) {
+    hero.appendChild(acts[0].link ? noteEl(acts[0].text, acts[0].link)
+                                  : el("span", null, acts[0].text));
+  } else {
+    hero.textContent = "당장 할 일 없음 — 계속 쓰세요.";
+  }
+  $("next-hero").appendChild(hero);
+  if (acts.length > 1) {
+    var rest = el("div", "hero-rest");
+    acts.slice(1).forEach(function (a) {
+      var line = el("div");
+      line.appendChild(el("span", null, "그다음엔 — "));
+      line.appendChild(a.link ? noteEl(a.text, a.link) : el("span", null, a.text));
+      rest.appendChild(line);
+    });
+    $("next-hero").appendChild(rest);
+  }
 
-  // 1a. 스텝퍼
-  var stageNames = [["triage", "1단계 트리아지"], ["lineage", "3단계 계열 지도"],
-                    ["prescription", "2단계 처방"]];
-  $("stepper").appendChild(el("span", "step done", d.cycle.stages.label || "사이클"));
+  // ── 서가: 미채점은 결손이 아니라 아직 읽지 않은 원고 더미다. ──
+  var cov = d.cycle.coverage, un = cov.unscoredFiles.length;
+  var shelfLine = el("div");
+  if (un === 0) {
+    shelfLine.textContent = "서가의 원고 " + cov.scored + "편을 전부 읽었습니다.";
+    $("shelf").appendChild(shelfLine);
+  } else {
+    shelfLine.textContent =
+      "지금까지 " + cov.scored + "편을 읽었고, 서가에는 새 원고 " + un + "편이 쌓여 있습니다.";
+    $("shelf").appendChild(shelfLine);
+    var det = el("details");
+    det.appendChild(el("summary", null, "기다리는 원고 " + un + "편 펼치기"));
+    var list = el("div", "waiting-list");
+    cov.unscoredFiles.forEach(function (f) {
+      var line = el("div");
+      line.appendChild(noteEl(f.title, f.link));
+      list.appendChild(line);
+    });
+    det.appendChild(list);
+    $("shelf").appendChild(det);
+  }
+
+  // 사이클 칩 (번호 없이 — 순서는 워크플로가 안다)
+  var stageNames = [["triage", "채점"], ["lineage", "계열 지도"], ["prescription", "처방"]];
+  $("stepper").appendChild(el("span", "step", d.cycle.stages.label || "사이클"));
   stageNames.forEach(function (s) {
     var cls = "step" + (d.cycle.stages[s[0]] === "done" ? " done" : "");
     $("stepper").appendChild(el("span", cls, s[1]));
   });
 
-  // 1b. 커버리지 도넛 + 미채점 목록
-  var cov = d.cycle.coverage, un = cov.unscoredFiles.length, total = cov.scored + un;
-  var wrap = el("div", "donut-wrap");
-  if (un === 0) {
-    wrap.appendChild(el("span", null, "전부 채점 완료 ✓ (" + cov.scored + "편)"));
-  } else {
-    var pct = total ? (cov.scored / total) * 100 : 0;
-    var donut = el("div", "donut");
-    donut.style.background =
-      "conic-gradient(var(--ok) 0 " + pct + "%, var(--dim) " + pct + "% 100%)";
-    wrap.appendChild(donut);
-    var lab = el("div");
-    lab.appendChild(el("div", null, "채점 " + cov.scored + " / 미채점 " + un));
-    var det = el("details");
-    det.appendChild(el("summary", null, "미채점 " + un + "편 보기"));
-    cov.unscoredFiles.forEach(function (f) {
-      var line = el("div");
-      line.appendChild(noteEl(f.title, f.link));
-      det.appendChild(line);
-    });
-    lab.appendChild(det);
-    wrap.appendChild(lab);
+  // ── 무대로 가는 원고 (칸반): 설계는 5장까지, 나머지는 서랍.
+  //    앰버 ★는 무대 근처(조립·개작)에만 — 핀스포트 규칙. ──
+  var NEAR_STAGE = { "조립": true, "개작": true };
+  function cardEl(c, colName) {
+    var card = el("div", "kanban-card");
+    if (c.star) card.appendChild(el("span", NEAR_STAGE[colName] ? "star" : "star-quiet", "★ "));
+    card.appendChild(noteEl(c.title, c.link));
+    card.appendChild(el("div", "tags", c.lineage || ""));
+    return card;
   }
-  $("coverage").appendChild(wrap);
-
-  // 1c. 배치 스택 바 (배치 6/7 사이 구분선 — 두 구간은 연속 추세 아님)
-  var maxScored = Math.max.apply(null, d.cycle.batches.map(function (b) { return b.scored; }).concat([1]));
-  d.cycle.batches.forEach(function (b, i) {
-    if (i > 0 && d.cycle.batches[i - 1].phase !== b.phase) {
-      $("batches").appendChild(el("div", "batch-divider", "▲ 1차분 | ▼ 2·3차분"));
-    }
-    var row = el("div", "batch-row");
-    row.appendChild(el("span", "batch-label", "배치 " + b.no));
-    var bar = el("div", "batch-bar");
-    bar.style.maxWidth = (b.scored / maxScored) * 100 + "%";
-    [["seg-star", b.star], ["seg-prom", b.promising], ["seg-merge", b.merge]].forEach(function (seg) {
-      if (!seg[1]) return;
-      var s = el("span", seg[0]);
-      s.style.width = (seg[1] / b.scored) * 100 + "%";
-      s.title = seg[1] + "편";
-      bar.appendChild(s);
-    });
-    row.appendChild(bar);
-    row.appendChild(el("span", "batch-label",
-      "★" + b.star + " 유망" + b.promising + " 병합" + b.merge));
-    $("batches").appendChild(row);
-  });
-
-  // 2. 칸반 (4열 고정 — 빈 열도 유지)
   ["설계", "대기", "조립", "개작"].forEach(function (colName) {
     var col = el("div", "kanban-col");
     col.appendChild(el("h3", null, colName));
@@ -117,22 +118,34 @@
     if (!cards.length) {
       col.appendChild(el("div", "kanban-empty", "비어 있음"));
     }
-    cards.forEach(function (c) {
-      var card = el("div", "kanban-card");
-      if (c.star) card.appendChild(el("span", "star", "★ "));
-      card.appendChild(noteEl(c.title, c.link));
-      card.appendChild(el("div", "tags", c.lineage || ""));
-      col.appendChild(card);
-    });
+    var LIMIT = 5;
+    cards.slice(0, LIMIT).forEach(function (c) { col.appendChild(cardEl(c, colName)); });
+    if (cards.length > LIMIT) {
+      var more = el("details", "kanban-more");
+      more.appendChild(el("summary", null, "…" + (cards.length - LIMIT) + "편이 더 설계 중"));
+      cards.slice(LIMIT).forEach(function (c) { more.appendChild(cardEl(c, colName)); });
+      col.appendChild(more);
+    }
     $("kanban").appendChild(col);
   });
-  d.pipeline.mergers.forEach(function (m) {
-    var chip = el("span", "merger-chip", m.id + " " + m.title);
-    chip.title = m.nextAction;
-    $("mergers").appendChild(chip);
-  });
 
-  // 3. 계열표 — 활성(★>0 또는 개작/조립)만 기본, 나머지 접이식
+  // 병합 후보: 호버 뒤에 숨기지 않고 펼치면 문장으로
+  if (d.pipeline.mergers.length) {
+    var mdet = el("details");
+    mdet.appendChild(el("summary", null, "병합 후보 " + d.pipeline.mergers.length + "건 — 다음 행동 보기"));
+    var ul = el("ul");
+    d.pipeline.mergers.forEach(function (m) {
+      var li = el("li");
+      var name = el("b", null, m.id + " " + m.title);
+      li.appendChild(name);
+      li.appendChild(el("span", null, " — " + m.nextAction));
+      ul.appendChild(li);
+    });
+    mdet.appendChild(ul);
+    $("mergers").appendChild(mdet);
+  }
+
+  // ── 계열 서랍: 움직이는 계열만 기본 표시, 주석은 낮은 목소리로 ──
   function lineageTable(rows) {
     var t = el("table"), head = el("tr");
     ["계열", "운반체", "★", "구성원", "부품", "상태"].forEach(function (h) {
@@ -141,11 +154,12 @@
     t.appendChild(head);
     rows.forEach(function (l) {
       var tr = el("tr");
-      tr.appendChild(el("td", null, l.name));
-      var carrier = el("td", l.carrier ? null : "no-carrier",
-                       l.carrier || "운반체 결정 필요");
-      tr.appendChild(carrier);
-      tr.appendChild(el("td", "star", String(l.stars)));
+      var nameCell = el("td", null, l.name);
+      if (l.annotation) nameCell.appendChild(el("small", "lineage-note", l.annotation));
+      tr.appendChild(nameCell);
+      tr.appendChild(el("td", l.carrier ? null : "no-carrier",
+                       l.carrier || "운반체 결정 필요"));
+      tr.appendChild(el("td", "star-quiet", String(l.stars)));
       tr.appendChild(el("td", null, String(l.members)));
       tr.appendChild(el("td", null, String(l.parts)));
       tr.appendChild(el("td", null, l.state));
@@ -165,7 +179,7 @@
     $("lineages").appendChild(det2);
   }
 
-  // 4. 풋노트 (0건이면 미렌더, >=10은 위 배너가 담당하되 목록은 여기)
+  // 풋노트 (0건이면 미렌더)
   if (d.unparsed.length > 0) {
     var det3 = el("details");
     det3.appendChild(el("summary", null, "분류 안 됨 " + d.unparsed.length + "건"));
@@ -175,27 +189,26 @@
     $("footnote").appendChild(det3);
   }
 
-  // 독서모임 탭
+  // ── 독서모임: 숫자 타일이 아니라 문장으로 ──
   var bc = d.bookclub;
   var mined = bc.books.filter(function (b) { return b.derivedNotes > 0; }).length;
-  var rate = bc.books.length ? Math.round((mined / bc.books.length) * 100) : 0;
-  [["책", bc.books.length], ["로우 데이터", bc.rawTotal],
-   ["원본장치 지도", bc.deviceMapTotal], ["창작 전환율", rate + "%"]].forEach(function (s) {
-    var item = el("div", "strip-item");
-    item.appendChild(el("div", "tags", s[0]));
-    item.appendChild(el("div", null, String(s[1])));
-    $("bc-summary").appendChild(item);
-  });
+  $("bc-summary").textContent =
+    "함께 읽은 " + bc.books.length + "권 가운데 " + mined + "권이 글감이 되었습니다. " +
+    "모임의 기록 " + bc.rawTotal + "편, 원본에서 캐낸 장치 지도 " + bc.deviceMapTotal + "권.";
+
   bc.books.forEach(function (b) {
-    var card = el("div", "card book-card" + (b.derivedNotes ? "" : " unmined"));
-    var title = el("div");
+    var card = el("div", "book-card" + (b.derivedNotes ? "" : " unmined"));
+    var title = el("div", "book-title");
     title.appendChild(noteEl(b.title, b.cardPath));
-    if (b.stars) title.appendChild(el("span", "star", " ★" + b.stars));
+    if (b.stars) title.appendChild(el("span", "star-quiet", " ★" + b.stars));
     card.appendChild(title);
     card.appendChild(el("div", "tags",
-      "글감 " + b.derivedNotes + (b.lineages.length ? " · " + b.lineages.join(", ") : "")));
+      b.derivedNotes
+        ? "글감 " + b.derivedNotes + (b.lineages.length ? " · " + b.lineages.join(", ") : "")
+        : "아직 채굴 전"));
     $("bc-shelf").appendChild(card);
   });
+
   var top = bc.books.slice(0, 10).filter(function (b) { return b.derivedNotes > 0; });
   var maxD = Math.max.apply(null, top.map(function (b) { return b.derivedNotes; }).concat([1]));
   top.forEach(function (b) {

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-04T21:45:00+09:00",
+  "title": "Design System: Vault 대시보드",
+  "extensions": {
+    "colorMeta": {
+      "stage-dark": { "role": "neutral", "displayName": "객석 소등", "canonical": "#14161a", "tonalRamp": ["#0a0b0d", "#14161a", "#1d2026", "#2c3038", "#454b55", "#6b7280", "#9aa0a8", "#d5d8dc"] },
+      "backstage-panel": { "role": "neutral", "displayName": "무대 뒤 패널", "canonical": "#1d2026", "tonalRamp": ["#0e1013", "#16181c", "#1d2026", "#272b31", "#3a404a", "#5a6270", "#8b93a0", "#c9cdd4"] },
+      "chalk-line": { "role": "neutral", "displayName": "분필 괘선", "canonical": "#2c3038", "tonalRamp": ["#121418", "#1c1f24", "#2c3038", "#3d434e", "#565e6c", "#78818f", "#a2a9b4", "#d2d6dc"] },
+      "script-ink": { "role": "neutral", "displayName": "원고 잉크", "canonical": "#e6e6e3", "tonalRamp": ["#3a3a38", "#565654", "#757572", "#949491", "#b3b3b0", "#cfcfcc", "#e6e6e3", "#f7f7f5"] },
+      "stage-whisper": { "role": "neutral", "displayName": "무대 속삭임", "canonical": "#9aa0a8", "tonalRamp": ["#23262b", "#383d44", "#51575f", "#6b727c", "#858c96", "#9aa0a8", "#bfc4ca", "#e2e4e8"] },
+      "dust": { "role": "neutral", "displayName": "먼지", "canonical": "#6b7280", "tonalRamp": ["#181b20", "#2a2e36", "#3f444e", "#555b66", "#6b7280", "#8a909c", "#adb2bc", "#d6d9de"] },
+      "pinspot-amber": { "role": "primary", "displayName": "핀스포트 앰버", "canonical": "#d4a73f", "tonalRamp": ["#3a2c0c", "#5c4614", "#7f611e", "#a37f2b", "#d4a73f", "#e0bc66", "#ecd394", "#f7ecc9"] },
+      "exit-green": { "role": "secondary", "displayName": "비상구 초록", "canonical": "#4f9d69", "tonalRamp": ["#122619", "#1e3f2a", "#2c5c3d", "#3c7b51", "#4f9d69", "#72b488", "#9fceae", "#d0e8d8"] },
+      "cue-yellow": { "role": "tertiary", "displayName": "큐 옐로", "canonical": "#e0b64a", "tonalRamp": ["#3d300e", "#604c18", "#856a23", "#b28e33", "#e0b64a", "#e8c771", "#f0da9d", "#f8eecb"] },
+      "fire-curtain-red": { "role": "tertiary", "displayName": "방화막 레드", "canonical": "#c05b4d", "tonalRamp": ["#331512", "#54241e", "#78352c", "#9c473c", "#c05b4d", "#d07f73", "#e0a89f", "#f0d3ce"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "페이지 제목 단 한 곳." },
+      "title": { "displayName": "Title", "purpose": "섹션 제목 — 밝기가 아니라 위치와 여백으로 구획." },
+      "body": { "displayName": "Body", "purpose": "본문·카드 제목·표 셀. word-break: keep-all 필수." },
+      "label": { "displayName": "Label", "purpose": "태그·시각·집계 수치. tabular-nums." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-standard", "value": "ease-out", "purpose": "상태 전환 기본. 현재 모션 최소 — 추가 시 ease-out-quart 계열, reduced-motion 대응 필수." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "탭 버튼",
+      "kind": "button",
+      "refersTo": "tab-button",
+      "description": "창작/독서모임 전환. 활성 시 텍스트가 잉크로, 괘선이 핀스포트로.",
+      "html": "<span><button class=\"ds-tab\">창작</button><button class=\"ds-tab ds-tab-active\">독서모임</button></span>",
+      "css": ".ds-tab { background: var(--panel, #1d2026); color: var(--muted, #9aa0a8); border: 1px solid var(--line, #2c3038); padding: 6px 18px; cursor: pointer; font: inherit; word-break: keep-all; transition: color .15s ease-out, border-color .15s ease-out; } .ds-tab:hover { border-color: var(--muted, #9aa0a8); } .ds-tab:focus-visible { outline: 1px solid var(--star, #d4a73f); outline-offset: 2px; } .ds-tab-active { color: var(--text, #e6e6e3); border-color: var(--star, #d4a73f); }"
+    },
+    {
+      "name": "오늘의 한 걸음 (히어로)",
+      "kind": "custom",
+      "refersTo": "next-hero",
+      "description": "화면이 존재하는 이유 — 앰버 라벨 + 22px 문장. 핀스포트가 닿는 첫 자리.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-hero-label\">오늘의 한 걸음</div><div class=\"ds-hero-sentence\">서가의 새 원고 393편이 트리아지를 기다립니다</div></div>",
+      "css": ".ds-hero-label { color: var(--star, #d4a73f); font-size: 13px; margin-bottom: 6px; } .ds-hero-sentence { color: var(--text, #e6e6e3); font-size: 22px; font-weight: 600; line-height: 1.45; word-break: keep-all; }"
+    },
+    {
+      "name": "스텝 칩",
+      "kind": "chip",
+      "refersTo": "step-chip",
+      "description": "사이클 단계 표시. 완료 시 비상구 초록 괘선.",
+      "html": "<span><span class=\"ds-step ds-step-done\">3단계 계열 지도</span> <span class=\"ds-step\">1단계 트리아지</span></span>",
+      "css": ".ds-step { display: inline-block; padding: 6px 14px; border: 1px solid var(--line, #2c3038); border-radius: 20px; color: var(--muted, #9aa0a8); font-size: 15px; word-break: keep-all; } .ds-step-done { border-color: var(--ok, #4f9d69); color: var(--text, #e6e6e3); }"
+    },
+    {
+      "name": "칸반 카드",
+      "kind": "card",
+      "refersTo": "kanban-card",
+      "description": "집필 파이프라인의 원고 카드. ★는 핀스포트 앰버.",
+      "html": "<div class=\"ds-kcard\"><span class=\"ds-kcard-star\">★ </span>출처 확인 중인 위로<div class=\"ds-kcard-tag\">진짜/출처</div></div>",
+      "css": ".ds-kcard { background: var(--bg, #14161a); border: 1px solid var(--line, #2c3038); border-radius: 4px; padding: 6px 8px; font-size: 13px; color: var(--text, #e6e6e3); word-break: keep-all; max-width: 220px; } .ds-kcard-star { color: var(--star, #d4a73f); } .ds-kcard-tag { color: var(--muted, #9aa0a8); font-size: 12px; margin-top: 2px; }"
+    },
+    {
+      "name": "병합 칩",
+      "kind": "chip",
+      "refersTo": "merger-chip",
+      "description": "병합 후보 A~L. 다음 행동은 툴팁으로.",
+      "html": "<span class=\"ds-merger\" title=\"재해석 후 2부 구조 설계\">H 공동 수리 극</span>",
+      "css": ".ds-merger { display: inline-block; border: 1px solid var(--line, #2c3038); border-radius: 14px; padding: 3px 10px; font-size: 12px; color: var(--muted, #9aa0a8); cursor: help; word-break: keep-all; } .ds-merger:hover { border-color: var(--muted, #9aa0a8); }"
+    },
+    {
+      "name": "서가 카드",
+      "kind": "card",
+      "refersTo": "book-card",
+      "description": "독서모임 탭의 책 한 권. 미채굴은 먼지 앉은 책등(opacity .55).",
+      "html": "<div class=\"ds-book\"><div>혼모노 <span class=\"ds-book-star\">★5</span></div><div class=\"ds-book-tags\">글감 17 · 진짜/출처, 공동체-명단</div></div>",
+      "css": ".ds-book { background: var(--panel, #1d2026); border: 1px solid var(--line, #2c3038); border-radius: 6px; padding: 10px 12px; color: var(--text, #e6e6e3); font-size: 15px; word-break: keep-all; max-width: 240px; } .ds-book-star { color: var(--star, #d4a73f); } .ds-book-tags { color: var(--muted, #9aa0a8); font-size: 12px; margin-top: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "무대 뒤 작업실",
+    "overview": "공연 전, 객석의 불이 꺼진 극장의 무대 뒤. 대본 더미와 소품 상자, 벽에 붙은 큐시트, 그리고 작업등 하나. 이 대시보드는 극작가가 자기 작업의 무대 뒤를 둘러보는 화면이다 — 배경은 '다크 모드'가 아니라 객석 소등이고, 강조색은 '액센트 컬러'가 아니라 핀스포트 불빛이다. 빛은 귀하고, 귀해서 의미가 있다. 이 시스템이 거부하는 것: SaaS 관리자 패널, 생산성 앱의 할 일 압박, 차가운 개발자 툴. 데이터는 지표가 아니라 원고 더미이며, 숫자는 성과가 아니라 서가의 두께다.",
+    "keyCharacteristics": [
+      "객석 소등 위의 정갈한 원고 카드 — 완전 평면, 잉크와 괘선의 세계",
+      "핀스포트 하나: 앰버는 유망★와 '다음 할 일'에만 닿는다",
+      "한국어 활자 존중: word-break: keep-all, 숫자는 tabular-nums",
+      "재촉하지 않는 화면: 경고색은 파서가 실제로 깨졌을 때만"
+    ],
+    "rules": [
+      { "name": "핀스포트 규칙", "body": "앰버는 한 화면에서 정확히 세 곳: '오늘의 한 걸음' 라벨, 무대 근처(조립·개작) ★, 포커스 링. 나머지 ★는 무대 속삭임 톤. 모든 곳이 스포트라이트면 아무 곳도 아니다.", "section": "colors" },
+      { "name": "방화막 규칙", "body": "방화막 레드는 시스템 고장(파서 파손) 단 하나의 신호다. 상태 표시에 빨강 금지 — 이 화면은 재촉하지 않는다.", "section": "colors" },
+      { "name": "원고 존중 규칙", "body": "모든 한국어 텍스트는 word-break: keep-all — 어절 중간에서 꺾인 제목은 원고에 대한 무례다. 수치 열은 tabular-nums.", "section": "typography" },
+      { "name": "잉크와 괘선 규칙", "body": "box-shadow는 이 코드베이스에 존재하지 않는다. 깊이는 면 색차, 구분은 1px 분필 괘선. 예외 없음.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do 앰버를 아껴라 — 핀스포트 규칙: 유망★와 '다음 할 일'에만, 화면의 10% 이하 (#d4a73f).",
+      "Do 모든 한국어에 word-break: keep-all, 모든 수치 열에 tabular-nums.",
+      "Do 깊이는 면 색차(#14161a → #1d2026)와 1px 괘선(#2c3038)으로만.",
+      "Do 본문 대비 4.5:1 이상 — 먼지(#6b7280)는 짧은 표식 전용.",
+      "Do 빈 상태에도 문장을 — 침묵하되 무뚝뚝하지 않게.",
+      "Do prefers-reduced-motion: reduce에서 모든 전환을 즉시 전환으로."
+    ],
+    "donts": [
+      "Don't 'SaaS 관리자 패널'이 되지 마라: 큰 숫자 KPI 히어로, 그라데이션 액센트, 동일 카드 무한 그리드 금지.",
+      "Don't '생산성 앱 느낌'을 들이지 마라: 체크박스, 진행률 게이지, 스트릭·배지·'오늘의 목표' 금지.",
+      "Don't '차가운 개발자 툴'로 기울지 마라: 모노스페이스 도배, 터미널 초록, 네온 금지.",
+      "Don't box-shadow, 글래스모피즘, 그라데이션 텍스트 — 잉크와 괘선 규칙 위반.",
+      "Don't 1px 초과의 한쪽 측면 컬러 스트라이프 — 괘선은 전 방향이다.",
+      "Don't 방화막 레드를 상태 표시에 쓰지 마라 — 파서 파손 배너 단 하나의 용도.",
+      "Don't 데이터를 이기는 그래픽 — 차트는 CSS로 그린 조명이지, 화면의 주인공이 아니다."
+    ]
+  }
+}

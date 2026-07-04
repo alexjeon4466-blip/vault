@@ -1,9 +1,9 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-04 22:05",
+  "generated": "2026-07-04 22:13",
   "vaultName": "vault",
   "nextActions": [
     {
-      "text": "다음 트리아지 사이클 돌릴 때 (393편 대기)",
+      "text": "서가의 새 원고 393편이 트리아지를 기다립니다",
       "link": null
     },
     {

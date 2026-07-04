@@ -396,7 +396,7 @@ def compute_unscored(vault_root, twins, entries, excluded):
 def compute_next_actions(unscored, lineages, cards):
     acts = []
     if len(unscored) >= 10:
-        acts.append({"text": "다음 트리아지 사이클 돌릴 때 (%d편 대기)" % len(unscored), "link": None})
+        acts.append({"text": "서가의 새 원고 %d편이 트리아지를 기다립니다" % len(unscored), "link": None})
     for lin in lineages:
         if len(acts) >= 3:
             break
