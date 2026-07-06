@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-05 23:50",
+  "generated": "2026-07-06 23:27",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -896,6 +896,12 @@ window.VAULT_DATA = {
           "lineage": "공동체 실패 — 타인",
           "star": true,
           "link": "wiki/writing/draft-candidates/47번_재호출"
+        },
+        {
+          "title": "그늘은 예약할 수 없습니다",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다"
         }
       ],
       "조립": [
@@ -1074,11 +1080,11 @@ window.VAULT_DATA = {
     {
       "name": "자리/환대",
       "annotation": null,
-      "carrier": "이 의자는 누구 거예요?",
+      "carrier": "그늘은 예약할 수 없습니다",
       "stars": 3,
-      "members": 3,
+      "members": 4,
       "parts": 1,
-      "state": "설계"
+      "state": "대기"
     },
     {
       "name": "기록 — 보정 체인",
