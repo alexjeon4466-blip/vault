@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-06 23:27",
+  "generated": "2026-07-06 23:36",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -16,10 +16,10 @@ window.VAULT_DATA = {
     }
   ],
   "bridge": {
-    "book": "서사의위기",
-    "work": "자연스럽게 고쳐 드렸습니다",
-    "link": "wiki/writing/notes/자연스럽게_고쳐_드렸습니다",
-    "phrase": "이제 막 설계에 들어갔습니다"
+    "book": "사람장소환대",
+    "work": "그늘은 예약할 수 없습니다",
+    "link": "wiki/writing/notes/그늘은_예약할_수_없습니다",
+    "phrase": "무대로 향합니다"
   },
   "bookclub": {
     "rawTotal": 339,
@@ -896,12 +896,6 @@ window.VAULT_DATA = {
           "lineage": "공동체 실패 — 타인",
           "star": true,
           "link": "wiki/writing/draft-candidates/47번_재호출"
-        },
-        {
-          "title": "그늘은 예약할 수 없습니다",
-          "lineage": "자리/환대",
-          "star": true,
-          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다"
         }
       ],
       "조립": [
@@ -910,6 +904,12 @@ window.VAULT_DATA = {
           "lineage": "기록 — 유류품/애도",
           "star": true,
           "link": "wiki/writing/draft-candidates/폐기_전_확인_초고후보"
+        },
+        {
+          "title": "그늘은 예약할 수 없습니다",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다"
         }
       ],
       "개작": [
@@ -1084,7 +1084,7 @@ window.VAULT_DATA = {
       "stars": 3,
       "members": 4,
       "parts": 1,
-      "state": "대기"
+      "state": "조립"
     },
     {
       "name": "기록 — 보정 체인",
