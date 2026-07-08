@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-08 22:47",
+  "generated": "2026-07-08 22:54",
   "vaultName": "compassionate-perlman-7806a1",
   "nextActions": [
     {
@@ -770,6 +770,36 @@ window.VAULT_DATA = {
           "link": null
         },
         {
+          "title": "아직까지는 영혼의 선장입니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
+          "title": "운전자는 내가 될 겁니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
+          "title": "죽음에 동의하지 않겠습니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
+          "title": "관청의 일을 떠맡지 않겠습니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
+          "title": "모욕에 동의하라는 절차",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
           "title": "보통 인간 연수에 참석했습니다",
           "lineage": "신설 계열 등록",
           "star": true,
@@ -1000,6 +1030,15 @@ window.VAULT_DATA = {
       "stars": 16,
       "members": 45,
       "parts": 18,
+      "state": "설계"
+    },
+    {
+      "name": "서명칸 계보",
+      "annotation": "횡단 발견 — 사이클 2~3",
+      "carrier": "만장일치가 아니면 가지 않습니다",
+      "stars": 5,
+      "members": 6,
+      "parts": 0,
       "state": "설계"
     },
     {
@@ -1329,15 +1368,6 @@ window.VAULT_DATA = {
     {
       "name": "사죄/구원/늦은 말",
       "annotation": null,
-      "carrier": null,
-      "stars": 0,
-      "members": 0,
-      "parts": 0,
-      "state": "설계"
-    },
-    {
-      "name": "서명칸 계보",
-      "annotation": "횡단 발견 — 사이클 2~3",
       "carrier": null,
       "stars": 0,
       "members": 0,
