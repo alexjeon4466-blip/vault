@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-08 23:01",
+  "generated": "2026-07-08 23:26",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -790,12 +790,6 @@ window.VAULT_DATA = {
           "link": null
         },
         {
-          "title": "운전자는 내가 될 겁니다",
-          "lineage": "서명칸 계보",
-          "star": true,
-          "link": null
-        },
-        {
           "title": "죽음에 동의하지 않겠습니다",
           "lineage": "서명칸 계보",
           "star": true,
@@ -931,6 +925,12 @@ window.VAULT_DATA = {
         },
         {
           "title": "아직까지는 영혼의 선장입니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
+        },
+        {
+          "title": "운전자는 내가 될 겁니다",
           "lineage": "서명칸 계보",
           "star": true,
           "link": null
