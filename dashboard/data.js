@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-08 22:41",
+  "generated": "2026-07-08 23:01",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -790,12 +790,6 @@ window.VAULT_DATA = {
           "link": null
         },
         {
-          "title": "아직까지는 영혼의 선장입니다",
-          "lineage": "서명칸 계보",
-          "star": true,
-          "link": null
-        },
-        {
           "title": "운전자는 내가 될 겁니다",
           "lineage": "서명칸 계보",
           "star": true,
@@ -934,6 +928,12 @@ window.VAULT_DATA = {
           "lineage": "공동체 실패 — 타인",
           "star": true,
           "link": "wiki/writing/draft-candidates/47번_재호출"
+        },
+        {
+          "title": "아직까지는 영혼의 선장입니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
         }
       ],
       "조립": [
