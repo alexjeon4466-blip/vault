@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-06 23:36",
+  "generated": "2026-07-08 22:03",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -19,7 +19,7 @@ window.VAULT_DATA = {
     "book": "사람장소환대",
     "work": "그늘은 예약할 수 없습니다",
     "link": "wiki/writing/notes/그늘은_예약할_수_없습니다",
-    "phrase": "무대로 향합니다"
+    "phrase": "무대에 오르고 있습니다"
   },
   "bookclub": {
     "rawTotal": 339,
@@ -606,6 +606,14 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/거울을_옮기는_사람_반복어_기능감사"
         },
         {
+          "title": "그늘은 예약할 수 없습니다 기능감사",
+          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다_기능감사"
+        },
+        {
+          "title": "그늘은 예약할 수 없습니다 작업체크리스트 2026-07-07",
+          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다_작업체크리스트_2026-07-07"
+        },
+        {
           "title": "믿어야 보통이 됩니까",
           "link": "wiki/writing/notes/믿어야_보통이_됩니까"
         },
@@ -904,12 +912,6 @@ window.VAULT_DATA = {
           "lineage": "기록 — 유류품/애도",
           "star": true,
           "link": "wiki/writing/draft-candidates/폐기_전_확인_초고후보"
-        },
-        {
-          "title": "그늘은 예약할 수 없습니다",
-          "lineage": "자리/환대",
-          "star": true,
-          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다"
         }
       ],
       "개작": [
@@ -918,6 +920,12 @@ window.VAULT_DATA = {
           "lineage": "기록 — 관계자격",
           "star": true,
           "link": "wiki/writing/draft-candidates/수정된_보호자"
+        },
+        {
+          "title": "그늘은 예약할 수 없습니다",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다"
         }
       ]
     },
@@ -1084,7 +1092,7 @@ window.VAULT_DATA = {
       "stars": 3,
       "members": 4,
       "parts": 1,
-      "state": "조립"
+      "state": "개작"
     },
     {
       "name": "기록 — 보정 체인",
