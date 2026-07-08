@@ -1,6 +1,6 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-08 22:03",
-  "vaultName": "vault",
+  "generated": "2026-07-08 22:47",
+  "vaultName": "compassionate-perlman-7806a1",
   "nextActions": [
     {
       "text": "『수정된 보호자』 개작을 이어서",
@@ -602,18 +602,6 @@ window.VAULT_DATA = {
       "scored": 970,
       "unscoredFiles": [
         {
-          "title": "거울을 옮기는 사람 반복어 기능감사",
-          "link": "wiki/writing/notes/거울을_옮기는_사람_반복어_기능감사"
-        },
-        {
-          "title": "그늘은 예약할 수 없습니다 기능감사",
-          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다_기능감사"
-        },
-        {
-          "title": "그늘은 예약할 수 없습니다 작업체크리스트 2026-07-07",
-          "link": "wiki/writing/notes/그늘은_예약할_수_없습니다_작업체크리스트_2026-07-07"
-        },
-        {
           "title": "믿어야 보통이 됩니까",
           "link": "wiki/writing/notes/믿어야_보통이_됩니까"
         },
@@ -624,14 +612,6 @@ window.VAULT_DATA = {
         {
           "title": "판정자는 자리에 없습니다",
           "link": "wiki/writing/notes/판정자는_자리에_없습니다"
-        },
-        {
-          "title": "히라타 오리자 연극입문 1-3장 요약과 적용",
-          "link": "wiki/writing/notes/히라타_오리자_연극입문_1-3장_요약과_적용"
-        },
-        {
-          "title": "히라타 오리자식 극작 체크리스트",
-          "link": "wiki/writing/notes/히라타_오리자식_극작_체크리스트"
         }
       ]
     }

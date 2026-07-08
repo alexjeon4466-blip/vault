@@ -332,6 +332,29 @@ class TestBooks(unittest.TestCase):
             self.assertEqual(by_title["궤도"]["derivedNotes"], 0)  # 미채굴
 
 
+class TestToolNote(unittest.TestCase):
+    def test_suffix_types_are_tools(self):
+        # writing-note로 위장한 진단/도구 문서 — 파일명 접미로 걸러야 한다
+        self.assertTrue(g.is_tool_note("그늘은_예약할_수_없습니다_기능감사"))
+        self.assertTrue(g.is_tool_note("거울을_옮기는_사람_반복어_기능감사"))
+        # 접미 뒤에 날짜가 붙어도 잡는다
+        self.assertTrue(g.is_tool_note("그늘은_예약할_수_없습니다_작업체크리스트_2026-07-07"))
+        self.assertTrue(g.is_tool_note("거울을_옮기는_사람_현재판_평가_2026-07-02"))
+        for suffix in ("퇴고표", "맵", "어휘표", "물성표"):
+            self.assertTrue(g.is_tool_note("아무_원고_" + suffix), suffix)
+
+    def test_type_gate(self):
+        # 파일명이 도구 접미가 아니어도 type이 도구류면 제외
+        self.assertTrue(g.is_tool_note("거울을_옮기는_사람_현재판", "writing-evaluation"))
+        self.assertTrue(g.is_tool_note("거울을_옮기는_사람_체크", "writing-checklist"))
+
+    def test_real_notes_are_not_tools(self):
+        # 질문형 글감·기법 노트는 도구가 아니다 (접미가 부분일치해도 세그먼트로만 판단)
+        self.assertFalse(g.is_tool_note("믿어야_보통이_됩니까", "writing-note"))
+        self.assertFalse(g.is_tool_note("판정자는_자리에_없습니다", "writing-note"))
+        self.assertFalse(g.is_tool_note("맵을_그리는_사람", "writing-note"))   # '맵'이 접두여도 아님
+
+
 class TestUnscoredAndActions(unittest.TestCase):
     def test_unscored(self):
         tmp, root = make_vault({
@@ -346,6 +369,24 @@ class TestUnscoredAndActions(unittest.TestCase):
                                    excluded={"수많은_일인칭"})
             titles = [x["title"] for x in r]
             self.assertEqual(titles, ["새 글감"])   # 쌍둥이·제외·지도 자신 전부 빠짐, 표시명은 공백
+
+    def test_unscored_excludes_tool_docs(self):
+        # 회귀: type: writing-note로 위장한 진단/도구 문서가 미채점 글감으로 세어지면 안 됨
+        tmp, root = make_vault({
+            "wiki/writing/notes/그늘은_예약할_수_없습니다.md": "---\ntype: writing-note\n---\n# 글감\n",
+            "wiki/writing/notes/그늘은_예약할_수_없습니다_기능감사.md":
+                "---\ntype: writing-note\n---\n# 기능 감사\n",
+            "wiki/writing/notes/그늘은_예약할_수_없습니다_작업체크리스트_2026-07-07.md":
+                "---\ntype: writing-note\n---\n# 작업 체크리스트\n",
+            "wiki/writing/notes/그늘은_예약할_수_없습니다_현재판_평가_2026-07-07.md":
+                "---\ntype: writing-evaluation\n---\n# 현재판 평가\n",
+            "wiki/writing/notes/거울을_옮기는_사람_반복어_기능감사.md":
+                "---\ntype: writing-note\n---\n# 반복어 기능 감사\n",
+        })
+        with tmp:
+            r = g.compute_unscored(root, twins={}, entries={}, excluded=set())
+            titles = [x["title"] for x in r]
+            self.assertEqual(titles, ["그늘은 예약할 수 없습니다"])   # 도구 문서 4종 전부 제외
 
     def test_next_actions_prioritizes_near_stage(self):
         # 무대에 가장 가까운 원고(개작)가 히어로가 되고, 링크를 가진다

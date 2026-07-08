@@ -375,6 +375,23 @@ def scan_books(vault_root, note_sources, verdict_of):
 
 MAP_SELF = "글감_트리아지_지도"
 
+# 진단·도구 문서 파일명 접미 — 특정 원고의 퇴고 도구지 트리아지할 글감이 아니다.
+# 접미 뒤에 _YYYY-MM-DD 날짜가 붙는 경우(작업체크리스트·현재판_평가)도 잡는다.
+_TOOL_SUFFIXES = ("기능감사", "작업체크리스트", "현재판_평가", "반복어",
+                  "퇴고표", "맵", "어휘표", "물성표")
+# 진단·도구 문서 type. writing-note 이외는 이미 게이트에서 빠지지만 명시적으로 둔다.
+_TOOL_TYPES = {"writing-evaluation", "writing-checklist"}
+_DATE_SUFFIX_RE = re.compile(r'_\d{4}-\d{2}-\d{2}$')
+
+
+def is_tool_note(stem, note_type=None):
+    """진단/도구 문서면 True — 미채점 글감 카운트에서 제외한다.
+    type이 도구류거나, (날짜 접미 제거 후) 파일명이 도구 접미로 끝나면 도구로 본다."""
+    if note_type in _TOOL_TYPES:
+        return True
+    base = _DATE_SUFFIX_RE.sub("", stem)
+    return any(base == s or base.endswith("_" + s) for s in _TOOL_SUFFIXES)
+
 
 def compute_unscored(vault_root, twins, entries, excluded):
     out = []
@@ -387,7 +404,10 @@ def compute_unscored(vault_root, twins, entries, excluded):
             continue
         if stem in twins or stem in entries or stem in excluded:
             continue
-        if parse_frontmatter(read_text(p)).get("type") != "writing-note":
+        note_type = parse_frontmatter(read_text(p)).get("type")
+        if note_type != "writing-note":
+            continue
+        if is_tool_note(stem, note_type):     # writing-note로 위장한 진단/도구 문서 제외
             continue
         out.append({"title": display_title(stem), "link": "wiki/writing/notes/" + stem})
     return out
