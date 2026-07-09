@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-09 23:07",
+  "generated": "2026-07-09 23:12",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -908,12 +908,6 @@ window.VAULT_DATA = {
           "lineage": "서명칸 계보",
           "star": true,
           "link": null
-        },
-        {
-          "title": "죽음에 동의하지 않겠습니다",
-          "lineage": "서명칸 계보",
-          "star": true,
-          "link": null
         }
       ],
       "조립": [
@@ -922,6 +916,12 @@ window.VAULT_DATA = {
           "lineage": "기록 — 유류품/애도",
           "star": true,
           "link": "wiki/writing/draft-candidates/폐기_전_확인_초고후보"
+        },
+        {
+          "title": "죽음에 동의하지 않겠습니다",
+          "lineage": "서명칸 계보",
+          "star": true,
+          "link": null
         }
       ],
       "개작": [
