@@ -2438,3 +2438,29 @@
 - 연작 진행: 1·2번 대기, 3~6번 설계.
 - 검증 주: 내 산출물(운전자는) 검증 실패 기여 0행. 지표 오염은 병렬 대시보드 worktree 이중 스캔 — 세션 정리 후 0/0/0 재확인 예정.
 - 다음: 3번 「죽음에 동의하지 않겠습니다」 B 또는 대기작 C1. 백업: 로컬 커밋만.
+
+## [2026-07-08] update | Inbox·Decision note·Weekly Review 운영 규칙 반영
+
+- 생성: `wiki/_inbox/quick-captures/README.md`, `wiki/_inbox/web-clips/README.md`, `wiki/_inbox/raw-ideas/README.md`, `wiki/_inbox/to-triage/README.md`.
+- 생성: `wiki/writing/decisions/README.md`, `wiki/bookclub/decisions/README.md`, `wiki/shared/reviews/weekly/README.md`.
+- 갱신: `SCHEMA.md`, `AGENTS.md`, `index.md`, `_templates/inbox-capture-v2.md`, `_templates/web-clip-capture-v2.md`, `_templates/decision-note-v2.md`, `_templates/weekly-review-v2.md`, `wiki/_inbox/README.md`, `wiki/shared/decisions/README.md`, `wiki/shared/reviews/README.md`, `wiki/shared/maps/인박스_결정_주간리뷰_수집루트_운영원칙.md`.
+- 핵심 변경: Inbox는 보관소가 아니라 임시 대기실, Decision note는 반복 논쟁을 줄이는 판단 압축본, Weekly Review는 log의 주간 작업 판단 압축본으로 규정했다. 승격 규칙을 추가해 Inbox/log/review/decision이 질문형 노트·창작 노트·지도·결정 노트·폐기로 이어지게 했다.
+- 커밋/푸시는 하지 않았다.
+
+## [2026-07-08] create | Inbox·Decision note·Weekly Review 도입 결정 위키화
+
+- 생성: `wiki/shared/decisions/인박스_결정노트_주간리뷰_도입.md`.
+- 갱신: `index.md`, `wiki/shared/maps/인박스_결정_주간리뷰_수집루트_운영원칙.md`.
+- 핵심 변경: Inbox/Decision note/Weekly Review 구조를 왜 도입했는지, 왜 top-level `00 Inbox`와 회사식 `08 Decisions`를 버렸는지, 어떤 조건에서 재검토할지를 decision-note로 분리했다.
+- 커밋/푸시는 하지 않았다.
+
+## [2026-07-07] cycle-B | 서명칸 계보 3번 「죽음에 동의하지 않겠습니다」 B 완주 → 대기
+
+- B1 소집: 연작 3편, 연작공통 상속(물려받기="거짓으로 채운 칸", 넘기기="비워둔 칸·미서명도 진행", 톤 고요한 단단함, 펜 뚜껑 닫힌 채).
+- **민감 소재 판단(사용자 동의)**: 특정 참사·실존 제도 무관 → 가상화 확정 문서 불요, 톤 관리로 충분. **수위 상향 확정(사용자): 죽음을 정면으로, 완곡어·감상 금지, 담담함이 수위를 올리는 방법.** A는 죽음이 임박·확정된 당사자.
+- B2 구조 맵: 사후 처리 상담 창구 — 사실은 인정하되 동의란에 서명 거부. 장 경계=동의 확보 시도의 경로 변화(직접→필요 설명→대리 안내→무서명 진행 통보→마감). 조르바의 창틀(3장 대리 저지). "서명 안 하셔도 처리는 진행됩니다"(4장)가 잔혹의 핵. 인정≠동의를 서식이 물성으로 증명(사실란 참, 동의란 빔). 결말 후보 3(미서명 완료/창틀/대리 거부).
+- B3 어휘표: "그건 압니다"(사실 인정)와 "그래도 서명 안 합니다"(동의 거부)의 분리 / "곧 죽어요. 압니다"가 수위 기준점 / 완곡어·신파 금칙. 물성표 조건부 생략(4번째).
+- B4 게이트: 맵 검증형 8축 + 연작공통 정합 전축 ○ → 대기 승격. 계열 지도 3번 상태 설계→대기.
+- 연작 진행: 1·2·3번 대기, 4~6번 설계.
+- 대시보드: 미채점 3으로 정상화(머지된 3d149b6 진단문서 제외 fix 반영). 내 산출물 검증 기여 0(worktree 노이즈만 잔존).
+- 다음: 4번 「관청의 일을 떠맡지 않겠습니다」 B 또는 대기작 C1. 백업: 로컬 커밋만.
