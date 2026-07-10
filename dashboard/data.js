@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-10 00:34",
+  "generated": "2026-07-10 21:19",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -3924,6 +3924,14 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "큰 불편은 없습니다",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/draft-candidates/큰_불편은_없습니다_단막후보_맵",
+          "role": "신규 뉴스 채집 운반체",
+          "note": null
+        },
+        {
           "title": "아직까지는 영혼의 선장입니다",
           "lineage": "서명칸 계보",
           "star": true,
@@ -4116,6 +4124,15 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
+      "name": "자리/환대",
+      "annotation": null,
+      "carrier": "큰 불편은 없습니다",
+      "stars": 4,
+      "members": 5,
+      "parts": 1,
+      "state": "대기"
+    },
+    {
       "name": "공동체 실패 — 타인",
       "annotation": null,
       "carrier": "47번 재호출",
@@ -4141,15 +4158,6 @@ window.VAULT_DATA = {
       "members": 3,
       "parts": 0,
       "state": "설계"
-    },
-    {
-      "name": "자리/환대",
-      "annotation": null,
-      "carrier": "그늘은 예약할 수 없습니다",
-      "stars": 3,
-      "members": 4,
-      "parts": 1,
-      "state": "개작"
     },
     {
       "name": "기록 — 보정 체인",
