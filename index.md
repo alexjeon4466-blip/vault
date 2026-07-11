@@ -21,6 +21,10 @@
 - [[wiki/_inbox/README|Inbox 운영]] — `quick-captures`, `web-clips`, `raw-ideas`, `to-triage`로 받는 임시 승격 대기실.
 - [[wiki/shared/decisions/README|Decision note 운영]] — 반복 논쟁을 줄이는 공통 결정 기록 폴더.
 - [[wiki/writing/decisions/README|writing decisions 운영]] — 희곡/집필/퇴고/투고 결정 기록 폴더.
+- [[wiki/writing/decisions/희곡_교리와_스킬_정합화_설계|희곡 교리와 스킬 정합화 설계]] — 복수 형식 교리원과 글감 채집·극작·위키 운영 스킬 3종의 책임 경계를 정한 결정.
+- [[wiki/writing/decisions/희곡_교리와_스킬_정합화_실행계획|희곡 교리와 스킬 정합화 실행계획]] — 백업부터 교리 5종·스킬 3종·정적 검사·세 계보 행동 시험까지 Task 0–10 완료 상태와 검증 단위를 기록한 계획.
+- [[wiki/writing/decisions/희곡_교리와_스킬_정합화_체크포인트_2026-07-11|희곡 교리와 스킬 정합화 — Task 0–10 완료 체크포인트]] — 최종 아키텍처, 고정 비강제 원칙, 검증 수치, 기존 부채, Git 안전선.
+- [[wiki/writing/decisions/희곡_교리와_스킬_정합화_통합_행동시험_2026-07-11|희곡 교리와 스킬 정합화 — 세 글감 통합 행동 시험]] — `큰 불편`·`그늘`·`서명칸`에서 보호 핵심·복수 형식·선택·B2·개작 계약이 서로 다른 결론을 내는지 확인한 시험.
 - [[wiki/bookclub/decisions/README|bookclub decisions 운영]] — 책모임/강독/비교 강의 결정 기록 폴더.
 - [[wiki/shared/reviews/README|Weekly Review 운영]] — `log.md`와 별개로 남은 질문·새 연결·다음 초점을 압축하는 리뷰 폴더.
 - [[wiki/shared/reviews/weekly/README|weekly 운영]] — 주간 리뷰 파일 위치.
