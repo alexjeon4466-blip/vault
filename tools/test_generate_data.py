@@ -454,5 +454,134 @@ class TestWriter(unittest.TestCase):
             self.assertNotIn(b"\r", raw)   # Windows CRLF 번역 방지 (newline="")
 
 
+class TestBookclubReading(unittest.TestCase):
+    def test_scan_bookclub_reading_metrics(self):
+        tmp, root = make_vault({
+            "wiki/bookclub/books/편의점인간/00_책카드.md": (
+                "---\ntype: book-card\n---\n# 편의점 인간\n\n## 한 줄 핵심\n> 정상성 / 견본 / 기능 자리\n\n"
+                "[[wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가]]\n"
+                "[[wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가]]\n"
+                "[[wiki/writing/notes/환대는_기능_자리가_아닙니다]]\n"
+            ),
+            "wiki/bookclub/books/편의점인간/01_죽은_새.md": "---\ntype: close-reading-note\n---\n# 죽은 새\n",
+            "wiki/bookclub/books/편의점인간/02_몸이_약해서.md": "---\ntype: close-reading-note\n---\n# 몸이 약해서\n",
+            "wiki/bookclub/books/코뿔소/00_책카드.md": "---\ntype: book-card\n---\n# 코뿔소\n",
+            "wiki/bookclub/lectures/편의점인간과_코뿔소_보통인간과_동조의언어.md": "---\ntype: lecture-script\n---\n# 비교\n",
+        })
+        with tmp:
+            bookclub = {"books": [{"title": "편의점인간", "cardPath": "wiki/bookclub/books/편의점인간/00_책카드", "derivedNotes": 7},
+                                  {"title": "코뿔소", "cardPath": "wiki/bookclub/books/코뿔소/00_책카드", "derivedNotes": 1}]}
+            reading = g.scan_bookclub_reading(root, bookclub, [])
+            book = [b for b in reading["books"] if b["title"] == "편의점인간"][0]
+            self.assertEqual(book["axis"], "정상성 / 견본 / 기능 자리")
+            self.assertEqual(book["closeReadings"], 2)
+            self.assertEqual(book["questionLinks"], 2)
+            self.assertEqual(book["lectureLinks"], 1)
+            self.assertEqual(book["writingLinks"], 1)
+            self.assertEqual(book["derivedNotes"], 7)
+            self.assertGreater(book["readingScore"], book["derivedNotes"])
+
+    def test_extract_axis_skips_tables_and_list_numbers(self):
+        # 강의 노트: 핵심 섹션이 표로 시작하면 표 행이 아니라 다음 문장을 축으로
+        lecture = ("# 강의\n\n## 핵심 비교\n\n"
+                   "| 축 | 『1984』 | 『서사의 위기』 |\n|---|---|---|\n"
+                   "| 정보 | 독점 | 과잉 |\n\n"
+                   "정보 독점과 정보 과잉은 같은 침묵을 만든다.\n")
+        self.assertEqual(g.extract_axis(lecture), "정보 독점과 정보 과잉은 같은 침묵을 만든다.")
+        # 책카드: 목록 번호·백틱·볼드는 축 문장에 남기지 않는다
+        card = ("# 카드\n\n## 중심 질문\n\n"
+                "1. **`보통 인간`은 타고나는 것인가?**\n")
+        self.assertEqual(g.extract_axis(card), "보통 인간은 타고나는 것인가?")
+        # 표만 있고 문장이 없으면 축 미정
+        only_table = "## 핵심\n\n| a | b |\n|---|---|\n"
+        self.assertEqual(g.extract_axis(only_table), "축 미정")
+
+    def test_reading_cockpit_override_focus(self):
+        tmp, root = make_vault({
+            "dashboard/reading_cockpit.json": '{"focusBook":"편의점인간","question":"정상성/견본 축을 독서모임에서 어떻게 말할까?","nextAction":"10분 해설 압축"}',
+            "wiki/bookclub/books/편의점인간/00_책카드.md": "---\ntype: book-card\n---\n# 편의점 인간\n\n## 한 줄 핵심\n> 정상성 / 견본\n",
+            "wiki/bookclub/books/코뿔소/00_책카드.md": "---\ntype: book-card\n---\n# 코뿔소\n\n## 한 줄 핵심\n> 동조\n",
+        })
+        with tmp:
+            bookclub = {"books": [{"title": "코뿔소", "cardPath": "wiki/bookclub/books/코뿔소/00_책카드", "derivedNotes": 20},
+                                  {"title": "편의점인간", "cardPath": "wiki/bookclub/books/편의점인간/00_책카드", "derivedNotes": 1}]}
+            reading = g.scan_bookclub_reading(root, bookclub, [])
+            self.assertEqual(reading["focus"]["title"], "편의점인간")
+            self.assertEqual(reading["focus"]["centerQuestion"], "정상성/견본 축을 독서모임에서 어떻게 말할까?")
+            self.assertEqual(reading["focus"]["nextAction"], "10분 해설 압축")
+
+
+class TestCockpit(unittest.TestCase):
+    def test_read_cockpit_override(self):
+        tmp, root = make_vault({
+            "dashboard/cockpit.json": '{"primary":"환대는_기능_자리가_아닙니다","secondary":["보통_인간_연수에_참석했습니다"],"question":"지금 사이클 C인가?"}'
+        })
+        with tmp:
+            unparsed = []
+            override = g.read_cockpit_override(root, unparsed)
+            self.assertEqual(override["primary"], "환대는_기능_자리가_아닙니다")
+            self.assertEqual(override["secondary"], ["보통_인간_연수에_참석했습니다"])
+            self.assertEqual(unparsed, [])
+
+    def test_resolve_work_link_falls_back_to_structure_map(self):
+        tmp, root = make_vault({
+            "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵.md": "---\ntype: draft-candidate-map\n---\n# 맵\n",
+            "wiki/writing/notes/환대는_기능_자리가_아닙니다.md": "---\ntype: writing-note\n---\n# 노트\n",
+        })
+        with tmp:
+            self.assertEqual(
+                g.resolve_work_link(root, "환대는 기능 자리가 아닙니다", "환대는_기능_자리가_아닙니다"),
+                "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵",
+            )
+
+    def test_detect_ready_for_c1_and_tone_spike(self):
+        tmp, root = make_vault({
+            "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵.md":
+                "---\ntype: draft-candidate-map\n---\n# 맵\n\n## B4 맵 검증형 재채점\n\n- 판정: **B2 통과 / 대기 후보**\n",
+            "wiki/writing/drafts/보통_인간_연수에_참석했습니다_첫장면.md":
+                "---\ntype: draft-scene\n---\n# 첫 장면\n",
+        })
+        with tmp:
+            ready = g.derive_phase(root, {"title": "환대는 기능 자리가 아닙니다", "state": "설계", "stem": "환대는_기능_자리가_아닙니다"})
+            tone = g.derive_phase(root, {"title": "보통 인간 연수에 참석했습니다", "state": "설계", "stem": "보통_인간_연수에_참석했습니다"})
+            self.assertEqual(ready["phaseKind"], "ready-for-c1")
+            self.assertIn("B4", ready["phaseLabel"])
+            self.assertEqual(tone["phaseKind"], "tone-spike")
+            self.assertIn("톤 확인", tone["phaseLabel"])
+
+    def test_build_cockpit_uses_override_focus(self):
+        tmp, root = make_vault({
+            "dashboard/cockpit.json": '{"primary":"환대는_기능_자리가_아닙니다","secondary":["보통_인간_연수에_참석했습니다"],"question":"지금 사이클 C인가?"}',
+            "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵.md":
+                "---\ntype: draft-candidate-map\n---\n# 맵\n\n## B4 맵 검증형 재채점\n\n- 판정: **B2 통과 / 대기 후보**\n",
+            "wiki/writing/drafts/보통_인간_연수에_참석했습니다_첫장면.md":
+                "---\ntype: draft-scene\n---\n# 첫 장면\n",
+        })
+        with tmp:
+            cards = [
+                {"title": "수정된 보호자", "lineage": "기록", "star": True, "state": "개작", "link": "wiki/writing/x", "stem": "수정된_보호자", "role": "운반체", "note": None},
+                {"title": "환대는 기능 자리가 아닙니다", "lineage": "자리/환대", "star": True, "state": "설계", "link": None, "stem": "환대는_기능_자리가_아닙니다", "role": "운반체 후보", "note": None},
+                {"title": "보통 인간 연수에 참석했습니다", "lineage": "정상성/견본", "star": True, "state": "설계", "link": None, "stem": "보통_인간_연수에_참석했습니다", "role": "독립 가능", "note": None},
+            ]
+            unparsed = []
+            cockpit = g.build_cockpit(root, cards, {"scored": 970, "unscoredFiles": []}, unparsed)
+            self.assertEqual(cockpit["primary"]["title"], "환대는 기능 자리가 아닙니다")
+            self.assertEqual(cockpit["secondary"][0]["title"], "보통 인간 연수에 참석했습니다")
+            self.assertEqual(cockpit["activeQuestion"], "지금 사이클 C인가?")
+            self.assertEqual(unparsed, [])
+            # 계기판은 A/B/C 고도계 — 패널 본문(현재 위치·다음 조작)과 중복되지 않는다
+            labels = [i["label"] for i in cockpit["instruments"]]
+            self.assertEqual(len(labels), 3)
+            self.assertNotIn("다음 조작", labels)
+            self.assertNotIn("현재 위치", labels)
+            values = " ".join(i["value"] for i in cockpit["instruments"])
+            self.assertIn("설계 2", values)      # 환대·보통 (개작 1은 C 계기로)
+            self.assertIn("개작 1", values)
+            # primary가 ready-for-c1(B 구간)이므로 B 계기가 attention
+            by_label = {i["label"]: i for i in cockpit["instruments"]}
+            self.assertEqual(by_label["B 사이클 — 구조"]["status"], "attention")
+            self.assertEqual(by_label["C 사이클 — 원고"]["status"], "standby")
+
+
 if __name__ == "__main__":
     unittest.main()

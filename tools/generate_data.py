@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """vault 스캔 → dashboard/data.js 생성. 쓰기 대상은 OUTPUT 하나뿐."""
+import collections
 import json
 import re
 import sys
@@ -127,10 +128,15 @@ def extract_tables(text):
 def stem_from_cell(cell):
     """글감 셀 → 파일 스템. 위키링크면 타깃 경로의 마지막 조각, _scored 접미사 제거."""
     m = re.search(r'\[\[([^\]|]+)', cell)
-    name = (m.group(1).split("/")[-1] if m else cell.replace("*", "").strip())
+    if m:
+        name = m.group(1).split("/")[-1]
+    else:
+        name = cell.replace("*", "").strip()
+        name = name.split("★", 1)[0]
+        name = re.split(r'\(|（|\s+—\s+', name)[0]
     if name.endswith("_scored"):
         name = name[:-len("_scored")]
-    return name.strip()
+    return name.strip().replace(" ", "_")
 
 
 def _find_col(header, name):
@@ -250,6 +256,156 @@ def _link_from_cell(cell):
     return None
 
 
+def read_cockpit_override(vault_root, unparsed):
+    """dashboard/cockpit.json은 공식 상태가 아니라 현재 조종석 초점 override다."""
+    p = vault_root / "dashboard" / "cockpit.json"
+    if not p.is_file():
+        return {}
+    try:
+        data = json.loads(read_text(p))
+    except Exception as exc:
+        unparsed.append({"file": "dashboard/cockpit.json",
+                         "reason": "cockpit override JSON 파싱 실패: %s" % exc})
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _strip_md(rel):
+    return rel[:-3] if rel.endswith(".md") else rel
+
+
+def resolve_work_link(vault_root, cell, stem):
+    """위키링크가 없는 계열 지도 plain text 항목도 실제 산출물로 연결한다."""
+    direct = _link_from_cell(cell)
+    if direct:
+        return direct
+    candidates = [
+        "wiki/writing/draft-candidates/%s_단막후보_맵.md" % stem,
+        "wiki/writing/draft-candidates/%s_구조맵.md" % stem,
+        "wiki/writing/drafts/%s_첫장면.md" % stem,
+        "wiki/writing/draft-candidates/%s_첫장면_초안.md" % stem,
+        "wiki/writing/notes/%s.md" % stem,
+    ]
+    for rel in candidates:
+        if (vault_root / rel).is_file():
+            return _strip_md(rel)
+    return None
+
+
+def detect_artifacts(vault_root, stem):
+    candidates = [
+        ("B2", "단막 후보 맵", "wiki/writing/draft-candidates/%s_단막후보_맵.md" % stem),
+        ("B2", "구조맵", "wiki/writing/draft-candidates/%s_구조맵.md" % stem),
+        ("C1-tone", "첫 장면", "wiki/writing/drafts/%s_첫장면.md" % stem),
+        ("C1", "장면 초안", "wiki/writing/draft-candidates/%s_첫장면_초안.md" % stem),
+        ("C2", "연결본", "wiki/writing/drafts/%s_1-N장_연결본.md" % stem),
+        ("C2", "1막초고", "wiki/writing/drafts/%s_1막초고.md" % stem),
+    ]
+    out = []
+    for kind, label, rel in candidates:
+        p = vault_root / rel
+        if p.is_file():
+            out.append({"kind": kind, "label": label, "link": _strip_md(rel)})
+    return out
+
+
+def _has_b4_pass(vault_root, artifacts):
+    for a in artifacts:
+        if a["kind"] != "B2":
+            continue
+        p = vault_root / (a["link"] + ".md")
+        text = read_text(p) if p.is_file() else ""
+        if "B4 맵 검증형 재채점" in text and ("B2 통과" in text or "C1 진입" in text):
+            return True
+    return False
+
+
+def derive_phase(vault_root, card):
+    artifacts = detect_artifacts(vault_root, card.get("stem") or card["title"].replace(" ", "_"))
+    kinds = {a["kind"] for a in artifacts}
+    state = card.get("state") or card.get("officialState") or "설계"
+    if state == "개작":
+        kind, label, action = "revising", "C3 개작 중", "현재판 평가·기능감사·체크리스트 순서로 개작 루프 진행"
+    elif state == "조립":
+        kind, label, action = "assembling", "C1 장면 조립 중", "장면 초안 1개 또는 연결부 퇴고표 작성"
+    elif state == "대기":
+        kind, label, action = "ready-for-c1", "C1 진입 준비 완료", "첫 장면 조립"
+    elif "B2" in kinds and _has_b4_pass(vault_root, artifacts):
+        kind, label, action = "ready-for-c1", "B2 구조맵 작성 · B4 검증 통과 · C1 진입 대기", "계열 지도 상태를 대기 반영 후 C1 첫 장면 조립"
+    elif "C1-tone" in kinds and "B2" not in kinds:
+        kind, label, action = "tone-spike", "C1 톤 확인 장면 있음 · 정식 B2 구조맵 필요", "톤을 살릴지 결정한 뒤 B2 구조맵 작성"
+    elif "B2" in kinds:
+        kind, label, action = "b2-map", "B2 구조맵 있음 · B4 검증 필요", "B4 맵 검증형 재채점"
+    else:
+        kind, label, action = "designing", "설계 단계", "B1 소집 또는 B2 구조맵 작성"
+    return {"phaseKind": kind, "phaseLabel": label, "nextAction": action, "artifacts": artifacts}
+
+
+def _card_identity(card):
+    return (card.get("stem") or card.get("title", "")).replace(" ", "_")
+
+
+def _enrich_cockpit_card(vault_root, card):
+    phase = derive_phase(vault_root, card)
+    link = card.get("link")
+    if not link and phase["artifacts"]:
+        link = phase["artifacts"][0]["link"]
+    return {
+        "title": card["title"],
+        "link": link,
+        "lineage": card.get("lineage"),
+        "officialState": card.get("state", "설계"),
+        "role": card.get("role"),
+        "note": card.get("note"),
+        "phaseKind": phase["phaseKind"],
+        "phaseLabel": phase["phaseLabel"],
+        "nextAction": phase["nextAction"],
+        "reason": card.get("note") or ("산출물과 계열 지도 상태를 함께 판정"),
+        "blockers": (["상태 전이 미반영"] if phase["phaseKind"] == "ready-for-c1" and card.get("state") == "설계" else []),
+        "artifacts": phase["artifacts"],
+    }
+
+
+def build_cockpit(vault_root, cards, coverage, unparsed):
+    override = read_cockpit_override(vault_root, unparsed)
+    by_id = {_card_identity(c): c for c in cards}
+    enriched = [_enrich_cockpit_card(vault_root, c) for c in cards]
+    enriched_by_id = {_card_identity(c): _enrich_cockpit_card(vault_root, c) for c in cards}
+
+    def pick_auto():
+        order = {"revising": 0, "assembling": 1, "ready-for-c1": 2, "tone-spike": 3, "b2-map": 4, "designing": 5}
+        return sorted(enriched, key=lambda c: (order.get(c["phaseKind"], 9), c["title"]))[0] if enriched else None
+
+    primary = enriched_by_id.get(override.get("primary")) if override.get("primary") else None
+    primary = primary or pick_auto()
+    secondary = []
+    for ident in override.get("secondary", []) if isinstance(override.get("secondary", []), list) else []:
+        if ident in enriched_by_id and (not primary or enriched_by_id[ident]["title"] != primary["title"]):
+            secondary.append(enriched_by_id[ident])
+    if not secondary:
+        secondary = [c for c in enriched if primary and c["title"] != primary["title"]][:2]
+
+    active_cycle = "B→C" if primary and primary["phaseKind"] in {"ready-for-c1", "tone-spike", "b2-map"} else "C" if primary and primary["phaseKind"] in {"assembling", "revising"} else "A/B"
+    # 계기판 = A/B/C 세 사이클의 고도계. 패널 본문(현재 위치·다음 조작)과 중복 금지.
+    in_b = primary is not None and primary["phaseKind"] in {"designing", "b2-map", "tone-spike", "ready-for-c1"}
+    in_c = primary is not None and primary["phaseKind"] in {"assembling", "revising"}
+    state_count = {}
+    for c in cards:
+        st = c.get("state", "설계")
+        state_count[st] = state_count.get(st, 0) + 1
+    instruments = [
+        {"label": "A 사이클 — 채점", "value": "채점 %d · 미채점 %d" % (coverage.get("scored", 0), len(coverage.get("unscoredFiles", []))), "status": "ok"},
+        {"label": "B 사이클 — 구조", "value": "설계 %d · 대기 %d" % (state_count.get("설계", 0), state_count.get("대기", 0)), "status": "attention" if in_b else "standby"},
+        {"label": "C 사이클 — 원고", "value": "조립 %d · 개작 %d" % (state_count.get("조립", 0), state_count.get("개작", 0)), "status": "attention" if in_c else "standby"},
+    ]
+    return {"generatedFrom": "wiki/shared/maps/글감_계열_병합_지도.md",
+            "activeCycle": active_cycle,
+            "activeQuestion": override.get("question") or "지금 어디를 날고 있나?",
+            "primary": primary,
+            "secondary": secondary,
+            "instruments": instruments}
+
+
 def parse_lineage_map(text, unparsed):
     lineages, cards = [], []
     for sec in re.split(r'(?m)^### ', text)[1:]:
@@ -272,6 +428,8 @@ def parse_lineage_map(text, unparsed):
                     if len(row) < 3:
                         continue
                     role, item, st = row[0], row[1], row[2].replace("*", "").strip()
+                    note = row[3].replace("*", "").strip() if len(row) > 3 else None
+                    stem = stem_from_cell(item)
                     stars += item.count("★")
                     if "부품" in role or st == "부품":
                         parts += 1
@@ -285,7 +443,10 @@ def parse_lineage_map(text, unparsed):
                         cards.append({"title": _clean_title(item),
                                       "lineage": name, "star": star,
                                       "state": st or "설계",
-                                      "link": _link_from_cell(item)})
+                                      "link": _link_from_cell(item),
+                                      "stem": stem,
+                                      "role": role,
+                                      "note": note})
         except Exception as exc:  # 관대한 파싱: 섹션 단위로만 실패
             unparsed.append({"file": "글감_계열_병합_지도.md",
                              "reason": "계열 섹션 파싱 실패(%s): %s" % (name, exc)})
@@ -371,6 +532,112 @@ def scan_books(vault_root, note_sources, verdict_of):
                           "lineages": [k for k, _ in top]})
     books.sort(key=lambda b: (-b["derivedNotes"], b["title"]))
     return {"rawTotal": raw_total, "deviceMapTotal": len(device_maps), "books": books}
+
+
+def extract_wikilinks(text, prefix=None):
+    links = []
+    for m in re.finditer(r'\[\[([^\]|#]+)', text):
+        link = m.group(1).strip()
+        if prefix is None or link.startswith(prefix):
+            links.append(link)
+    return sorted(set(links))
+
+
+def note_link_from_path(path, vault_root):
+    rel = path.relative_to(vault_root).as_posix()
+    return rel[:-3] if rel.endswith(".md") else rel
+
+
+def extract_axis(text):
+    headings = ("한 줄 핵심", "핵심", "내 해석", "중심 질문")
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if not line.startswith("##") or not any(h in line for h in headings):
+            continue
+        for nxt in lines[i + 1:i + 8]:
+            val = nxt.strip().lstrip(">- ").strip()
+            if not val or val.startswith("#") or val.startswith("|"):
+                continue                                  # 표 행은 축 문장이 아니다
+            val = re.sub(r'^\d+[.)]\s*', '', val)          # 목록 번호는 화면에 내보내지 않는다
+            val = val.replace("**", "").replace("`", "").strip()
+            if val:
+                return val[:80]
+    return "축 미정"
+
+
+def read_reading_override(vault_root, unparsed):
+    p = vault_root / "dashboard" / "reading_cockpit.json"
+    if not p.is_file():
+        return {}
+    try:
+        data = json.loads(read_text(p))
+    except Exception as exc:
+        unparsed.append({"file": "dashboard/reading_cockpit.json",
+                         "reason": "reading cockpit override JSON 파싱 실패: %s" % exc})
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def scan_bookclub_reading(vault_root, bookclub, unparsed):
+    lectures_dir = vault_root / "wiki" / "bookclub" / "lectures"
+    lecture_files = sorted(lectures_dir.glob("*.md")) if lectures_dir.is_dir() else []
+    known_titles = {b["title"] for b in bookclub.get("books", [])}
+    books = []
+    for b in bookclub.get("books", []):
+        title = b["title"]
+        card_path = vault_root / (b["cardPath"] + ".md")
+        card_text = read_text(card_path) if card_path.is_file() else ""
+        close = []
+        if card_path.parent.is_dir():
+            close = [p for p in sorted(card_path.parent.glob("*.md"))
+                     if p.name != "00_책카드.md" and not p.name.startswith("00_")]
+        qlinks = extract_wikilinks(card_text, "wiki/shared/questions/")
+        wlinks = extract_wikilinks(card_text, "wiki/writing/")
+        linked_lectures = set(extract_wikilinks(card_text, "wiki/bookclub/lectures/"))
+        for lp in lecture_files:
+            ltext = read_text(lp)
+            if title in lp.stem or b["cardPath"] in extract_wikilinks(ltext):
+                linked_lectures.add(note_link_from_path(lp, vault_root))
+        derived = b.get("derivedNotes", 0)
+        score = len(close) * 4 + len(qlinks) * 3 + len(linked_lectures) * 5 + min(len(wlinks), 12) + min(derived, 12)
+        books.append({
+            "title": title, "cardPath": b["cardPath"], "axis": extract_axis(card_text),
+            "closeReadings": len(close), "questionLinks": len(qlinks),
+            "lectureLinks": len(linked_lectures), "writingLinks": len(wlinks),
+            "derivedNotes": derived, "readingScore": score,
+            "topQuestions": [{"title": q.split("/")[-1], "link": q} for q in qlinks[:5]],
+            "topLectures": [{"title": l.split("/")[-1].replace("_", " "), "link": l} for l in sorted(linked_lectures)[:5]],
+            "closeReadingLinks": [{"title": p.stem.replace("_", " "), "link": note_link_from_path(p, vault_root)} for p in close[:5]],
+        })
+    books.sort(key=lambda b: (-b["readingScore"], b["title"]))
+    q_counter = collections.Counter()
+    q_books = collections.defaultdict(list)
+    for b in books:
+        for q in b["topQuestions"]:
+            q_counter[q["link"]] += 1
+            q_books[q["link"]].append(b["title"])
+    questions = [{"title": q.split("/")[-1], "link": q, "books": q_books[q],
+                  "strength": "strong" if count >= 2 else "medium"}
+                 for q, count in q_counter.most_common(12)]
+    lectures = []
+    for lp in lecture_files:
+        ltext = read_text(lp)
+        body_links = extract_wikilinks(ltext)
+        touched = [t for t in known_titles if t in lp.stem or ("wiki/bookclub/books/%s/00_책카드" % t) in body_links]
+        if touched:
+            lectures.append({"title": lp.stem.replace("_", " "), "link": note_link_from_path(lp, vault_root),
+                             "books": sorted(touched), "axis": extract_axis(ltext)})
+    override = read_reading_override(vault_root, unparsed)
+    focus = next((b for b in books if b["title"] == override.get("focusBook")), None) if override.get("focusBook") else None
+    focus = focus or (books[0] if books else None)
+    if focus:
+        focus = dict(focus)
+        focus["centerQuestion"] = override.get("question") or (focus["topQuestions"][0]["title"] if focus["topQuestions"] else focus["axis"])
+        focus["nextAction"] = override.get("nextAction") or "이 책의 해석 축을 10분 독서모임 발화로 압축"
+        focus["metrics"] = {"closeReadings": focus["closeReadings"], "questionLinks": focus["questionLinks"],
+                             "lectureLinks": focus["lectureLinks"], "writingLinks": focus["writingLinks"],
+                             "derivedNotes": focus["derivedNotes"]}
+    return {"focus": focus, "questions": questions, "books": books, "lectures": lectures[:20]}
 
 
 MAP_SELF = "글감_트리아지_지도"
@@ -501,11 +768,17 @@ def build_data(vault_root):
 
     note_sources = scan_note_sources(vault_root)
     bookclub = scan_books(vault_root, note_sources, verdict_of)
+    bookclub_reading = scan_bookclub_reading(vault_root, bookclub, unparsed)
+
+    for c in lmap["cards"]:
+        if not c.get("link"):
+            c["link"] = resolve_work_link(vault_root, c["title"], c.get("stem") or c["title"].replace(" ", "_"))
 
     columns = {"설계": [], "대기": [], "조립": [], "개작": []}
     for c in lmap["cards"]:
         columns.get(c["state"], columns["설계"]).append(
-            {"title": c["title"], "lineage": c["lineage"], "star": c["star"], "link": c["link"]})
+            {"title": c["title"], "lineage": c["lineage"], "star": c["star"],
+             "link": c["link"], "role": c.get("role"), "note": c.get("note")})
 
     # 원고 → 책 역인덱스 (다리 문장용): 노트 sources가 가리키는 책카드 경로로 매핑
     book_title_by_key = {b["cardPath"]: b["title"] for b in bookclub["books"]}
@@ -516,16 +789,19 @@ def build_data(vault_root):
                 work_book.setdefault(stem, book_title_by_key[s])
                 break
 
+    coverage = {"scored": len(all_scored), "unscoredFiles": unscored}
     data = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "vaultName": vault_root.name,
         "nextActions": compute_next_actions(unscored, lmap["lineages"], lmap["cards"]),
         "bridge": compute_bridge(lmap["cards"], work_book),
         "bookclub": bookclub,
+        "bookclubReading": bookclub_reading,
+        "cockpit": build_cockpit(vault_root, lmap["cards"], coverage, unparsed),
         "cycle": {
             "stages": {"triage": "done" if not unscored else "pending",
                        "lineage": "done", "prescription": "done", "label": "사이클 1회차"},
-            "coverage": {"scored": len(all_scored), "unscoredFiles": unscored},
+            "coverage": coverage,
         },
         "pipeline": {"columns": columns, "mergers": lmap["mergers"]},
         "lineages": sorted(lmap["lineages"], key=lambda x: (-x["stars"], x["name"])),

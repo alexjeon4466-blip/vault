@@ -34,6 +34,43 @@ a:hover { color: var(--star); }
 .star { color: var(--star); }
 .star-quiet { color: var(--muted); }
 
+/* ── 현재 비행 조종석: 상태 패널. 잉크와 괘선의 세계 — 그림자·그라데이션 없음.
+      앰버는 여기 닿지 않는다(핀스포트는 '오늘의 한 걸음'의 것). ── */
+#cockpit { margin-top: 34px; }
+.cockpit-panel {
+  background: var(--panel);
+  border: 1px solid var(--line-high);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.cockpit-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.cockpit-kicker { color: var(--text); font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+.cockpit-question { color: var(--muted); font-size: 13px; }
+.cockpit-primary { margin-top: 12px; }
+.cockpit-label { color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+.cockpit-title { margin: 0; font-size: 22px; color: var(--text); }
+.cockpit-title a { text-decoration-color: var(--line-high); text-underline-offset: 4px; }
+.cockpit-phase { margin: 8px 0 0; font-size: 17px; line-height: 1.5; text-wrap: balance;
+  max-width: 62ch; }
+.cockpit-blockers { margin: 8px 0 0; color: var(--warn); font-size: 13px; }
+.cockpit-artifacts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; font-size: 13px; color: var(--muted); }
+.cockpit-instruments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.instrument { border: 1px solid var(--line); border-radius: 4px; padding: 9px 10px;
+  background: var(--bg); font-variant-numeric: tabular-nums; }
+.instrument-label { display: block; color: var(--muted); font-size: 11px; margin-bottom: 2px; }
+.instrument strong { display: block; font-size: 13px; line-height: 1.35; font-weight: 500;
+  color: var(--muted); }
+.instrument.ok { border-color: rgba(79,157,105,.45); }
+.instrument.ok strong { color: var(--text); }
+.instrument.attention { border-color: var(--line-high); }
+.instrument.attention strong { color: var(--text); font-weight: 600; }
+.instrument.blocked { border-color: rgba(192,91,77,.65); }
+.cockpit-secondary { margin-top: 14px; }
+.cockpit-secondary summary { cursor: pointer; color: var(--muted); }
+.secondary-flight { display: grid; grid-template-columns: 240px 1fr; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); }
+.secondary-flight b { font-weight: 600; }
+.secondary-flight > span { color: var(--muted); font-size: 13px; }
+
 /* ── 오늘의 한 걸음 (히어로: 앰버가 닿는 첫 자리) ── */
 #next-hero { margin-top: 40px; max-width: 72ch; }
 .hero-label { color: var(--star); font-size: 13px; margin-bottom: 6px; }
@@ -95,6 +132,68 @@ td.no-carrier { color: var(--muted); font-style: italic; }
 .lineage-note { display: block; color: var(--muted); font-size: 12px; }
 #lineages details summary { color: var(--muted); cursor: pointer; padding: 6px 0; }
 
+/* ── 독서모임 해석 조종석: 창작 조종석과 같은 결 — 평면·괘선.
+      초록은 이 세계의 표지(비상구 초록: 안전하게 쌓인 자산)로만 옅게. ── */
+#reading-cockpit { margin-top: 34px; }
+.reading-panel {
+  background: var(--panel);
+  border: 1px solid rgba(79,157,105,.40);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.reading-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.reading-kicker { color: var(--ok); font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+.reading-question { color: var(--muted); font-size: 13px; }
+.reading-panel > div:nth-child(2) { margin-top: 12px; }
+.reading-title { margin: 0; font-size: 22px; }
+.reading-axis { margin: 8px 0 0; font-size: 17px; line-height: 1.5; text-wrap: balance;
+  max-width: 62ch; }
+.reading-metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.reading-chip { display: inline-flex; gap: 6px; align-items: baseline; border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 10px; font-size: 13px; color: var(--muted);
+  font-variant-numeric: tabular-nums; }
+.reading-chip b { color: var(--text); font-weight: 600; }
+.reading-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; font-size: 13px; }
+.reading-links > div { display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.reading-link-label { color: var(--ok); }
+
+/* ── 다음 모임의 한 걸음 (독서 탭 히어로 — 창작 탭과 대칭) ── */
+#reading-hero { margin-top: 28px; max-width: 72ch; }
+#reading-bridge { margin-top: 16px; max-width: 72ch; }
+#reading-bridge .bridge-line b { color: var(--text); font-weight: 600; }
+
+/* ── 질문망: 질문형 노트가 책들을 잇는 중심 노드 ── */
+#question-net { max-width: 76ch; }
+.question-row { display: flex; align-items: baseline; gap: 12px; padding: 7px 0;
+  border-bottom: 1px solid var(--line); }
+.question-sentence { flex: 1; font-size: 15px; }
+.question-sentence a { color: var(--text); text-decoration-color: var(--line-high);
+  text-underline-offset: 3px; }
+.question-meta { flex: none; color: var(--muted); font-size: 12px;
+  font-variant-numeric: tabular-nums; }
+#question-net details { margin-top: 8px; }
+#question-net summary { color: var(--muted); cursor: pointer; font-size: 13px; }
+
+/* ── 책 서가 안쪽 (해석 지표 낮은 책들의 서랍) ── */
+#bc-shelf-rest { margin-top: 10px; }
+#bc-shelf-rest summary { color: var(--muted); cursor: pointer; font-size: 13px; }
+.shelf-inner { columns: 2 320px; column-gap: 28px; margin-top: 10px; }
+.shelf-inner-line { padding: 2px 0; font-size: 13px; color: var(--muted); break-inside: avoid; }
+.shelf-inner-line a { color: var(--muted); }
+.shelf-inner-line .tags { font-size: 12px; }
+
+/* ── 비교 강의 선반 ── */
+#lecture-shelf { max-width: 76ch; }
+.lecture-row { display: flex; align-items: baseline; gap: 12px; padding: 6px 0;
+  border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.lecture-title { font-size: 14px; }
+.lecture-title a { color: var(--text); text-decoration-color: var(--line-high);
+  text-underline-offset: 3px; }
+.lecture-books { color: var(--muted); font-size: 12px; }
+#lecture-shelf details { margin-top: 8px; }
+#lecture-shelf summary { color: var(--muted); cursor: pointer; font-size: 13px; }
+#lecture-shelf details .lecture-row:first-of-type { margin-top: 6px; }
+
 /* ── 독서모임 ── */
 #bc-summary { margin-top: 32px; max-width: 72ch; font-size: 17px; line-height: 1.6;
   text-wrap: pretty; }
@@ -107,7 +206,10 @@ td.no-carrier { color: var(--muted); font-style: italic; }
 .flow-label { width: 200px; flex: none; font-size: 13px; overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
 .flow-bar { height: 14px; background: var(--ok); }
+.book-axis { margin-top: 4px; color: var(--text); font-size: 13px; line-height: 1.4; }
 .tags { color: var(--muted); font-size: 12px; }
+.tags.dim { color: var(--dim); }
+.reading-bar { background: var(--ok); }
 details { color: var(--muted); }
 summary:hover { color: var(--text); }
 
@@ -115,6 +217,10 @@ summary:hover { color: var(--text); }
   .shelf { flex-direction: column; gap: 4px; }
   .shelf-label { width: auto; }
   .hero-sentence { font-size: 19px; }
+  .cockpit-instruments, .secondary-flight, .reading-links { grid-template-columns: 1fr; }
+  .cockpit-top, .reading-top { flex-direction: column; gap: 2px; }
+  .cockpit-title, .reading-title { font-size: 20px; }
+  .question-row, .lecture-row { flex-direction: column; gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }

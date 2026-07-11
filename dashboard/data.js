@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-10 21:19",
+  "generated": "2026-07-11 13:38",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -595,7 +595,7 @@ window.VAULT_DATA = {
     "focus": {
       "title": "편의점인간",
       "cardPath": "wiki/bookclub/books/편의점인간/00_책카드",
-      "axis": "`보통 인간`은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
+      "axis": "보통 인간은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
       "closeReadings": 10,
       "questionLinks": 5,
       "lectureLinks": 5,
@@ -910,7 +910,7 @@ window.VAULT_DATA = {
       {
         "title": "편의점인간",
         "cardPath": "wiki/bookclub/books/편의점인간/00_책카드",
-        "axis": "`보통 인간`은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
+        "axis": "보통 인간은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
         "closeReadings": 10,
         "questionLinks": 5,
         "lectureLinks": 5,
@@ -987,7 +987,7 @@ window.VAULT_DATA = {
       {
         "title": "서사의위기",
         "cardPath": "wiki/bookclub/books/서사의위기/00_책카드",
-        "axis": "1. 정보가 많아질수록 왜 삶은 더 잘 이해되지 않는가.",
+        "axis": "정보가 많아질수록 왜 삶은 더 잘 이해되지 않는가.",
         "closeReadings": 3,
         "questionLinks": 4,
         "lectureLinks": 6,
@@ -1052,7 +1052,7 @@ window.VAULT_DATA = {
       {
         "title": "작별하지않는다",
         "cardPath": "wiki/bookclub/books/작별하지않는다/00_책카드",
-        "axis": "1. 작별이 불가능한 폭력 앞에서, 애도는 끝내야 하는 일인가 계속해야 하는 일인가?",
+        "axis": "작별이 불가능한 폭력 앞에서, 애도는 끝내야 하는 일인가 계속해야 하는 일인가?",
         "closeReadings": 1,
         "questionLinks": 6,
         "lectureLinks": 5,
@@ -1113,7 +1113,7 @@ window.VAULT_DATA = {
       {
         "title": "마션",
         "cardPath": "wiki/bookclub/books/마션/00_책카드",
-        "axis": "1. 절망은 언제 감정 상태에서 문제 목록으로 바뀌는가.",
+        "axis": "절망은 언제 감정 상태에서 문제 목록으로 바뀌는가.",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 1,
@@ -1174,7 +1174,7 @@ window.VAULT_DATA = {
       {
         "title": "모든것이산산이부서지다",
         "cardPath": "wiki/bookclub/books/모든것이산산이부서지다/00_책카드",
-        "axis": "1. 공동체는 무엇으로 함께 묶이는가? 혈연, 의례, 속담, 시장, 신앙, 법, 두려움, 돈 중 무엇이 중심인가?",
+        "axis": "공동체는 무엇으로 함께 묶이는가? 혈연, 의례, 속담, 시장, 신앙, 법, 두려움, 돈 중 무엇이 중심인가?",
         "closeReadings": 2,
         "questionLinks": 8,
         "lectureLinks": 2,
@@ -1227,7 +1227,7 @@ window.VAULT_DATA = {
       {
         "title": "1984",
         "cardPath": "wiki/bookclub/books/1984/00_책카드",
-        "axis": "1. 권력은 어떻게 과거를 고쳐 현재의 진실을 만들고, 그 현재를 통해 다시 과거를 지배하는가.",
+        "axis": "권력은 어떻게 과거를 고쳐 현재의 진실을 만들고, 그 현재를 통해 다시 과거를 지배하는가.",
         "closeReadings": 1,
         "questionLinks": 5,
         "lectureLinks": 3,
@@ -1280,7 +1280,7 @@ window.VAULT_DATA = {
       {
         "title": "사람장소환대",
         "cardPath": "wiki/bookclub/books/사람장소환대/00_책카드",
-        "axis": "1. 인간으로 태어난 존재는 어떤 과정을 거쳐 사회 안의 “사람”이 되는가?",
+        "axis": "인간으로 태어난 존재는 어떤 과정을 거쳐 사회 안의 “사람”이 되는가?",
         "closeReadings": 0,
         "questionLinks": 6,
         "lectureLinks": 3,
@@ -1328,7 +1328,7 @@ window.VAULT_DATA = {
       {
         "title": "소송",
         "cardPath": "wiki/bookclub/books/소송/00_책카드",
-        "axis": "1. 무슨 죄인지 말해주지 않는 세계에서, 인간은 어떻게 스스로 피고인이 되는가?",
+        "axis": "무슨 죄인지 말해주지 않는 세계에서, 인간은 어떻게 스스로 피고인이 되는가?",
         "closeReadings": 1,
         "questionLinks": 6,
         "lectureLinks": 2,
@@ -1377,7 +1377,7 @@ window.VAULT_DATA = {
       {
         "title": "백지앞에서",
         "cardPath": "wiki/bookclub/books/백지앞에서/00_책카드",
-        "axis": "1. 타인의 고통을 어떻게 써야 그 고통을 이용하지 않게 되는가?",
+        "axis": "타인의 고통을 어떻게 써야 그 고통을 이용하지 않게 되는가?",
         "closeReadings": 1,
         "questionLinks": 5,
         "lectureLinks": 2,
@@ -1426,7 +1426,7 @@ window.VAULT_DATA = {
       {
         "title": "궤도",
         "cardPath": "wiki/bookclub/books/궤도/00_책카드",
-        "axis": "1. 사건이 거의 없는 소설은 어떻게 삶의 리듬을 보여줄 수 있는가?",
+        "axis": "사건이 거의 없는 소설은 어떻게 삶의 리듬을 보여줄 수 있는가?",
         "closeReadings": 0,
         "questionLinks": 6,
         "lectureLinks": 3,
@@ -1531,7 +1531,7 @@ window.VAULT_DATA = {
       {
         "title": "시대예보경량문명의탄생",
         "cardPath": "wiki/bookclub/books/시대예보경량문명의탄생/00_책카드",
-        "axis": "1. 경량문명은 기술 변화인가, 협력 방식의 재설계인가?",
+        "axis": "경량문명은 기술 변화인가, 협력 방식의 재설계인가?",
         "closeReadings": 1,
         "questionLinks": 6,
         "lectureLinks": 1,
@@ -1576,7 +1576,7 @@ window.VAULT_DATA = {
       {
         "title": "여행의이유",
         "cardPath": "wiki/bookclub/books/여행의이유/00_책카드",
-        "axis": "1. 여행은 정체성을 회복하는가, 해체하는가?",
+        "axis": "여행은 정체성을 회복하는가, 해체하는가?",
         "closeReadings": 2,
         "questionLinks": 5,
         "lectureLinks": 3,
@@ -1633,7 +1633,7 @@ window.VAULT_DATA = {
       {
         "title": "혼모노",
         "cardPath": "wiki/bookclub/books/혼모노/00_책카드",
-        "axis": "1. 진짜와 가짜는 사물 안에 있는가, 아니면 믿음·관점·권력·퍼포먼스 속에서 판정되는가?",
+        "axis": "진짜와 가짜는 사물 안에 있는가, 아니면 믿음·관점·권력·퍼포먼스 속에서 판정되는가?",
         "closeReadings": 0,
         "questionLinks": 7,
         "lectureLinks": 1,
@@ -1673,7 +1673,7 @@ window.VAULT_DATA = {
       {
         "title": "노동의배신",
         "cardPath": "wiki/bookclub/books/노동의배신/00_책카드",
-        "axis": "1. 왜 일을 하는데도 가난한가.",
+        "axis": "왜 일을 하는데도 가난한가.",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 2,
@@ -1717,7 +1717,7 @@ window.VAULT_DATA = {
       {
         "title": "예감은틀리지않는다",
         "cardPath": "wiki/bookclub/books/예감은틀리지않는다/00_책카드",
-        "axis": "1. 오래 믿어 온 기억은 진실에 가까워지는가, 아니면 더 단단한 착각이 되는가?",
+        "axis": "오래 믿어 온 기억은 진실에 가까워지는가, 아니면 더 단단한 착각이 되는가?",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 2,
@@ -1761,7 +1761,7 @@ window.VAULT_DATA = {
       {
         "title": "그리스인조르바",
         "cardPath": "wiki/bookclub/books/그리스인조르바/00_책카드",
-        "axis": "1. 자유는 방종인가, 아니면 몸의 결행에 절차와 책임이 붙은 상태인가?",
+        "axis": "자유는 방종인가, 아니면 몸의 결행에 절차와 책임이 붙은 상태인가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -1817,7 +1817,7 @@ window.VAULT_DATA = {
       {
         "title": "매직필",
         "cardPath": "wiki/bookclub/books/매직필/00_책카드",
-        "axis": "1. 고통 없이 해결한 문제는 덜 가치 있는가?",
+        "axis": "고통 없이 해결한 문제는 덜 가치 있는가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -1873,7 +1873,7 @@ window.VAULT_DATA = {
       {
         "title": "먼저온미래",
         "cardPath": "wiki/bookclub/books/먼저온미래/00_책카드",
-        "axis": "1. AI가 특정 영역에서 인간보다 더 잘 판단할 때, 인간은 경쟁자인가 수용자인가?",
+        "axis": "AI가 특정 영역에서 인간보다 더 잘 판단할 때, 인간은 경쟁자인가 수용자인가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -1929,7 +1929,7 @@ window.VAULT_DATA = {
       {
         "title": "백년의고독",
         "cardPath": "wiki/bookclub/books/백년의고독/00_책카드",
-        "axis": "1. 이름을 붙이는 일은 세계를 이해하는 일인가, 세계를 반복의 굴레에 묶는 일인가?",
+        "axis": "이름을 붙이는 일은 세계를 이해하는 일인가, 세계를 반복의 굴레에 묶는 일인가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -1985,7 +1985,7 @@ window.VAULT_DATA = {
       {
         "title": "섬에있는서점",
         "cardPath": "wiki/bookclub/books/섬에있는서점/00_책카드",
-        "axis": "1. 사람은 어떤 공간을 통해 고립에서 관계로 이동하는가?",
+        "axis": "사람은 어떤 공간을 통해 고립에서 관계로 이동하는가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2041,7 +2041,7 @@ window.VAULT_DATA = {
       {
         "title": "위대한개츠비",
         "cardPath": "wiki/bookclub/books/위대한개츠비/00_책카드",
-        "axis": "1. 과거를 되돌리고 싶다는 욕망은 언제 사랑이 아니라 현재 사람을 지우는 폭력이 되는가?",
+        "axis": "과거를 되돌리고 싶다는 욕망은 언제 사랑이 아니라 현재 사람을 지우는 폭력이 되는가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2097,7 +2097,7 @@ window.VAULT_DATA = {
       {
         "title": "현대생활의발견",
         "cardPath": "wiki/bookclub/books/현대생활의발견/00_책카드",
-        "axis": "1. 우아함은 취향인가, 유지비를 감당할 수 있는 계급의 기술인가?",
+        "axis": "우아함은 취향인가, 유지비를 감당할 수 있는 계급의 기술인가?",
         "closeReadings": 5,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2153,7 +2153,7 @@ window.VAULT_DATA = {
       {
         "title": "경험의멸종",
         "cardPath": "wiki/bookclub/books/경험의멸종/00_책카드",
-        "axis": "1. 기술은 우리의 경험을 확장하는가, 아니면 경험의 위험과 마찰을 제거해 경험 자체를 얇게 만드는가?",
+        "axis": "기술은 우리의 경험을 확장하는가, 아니면 경험의 위험과 마찰을 제거해 경험 자체를 얇게 만드는가?",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 2,
@@ -2246,7 +2246,7 @@ window.VAULT_DATA = {
       {
         "title": "게으름에대한찬양",
         "cardPath": "wiki/bookclub/books/게으름에대한찬양/00_책카드",
-        "axis": "1. 노동은 삶의 수단인가, 목적이 되었는가.",
+        "axis": "노동은 삶의 수단인가, 목적이 되었는가.",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 1,
@@ -2286,7 +2286,7 @@ window.VAULT_DATA = {
       {
         "title": "한국이란무엇인가",
         "cardPath": "wiki/bookclub/books/한국이란무엇인가/00_책카드",
-        "axis": "1. 한국은 본질인가, 기억과 망각과 선택의 결과인가?",
+        "axis": "한국은 본질인가, 기억과 망각과 선택의 결과인가?",
         "closeReadings": 0,
         "questionLinks": 8,
         "lectureLinks": 2,
@@ -2330,7 +2330,7 @@ window.VAULT_DATA = {
       {
         "title": "남아있는나날",
         "cardPath": "wiki/bookclub/books/남아있는나날/00_책카드",
-        "axis": "1. 품위는 인간을 지키는 절제인가, 인간을 지우는 자기검열인가?",
+        "axis": "품위는 인간을 지키는 절제인가, 인간을 지우는 자기검열인가?",
         "closeReadings": 1,
         "questionLinks": 5,
         "lectureLinks": 2,
@@ -2428,7 +2428,7 @@ window.VAULT_DATA = {
       {
         "title": "아무것도하지않는법",
         "cardPath": "wiki/bookclub/books/아무것도하지않는법/00_책카드",
-        "axis": "1. 내 관심은 내가 선택한 것인가, 플랫폼과 생산성의 요구가 가져간 것인가?",
+        "axis": "내 관심은 내가 선택한 것인가, 플랫폼과 생산성의 요구가 가져간 것인가?",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2463,7 +2463,7 @@ window.VAULT_DATA = {
       {
         "title": "흰고래의흼에대하여",
         "cardPath": "wiki/bookclub/books/흰고래의흼에대하여/00_책카드",
-        "axis": "1. 완벽한 번역이 불가능하다면, 좋은 번역은 무엇을 목표로 해야 하는가?",
+        "axis": "완벽한 번역이 불가능하다면, 좋은 번역은 무엇을 목표로 해야 하는가?",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2498,7 +2498,7 @@ window.VAULT_DATA = {
       {
         "title": "빛과실",
         "cardPath": "wiki/bookclub/books/빛과실/00_책카드",
-        "axis": "1. 한강 문학의 가장 깊은 질문은 `세계는 왜 폭력적인가`인가, 아니면 `그럼에도 사랑은 어디에 있는가`인가?",
+        "axis": "한강 문학의 가장 깊은 질문은 세계는 왜 폭력적인가인가, 아니면 그럼에도 사랑은 어디에 있는가인가?",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 2,
@@ -2538,7 +2538,7 @@ window.VAULT_DATA = {
       {
         "title": "안녕이라그랬어",
         "cardPath": "wiki/bookclub/books/안녕이라그랬어/00_책카드",
-        "axis": "1. 상투적인 말은 언제 빈말이 되고, 언제 관계를 겨우 붙드는 말이 되는가.",
+        "axis": "상투적인 말은 언제 빈말이 되고, 언제 관계를 겨우 붙드는 말이 되는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 0,
@@ -2613,7 +2613,7 @@ window.VAULT_DATA = {
       {
         "title": "괴테는모든것을말했다",
         "cardPath": "wiki/bookclub/books/괴테는모든것을말했다/00_책카드",
-        "axis": "1. 말의 진실성은 출처의 정확성에만 있는가, 아니면 그 말이 누군가에게 도착해 삶을 움직인 효과에도 있는가?",
+        "axis": "말의 진실성은 출처의 정확성에만 있는가, 아니면 그 말이 누군가에게 도착해 삶을 움직인 효과에도 있는가?",
         "closeReadings": 0,
         "questionLinks": 6,
         "lectureLinks": 0,
@@ -2648,7 +2648,7 @@ window.VAULT_DATA = {
       {
         "title": "달리기를말할때내가하고싶은말",
         "cardPath": "wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드",
-        "axis": "1. 우리는 달리기를 말할 때 사실 무엇을 말하고 있는가.",
+        "axis": "우리는 달리기를 말할 때 사실 무엇을 말하고 있는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 3,
@@ -2692,7 +2692,7 @@ window.VAULT_DATA = {
       {
         "title": "고래는물에서숨쉬지않는다",
         "cardPath": "wiki/bookclub/books/고래는물에서숨쉬지않는다/00_책카드",
-        "axis": "1. 진화는 왜 완벽한 생물을 만들지 못하는가.",
+        "axis": "진화는 왜 완벽한 생물을 만들지 못하는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 1,
@@ -2728,7 +2728,7 @@ window.VAULT_DATA = {
       {
         "title": "살인자의기억법",
         "cardPath": "wiki/bookclub/books/살인자의기억법/00_책카드",
-        "axis": "1. 기억하지 못하는 죄는 사라지는가.",
+        "axis": "기억하지 못하는 죄는 사라지는가.",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 2,
@@ -2772,7 +2772,7 @@ window.VAULT_DATA = {
       {
         "title": "프로젝트헤일메리",
         "cardPath": "wiki/bookclub/books/프로젝트헤일메리/00_책카드",
-        "axis": "1. 과학은 구원을 가능하게 하지만, 무엇이 그 구원을 실제 선택으로 바꾸는가.",
+        "axis": "과학은 구원을 가능하게 하지만, 무엇이 그 구원을 실제 선택으로 바꾸는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 1,
@@ -2808,7 +2808,7 @@ window.VAULT_DATA = {
       {
         "title": "맥베스",
         "cardPath": "wiki/bookclub/books/맥베스/00_책카드",
-        "axis": "1. 예언은 운명을 말하는가, 아니면 인간의 욕망을 깨우는가.",
+        "axis": "예언은 운명을 말하는가, 아니면 인간의 욕망을 깨우는가.",
         "closeReadings": 1,
         "questionLinks": 5,
         "lectureLinks": 1,
@@ -2881,7 +2881,7 @@ window.VAULT_DATA = {
       {
         "title": "사생활의역사",
         "cardPath": "wiki/bookclub/books/사생활의역사/00_책카드",
-        "axis": "1. 사생활은 혼자 있을 권리인가, 아니면 무엇을 누구에게 보여줄지 결정하는 통제권인가.",
+        "axis": "사생활은 혼자 있을 권리인가, 아니면 무엇을 누구에게 보여줄지 결정하는 통제권인가.",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -2916,7 +2916,7 @@ window.VAULT_DATA = {
       {
         "title": "노인과바다",
         "cardPath": "wiki/bookclub/books/노인과바다/00_책카드",
-        "axis": "1. 결과가 거의 사라졌을 때, 행위의 존엄은 어디에 남는가.",
+        "axis": "결과가 거의 사라졌을 때, 행위의 존엄은 어디에 남는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 0,
@@ -2947,7 +2947,7 @@ window.VAULT_DATA = {
       {
         "title": "브람스를좋아하세요",
         "cardPath": "wiki/bookclub/books/브람스를좋아하세요/00_책카드",
-        "axis": "1. 사랑받는 것과 필요되는 것은 왜 다르게 느껴지는가?",
+        "axis": "사랑받는 것과 필요되는 것은 왜 다르게 느껴지는가?",
         "closeReadings": 1,
         "questionLinks": 4,
         "lectureLinks": 1,
@@ -2988,7 +2988,7 @@ window.VAULT_DATA = {
       {
         "title": "모비딕",
         "cardPath": "wiki/bookclub/books/모비딕/00_책카드",
-        "axis": "1. 인간은 왜 알 수 없는 대상을 그대로 두지 못하고 의미·악·운명으로 고정하려 하는가.",
+        "axis": "인간은 왜 알 수 없는 대상을 그대로 두지 못하고 의미·악·운명으로 고정하려 하는가.",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 0,
@@ -3047,7 +3047,7 @@ window.VAULT_DATA = {
       {
         "title": "사탄탱고",
         "cardPath": "wiki/bookclub/books/사탄탱고/00_책카드",
-        "axis": "1. 사람들은 왜 거짓이라는 낌새를 느끼면서도 “구원자”의 말에 돈과 몸을 맡기는가?",
+        "axis": "사람들은 왜 거짓이라는 낌새를 느끼면서도 “구원자”의 말에 돈과 몸을 맡기는가?",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -3082,7 +3082,7 @@ window.VAULT_DATA = {
       {
         "title": "너무늦은시간",
         "cardPath": "wiki/bookclub/books/너무늦은시간/00_책카드",
-        "axis": "1. 여성혐오는 미움보다 `안 주는 것`으로 더 자주 작동하는가.",
+        "axis": "여성혐오는 미움보다 안 주는 것으로 더 자주 작동하는가.",
         "closeReadings": 0,
         "questionLinks": 5,
         "lectureLinks": 0,
@@ -3140,7 +3140,7 @@ window.VAULT_DATA = {
       {
         "title": "참을수없는존재의가벼움",
         "cardPath": "wiki/bookclub/books/참을수없는존재의가벼움/00_책카드",
-        "axis": "1. 한 번뿐인 삶은 가벼운가, 무거운가?",
+        "axis": "한 번뿐인 삶은 가벼운가, 무거운가?",
         "closeReadings": 0,
         "questionLinks": 4,
         "lectureLinks": 0,
@@ -3171,7 +3171,7 @@ window.VAULT_DATA = {
       {
         "title": "제자리에있다는것",
         "cardPath": "wiki/bookclub/books/제자리에있다는것/00_책카드",
-        "axis": "“모든 것이 제자리에 있는 세계”는 언뜻 아름답다. 어수선함도 없고, 충돌도 없고, 각자가 자기 자리를 아는 세계. 그러나 마랭은 그 이면에 *",
+        "axis": "“모든 것이 제자리에 있는 세계”는 언뜻 아름답다. 어수선함도 없고, 충돌도 없고, 각자가 자기 자리를 아는 세계. 그러나 마랭은 그 이면에 분",
         "closeReadings": 0,
         "questionLinks": 1,
         "lectureLinks": 0,
@@ -3251,7 +3251,7 @@ window.VAULT_DATA = {
       {
         "title": "getthepicture",
         "cardPath": "wiki/bookclub/books/getthepicture/00_책카드",
-        "axis": "**예술은 돈과 욕망의 게임이라는 사실을 인정한 뒤에도, 여전히 우리 삶을 바꿀 수 있는가?**",
+        "axis": "예술은 돈과 욕망의 게임이라는 사실을 인정한 뒤에도, 여전히 우리 삶을 바꿀 수 있는가?",
         "closeReadings": 0,
         "questionLinks": 0,
         "lectureLinks": 0,
@@ -3285,7 +3285,7 @@ window.VAULT_DATA = {
           "1984",
           "서사의위기"
         ],
-        "axis": "| 축 | 『1984』 | 『서사의 위기』 |"
+        "axis": "축 미정"
       },
       {
         "title": "1984와 소송 죄명없는절차와 사상죄",
@@ -3294,7 +3294,7 @@ window.VAULT_DATA = {
           "1984",
           "소송"
         ],
-        "axis": "| 축 | 『소송』 | 『1984』 |"
+        "axis": "축 미정"
       },
       {
         "title": "1984와 코뿔소 집단감정과 좋은말의폭력",
@@ -3303,7 +3303,7 @@ window.VAULT_DATA = {
           "1984",
           "코뿔소"
         ],
-        "axis": "| 축 | 『1984』 | 『코뿔소』 |"
+        "axis": "축 미정"
       },
       {
         "title": "게으름에대한찬양과 노동의배신 근면은누구의미덕인가",
@@ -3312,7 +3312,7 @@ window.VAULT_DATA = {
           "게으름에대한찬양",
           "노동의배신"
         ],
-        "axis": "| 축 | 게으름에 대한 찬양 | 노동의 배신 |"
+        "axis": "축 미정"
       },
       {
         "title": "경험의멸종과 서사의위기 정보는 왜 경험이 되지 못하는가",
@@ -3356,7 +3356,7 @@ window.VAULT_DATA = {
         "books": [
           "센스의철학"
         ],
-        "axis": "| 축 | 『달리기를 말할 때 내가 하고 싶은 말』 | 『센스의 철학』 |"
+        "axis": "축 미정"
       },
       {
         "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
@@ -3365,7 +3365,7 @@ window.VAULT_DATA = {
           "궤도",
           "마션"
         ],
-        "axis": "| 축 | 『마션』 | 『궤도』 |"
+        "axis": "축 미정"
       },
       {
         "title": "맥베스와 살인자의기억법 예언과의심은어떻게예방적폭력이되는가",
@@ -3374,7 +3374,7 @@ window.VAULT_DATA = {
           "맥베스",
           "살인자의기억법"
         ],
-        "axis": "| 축 | 맥베스 | 살인자의 기억법 |"
+        "axis": "축 미정"
       },
       {
         "title": "모든것이산산이부서지다와 사람장소환대 누가 공동체 안에서 사람으로 인정받는가",
@@ -3383,7 +3383,7 @@ window.VAULT_DATA = {
           "모든것이산산이부서지다",
           "사람장소환대"
         ],
-        "axis": "| 축 | 『모든 것이 산산이 부서지다』 | 『사람, 장소, 환대』 |"
+        "axis": "축 미정"
       },
       {
         "title": "모든것이산산이부서지다와 한국이란무엇인가 공동체는 자기이야기를 어떻게 되찾는가",
@@ -3392,7 +3392,7 @@ window.VAULT_DATA = {
           "모든것이산산이부서지다",
           "한국이란무엇인가"
         ],
-        "axis": "| 축 | 『모든 것이 산산이 부서지다』 | 『한국이란 무엇인가』 |"
+        "axis": "축 미정"
       },
       {
         "title": "모순과 여행의이유 떠나면 정말 자유로운가",
@@ -3419,7 +3419,7 @@ window.VAULT_DATA = {
           "백지앞에서",
           "예감은틀리지않는다"
         ],
-        "axis": "| 축 | 『예감은 틀리지 않는다』 | 『백지 앞에서』 |"
+        "axis": "축 미정"
       },
       {
         "title": "백지앞에서와 작별하지않는다 기억은 사람을 다시 사람으로 부르는가",
@@ -3455,73 +3455,96 @@ window.VAULT_DATA = {
           "남아있는나날",
           "살인자의기억법"
         ],
-        "axis": "| 축 | 살인자의 기억법 | 남아 있는 나날 |"
+        "axis": "축 미정"
       }
     ]
   },
   "cockpit": {
     "generatedFrom": "wiki/shared/maps/글감_계열_병합_지도.md",
-    "activeCycle": "B→C",
-    "activeQuestion": "지금 사이클 C인가?",
+    "activeCycle": "C",
+    "activeQuestion": "C3 개작 — 이번 판은 어디까지 왔나?",
     "primary": {
-      "title": "환대는 기능 자리가 아닙니다",
-      "link": "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵",
+      "title": "그늘은 예약할 수 없습니다",
+      "link": "wiki/writing/notes/그늘은_예약할_수_없습니다",
       "lineage": "자리/환대",
-      "officialState": "설계",
-      "role": "사이클4 합류",
+      "officialState": "개작",
+      "role": "운반체",
       "note": null,
-      "phaseKind": "ready-for-c1",
-      "phaseLabel": "B2 구조맵 작성 · B4 검증 통과 · C1 진입 대기",
-      "nextAction": "계열 지도 상태를 대기 반영 후 C1 첫 장면 조립",
+      "phaseKind": "revising",
+      "phaseLabel": "C3 개작 중",
+      "nextAction": "현재판 평가·기능감사·체크리스트 순서로 개작 루프 진행",
       "reason": "산출물과 계열 지도 상태를 함께 판정",
-      "blockers": [
-        "상태 전이 미반영"
-      ],
+      "blockers": [],
       "artifacts": [
         {
           "kind": "B2",
           "label": "단막 후보 맵",
-          "link": "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵"
+          "link": "wiki/writing/draft-candidates/그늘은_예약할_수_없습니다_단막후보_맵"
         }
       ]
     },
     "secondary": [
       {
-        "title": "보통 인간 연수에 참석했습니다",
-        "link": "wiki/writing/drafts/보통_인간_연수에_참석했습니다_첫장면",
-        "lineage": "신설 계열 등록",
-        "officialState": "설계",
+        "title": "죽음에 동의하지 않겠습니다",
+        "link": "wiki/writing/draft-candidates/죽음에_동의하지_않겠습니다_단막후보_맵",
+        "lineage": "서명칸 계보",
+        "officialState": "개작",
+        "role": "운반체(3 거부)",
+        "note": "C2 연결본(진본)·C3 개작 1회차 2026-07-10",
+        "phaseKind": "revising",
+        "phaseLabel": "C3 개작 중",
+        "nextAction": "현재판 평가·기능감사·체크리스트 순서로 개작 루프 진행",
+        "reason": "C2 연결본(진본)·C3 개작 1회차 2026-07-10",
+        "blockers": [],
+        "artifacts": [
+          {
+            "kind": "B2",
+            "label": "단막 후보 맵",
+            "link": "wiki/writing/draft-candidates/죽음에_동의하지_않겠습니다_단막후보_맵"
+          }
+        ]
+      },
+      {
+        "title": "수정된 보호자",
+        "link": "wiki/writing/draft-candidates/수정된_보호자",
+        "lineage": "기록 — 관계자격",
+        "officialState": "개작",
         "role": "운반체",
         "note": null,
-        "phaseKind": "tone-spike",
-        "phaseLabel": "C1 톤 확인 장면 있음 · 정식 B2 구조맵 필요",
-        "nextAction": "톤을 살릴지 결정한 뒤 B2 구조맵 작성",
+        "phaseKind": "revising",
+        "phaseLabel": "C3 개작 중",
+        "nextAction": "현재판 평가·기능감사·체크리스트 순서로 개작 루프 진행",
         "reason": "산출물과 계열 지도 상태를 함께 판정",
         "blockers": [],
         "artifacts": [
           {
             "kind": "C1-tone",
             "label": "첫 장면",
-            "link": "wiki/writing/drafts/보통_인간_연수에_참석했습니다_첫장면"
+            "link": "wiki/writing/drafts/수정된_보호자_첫장면"
+          },
+          {
+            "kind": "C2",
+            "label": "1막초고",
+            "link": "wiki/writing/drafts/수정된_보호자_1막초고"
           }
         ]
       }
     ],
     "instruments": [
       {
-        "label": "A 사이클",
-        "value": "채점 970 / 미채점 3",
+        "label": "A 사이클 — 채점",
+        "value": "채점 970 · 미채점 3",
         "status": "ok"
       },
       {
-        "label": "현재 위치",
-        "value": "B2 구조맵 작성 · B4 검증 통과 · C1 진입 대기",
-        "status": "attention"
+        "label": "B 사이클 — 구조",
+        "value": "설계 41 · 대기 6",
+        "status": "standby"
       },
       {
-        "label": "다음 조작",
-        "value": "계열 지도 상태를 대기 반영 후 C1 첫 장면 조립",
-        "status": "standby"
+        "label": "C 사이클 — 원고",
+        "value": "조립 3 · 개작 3",
+        "status": "attention"
       }
     ]
   },
@@ -3615,14 +3638,6 @@ window.VAULT_DATA = {
           "star": true,
           "link": "wiki/writing/notes/서로_더_신경_써야_한다는_거예요",
           "role": "운반체",
-          "note": null
-        },
-        {
-          "title": "환대는 기능 자리가 아닙니다",
-          "lineage": "자리/환대",
-          "star": true,
-          "link": "wiki/writing/draft-candidates/환대는_기능_자리가_아닙니다_단막후보_맵",
-          "role": "사이클4 합류",
           "note": null
         },
         {
@@ -3768,14 +3783,6 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/모욕에_동의하라는_절차",
           "role": "운반체(5 강요)",
           "note": ""
-        },
-        {
-          "title": "보통 인간 연수에 참석했습니다",
-          "lineage": "신설 계열 등록",
-          "star": true,
-          "link": "wiki/writing/drafts/보통_인간_연수에_참석했습니다_첫장면",
-          "role": "운반체",
-          "note": null
         },
         {
           "title": "인간 설명서는 없습니다",
@@ -3954,6 +3961,22 @@ window.VAULT_DATA = {
           "lineage": "기록 — 유류품/애도",
           "star": true,
           "link": "wiki/writing/draft-candidates/폐기_전_확인_초고후보",
+          "role": "운반체",
+          "note": null
+        },
+        {
+          "title": "첫 장면",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/drafts/환대는_기능_자리가_아닙니다_첫장면",
+          "role": "사이클4 합류",
+          "note": null
+        },
+        {
+          "title": "1-3장 조립본",
+          "lineage": "신설 계열 등록",
+          "star": true,
+          "link": "wiki/writing/drafts/보통_인간_연수에_참석했습니다_1-3장_조립본",
           "role": "운반체",
           "note": null
         }
