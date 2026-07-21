@@ -1,0 +1,772 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text",
+      "id": "title",
+      "x": 50,
+      "y": 30,
+      "width": 523.6,
+      "height": 36.4,
+      "text": "아무도 생일이 아닌데 축하합니다 — 끈·펠트·테이블 물성 시험",
+      "fontSize": 28,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "아무도 생일이 아닌데 축하합니다 — 끈·펠트·테이블 물성 시험",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "legend",
+      "x": 50,
+      "y": 70,
+      "width": 435.6,
+      "height": 23.400000000000002,
+      "text": "보라=펠트  빨강=절단/낙하  금색=포일  회색=접이식 테이블  녹색=C의 전환",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "보라=펠트  빨강=절단/낙하  금색=포일  회색=접이식 테이블  녹색=C의 전환",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "h1",
+      "x": 50,
+      "y": 120,
+      "width": 231.00000000000003,
+      "height": 27.3,
+      "text": "1. 설치 — 펠트 0.28m 매달림",
+      "fontSize": 21,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "1. 설치 — 펠트 0.28m 매달림",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "p1",
+      "x": 50,
+      "y": 160,
+      "width": 420,
+      "height": 340,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "floor1",
+      "x": 75,
+      "y": 450,
+      "width": 370,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          370,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud1",
+      "x": 215,
+      "y": 465,
+      "width": 80,
+      "height": 19.5,
+      "text": "객석",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "top1",
+      "x": 140,
+      "y": 250,
+      "width": 240,
+      "height": 35,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legL1",
+      "x": 165,
+      "y": 285,
+      "width": 0,
+      "height": 145,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          145
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legR1",
+      "x": 350,
+      "y": 285,
+      "width": 0,
+      "height": 140,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          140
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table1",
+      "x": 220,
+      "y": 258,
+      "width": 80,
+      "height": 19.5,
+      "text": "접이식 테이블",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "접이식 테이블",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "foil1",
+      "x": 130,
+      "y": 205,
+      "width": 270,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          0
+        ]
+      ],
+      "strokeColor": "#f08c00",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "foilt1",
+      "x": 185,
+      "y": 180,
+      "width": 80,
+      "height": 20.8,
+      "text": "포일 문구",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#f08c00",
+      "originalText": "포일 문구",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "string1",
+      "x": 155,
+      "y": 205,
+      "width": 70,
+      "height": 190,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          70,
+          190
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "ellipse",
+      "id": "felt1",
+      "x": 215,
+      "y": 385,
+      "width": 44,
+      "height": 24,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "felt1t",
+      "x": 190,
+      "y": 412,
+      "width": 80,
+      "height": 18.2,
+      "text": "펠트 12cm",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#6741d9",
+      "originalText": "펠트 12cm",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "height1",
+      "x": 270,
+      "y": 360,
+      "width": 80,
+      "height": 18.2,
+      "text": "바닥 위 0.28m",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#6741d9",
+      "originalText": "바닥 위 0.28m",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "h2",
+      "x": 520,
+      "y": 120,
+      "width": 242.55,
+      "height": 27.3,
+      "text": "2. 절단 — 포일 처짐 + 펠트 낙하",
+      "fontSize": 21,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "2. 절단 — 포일 처짐 + 펠트 낙하",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "p2",
+      "x": 520,
+      "y": 160,
+      "width": 420,
+      "height": 340,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "floor2",
+      "x": 545,
+      "y": 450,
+      "width": 370,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          370,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud2",
+      "x": 685,
+      "y": 465,
+      "width": 80,
+      "height": 19.5,
+      "text": "객석",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "top2",
+      "x": 610,
+      "y": 250,
+      "width": 240,
+      "height": 35,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legL2",
+      "x": 635,
+      "y": 285,
+      "width": 0,
+      "height": 145,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          145
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legR2",
+      "x": 820,
+      "y": 285,
+      "width": 0,
+      "height": 140,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          140
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table2",
+      "x": 690,
+      "y": 258,
+      "width": 80,
+      "height": 19.5,
+      "text": "접이식 테이블",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "접이식 테이블",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "foil2",
+      "x": 600,
+      "y": 205,
+      "width": 270,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          0
+        ]
+      ],
+      "strokeColor": "#f08c00",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "foilt2",
+      "x": 655,
+      "y": 180,
+      "width": 80,
+      "height": 20.8,
+      "text": "포일 문구",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#f08c00",
+      "originalText": "포일 문구",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "foil2drop",
+      "x": 600,
+      "y": 205,
+      "width": 270,
+      "height": 45,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          45
+        ]
+      ],
+      "strokeColor": "#f08c00",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "scissor",
+      "x": 578,
+      "y": 300,
+      "width": 80,
+      "height": 20.8,
+      "text": "가위 1회",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#e03131",
+      "originalText": "가위 1회",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "fall",
+      "x": 698,
+      "y": 330,
+      "width": 0,
+      "height": 85,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          85
+        ]
+      ],
+      "strokeColor": "#e03131",
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "ellipse",
+      "id": "felt2",
+      "x": 680,
+      "y": 415,
+      "width": 44,
+      "height": 24,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "fallt",
+      "x": 735,
+      "y": 350,
+      "width": 80,
+      "height": 19.5,
+      "text": "0.28m 낙하",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#e03131",
+      "originalText": "0.28m 낙하",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "h3",
+      "x": 990,
+      "y": 120,
+      "width": 207.9,
+      "height": 27.3,
+      "text": "3. 전환 — C가 받침으로 사용",
+      "fontSize": 21,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "3. 전환 — C가 받침으로 사용",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "p3",
+      "x": 990,
+      "y": 160,
+      "width": 420,
+      "height": 340,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "floor3",
+      "x": 1015,
+      "y": 450,
+      "width": 370,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          370,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud3",
+      "x": 1155,
+      "y": 465,
+      "width": 80,
+      "height": 19.5,
+      "text": "객석",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "top3",
+      "x": 1080,
+      "y": 250,
+      "width": 240,
+      "height": 35,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legL3",
+      "x": 1105,
+      "y": 285,
+      "width": 0,
+      "height": 145,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          145
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "line",
+      "id": "legR3",
+      "x": 1290,
+      "y": 285,
+      "width": 0,
+      "height": 140,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          140
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table3",
+      "x": 1160,
+      "y": 258,
+      "width": 80,
+      "height": 19.5,
+      "text": "접이식 테이블",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "접이식 테이블",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "foil3",
+      "x": 1070,
+      "y": 205,
+      "width": 270,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          0
+        ]
+      ],
+      "strokeColor": "#f08c00",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "foilt3",
+      "x": 1125,
+      "y": 180,
+      "width": 80,
+      "height": 20.8,
+      "text": "포일 문구",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#f08c00",
+      "originalText": "포일 문구",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "foil3drop",
+      "x": 1070,
+      "y": 205,
+      "width": 270,
+      "height": 45,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          45
+        ]
+      ],
+      "strokeColor": "#f08c00",
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "roughness": 1
+    },
+    {
+      "type": "ellipse",
+      "id": "felt3",
+      "x": 1265,
+      "y": 420,
+      "width": 48,
+      "height": 20,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "arrow",
+      "id": "Cslide",
+      "x": 1085,
+      "y": 410,
+      "width": 175,
+      "height": 20,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          175,
+          20
+        ]
+      ],
+      "strokeColor": "#2b8a3e",
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "Ctxt",
+      "x": 1055,
+      "y": 380,
+      "width": 90.75000000000001,
+      "height": 19.5,
+      "text": "C가 주워 밀어 넣음",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#2b8a3e",
+      "originalText": "C가 주워 밀어 넣음",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "shimtxt",
+      "x": 1230,
+      "y": 455,
+      "width": 80,
+      "height": 18.2,
+      "text": "짧은 다리 받침",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#6741d9",
+      "originalText": "짧은 다리 받침",
+      "autoResize": true
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}

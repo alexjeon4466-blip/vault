@@ -1,0 +1,850 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text",
+      "id": "title",
+      "x": 50,
+      "y": 30,
+      "width": 554.4000000000001,
+      "height": 36.4,
+      "text": "사진에서 빠진 사람이 사진을 찍었습니다 — F3 무언 동선 축척도",
+      "fontSize": 28,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "사진에서 빠진 사람이 사진을 찍었습니다 — F3 무언 동선 축척도",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "legend",
+      "x": 50,
+      "y": 70,
+      "width": 396.00000000000006,
+      "height": 23.400000000000002,
+      "text": "파랑=A  노랑=B  보라=C  주황=즉석카메라  회색=식탁  빨강=이동",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "파랑=A  노랑=B  보라=C  주황=즉석카메라  회색=식탁  빨강=이동",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "p1_title",
+      "x": 50,
+      "y": 120,
+      "width": 145.20000000000002,
+      "height": 28.6,
+      "text": "프레임 1 — C 촬영",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "프레임 1 — C 촬영",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "stage1",
+      "x": 50,
+      "y": 160,
+      "width": 420,
+      "height": 330,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "up1",
+      "x": 220,
+      "y": 170,
+      "width": 80,
+      "height": 18.2,
+      "text": "업스테이지",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "업스테이지",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "table1",
+      "x": 195,
+      "y": 295,
+      "width": 180,
+      "height": 70,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table_t1",
+      "x": 255,
+      "y": 318,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "식탁",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "식탁",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "audline1",
+      "x": 80,
+      "y": 465,
+      "width": 360,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          360,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud1",
+      "x": 220,
+      "y": 468,
+      "width": 80,
+      "height": 20.8,
+      "text": "객석",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "aisle1",
+      "x": 175,
+      "y": 200,
+      "width": 0,
+      "height": 245,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          245
+        ]
+      ],
+      "strokeColor": "#2b8a3e",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aislet1",
+      "x": 85,
+      "y": 210,
+      "width": 92.4,
+      "height": 18.2,
+      "text": "좌측 통로\n0.55m+",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#2b8a3e",
+      "originalText": "좌측 통로\n0.55m+",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "cam1",
+      "x": 95,
+      "y": 400,
+      "width": 60,
+      "height": 38,
+      "backgroundColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeColor": "#d9480f",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "camt1",
+      "x": 101,
+      "y": 408,
+      "width": 80,
+      "height": 18.2,
+      "text": "카메라",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "카메라",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "A1",
+      "x": 225,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_A1",
+      "x": 239.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "A",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "A",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "B1",
+      "x": 315,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#fff3bf",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_B1",
+      "x": 329.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "B",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "B",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "C1",
+      "x": 100,
+      "y": 350,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_C1",
+      "x": 114.72,
+      "y": 359.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "C",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "C",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "p2_title",
+      "x": 520,
+      "y": 120,
+      "width": 217.8,
+      "height": 28.6,
+      "text": "프레임 2 — B가 카메라를 받음",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "프레임 2 — B가 카메라를 받음",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "stage2",
+      "x": 520,
+      "y": 160,
+      "width": 420,
+      "height": 330,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "up2",
+      "x": 690,
+      "y": 170,
+      "width": 80,
+      "height": 18.2,
+      "text": "업스테이지",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "업스테이지",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "table2",
+      "x": 665,
+      "y": 295,
+      "width": 180,
+      "height": 70,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table_t2",
+      "x": 725,
+      "y": 318,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "식탁",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "식탁",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "audline2",
+      "x": 550,
+      "y": 465,
+      "width": 360,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          360,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud2",
+      "x": 690,
+      "y": 468,
+      "width": 80,
+      "height": 20.8,
+      "text": "객석",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "aisle2",
+      "x": 645,
+      "y": 200,
+      "width": 0,
+      "height": 245,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          245
+        ]
+      ],
+      "strokeColor": "#2b8a3e",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aislet2",
+      "x": 555,
+      "y": 210,
+      "width": 92.4,
+      "height": 18.2,
+      "text": "좌측 통로\n0.55m+",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#2b8a3e",
+      "originalText": "좌측 통로\n0.55m+",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "cam2",
+      "x": 565,
+      "y": 400,
+      "width": 60,
+      "height": 38,
+      "backgroundColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeColor": "#d9480f",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "camt2",
+      "x": 571,
+      "y": 408,
+      "width": 80,
+      "height": 18.2,
+      "text": "카메라",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "카메라",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "A2",
+      "x": 695,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_A2",
+      "x": 709.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "A",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "A",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "C2",
+      "x": 785,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_C2",
+      "x": 799.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "C",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "C",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "B2",
+      "x": 570,
+      "y": 350,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#fff3bf",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_B2",
+      "x": 584.72,
+      "y": 359.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "B",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "B",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "emptyB",
+      "x": 780,
+      "y": 215,
+      "width": 56,
+      "height": 65,
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeColor": "#e03131",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "emptyBt",
+      "x": 765,
+      "y": 195,
+      "width": 80,
+      "height": 19.5,
+      "text": "B 빈자리",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#e03131",
+      "originalText": "B 빈자리",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "Bpath",
+      "x": 802,
+      "y": 250,
+      "width": 205,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -150,
+          0
+        ],
+        [
+          -205,
+          120
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#e03131",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "p3_title",
+      "x": 990,
+      "y": 120,
+      "width": 205.70000000000002,
+      "height": 28.6,
+      "text": "프레임 3 — C가 역할을 복구",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "프레임 3 — C가 역할을 복구",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "stage3",
+      "x": 990,
+      "y": 160,
+      "width": 420,
+      "height": 330,
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "up3",
+      "x": 1160,
+      "y": 170,
+      "width": 80,
+      "height": 18.2,
+      "text": "업스테이지",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "업스테이지",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "table3",
+      "x": 1135,
+      "y": 295,
+      "width": 180,
+      "height": 70,
+      "backgroundColor": "#dee2e6",
+      "fillStyle": "solid",
+      "strokeColor": "#495057",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "table_t3",
+      "x": 1195,
+      "y": 318,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "식탁",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "식탁",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "audline3",
+      "x": 1020,
+      "y": 465,
+      "width": 360,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          360,
+          0
+        ]
+      ],
+      "strokeColor": "#495057",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aud3",
+      "x": 1160,
+      "y": 468,
+      "width": 80,
+      "height": 20.8,
+      "text": "객석",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#757575",
+      "originalText": "객석",
+      "autoResize": true
+    },
+    {
+      "type": "line",
+      "id": "aisle3",
+      "x": 1115,
+      "y": 200,
+      "width": 0,
+      "height": 245,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          245
+        ]
+      ],
+      "strokeColor": "#2b8a3e",
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "aislet3",
+      "x": 1025,
+      "y": 210,
+      "width": 92.4,
+      "height": 18.2,
+      "text": "좌측 통로\n0.55m+",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#2b8a3e",
+      "originalText": "좌측 통로\n0.55m+",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "cam3",
+      "x": 1035,
+      "y": 400,
+      "width": 60,
+      "height": 38,
+      "backgroundColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeColor": "#d9480f",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "camt3",
+      "x": 1041,
+      "y": 408,
+      "width": 80,
+      "height": 18.2,
+      "text": "카메라",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "카메라",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "A3",
+      "x": 1165,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_A3",
+      "x": 1179.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "A",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "A",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "B3",
+      "x": 1255,
+      "y": 230,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#fff3bf",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_B3",
+      "x": 1269.72,
+      "y": 239.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "B",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "B",
+      "autoResize": true
+    },
+    {
+      "type": "ellipse",
+      "id": "C3",
+      "x": 1040,
+      "y": 350,
+      "width": 46,
+      "height": 46,
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "t_C3",
+      "x": 1054.72,
+      "y": 359.2,
+      "width": 80,
+      "height": 23.400000000000002,
+      "text": "C",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "C",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "Creturn",
+      "x": 1275,
+      "y": 245,
+      "width": 210,
+      "height": 125,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -150,
+          0
+        ],
+        [
+          -210,
+          125
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#e03131",
+      "strokeStyle": "solid",
+      "roughness": 1
+    },
+    {
+      "type": "text",
+      "id": "returntxt",
+      "x": 1135,
+      "y": 375,
+      "width": 148.5,
+      "height": 19.5,
+      "text": "C가 좌측 통로로\n촬영 위치 복귀",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#e03131",
+      "originalText": "C가 좌측 통로로\n촬영 위치 복귀",
+      "autoResize": true
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}
