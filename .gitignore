@@ -30,3 +30,6 @@ id_ed25519*
 __pycache__/
 *.pyc
 .superpowers/
+
+# Hermes automation workspace (PC-local agent plans)
+.hermes/

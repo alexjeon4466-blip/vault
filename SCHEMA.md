@@ -25,23 +25,33 @@
 
 ```text
 wiki/
+  _inbox/            # 빠른 캡처와 Web Clipper 자료의 임시 승격 대기실.
+    quick-captures/  # 갑자기 떠오른 문장, 장면감, Hermes에게 던지는 짧은 조각.
+    web-clips/       # 기사/트윗/인터뷰/웹 문장. URL과 핵심 문장 우선.
+    raw-ideas/       # 아직 질문형 노트나 창작 노트로 승격하기 애매한 글감 원석.
+    to-triage/       # 분류는 되었지만 승격/폐기 판정이 남은 항목.
   bookclub/
     books/           # 책별 카드. 한 권을 다시 붙잡는 기억 장치.
     authors/         # 작가론이 반복적으로 중요할 때.
     themes/          # 책모임 안에서만 유효한 주제.
     reading-flow/    # 장기 독서 흐름, 월별/연도별 지도.
+    decisions/       # 책모임/강독/비교 강의 관련 결정 노트.
   writing/
     plays/           # 희곡별 작품카드.
     revisions/       # 버전 비교와 퇴고 기록.
     aesthetics/      # 내 희곡의 반복 미학/장면 감각.
     contest/         # 신춘문예 투고, 당선작 분석, 심사 기준.
     references/      # 기성 희곡, 연극론, 작법 자료.
+    decisions/       # 희곡/집필/퇴고/투고 관련 결정 노트.
   shared/
     questions/       # 핵심. 책과 책, 책과 희곡을 잇는 질문형 노트.
     themes/          # 질문보다 주제명이 더 적합할 때만.
     emotions/        # 정서별 연결.
     maps/            # 연결 지도.
-output/
+    decisions/       # 공통 결정 노트.
+    reviews/         # 작업 묶음 리뷰.
+      weekly/        # 주간 리뷰. 다음 작업의 압축 출발점.
+
   lecture-scripts/   # 강독 대본 재정리.
   youtube-scripts/   # 유튜브 대본.
   podcast-scripts/   # 팟캐스트 대본.
@@ -122,7 +132,7 @@ v2의 중심 문서. 추상 주제어보다 질문형 제목을 우선한다.
 
 ```yaml
 ---
-type: book-card | question-note | play-card | revision-note | close-reading-note | lecture-script | map | reference | contest-note
+type: book-card | question-note | play-card | revision-note | close-reading-note | lecture-script | map | reference | contest-note | inbox-capture | decision-note | weekly-review
 status: draft | stable | needs-review
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -166,10 +176,14 @@ submission_target: 신춘문예
 ## 6. 링크 규칙
 
 - 의미 연결은 태그보다 질문형 노트 wikilink로 만든다. 예: `[[wiki/shared/questions/자각은 왜 사건이 되지 못하는가|자각은 왜 사건이 되지 못하는가]]`
-- 태그는 문서 타입 보조용으로만 최소 사용한다.
+- 태그는 문서 타입 보조나 검토/처리 대기 같은 상태 표시용으로만 최소 사용한다. 의미 연결은 태그가 아니라 wikilink와 frontmatter 배열로 만든다.
 - 책카드는 최소 2개 이상의 질문형 노트에 연결하는 것을 목표로 한다. 억지 연결은 금지.
 - 질문형 노트는 연결된 책/희곡이 늘어날수록 갱신한다.
 - Obsidian alias는 대괄호 두 겹 안에서 `대상경로|표시명` 형식으로 쓰고, `\|`처럼 escape하지 않는다.
+- Inbox 캡처와 Web Clipper 자료는 바로 장기 지식으로 취급하지 않고, 출처·핵심 문장·승격 방향을 정한 뒤 질문형 노트/창작 노트/지도/책카드/결정 노트로 이동한다.
+- `log.md`의 결정이 나중에 반복 논쟁이 될 가능성이 있으면 decision-note로 승격한다. 공통 결정은 `wiki/shared/decisions/`, 희곡/집필 결정은 `wiki/writing/decisions/`, 책모임/강독 결정은 `wiki/bookclub/decisions/`를 쓴다.
+- 주간 또는 큰 작업 묶음 뒤에는 필요할 때 `wiki/shared/reviews/weekly/`에 weekly-review를 남겨 남은 질문·새 연결·다음 초점을 압축한다.
+- 승격 규칙: 한 번만 등장한 생각은 Inbox나 log에 둘 수 있고, 두 번 이상 반복되면 question/note 후보, 작업 방향을 바꾸는 판단이면 decision-note, 여러 책/희곡/글감을 잇기 시작하면 map으로 승격한다.
 
 ## 7. Ingest 원칙
 

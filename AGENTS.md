@@ -25,6 +25,7 @@
 명시적 허락 없이 쓸 수 있는 곳:
 
 - `wiki/` 아래 새 v2 문서
+- `wiki/_inbox/`, `wiki/shared/decisions/`, `wiki/shared/reviews/` 아래 운영 보강 문서
 - `output/` 아래 초안/리포트
 - `_templates/` 아래 템플릿
 - `SCHEMA.md`, `index.md`, `log.md`, `LLM_WIKI_PLAYBOOK.md`, `CLAUDE.md`, `AGENTS.md`
@@ -43,7 +44,7 @@
 - 책을 읽은 사람에게 다시 설명하는 강의형 문장으로 쓴다.
 - `내 해석`은 사용자가 실제로 붙잡았을 법한 문제의식으로 쓴다.
 - AI가 적극적으로 연결/가설을 제안할 수 있지만 `AI 가설`, `가능한 연결`처럼 분리한다.
-- 확신이 낮은 내용은 `추정`, `확인 필요`, `가설`로 표시한다.
+- 확신이 낮은 내용은 `추정`, `검토 필요`, `가설`로 표시한다.
 
 ## 4. 북클럽 작업 규칙
 
@@ -84,13 +85,17 @@
 - [[언어는 왜 관계를 구하지 못하는가]]
 - [[자각은 왜 사건이 되지 못하는가]]
 
-질문형 노트는 책과 책, 책과 희곡을 연결하는 중심 노드다.
+- 질문형 노트는 책과 책, 책과 희곡을 연결하는 중심 노드다.
+- 태그는 상태 표시용으로 최소화하고, 의미 연결은 질문형 노트 wikilink와 frontmatter 배열로 만든다.
 
 ## 7. Index / Log 규칙
 
 - 새 wiki 문서를 만들면 `index.md`에 추가한다.
 - 모든 의미 있는 작업은 `log.md`에 append-only로 기록한다.
 - `log.md` 기존 항목은 수정하지 않는다.
+- 반복 논쟁이 될 결정은 별도 decision-note로 승격한다. 공통 결정은 `wiki/shared/decisions/`, 희곡/집필 결정은 `wiki/writing/decisions/`, 책모임/강독 결정은 `wiki/bookclub/decisions/`를 쓴다.
+- 큰 작업 묶음이나 주간 단위로 남은 질문·승격할 캡처·다음 초점을 `wiki/shared/reviews/weekly/`에 압축할 수 있다.
+- Inbox는 보관소가 아니라 임시 대기실이다. `quick-captures`, `web-clips`, `raw-ideas`, `to-triage`로 받고, 주간 리뷰에서 질문형 노트·창작 노트·지도·결정 노트·폐기 중 하나로 판정한다.
 
 ## 8. 파일 우선 / convention 우선 원칙
 
@@ -99,6 +104,7 @@
 - `_`로 시작하는 frontmatter 필드는 워크플로·검증·생성 출처 같은 내부 메타데이터다. 해석 본문처럼 읽히지 않게 최소한으로 쓴다.
 - 로컬 API 키, Obsidian REST URL, 임시 media/cache 경로처럼 특정 PC에만 속하는 값은 vault에 쓰지 않는다.
 - 자동화나 MCP 작업은 vault root 밖 파일을 만들거나 덮어쓰지 않는다. 새 노트 생성은 기존 파일 overwrite 없이 수행한다.
+- Web Clipper와 빠른 캡처는 `wiki/_inbox/`에 먼저 두고, Hermes가 출처·핵심 문장·질문/희곡 장치 후보를 선별한 뒤 장기 노트로 승격한다.
 
 ## 9. v2 첫 구축 원칙
 
