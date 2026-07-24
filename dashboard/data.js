@@ -1,5 +1,5 @@
 window.VAULT_DATA = {
-  "generated": "2026-07-19 23:46",
+  "generated": "2026-07-24 00:04",
   "vaultName": "vault",
   "nextActions": [
     {
@@ -16,14 +16,14 @@ window.VAULT_DATA = {
     }
   ],
   "bridge": {
-    "book": "경험의멸종",
-    "work": "리뷰를 먼저 읽은 장소",
-    "link": "wiki/writing/notes/리뷰를_먼저_읽은_장소",
+    "book": "시지프신화",
+    "work": "두 가지 도망이 같은 방에 있습니다",
+    "link": "wiki/writing/notes/두_가지_도망이_같은_방에_있습니다",
     "phrase": "이제 막 설계에 들어갔습니다"
   },
   "bookclub": {
     "rawTotal": 358,
-    "deviceMapTotal": 22,
+    "deviceMapTotal": 23,
     "books": [
       {
         "title": "소송",
@@ -47,6 +47,18 @@ window.VAULT_DATA = {
           "회고/자기기만",
           "회고/자기기만 부품",
           "회고/자기기만 · 기록 교차"
+        ]
+      },
+      {
+        "title": "시지프신화",
+        "cardPath": "wiki/bookclub/books/시지프신화/00_책카드",
+        "rawNotes": 14,
+        "derivedNotes": 42,
+        "stars": 8,
+        "lineages": [
+          "무대/작별",
+          "몸/결행",
+          "유예/대기"
         ]
       },
       {
@@ -81,8 +93,8 @@ window.VAULT_DATA = {
         "stars": 4,
         "lineages": [
           "신설 「정상성/견본」",
-          "「공동체/명단」",
-          "「노동"
+          "정상성/견본",
+          "「공동체/명단」"
         ]
       },
       {
@@ -104,9 +116,9 @@ window.VAULT_DATA = {
         "derivedNotes": 20,
         "stars": 5,
         "lineages": [
+          "정상성/견본",
           "진짜/출처",
-          "공동체-명단 · 자격 교차",
-          "기록-삭제"
+          "공동체-명단 · 자격 교차"
         ]
       },
       {
@@ -342,18 +354,6 @@ window.VAULT_DATA = {
           "리듬/의미",
           "리듬/의미 부품",
           "번역 부품"
-        ]
-      },
-      {
-        "title": "시지프신화",
-        "cardPath": "wiki/bookclub/books/시지프신화/00_책카드",
-        "rawNotes": 0,
-        "derivedNotes": 5,
-        "stars": 0,
-        "lineages": [
-          "반복·소송 교차 부품",
-          "소송/시지프 부품",
-          "시지프 부품"
         ]
       },
       {
@@ -606,10 +606,10 @@ window.VAULT_DATA = {
       "axis": "보통 인간은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
       "closeReadings": 10,
       "questionLinks": 7,
-      "lectureLinks": 10,
+      "lectureLinks": 15,
       "writingLinks": 42,
       "derivedNotes": 26,
-      "readingScore": 135,
+      "readingScore": 160,
       "topQuestions": [
         {
           "title": "사람은 어떻게 사람 아닌 것이 되는가",
@@ -638,6 +638,10 @@ window.VAULT_DATA = {
           "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
         },
         {
+          "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+          "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+        },
+        {
           "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
           "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
         },
@@ -646,12 +650,8 @@ window.VAULT_DATA = {
           "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
         },
         {
-          "title": "자유로부터의도피와 코뿔소 좋은말과 익명권위는 어떻게동조를만드는가",
-          "link": "wiki/bookclub/lectures/자유로부터의도피와_코뿔소_좋은말과_익명권위는_어떻게동조를만드는가"
-        },
-        {
-          "title": "자유로부터의도피와 편의점인간 보통인간은 누구의배역인가",
-          "link": "wiki/bookclub/lectures/자유로부터의도피와_편의점인간_보통인간은_누구의배역인가"
+          "title": "자유로부터의도피와 위대한개츠비 욕망은어떻게계급의목소리를자기꿈으로듣는가",
+          "link": "wiki/bookclub/lectures/자유로부터의도피와_위대한개츠비_욕망은어떻게계급의목소리를자기꿈으로듣는가"
         }
       ],
       "closeReadingLinks": [
@@ -681,7 +681,7 @@ window.VAULT_DATA = {
       "metrics": {
         "closeReadings": 10,
         "questionLinks": 7,
-        "lectureLinks": 10,
+        "lectureLinks": 15,
         "writingLinks": 42,
         "derivedNotes": 26
       }
@@ -693,28 +693,28 @@ window.VAULT_DATA = {
         "books": [
           "편의점인간",
           "사람장소환대",
-          "시대예보경량문명의탄생",
           "남아있는나날",
-          "모든것이산산이부서지다",
-          "소송",
           "예감은틀리지않는다",
-          "경험의멸종",
+          "소송",
+          "모든것이산산이부서지다",
+          "시대예보경량문명의탄생",
+          "한국이란무엇인가",
           "백지앞에서",
+          "경험의멸종",
+          "위대한개츠비",
           "여행의이유",
+          "희랍어시간",
           "그리스인조르바",
           "섬에있는서점",
-          "위대한개츠비",
-          "희랍어시간",
-          "한국이란무엇인가",
           "흰고래의흼에대하여",
           "빛과실",
-          "안녕이라그랬어",
-          "괴테는모든것을말했다",
-          "살인자의기억법",
-          "맥베스",
           "브람스를좋아하세요",
-          "너무늦은시간",
-          "참을수없는존재의가벼움"
+          "안녕이라그랬어",
+          "살인자의기억법",
+          "괴테는모든것을말했다",
+          "맥베스",
+          "참을수없는존재의가벼움",
+          "너무늦은시간"
         ],
         "strength": "strong"
       },
@@ -722,20 +722,22 @@ window.VAULT_DATA = {
         "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
         "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
         "books": [
-          "편의점인간",
-          "시대예보경량문명의탄생",
-          "게으름에대한찬양",
-          "남아있는나날",
-          "아무것도하지않는법",
           "자유로부터의도피",
+          "편의점인간",
+          "노동의배신",
+          "남아있는나날",
+          "게으름에대한찬양",
+          "시대예보경량문명의탄생",
+          "아무것도하지않는법",
+          "한국이란무엇인가",
+          "혼모노",
+          "먼저온미래",
+          "위대한개츠비",
           "모순",
           "여행의이유",
           "매직필",
-          "먼저온미래",
           "섬에있는서점",
-          "위대한개츠비",
           "현대생활의발견",
-          "한국이란무엇인가",
           "제자리에있다는것"
         ],
         "strength": "strong"
@@ -747,18 +749,17 @@ window.VAULT_DATA = {
           "사람장소환대",
           "1984",
           "게으름에대한찬양",
-          "노동의배신",
           "소송",
-          "여행의이유",
-          "그리스인조르바",
-          "매직필",
           "먼저온미래",
           "백년의고독",
           "위대한개츠비",
+          "여행의이유",
+          "그리스인조르바",
+          "매직필",
           "현대생활의발견",
+          "부활",
           "코스모스",
-          "사탄탱고",
-          "부활"
+          "사탄탱고"
         ],
         "strength": "strong"
       },
@@ -768,38 +769,18 @@ window.VAULT_DATA = {
         "books": [
           "작별하지않는다",
           "백지앞에서",
+          "혼모노",
+          "무진기행",
           "모순",
           "여행의이유",
-          "혼모노",
+          "희랍어시간",
           "그리스인조르바",
           "매직필",
           "섬에있는서점",
           "현대생활의발견",
-          "희랍어시간",
           "빛과실",
-          "무진기행",
           "너무늦은시간",
           "종이동물원"
-        ],
-        "strength": "strong"
-      },
-      {
-        "title": "정보는 왜 이야기가 되지 못하는가",
-        "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가",
-        "books": [
-          "서사의위기",
-          "1984",
-          "시대예보경량문명의탄생",
-          "마션",
-          "노동의배신",
-          "경험의멸종",
-          "먼저온미래",
-          "현대생활의발견",
-          "코스모스",
-          "흰고래의흼에대하여",
-          "괴테는모든것을말했다",
-          "사생활의역사",
-          "프로젝트헤일메리"
         ],
         "strength": "strong"
       },
@@ -807,19 +788,39 @@ window.VAULT_DATA = {
         "title": "자각은 왜 사건이 되지 못하는가",
         "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가",
         "books": [
-          "소송",
-          "예감은틀리지않는다",
           "자유로부터의도피",
-          "그리스인조르바",
+          "예감은틀리지않는다",
+          "소송",
+          "시지프신화",
+          "무진기행",
           "먼저온미래",
           "위대한개츠비",
           "희랍어시간",
-          "무진기행",
+          "그리스인조르바",
+          "부활",
           "브람스를좋아하세요",
-          "시지프신화",
           "사탄탱고",
-          "참을수없는존재의가벼움",
-          "부활"
+          "참을수없는존재의가벼움"
+        ],
+        "strength": "strong"
+      },
+      {
+        "title": "정보는 왜 이야기가 되지 못하는가",
+        "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가",
+        "books": [
+          "노동의배신",
+          "1984",
+          "서사의위기",
+          "마션",
+          "시대예보경량문명의탄생",
+          "경험의멸종",
+          "먼저온미래",
+          "현대생활의발견",
+          "흰고래의흼에대하여",
+          "코스모스",
+          "사생활의역사",
+          "프로젝트헤일메리",
+          "괴테는모든것을말했다"
         ],
         "strength": "strong"
       },
@@ -830,15 +831,15 @@ window.VAULT_DATA = {
           "1984",
           "궤도",
           "모든것이산산이부서지다",
-          "경험의멸종",
           "백지앞에서",
-          "여행의이유",
           "혼모노",
+          "경험의멸종",
           "백년의고독",
-          "섬에있는서점",
+          "여행의이유",
           "희랍어시간",
-          "코스모스",
-          "흰고래의흼에대하여"
+          "섬에있는서점",
+          "흰고래의흼에대하여",
+          "코스모스"
         ],
         "strength": "strong"
       },
@@ -848,11 +849,10 @@ window.VAULT_DATA = {
         "books": [
           "1984",
           "모순",
-          "혼모노",
+          "희랍어시간",
           "그리스인조르바",
           "매직필",
           "현대생활의발견",
-          "희랍어시간",
           "안녕이라그랬어",
           "고래는물에서숨쉬지않는다",
           "사탄탱고"
@@ -866,9 +866,9 @@ window.VAULT_DATA = {
           "작별하지않는다",
           "궤도",
           "모든것이산산이부서지다",
-          "모순",
-          "백년의고독",
           "한국이란무엇인가",
+          "백년의고독",
+          "모순",
           "코스모스"
         ],
         "strength": "strong"
@@ -879,24 +879,11 @@ window.VAULT_DATA = {
         "books": [
           "남아있는나날",
           "예감은틀리지않는다",
-          "혼모노",
           "한국이란무엇인가",
+          "혼모노",
           "무진기행",
-          "살인자의기억법",
-          "브람스를좋아하세요"
-        ],
-        "strength": "strong"
-      },
-      {
-        "title": "기억은 어떤 매개를 통해 살아남는가",
-        "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가",
-        "books": [
-          "서사의위기",
-          "작별하지않는다",
-          "백년의고독",
-          "섬에있는서점",
-          "빛과실",
-          "괴테는모든것을말했다"
+          "브람스를좋아하세요",
+          "살인자의기억법"
         ],
         "strength": "strong"
       },
@@ -907,24 +894,90 @@ window.VAULT_DATA = {
           "사람장소환대",
           "시대예보경량문명의탄생",
           "아무것도하지않는법",
-          "경험의멸종",
           "혼모노",
+          "경험의멸종",
           "사생활의역사"
+        ],
+        "strength": "strong"
+      },
+      {
+        "title": "기억은 어떤 매개를 통해 살아남는가",
+        "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가",
+        "books": [
+          "작별하지않는다",
+          "서사의위기",
+          "백년의고독",
+          "섬에있는서점",
+          "빛과실",
+          "괴테는모든것을말했다"
         ],
         "strength": "strong"
       }
     ],
     "books": [
       {
+        "title": "자유로부터의도피",
+        "cardPath": "wiki/bookclub/books/자유로부터의도피/00_책카드",
+        "axis": "외적 지배가 사라진 뒤에도 자유가 완성되지 않는 이유는 무엇인가.",
+        "closeReadings": 1,
+        "questionLinks": 3,
+        "lectureLinks": 34,
+        "writingLinks": 0,
+        "derivedNotes": 0,
+        "readingScore": 183,
+        "topQuestions": [
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "소속은 언제 자아를 지우는가",
+            "link": "wiki/shared/questions/소속은 언제 자아를 지우는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
+          },
+          {
+            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 경험의멸종 편리함은왜내선택처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_경험의멸종_편리함은왜내선택처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
+          },
+          {
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 자동인형적 순응은 왜 자유처럼 느껴지는가",
+            "link": "wiki/bookclub/books/자유로부터의도피/01_자동인형적_순응은_왜_자유처럼_느껴지는가"
+          }
+        ]
+      },
+      {
         "title": "편의점인간",
         "cardPath": "wiki/bookclub/books/편의점인간/00_책카드",
         "axis": "보통 인간은 타고나는 것인가, 모두가 서로를 보며 흉내 내는 가공의 생물인가?",
         "closeReadings": 10,
         "questionLinks": 7,
-        "lectureLinks": 10,
+        "lectureLinks": 15,
         "writingLinks": 42,
         "derivedNotes": 26,
-        "readingScore": 135,
+        "readingScore": 160,
         "topQuestions": [
           {
             "title": "사람은 어떻게 사람 아닌 것이 되는가",
@@ -953,6 +1006,10 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
           },
           {
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+          },
+          {
             "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
             "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
           },
@@ -961,12 +1018,8 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
           },
           {
-            "title": "자유로부터의도피와 코뿔소 좋은말과 익명권위는 어떻게동조를만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_코뿔소_좋은말과_익명권위는_어떻게동조를만드는가"
-          },
-          {
-            "title": "자유로부터의도피와 편의점인간 보통인간은 누구의배역인가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_편의점인간_보통인간은_누구의배역인가"
+            "title": "자유로부터의도피와 위대한개츠비 욕망은어떻게계급의목소리를자기꿈으로듣는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_위대한개츠비_욕망은어떻게계급의목소리를자기꿈으로듣는가"
           }
         ],
         "closeReadingLinks": [
@@ -991,6 +1044,357 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/books/편의점인간/05_아직_설마_그런데"
           }
         ]
+      },
+      {
+        "title": "사람장소환대",
+        "cardPath": "wiki/bookclub/books/사람장소환대/00_책카드",
+        "axis": "인간으로 태어난 존재는 어떤 과정을 거쳐 사회 안의 “사람”이 되는가?",
+        "closeReadings": 0,
+        "questionLinks": 6,
+        "lectureLinks": 16,
+        "writingLinks": 59,
+        "derivedNotes": 11,
+        "readingScore": 121,
+        "topQuestions": [
+          {
+            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
+            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+          },
+          {
+            "title": "사람은 어떻게 사람 아닌 것이 되는가",
+            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          },
+          {
+            "title": "제자리는 누가 정하는가",
+            "link": "wiki/shared/questions/제자리는 누가 정하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "모든것이산산이부서지다와 사람장소환대 누가 공동체 안에서 사람으로 인정받는가",
+            "link": "wiki/bookclub/lectures/모든것이산산이부서지다와_사람장소환대_누가_공동체_안에서_사람으로_인정받는가"
+          },
+          {
+            "title": "여행의이유와 사람장소환대와 모순 환대는 언제 속박이 되는가",
+            "link": "wiki/bookclub/lectures/여행의이유와_사람장소환대와_모순_환대는_언제_속박이_되는가"
+          },
+          {
+            "title": "자유로부터의도피와 경험의멸종 편리함은왜내선택처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_경험의멸종_편리함은왜내선택처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+          },
+          {
+            "title": "자유로부터의도피와 모든것이산산이부서지다 약함의공포는어떻게가족과공동체의권위가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모든것이산산이부서지다_약함의공포는어떻게가족과공동체의권위가되는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "노동의배신",
+        "cardPath": "wiki/bookclub/books/노동의배신/00_책카드",
+        "axis": "왜 일을 하는데도 가난한가.",
+        "closeReadings": 0,
+        "questionLinks": 7,
+        "lectureLinks": 10,
+        "writingLinks": 29,
+        "derivedNotes": 27,
+        "readingScore": 95,
+        "topQuestions": [
+          {
+            "title": "사람은 어떻게 사람 아닌 것이 되는가",
+            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "여가는 누구에게 허락되는가",
+            "link": "wiki/shared/questions/여가는 누구에게 허락되는가"
+          },
+          {
+            "title": "일하는데도 왜 가난한가",
+            "link": "wiki/shared/questions/일하는데도 왜 가난한가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "게으름에대한찬양과 노동의배신 근면은누구의미덕인가",
+            "link": "wiki/bookclub/lectures/게으름에대한찬양과_노동의배신_근면은누구의미덕인가"
+          },
+          {
+            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+          },
+          {
+            "title": "자유로부터의도피와 노인과바다 끝까지버티는일은언제존엄이고언제자기파괴의명령인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노인과바다_끝까지버티는일은언제존엄이고언제자기파괴의명령인가"
+          },
+          {
+            "title": "자유로부터의도피와 마션 혼자해결하는능력은어떻게공동의자유가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_마션_혼자해결하는능력은어떻게공동의자유가되는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "작별하지않는다",
+        "cardPath": "wiki/bookclub/books/작별하지않는다/00_책카드",
+        "axis": "작별이 불가능한 폭력 앞에서, 애도는 끝내야 하는 일인가 계속해야 하는 일인가?",
+        "closeReadings": 1,
+        "questionLinks": 6,
+        "lectureLinks": 9,
+        "writingLinks": 13,
+        "derivedNotes": 10,
+        "readingScore": 89,
+        "topQuestions": [
+          {
+            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
+            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
+          },
+          {
+            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
+            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
+          },
+          {
+            "title": "기억은 어떤 매개를 통해 살아남는가",
+            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
+          },
+          {
+            "title": "기억은 왜 책임을 대신할 수 없는가",
+            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+          },
+          {
+            "title": "사람은 어떻게 사람 아닌 것이 되는가",
+            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "백지앞에서와 작별하지않는다 기억은 사람을 다시 사람으로 부르는가",
+            "link": "wiki/bookclub/lectures/백지앞에서와_작별하지않는다_기억은_사람을_다시_사람으로_부르는가"
+          },
+          {
+            "title": "빛과실과 작별하지않는다 북클럽 구어체",
+            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_북클럽_구어체"
+          },
+          {
+            "title": "빛과실과 작별하지않는다 사랑은 작별하지 않는가",
+            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_사랑은_작별하지_않는가"
+          },
+          {
+            "title": "자유로부터의도피와 백년의고독 기억을빼앗긴자유는왜같은역사를반복하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백년의고독_기억을빼앗긴자유는왜같은역사를반복하는가"
+          },
+          {
+            "title": "자유로부터의도피와 백지앞에서 잘듣는다는말은언제사랑이고언제선한자아의배역인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백지앞에서_잘듣는다는말은언제사랑이고언제선한자아의배역인가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 피가 멈추지 않게 하는 기억",
+            "link": "wiki/bookclub/books/작별하지않는다/01_피가_멈추지_않게_하는_기억"
+          }
+        ]
+      },
+      {
+        "title": "1984",
+        "cardPath": "wiki/bookclub/books/1984/00_책카드",
+        "axis": "권력은 어떻게 과거를 고쳐 현재의 진실을 만들고, 그 현재를 통해 다시 과거를 지배하는가.",
+        "closeReadings": 1,
+        "questionLinks": 5,
+        "lectureLinks": 9,
+        "writingLinks": 14,
+        "derivedNotes": 10,
+        "readingScore": 86,
+        "topQuestions": [
+          {
+            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
+            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
+          },
+          {
+            "title": "기록은 무엇을 남기고 무엇을 지우는가",
+            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          },
+          {
+            "title": "좋은 말은 어떻게 폭력의 재료가 되는가",
+            "link": "wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "1984와 서사의위기 정보독점과 정보과잉",
+            "link": "wiki/bookclub/lectures/1984와_서사의위기_정보독점과_정보과잉"
+          },
+          {
+            "title": "1984와 소송 죄명없는절차와 사상죄",
+            "link": "wiki/bookclub/lectures/1984와_소송_죄명없는절차와_사상죄"
+          },
+          {
+            "title": "1984와 코뿔소 집단감정과 좋은말의폭력",
+            "link": "wiki/bookclub/lectures/1984와_코뿔소_집단감정과_좋은말의폭력"
+          },
+          {
+            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
+          },
+          {
+            "title": "자유로부터의도피와 맥베스 욕망을운명이라고부르면선택의책임은사라지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_맥베스_욕망을운명이라고부르면선택의책임은사라지는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 2더하기2는4라고말할자유",
+            "link": "wiki/bookclub/books/1984/01_2더하기2는4라고말할자유"
+          }
+        ]
+      },
+      {
+        "title": "남아있는나날",
+        "cardPath": "wiki/bookclub/books/남아있는나날/00_책카드",
+        "axis": "품위는 인간을 지키는 절제인가, 인간을 지우는 자기검열인가?",
+        "closeReadings": 1,
+        "questionLinks": 7,
+        "lectureLinks": 9,
+        "writingLinks": 9,
+        "derivedNotes": 5,
+        "readingScore": 84,
+        "topQuestions": [
+          {
+            "title": "기억은 왜 책임을 대신할 수 없는가",
+            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+          },
+          {
+            "title": "부끄러움은 왜 행동이 되지 못하는가",
+            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "소속은 언제 자아를 지우는가",
+            "link": "wiki/shared/questions/소속은 언제 자아를 지우는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "남아있는나날과 예감은틀리지않는다 노년의회고와 자기기만",
+            "link": "wiki/bookclub/lectures/남아있는나날과_예감은틀리지않는다_노년의회고와_자기기만"
+          },
+          {
+            "title": "살인자의기억법과 남아있는나날 붕괴하는기억과반듯한기억",
+            "link": "wiki/bookclub/lectures/살인자의기억법과_남아있는나날_붕괴하는기억과반듯한기억"
+          },
+          {
+            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
+          },
+          {
+            "title": "자유로부터의도피와 무진기행 부끄러움은왜자유로이어지지못하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_무진기행_부끄러움은왜자유로이어지지못하는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 품위는 어떻게 책임을 지우는가",
+            "link": "wiki/bookclub/books/남아있는나날/01_품위는_어떻게_책임을_지우는가"
+          }
+        ]
+      },
+      {
+        "title": "예감은틀리지않는다",
+        "cardPath": "wiki/bookclub/books/예감은틀리지않는다/00_책카드",
+        "axis": "오래 믿어 온 기억은 진실에 가까워지는가, 아니면 더 단단한 착각이 되는가?",
+        "closeReadings": 0,
+        "questionLinks": 5,
+        "lectureLinks": 9,
+        "writingLinks": 46,
+        "derivedNotes": 45,
+        "readingScore": 84,
+        "topQuestions": [
+          {
+            "title": "기억은 왜 책임을 대신할 수 없는가",
+            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+          },
+          {
+            "title": "부끄러움은 왜 행동이 되지 못하는가",
+            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          },
+          {
+            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
+            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "남아있는나날과 예감은틀리지않는다 노년의회고와 자기기만",
+            "link": "wiki/bookclub/lectures/남아있는나날과_예감은틀리지않는다_노년의회고와_자기기만"
+          },
+          {
+            "title": "백지앞에서와 예감은틀리지않는다 기억의 자기면책과 연루성",
+            "link": "wiki/bookclub/lectures/백지앞에서와_예감은틀리지않는다_기억의_자기면책과_연루성"
+          },
+          {
+            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
+          },
+          {
+            "title": "자유로부터의도피와 무진기행 부끄러움은왜자유로이어지지못하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_무진기행_부끄러움은왜자유로이어지지못하는가"
+          },
+          {
+            "title": "자유로부터의도피와 백지앞에서 잘듣는다는말은언제사랑이고언제선한자아의배역인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백지앞에서_잘듣는다는말은언제사랑이고언제선한자아의배역인가"
+          }
+        ],
+        "closeReadingLinks": []
       },
       {
         "title": "서사의위기",
@@ -1058,250 +1462,15 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "사람장소환대",
-        "cardPath": "wiki/bookclub/books/사람장소환대/00_책카드",
-        "axis": "인간으로 태어난 존재는 어떤 과정을 거쳐 사회 안의 “사람”이 되는가?",
-        "closeReadings": 0,
-        "questionLinks": 6,
-        "lectureLinks": 7,
-        "writingLinks": 59,
-        "derivedNotes": 11,
-        "readingScore": 76,
-        "topQuestions": [
-          {
-            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
-            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
-          },
-          {
-            "title": "사람은 어떻게 사람 아닌 것이 되는가",
-            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          },
-          {
-            "title": "제자리는 누가 정하는가",
-            "link": "wiki/shared/questions/제자리는 누가 정하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "모든것이산산이부서지다와 사람장소환대 누가 공동체 안에서 사람으로 인정받는가",
-            "link": "wiki/bookclub/lectures/모든것이산산이부서지다와_사람장소환대_누가_공동체_안에서_사람으로_인정받는가"
-          },
-          {
-            "title": "여행의이유와 사람장소환대와 모순 환대는 언제 속박이 되는가",
-            "link": "wiki/bookclub/lectures/여행의이유와_사람장소환대와_모순_환대는_언제_속박이_되는가"
-          },
-          {
-            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
-          },
-          {
-            "title": "자유로부터의도피와 시대예보 가벼워진조직에서 왜자기감독자는무거워지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
-          },
-          {
-            "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "1984",
-        "cardPath": "wiki/bookclub/books/1984/00_책카드",
-        "axis": "권력은 어떻게 과거를 고쳐 현재의 진실을 만들고, 그 현재를 통해 다시 과거를 지배하는가.",
-        "closeReadings": 1,
-        "questionLinks": 5,
-        "lectureLinks": 6,
-        "writingLinks": 14,
-        "derivedNotes": 10,
-        "readingScore": 71,
-        "topQuestions": [
-          {
-            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
-            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
-          },
-          {
-            "title": "기록은 무엇을 남기고 무엇을 지우는가",
-            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          },
-          {
-            "title": "좋은 말은 어떻게 폭력의 재료가 되는가",
-            "link": "wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "1984와 서사의위기 정보독점과 정보과잉",
-            "link": "wiki/bookclub/lectures/1984와_서사의위기_정보독점과_정보과잉"
-          },
-          {
-            "title": "1984와 소송 죄명없는절차와 사상죄",
-            "link": "wiki/bookclub/lectures/1984와_소송_죄명없는절차와_사상죄"
-          },
-          {
-            "title": "1984와 코뿔소 집단감정과 좋은말의폭력",
-            "link": "wiki/bookclub/lectures/1984와_코뿔소_집단감정과_좋은말의폭력"
-          },
-          {
-            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
-          },
-          {
-            "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 2더하기2는4라고말할자유",
-            "link": "wiki/bookclub/books/1984/01_2더하기2는4라고말할자유"
-          }
-        ]
-      },
-      {
-        "title": "작별하지않는다",
-        "cardPath": "wiki/bookclub/books/작별하지않는다/00_책카드",
-        "axis": "작별이 불가능한 폭력 앞에서, 애도는 끝내야 하는 일인가 계속해야 하는 일인가?",
-        "closeReadings": 1,
-        "questionLinks": 6,
-        "lectureLinks": 5,
-        "writingLinks": 13,
-        "derivedNotes": 10,
-        "readingScore": 69,
-        "topQuestions": [
-          {
-            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
-            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
-          },
-          {
-            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
-            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
-          },
-          {
-            "title": "기억은 어떤 매개를 통해 살아남는가",
-            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
-          },
-          {
-            "title": "기억은 왜 책임을 대신할 수 없는가",
-            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
-          },
-          {
-            "title": "사람은 어떻게 사람 아닌 것이 되는가",
-            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "백지앞에서와 작별하지않는다 기억은 사람을 다시 사람으로 부르는가",
-            "link": "wiki/bookclub/lectures/백지앞에서와_작별하지않는다_기억은_사람을_다시_사람으로_부르는가"
-          },
-          {
-            "title": "빛과실과 작별하지않는다 북클럽 구어체",
-            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_북클럽_구어체"
-          },
-          {
-            "title": "빛과실과 작별하지않는다 사랑은 작별하지 않는가",
-            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_사랑은_작별하지_않는가"
-          },
-          {
-            "title": "작별하지않는다와 서사의위기 기억은 정보가 아니라 서사다",
-            "link": "wiki/bookclub/lectures/작별하지않는다와_서사의위기_기억은_정보가_아니라_서사다"
-          },
-          {
-            "title": "작별하지않는다와 한국이란무엇인가 국가는 무엇을 기억해야 하는가",
-            "link": "wiki/bookclub/lectures/작별하지않는다와_한국이란무엇인가_국가는_무엇을_기억해야_하는가"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 피가 멈추지 않게 하는 기억",
-            "link": "wiki/bookclub/books/작별하지않는다/01_피가_멈추지_않게_하는_기억"
-          }
-        ]
-      },
-      {
-        "title": "시대예보경량문명의탄생",
-        "cardPath": "wiki/bookclub/books/시대예보경량문명의탄생/00_책카드",
-        "axis": "경량문명은 기술 변화인가, 협력 방식의 재설계인가?",
-        "closeReadings": 1,
-        "questionLinks": 7,
-        "lectureLinks": 4,
-        "writingLinks": 16,
-        "derivedNotes": 11,
-        "readingScore": 68,
-        "topQuestions": [
-          {
-            "title": "나는 왜 나를 소개하지 못하는가",
-            "link": "wiki/shared/questions/나는 왜 나를 소개하지 못하는가"
-          },
-          {
-            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
-            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
-          },
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "시대예보와 서사의위기 정보가 이야기를 잃을때 일은 단계로 쪼개진다",
-            "link": "wiki/bookclub/lectures/시대예보와_서사의위기_정보가_이야기를_잃을때_일은_단계로_쪼개진다"
-          },
-          {
-            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
-          },
-          {
-            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
-          },
-          {
-            "title": "자유로부터의도피와 시대예보 가벼워진조직에서 왜자기감독자는무거워지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 알고리즘 상사는 누구의 책임인가",
-            "link": "wiki/bookclub/books/시대예보경량문명의탄생/01_알고리즘_상사는_누구의_책임인가"
-          }
-        ]
-      },
-      {
         "title": "게으름에대한찬양",
         "cardPath": "wiki/bookclub/books/게으름에대한찬양/00_책카드",
         "axis": "노동은 삶의 수단인가, 목적이 되었는가.",
         "closeReadings": 0,
         "questionLinks": 6,
-        "lectureLinks": 5,
+        "lectureLinks": 8,
         "writingLinks": 25,
         "derivedNotes": 18,
-        "readingScore": 67,
+        "readingScore": 82,
         "topQuestions": [
           {
             "title": "관심은 어떻게 현실을 다시 렌더링하는가",
@@ -1338,15 +1507,153 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
           },
           {
-            "title": "자유로부터의도피와 시대예보 가벼워진조직에서 왜자기감독자는무거워지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
           },
           {
-            "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
+            "title": "자유로부터의도피와 달리기를말할때내가하고싶은말 자기규칙은언제자발성이되고언제내면감독자가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_달리기를말할때내가하고싶은말_자기규칙은언제자발성이되고언제내면감독자가되는가"
           }
         ],
         "closeReadingLinks": []
+      },
+      {
+        "title": "마션",
+        "cardPath": "wiki/bookclub/books/마션/00_책카드",
+        "axis": "절망은 언제 감정 상태에서 문제 목록으로 바뀌는가.",
+        "closeReadings": 5,
+        "questionLinks": 5,
+        "lectureLinks": 5,
+        "writingLinks": 66,
+        "derivedNotes": 10,
+        "readingScore": 82,
+        "topQuestions": [
+          {
+            "title": "반복은 어떻게 삶을 지탱하는가",
+            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          },
+          {
+            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
+            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
+          },
+          {
+            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
+            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
+          },
+          {
+            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
+            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
+            "link": "wiki/bookclub/lectures/마션과_궤도_우주는_생존의_문제인가_관점의_문제인가"
+          },
+          {
+            "title": "자유로부터의도피와 노인과바다 끝까지버티는일은언제존엄이고언제자기파괴의명령인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노인과바다_끝까지버티는일은언제존엄이고언제자기파괴의명령인가"
+          },
+          {
+            "title": "자유로부터의도피와 마션 혼자해결하는능력은어떻게공동의자유가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_마션_혼자해결하는능력은어떻게공동의자유가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 시지프신화 구원을거부하는반항은적극적자유가될수있는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_시지프신화_구원을거부하는반항은적극적자유가될수있는가"
+          },
+          {
+            "title": "자유로부터의도피와 프로젝트헤일메리 강제로시작된희생은언제자기선택의책임이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_프로젝트헤일메리_강제로시작된희생은언제자기선택의책임이되는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 듣고 있습니까 패스파인더 통신해설",
+            "link": "wiki/bookclub/books/마션/01_듣고_있습니까_패스파인더_통신해설"
+          },
+          {
+            "title": "02 화성 감자와 마지막 식사 해설",
+            "link": "wiki/bookclub/books/마션/02_화성_감자와_마지막_식사_해설"
+          },
+          {
+            "title": "03 통제된 사고 VAL 파열 해설",
+            "link": "wiki/bookclub/books/마션/03_통제된_사고_VAL_파열_해설"
+          },
+          {
+            "title": "04 만난다는 건 거리와 속도를 다 맞추는 일이다 해설",
+            "link": "wiki/bookclub/books/마션/04_만난다는_건_거리와_속도를_다_맞추는_일이다_해설"
+          },
+          {
+            "title": "05 삐 무선 표지 신호 해설",
+            "link": "wiki/bookclub/books/마션/05_삐_무선_표지_신호_해설"
+          }
+        ]
+      },
+      {
+        "title": "소송",
+        "cardPath": "wiki/bookclub/books/소송/00_책카드",
+        "axis": "무슨 죄인지 말해주지 않는 세계에서, 인간은 어떻게 스스로 피고인이 되는가?",
+        "closeReadings": 1,
+        "questionLinks": 6,
+        "lectureLinks": 7,
+        "writingLinks": 55,
+        "derivedNotes": 54,
+        "readingScore": 81,
+        "topQuestions": [
+          {
+            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
+            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "왜 답이 없는데도 죽음은 집행되는가",
+            "link": "wiki/shared/questions/왜 답이 없는데도 죽음은 집행되는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "1984와 소송 죄명없는절차와 사상죄",
+            "link": "wiki/bookclub/lectures/1984와_소송_죄명없는절차와_사상죄"
+          },
+          {
+            "title": "자유로부터의도피와 부활 자기구원은언제타인을다시이용하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_부활_자기구원은언제타인을다시이용하는가"
+          },
+          {
+            "title": "자유로부터의도피와 사탄탱고 떠날수없는사람은왜구원자에게길을맡기는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사탄탱고_떠날수없는사람은왜구원자에게길을맡기는가"
+          },
+          {
+            "title": "자유로부터의도피와 소송 법은붙잡지않는데왜나는돌아서는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_소송_법은붙잡지않는데왜나는돌아서는가"
+          },
+          {
+            "title": "자유로부터의도피와 시지프신화 구원을거부하는반항은적극적자유가될수있는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_시지프신화_구원을거부하는반항은적극적자유가될수있는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 법앞에서 우화해설",
+            "link": "wiki/bookclub/books/소송/01_법앞에서_우화해설"
+          }
+        ]
       },
       {
         "title": "궤도",
@@ -1354,10 +1661,10 @@ window.VAULT_DATA = {
         "axis": "사건이 거의 없는 소설은 어떻게 삶의 리듬을 보여줄 수 있는가?",
         "closeReadings": 0,
         "questionLinks": 11,
-        "lectureLinks": 3,
+        "lectureLinks": 6,
         "writingLinks": 59,
         "derivedNotes": 5,
-        "readingScore": 65,
+        "readingScore": 80,
         "topQuestions": [
           {
             "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
@@ -1392,70 +1699,61 @@ window.VAULT_DATA = {
           {
             "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
             "link": "wiki/bookclub/lectures/마션과_궤도_우주는_생존의_문제인가_관점의_문제인가"
+          },
+          {
+            "title": "자유로부터의도피와 달리기를말할때내가하고싶은말 자기규칙은언제자발성이되고언제내면감독자가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_달리기를말할때내가하고싶은말_자기규칙은언제자발성이되고언제내면감독자가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 마션 혼자해결하는능력은어떻게공동의자유가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_마션_혼자해결하는능력은어떻게공동의자유가되는가"
           }
         ],
         "closeReadingLinks": []
       },
       {
-        "title": "남아있는나날",
-        "cardPath": "wiki/bookclub/books/남아있는나날/00_책카드",
-        "axis": "품위는 인간을 지키는 절제인가, 인간을 지우는 자기검열인가?",
-        "closeReadings": 1,
-        "questionLinks": 7,
-        "lectureLinks": 5,
-        "writingLinks": 9,
-        "derivedNotes": 5,
-        "readingScore": 64,
+        "title": "시지프신화",
+        "cardPath": "wiki/bookclub/books/시지프신화/00_책카드",
+        "axis": "삶이 살 가치가 있는지 없는지를 묻는 것이 왜 철학의 첫 질문인가?",
+        "closeReadings": 0,
+        "questionLinks": 2,
+        "lectureLinks": 10,
+        "writingLinks": 12,
+        "derivedNotes": 42,
+        "readingScore": 80,
         "topQuestions": [
           {
-            "title": "기억은 왜 책임을 대신할 수 없는가",
-            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
+            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
           },
           {
-            "title": "부끄러움은 왜 행동이 되지 못하는가",
-            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
-          },
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          },
-          {
-            "title": "소속은 언제 자아를 지우는가",
-            "link": "wiki/shared/questions/소속은 언제 자아를 지우는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
           }
         ],
         "topLectures": [
           {
-            "title": "남아있는나날과 예감은틀리지않는다 노년의회고와 자기기만",
-            "link": "wiki/bookclub/lectures/남아있는나날과_예감은틀리지않는다_노년의회고와_자기기만"
+            "title": "자유로부터의도피와 노인과바다 끝까지버티는일은언제존엄이고언제자기파괴의명령인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노인과바다_끝까지버티는일은언제존엄이고언제자기파괴의명령인가"
           },
           {
-            "title": "살인자의기억법과 남아있는나날 붕괴하는기억과반듯한기억",
-            "link": "wiki/bookclub/lectures/살인자의기억법과_남아있는나날_붕괴하는기억과반듯한기억"
+            "title": "자유로부터의도피와 달리기를말할때내가하고싶은말 자기규칙은언제자발성이되고언제내면감독자가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_달리기를말할때내가하고싶은말_자기규칙은언제자발성이되고언제내면감독자가되는가"
           },
           {
-            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
+            "title": "자유로부터의도피와 마션 혼자해결하는능력은어떻게공동의자유가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_마션_혼자해결하는능력은어떻게공동의자유가되는가"
           },
           {
-            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
+            "title": "자유로부터의도피와 맥베스 욕망을운명이라고부르면선택의책임은사라지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_맥베스_욕망을운명이라고부르면선택의책임은사라지는가"
           },
           {
-            "title": "자유로부터의도피와 편의점인간 보통인간은 누구의배역인가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_편의점인간_보통인간은_누구의배역인가"
+            "title": "자유로부터의도피와 모비딕 상처는어떻게공동체의명령이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모비딕_상처는어떻게공동체의명령이되는가"
           }
         ],
-        "closeReadingLinks": [
-          {
-            "title": "01 품위는 어떻게 책임을 지우는가",
-            "link": "wiki/bookclub/books/남아있는나날/01_품위는_어떻게_책임을_지우는가"
-          }
-        ]
+        "closeReadingLinks": []
       },
       {
         "title": "모든것이산산이부서지다",
@@ -1463,10 +1761,10 @@ window.VAULT_DATA = {
         "axis": "공동체는 무엇으로 함께 묶이는가? 혈연, 의례, 속담, 시장, 신앙, 법, 두려움, 돈 중 무엇이 중심인가?",
         "closeReadings": 2,
         "questionLinks": 8,
-        "lectureLinks": 3,
+        "lectureLinks": 6,
         "writingLinks": 23,
         "derivedNotes": 5,
-        "readingScore": 64,
+        "readingScore": 79,
         "topQuestions": [
           {
             "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
@@ -1499,6 +1797,14 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/lectures/모든것이산산이부서지다와_한국이란무엇인가_공동체는_자기이야기를_어떻게_되찾는가"
           },
           {
+            "title": "자유로부터의도피와 모든것이산산이부서지다 약함의공포는어떻게가족과공동체의권위가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모든것이산산이부서지다_약함의공포는어떻게가족과공동체의권위가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 백년의고독 기억을빼앗긴자유는왜같은역사를반복하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백년의고독_기억을빼앗긴자유는왜같은역사를반복하는가"
+          },
+          {
             "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
             "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
           }
@@ -1515,63 +1821,63 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "마션",
-        "cardPath": "wiki/bookclub/books/마션/00_책카드",
-        "axis": "절망은 언제 감정 상태에서 문제 목록으로 바뀌는가.",
-        "closeReadings": 5,
-        "questionLinks": 5,
-        "lectureLinks": 1,
-        "writingLinks": 66,
-        "derivedNotes": 10,
-        "readingScore": 62,
+        "title": "시대예보경량문명의탄생",
+        "cardPath": "wiki/bookclub/books/시대예보경량문명의탄생/00_책카드",
+        "axis": "경량문명은 기술 변화인가, 협력 방식의 재설계인가?",
+        "closeReadings": 1,
+        "questionLinks": 7,
+        "lectureLinks": 6,
+        "writingLinks": 16,
+        "derivedNotes": 11,
+        "readingScore": 78,
         "topQuestions": [
           {
-            "title": "반복은 어떻게 삶을 지탱하는가",
-            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+            "title": "나는 왜 나를 소개하지 못하는가",
+            "link": "wiki/shared/questions/나는 왜 나를 소개하지 못하는가"
+          },
+          {
+            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
+            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
           },
           {
             "title": "정보는 왜 이야기가 되지 못하는가",
             "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          },
-          {
-            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
-            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
-          },
-          {
-            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
-            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
-          },
-          {
-            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
-            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
           }
         ],
         "topLectures": [
           {
-            "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
-            "link": "wiki/bookclub/lectures/마션과_궤도_우주는_생존의_문제인가_관점의_문제인가"
+            "title": "시대예보와 서사의위기 정보가 이야기를 잃을때 일은 단계로 쪼개진다",
+            "link": "wiki/bookclub/lectures/시대예보와_서사의위기_정보가_이야기를_잃을때_일은_단계로_쪼개진다"
+          },
+          {
+            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 노동의배신 문은열려있는데왜나갈수없는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노동의배신_문은열려있는데왜나갈수없는가"
+          },
+          {
+            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
+          },
+          {
+            "title": "자유로부터의도피와 사생활의역사 닫힌문은언제자유를지키고언제고립을가두는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사생활의역사_닫힌문은언제자유를지키고언제고립을가두는가"
           }
         ],
         "closeReadingLinks": [
           {
-            "title": "01 듣고 있습니까 패스파인더 통신해설",
-            "link": "wiki/bookclub/books/마션/01_듣고_있습니까_패스파인더_통신해설"
-          },
-          {
-            "title": "02 화성 감자와 마지막 식사 해설",
-            "link": "wiki/bookclub/books/마션/02_화성_감자와_마지막_식사_해설"
-          },
-          {
-            "title": "03 통제된 사고 VAL 파열 해설",
-            "link": "wiki/bookclub/books/마션/03_통제된_사고_VAL_파열_해설"
-          },
-          {
-            "title": "04 만난다는 건 거리와 속도를 다 맞추는 일이다 해설",
-            "link": "wiki/bookclub/books/마션/04_만난다는_건_거리와_속도를_다_맞추는_일이다_해설"
-          },
-          {
-            "title": "05 삐 무선 표지 신호 해설",
-            "link": "wiki/bookclub/books/마션/05_삐_무선_표지_신호_해설"
+            "title": "01 알고리즘 상사는 누구의 책임인가",
+            "link": "wiki/bookclub/books/시대예보경량문명의탄생/01_알고리즘_상사는_누구의_책임인가"
           }
         ]
       },
@@ -1581,10 +1887,10 @@ window.VAULT_DATA = {
         "axis": "내 관심은 내가 선택한 것인가, 플랫폼과 생산성의 요구가 가져간 것인가?",
         "closeReadings": 0,
         "questionLinks": 7,
-        "lectureLinks": 3,
+        "lectureLinks": 5,
         "writingLinks": 33,
         "derivedNotes": 23,
-        "readingScore": 60,
+        "readingScore": 70,
         "topQuestions": [
           {
             "title": "관심은 어떻게 현실을 다시 렌더링하는가",
@@ -1617,6 +1923,14 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
           },
           {
+            "title": "자유로부터의도피와 경험의멸종 편리함은왜내선택처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_경험의멸종_편리함은왜내선택처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 사생활의역사 닫힌문은언제자유를지키고언제고립을가두는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사생활의역사_닫힌문은언제자유를지키고언제고립을가두는가"
+          },
+          {
             "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
             "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
           }
@@ -1624,247 +1938,57 @@ window.VAULT_DATA = {
         "closeReadingLinks": []
       },
       {
-        "title": "노동의배신",
-        "cardPath": "wiki/bookclub/books/노동의배신/00_책카드",
-        "axis": "왜 일을 하는데도 가난한가.",
+        "title": "한국이란무엇인가",
+        "cardPath": "wiki/bookclub/books/한국이란무엇인가/00_책카드",
+        "axis": "한국은 본질인가, 기억과 망각과 선택의 결과인가?",
         "closeReadings": 0,
-        "questionLinks": 5,
-        "lectureLinks": 4,
-        "writingLinks": 29,
-        "derivedNotes": 27,
-        "readingScore": 59,
+        "questionLinks": 8,
+        "lectureLinks": 7,
+        "writingLinks": 5,
+        "derivedNotes": 5,
+        "readingScore": 69,
         "topQuestions": [
           {
-            "title": "사람은 어떻게 사람 아닌 것이 되는가",
-            "link": "wiki/shared/questions/사람은 어떻게 사람 아닌 것이 되는가"
+            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
+            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
           },
           {
-            "title": "일하는데도 왜 가난한가",
-            "link": "wiki/shared/questions/일하는데도 왜 가난한가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          },
-          {
-            "title": "제도와 책임은 어떻게 서로를 밀어내는가",
-            "link": "wiki/shared/questions/제도와 책임은 어떻게 서로를 밀어내는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "게으름에대한찬양과 노동의배신 근면은누구의미덕인가",
-            "link": "wiki/bookclub/lectures/게으름에대한찬양과_노동의배신_근면은누구의미덕인가"
-          },
-          {
-            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
-          },
-          {
-            "title": "자유로부터의도피와 편의점인간 보통인간은 누구의배역인가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_편의점인간_보통인간은_누구의배역인가"
-          },
-          {
-            "title": "편의점인간과 노동의배신 일은 사람을 살리는가",
-            "link": "wiki/bookclub/lectures/편의점인간과_노동의배신_일은_사람을_살리는가"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "소송",
-        "cardPath": "wiki/bookclub/books/소송/00_책카드",
-        "axis": "무슨 죄인지 말해주지 않는 세계에서, 인간은 어떻게 스스로 피고인이 되는가?",
-        "closeReadings": 1,
-        "questionLinks": 6,
-        "lectureLinks": 2,
-        "writingLinks": 55,
-        "derivedNotes": 54,
-        "readingScore": 56,
-        "topQuestions": [
-          {
-            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
-            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "왜 답이 없는데도 죽음은 집행되는가",
-            "link": "wiki/shared/questions/왜 답이 없는데도 죽음은 집행되는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "1984와 소송 죄명없는절차와 사상죄",
-            "link": "wiki/bookclub/lectures/1984와_소송_죄명없는절차와_사상죄"
-          },
-          {
-            "title": "카뮈와 카프카 부조리 비교",
-            "link": "wiki/bookclub/lectures/카뮈와_카프카_부조리_비교"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 법앞에서 우화해설",
-            "link": "wiki/bookclub/books/소송/01_법앞에서_우화해설"
-          }
-        ]
-      },
-      {
-        "title": "예감은틀리지않는다",
-        "cardPath": "wiki/bookclub/books/예감은틀리지않는다/00_책카드",
-        "axis": "오래 믿어 온 기억은 진실에 가까워지는가, 아니면 더 단단한 착각이 되는가?",
-        "closeReadings": 0,
-        "questionLinks": 5,
-        "lectureLinks": 3,
-        "writingLinks": 46,
-        "derivedNotes": 45,
-        "readingScore": 54,
-        "topQuestions": [
-          {
-            "title": "기억은 왜 책임을 대신할 수 없는가",
-            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+            "title": "공동체는 언제 더 이상 우리라고 말하지 못하는가",
+            "link": "wiki/shared/questions/공동체는 언제 더 이상 우리라고 말하지 못하는가"
           },
           {
             "title": "부끄러움은 왜 행동이 되지 못하는가",
             "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
           },
           {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          },
-          {
-            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
-            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "남아있는나날과 예감은틀리지않는다 노년의회고와 자기기만",
-            "link": "wiki/bookclub/lectures/남아있는나날과_예감은틀리지않는다_노년의회고와_자기기만"
-          },
-          {
-            "title": "백지앞에서와 예감은틀리지않는다 기억의 자기면책과 연루성",
-            "link": "wiki/bookclub/lectures/백지앞에서와_예감은틀리지않는다_기억의_자기면책과_연루성"
-          },
-          {
-            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "자유로부터의도피",
-        "cardPath": "wiki/bookclub/books/자유로부터의도피/00_책카드",
-        "axis": "외적 지배가 사라진 뒤에도 자유가 완성되지 않는 이유는 무엇인가.",
-        "closeReadings": 1,
-        "questionLinks": 3,
-        "lectureLinks": 8,
-        "writingLinks": 0,
-        "derivedNotes": 0,
-        "readingScore": 53,
-        "topQuestions": [
-          {
             "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
             "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
           },
           {
-            "title": "소속은 언제 자아를 지우는가",
-            "link": "wiki/shared/questions/소속은 언제 자아를 지우는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
-          },
-          {
-            "title": "자유로부터의도피와 게으름에대한찬양 바쁨은 왜자유처럼느껴지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_게으름에대한찬양_바쁨은_왜자유처럼느껴지는가"
-          },
-          {
-            "title": "자유로부터의도피와 남아있는나날 품위는 어떻게자기삭제를 미덕으로만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_남아있는나날_품위는_어떻게자기삭제를_미덕으로만드는가"
-          },
-          {
-            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
-          },
-          {
-            "title": "자유로부터의도피와 시대예보 가벼워진조직에서 왜자기감독자는무거워지는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_시대예보_가벼워진조직에서_왜자기감독자는무거워지는가"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 자동인형적 순응은 왜 자유처럼 느껴지는가",
-            "link": "wiki/bookclub/books/자유로부터의도피/01_자동인형적_순응은_왜_자유처럼_느껴지는가"
-          }
-        ]
-      },
-      {
-        "title": "경험의멸종",
-        "cardPath": "wiki/bookclub/books/경험의멸종/00_책카드",
-        "axis": "기술은 우리의 경험을 확장하는가, 아니면 경험의 위험과 마찰을 제거해 경험 자체를 얇게 만드는가?",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 3,
-        "writingLinks": 19,
-        "derivedNotes": 12,
-        "readingScore": 51,
-        "topQuestions": [
-          {
-            "title": "기록은 무엇을 남기고 무엇을 지우는가",
-            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
-          },
-          {
-            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
-            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
-          },
-          {
             "title": "언어는 왜 관계를 구하지 못하는가",
             "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
           }
         ],
         "topLectures": [
           {
-            "title": "경험의멸종과 서사의위기 정보는 왜 경험이 되지 못하는가",
-            "link": "wiki/bookclub/lectures/경험의멸종과_서사의위기_정보는_왜_경험이_되지_못하는가"
+            "title": "모든것이산산이부서지다와 한국이란무엇인가 공동체는 자기이야기를 어떻게 되찾는가",
+            "link": "wiki/bookclub/lectures/모든것이산산이부서지다와_한국이란무엇인가_공동체는_자기이야기를_어떻게_되찾는가"
           },
           {
-            "title": "궤도와 경험의멸종 기술의 극한에서 경험은 어떻게 돌아오는가",
-            "link": "wiki/bookclub/lectures/궤도와_경험의멸종_기술의_극한에서_경험은_어떻게_돌아오는가"
+            "title": "자유로부터의도피와 모든것이산산이부서지다 약함의공포는어떻게가족과공동체의권위가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모든것이산산이부서지다_약함의공포는어떻게가족과공동체의권위가되는가"
           },
           {
-            "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
+            "title": "자유로부터의도피와 백년의고독 기억을빼앗긴자유는왜같은역사를반복하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백년의고독_기억을빼앗긴자유는왜같은역사를반복하는가"
+          },
+          {
+            "title": "자유로부터의도피와 제자리에있다는것 자유는자리를벗어나는힘인가자리를만드는힘인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_제자리에있다는것_자유는자리를벗어나는힘인가자리를만드는힘인가"
+          },
+          {
+            "title": "자유로부터의도피와 종이동물원 사랑의언어를버리는일은언제자유가되고언제자기삭제가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_종이동물원_사랑의언어를버리는일은언제자유가되고언제자기삭제가되는가"
           }
         ],
         "closeReadingLinks": []
@@ -1875,10 +1999,10 @@ window.VAULT_DATA = {
         "axis": "타인의 고통을 어떻게 써야 그 고통을 이용하지 않게 되는가?",
         "closeReadings": 1,
         "questionLinks": 5,
-        "lectureLinks": 2,
+        "lectureLinks": 5,
         "writingLinks": 50,
         "derivedNotes": 10,
-        "readingScore": 51,
+        "readingScore": 66,
         "topQuestions": [
           {
             "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
@@ -1909,6 +2033,18 @@ window.VAULT_DATA = {
           {
             "title": "백지앞에서와 작별하지않는다 기억은 사람을 다시 사람으로 부르는가",
             "link": "wiki/bookclub/lectures/백지앞에서와_작별하지않는다_기억은_사람을_다시_사람으로_부르는가"
+          },
+          {
+            "title": "자유로부터의도피와 백지앞에서 잘듣는다는말은언제사랑이고언제선한자아의배역인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백지앞에서_잘듣는다는말은언제사랑이고언제선한자아의배역인가"
+          },
+          {
+            "title": "자유로부터의도피와 빛과실 타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_빛과실_타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가"
+          },
+          {
+            "title": "자유로부터의도피와 예감은틀리지않는다 기억은어떻게가짜자아의알리바이가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_예감은틀리지않는다_기억은어떻게가짜자아의알리바이가되는가"
           }
         ],
         "closeReadingLinks": [
@@ -1917,6 +2053,437 @@ window.VAULT_DATA = {
             "link": "wiki/bookclub/books/백지앞에서/01_들을수없는존재는책임질수도없다"
           }
         ]
+      },
+      {
+        "title": "혼모노",
+        "cardPath": "wiki/bookclub/books/혼모노/00_책카드",
+        "axis": "진짜와 가짜는 사물 안에 있는가, 아니면 믿음·관점·권력·퍼포먼스 속에서 판정되는가?",
+        "closeReadings": 0,
+        "questionLinks": 9,
+        "lectureLinks": 3,
+        "writingLinks": 22,
+        "derivedNotes": 20,
+        "readingScore": 66,
+        "topQuestions": [
+          {
+            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
+            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
+          },
+          {
+            "title": "기록은 무엇을 남기고 무엇을 지우는가",
+            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+          },
+          {
+            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
+            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+          },
+          {
+            "title": "부끄러움은 왜 행동이 되지 못하는가",
+            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 이방인 의당느껴야하는감정을거부하면자유로운가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_이방인_의당느껴야하는감정을거부하면자유로운가"
+          },
+          {
+            "title": "자유로부터의도피와 혼모노 진짜자아는누가판정하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_혼모노_진짜자아는누가판정하는가"
+          },
+          {
+            "title": "편의점인간과 혼모노 보통과진짜는누가판정하는가",
+            "link": "wiki/bookclub/lectures/편의점인간과_혼모노_보통과진짜는누가판정하는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "경험의멸종",
+        "cardPath": "wiki/bookclub/books/경험의멸종/00_책카드",
+        "axis": "기술은 우리의 경험을 확장하는가, 아니면 경험의 위험과 마찰을 제거해 경험 자체를 얇게 만드는가?",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 5,
+        "writingLinks": 19,
+        "derivedNotes": 12,
+        "readingScore": 61,
+        "topQuestions": [
+          {
+            "title": "기록은 무엇을 남기고 무엇을 지우는가",
+            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+          },
+          {
+            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
+            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "경험의멸종과 서사의위기 정보는 왜 경험이 되지 못하는가",
+            "link": "wiki/bookclub/lectures/경험의멸종과_서사의위기_정보는_왜_경험이_되지_못하는가"
+          },
+          {
+            "title": "궤도와 경험의멸종 기술의 극한에서 경험은 어떻게 돌아오는가",
+            "link": "wiki/bookclub/lectures/궤도와_경험의멸종_기술의_극한에서_경험은_어떻게_돌아오는가"
+          },
+          {
+            "title": "자유로부터의도피와 경험의멸종 편리함은왜내선택처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_경험의멸종_편리함은왜내선택처럼느껴지는가"
+          },
+          {
+            "title": "자유로부터의도피와 아무것도하지않는법 도피하지않고 물러나는법",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_아무것도하지않는법_도피하지않고_물러나는법"
+          },
+          {
+            "title": "자유로부터의도피와 혼모노 진짜자아는누가판정하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_혼모노_진짜자아는누가판정하는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "무진기행",
+        "cardPath": "wiki/bookclub/books/무진기행/00_책카드",
+        "axis": "「무진기행」의 마지막 “심한 부끄러움”은 이 선집 전체의 중심 감정이다. 윤희중은 하인숙을 버렸다는 것을 안다. 편지를 찢는 일이 배반이라는 것",
+        "closeReadings": 4,
+        "questionLinks": 3,
+        "lectureLinks": 4,
+        "writingLinks": 8,
+        "derivedNotes": 0,
+        "readingScore": 53,
+        "topQuestions": [
+          {
+            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
+            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
+          },
+          {
+            "title": "부끄러움은 왜 행동이 되지 못하는가",
+            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 무진기행 부끄러움은왜자유로이어지지못하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_무진기행_부끄러움은왜자유로이어지지못하는가"
+          },
+          {
+            "title": "자유로부터의도피와 부활 자기구원은언제타인을다시이용하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_부활_자기구원은언제타인을다시이용하는가"
+          },
+          {
+            "title": "자유로부터의도피와 예감은틀리지않는다 기억은어떻게가짜자아의알리바이가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_예감은틀리지않는다_기억은어떻게가짜자아의알리바이가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 제자리에있다는것 자유는자리를벗어나는힘인가자리를만드는힘인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_제자리에있다는것_자유는자리를벗어나는힘인가자리를만드는힘인가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "02 무진기행 개별카드",
+            "link": "wiki/bookclub/books/무진기행/02_무진기행_개별카드"
+          },
+          {
+            "title": "03 서울 1964년 겨울 개별카드",
+            "link": "wiki/bookclub/books/무진기행/03_서울_1964년_겨울_개별카드"
+          },
+          {
+            "title": "04 생명연습 개별카드",
+            "link": "wiki/bookclub/books/무진기행/04_생명연습_개별카드"
+          },
+          {
+            "title": "05 서울의 달빛 0장 개별카드",
+            "link": "wiki/bookclub/books/무진기행/05_서울의_달빛_0장_개별카드"
+          }
+        ]
+      },
+      {
+        "title": "코뿔소",
+        "cardPath": "wiki/bookclub/books/코뿔소/00_책카드",
+        "axis": "작품 속 사람들은 갑자기 악인이 되지 않는다. 처음에는 말도 안 된다고 웃고, 다음에는 “그럴 수도 있지”라고 말하고, 마지막에는 “그들이 더 ",
+        "closeReadings": 0,
+        "questionLinks": 0,
+        "lectureLinks": 10,
+        "writingLinks": 2,
+        "derivedNotes": 1,
+        "readingScore": 53,
+        "topQuestions": [],
+        "topLectures": [
+          {
+            "title": "1984와 코뿔소 집단감정과 좋은말의폭력",
+            "link": "wiki/bookclub/lectures/1984와_코뿔소_집단감정과_좋은말의폭력"
+          },
+          {
+            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
+          },
+          {
+            "title": "자유로부터의도피와 모든것이산산이부서지다 약함의공포는어떻게가족과공동체의권위가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모든것이산산이부서지다_약함의공포는어떻게가족과공동체의권위가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 모비딕 상처는어떻게공동체의명령이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모비딕_상처는어떻게공동체의명령이되는가"
+          },
+          {
+            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "먼저온미래",
+        "cardPath": "wiki/bookclub/books/먼저온미래/00_책카드",
+        "axis": "AI가 특정 영역에서 인간보다 더 잘 판단할 때, 인간은 경쟁자인가 수용자인가?",
+        "closeReadings": 5,
+        "questionLinks": 5,
+        "lectureLinks": 1,
+        "writingLinks": 40,
+        "derivedNotes": 0,
+        "readingScore": 52,
+        "topQuestions": [
+          {
+            "title": "기술은 인간의 판단을 어떻게 바꾸는가",
+            "link": "wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 경험의멸종 편리함은왜내선택처럼느껴지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_경험의멸종_편리함은왜내선택처럼느껴지는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 실수라고 불렀던 수가 정답이 되었다",
+            "link": "wiki/bookclub/books/먼저온미래/01_실수라고_불렀던_수가_정답이_되었다"
+          },
+          {
+            "title": "02 공존은 강요됩니다",
+            "link": "wiki/bookclub/books/먼저온미래/02_공존은_강요됩니다"
+          },
+          {
+            "title": "03 좋은 삶을 모르겠습니다",
+            "link": "wiki/bookclub/books/먼저온미래/03_좋은_삶을_모르겠습니다"
+          },
+          {
+            "title": "04 마찰면이 필요합니다",
+            "link": "wiki/bookclub/books/먼저온미래/04_마찰면이_필요합니다"
+          },
+          {
+            "title": "05 좋은 상상이 시스템이 되어야 합니다",
+            "link": "wiki/bookclub/books/먼저온미래/05_좋은_상상이_시스템이_되어야_합니다"
+          }
+        ]
+      },
+      {
+        "title": "백년의고독",
+        "cardPath": "wiki/bookclub/books/백년의고독/00_책카드",
+        "axis": "이름을 붙이는 일은 세계를 이해하는 일인가, 세계를 반복의 굴레에 묶는 일인가?",
+        "closeReadings": 5,
+        "questionLinks": 5,
+        "lectureLinks": 1,
+        "writingLinks": 46,
+        "derivedNotes": 0,
+        "readingScore": 52,
+        "topQuestions": [
+          {
+            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
+            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
+          },
+          {
+            "title": "기록은 무엇을 남기고 무엇을 지우는가",
+            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+          },
+          {
+            "title": "기억은 어떤 매개를 통해 살아남는가",
+            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
+          },
+          {
+            "title": "반복은 어떻게 삶을 지탱하는가",
+            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 백년의고독 기억을빼앗긴자유는왜같은역사를반복하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_백년의고독_기억을빼앗긴자유는왜같은역사를반복하는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 불면증과 이름표",
+            "link": "wiki/bookclub/books/백년의고독/01_불면증과_이름표"
+          },
+          {
+            "title": "02 바나나 학살은 일어나지 않았다",
+            "link": "wiki/bookclub/books/백년의고독/02_바나나_학살은_일어나지_않았다"
+          },
+          {
+            "title": "03 양피지는 왜 너무 늦게 읽히는가",
+            "link": "wiki/bookclub/books/백년의고독/03_양피지는_왜_너무_늦게_읽히는가"
+          },
+          {
+            "title": "04 같은 이름은 왜 같은 운명을 반복시키는가",
+            "link": "wiki/bookclub/books/백년의고독/04_같은_이름은_왜_같은_운명을_반복시키는가"
+          },
+          {
+            "title": "05 죽음은 잊혀질 때 옵니다",
+            "link": "wiki/bookclub/books/백년의고독/05_죽음은_잊혀질_때_옵니다"
+          }
+        ]
+      },
+      {
+        "title": "위대한개츠비",
+        "cardPath": "wiki/bookclub/books/위대한개츠비/00_책카드",
+        "axis": "과거를 되돌리고 싶다는 욕망은 언제 사랑이 아니라 현재 사람을 지우는 폭력이 되는가?",
+        "closeReadings": 5,
+        "questionLinks": 5,
+        "lectureLinks": 1,
+        "writingLinks": 38,
+        "derivedNotes": 0,
+        "readingScore": 52,
+        "topQuestions": [
+          {
+            "title": "기억은 왜 책임을 대신할 수 없는가",
+            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
+          },
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          },
+          {
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 위대한개츠비 욕망은어떻게계급의목소리를자기꿈으로듣는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_위대한개츠비_욕망은어떻게계급의목소리를자기꿈으로듣는가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 빈말 초대는 왜 계급의 언어인가",
+            "link": "wiki/bookclub/books/위대한개츠비/01_빈말_초대는_왜_계급의_언어인가"
+          },
+          {
+            "title": "02 파티 명단과 장례식 명단",
+            "link": "wiki/bookclub/books/위대한개츠비/02_파티_명단과_장례식_명단"
+          },
+          {
+            "title": "03 데이지의 목소리는 왜 돈으로 가득 차 있는가",
+            "link": "wiki/bookclub/books/위대한개츠비/03_데이지의_목소리는_왜_돈으로_가득_차_있는가"
+          },
+          {
+            "title": "04 과거를 되돌릴 수 있다고요",
+            "link": "wiki/bookclub/books/위대한개츠비/04_과거를_되돌릴_수_있다고요"
+          },
+          {
+            "title": "05 그들이 만든 쓰레기는 다른 사람이 치운다",
+            "link": "wiki/bookclub/books/위대한개츠비/05_그들이_만든_쓰레기는_다른_사람이_치운다"
+          }
+        ]
+      },
+      {
+        "title": "달리기를말할때내가하고싶은말",
+        "cardPath": "wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드",
+        "axis": "우리는 달리기를 말할 때 사실 무엇을 말하고 있는가.",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 7,
+        "writingLinks": 4,
+        "derivedNotes": 0,
+        "readingScore": 51,
+        "topQuestions": [
+          {
+            "title": "나는 왜 나를 소개하지 못하는가",
+            "link": "wiki/shared/questions/나는 왜 나를 소개하지 못하는가"
+          },
+          {
+            "title": "반복은 어떻게 삶을 지탱하는가",
+            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+          },
+          {
+            "title": "의미를 서두르지 않는다는 것은 무엇인가",
+            "link": "wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가"
+          },
+          {
+            "title": "제자리는 누가 정하는가",
+            "link": "wiki/shared/questions/제자리는 누가 정하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "고래와 달리기 충분히좋은해법과 지속가능한루틴",
+            "link": "wiki/bookclub/lectures/고래와_달리기_충분히좋은해법과_지속가능한루틴"
+          },
+          {
+            "title": "궤도와 달리기 반복은 어떻게 현재를 만드는가",
+            "link": "wiki/bookclub/lectures/궤도와_달리기_반복은_어떻게_현재를_만드는가"
+          },
+          {
+            "title": "달리기와 센스의철학 반복과 변주의 리듬",
+            "link": "wiki/bookclub/lectures/달리기와_센스의철학_반복과_변주의_리듬"
+          },
+          {
+            "title": "자유로부터의도피와 노인과바다 끝까지버티는일은언제존엄이고언제자기파괴의명령인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노인과바다_끝까지버티는일은언제존엄이고언제자기파괴의명령인가"
+          },
+          {
+            "title": "자유로부터의도피와 달리기를말할때내가하고싶은말 자기규칙은언제자발성이되고언제내면감독자가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_달리기를말할때내가하고싶은말_자기규칙은언제자발성이되고언제내면감독자가되는가"
+          }
+        ],
+        "closeReadingLinks": []
       },
       {
         "title": "모순",
@@ -2033,14 +2600,14 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "혼모노",
-        "cardPath": "wiki/bookclub/books/혼모노/00_책카드",
-        "axis": "진짜와 가짜는 사물 안에 있는가, 아니면 믿음·관점·권력·퍼포먼스 속에서 판정되는가?",
-        "closeReadings": 0,
-        "questionLinks": 7,
-        "lectureLinks": 1,
-        "writingLinks": 22,
-        "derivedNotes": 20,
+        "title": "희랍어시간",
+        "cardPath": "wiki/bookclub/books/희랍어시간/00_책카드",
+        "axis": "언어는 감정과 감각을 표현하지만 완전한 진실을 담지 못하고, 상대를 위로하면서 동시에 상처 입힌다. 『희랍어 시간』에서 말은 단순 소통 수단이 ",
+        "closeReadings": 2,
+        "questionLinks": 5,
+        "lectureLinks": 3,
+        "writingLinks": 55,
+        "derivedNotes": 0,
         "readingScore": 50,
         "topQuestions": [
           {
@@ -2052,12 +2619,12 @@ window.VAULT_DATA = {
             "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
           },
           {
-            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
-            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
           },
           {
-            "title": "부끄러움은 왜 행동이 되지 못하는가",
-            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
           },
           {
             "title": "좋은 말은 어떻게 폭력의 재료가 되는가",
@@ -2066,11 +2633,28 @@ window.VAULT_DATA = {
         ],
         "topLectures": [
           {
-            "title": "편의점인간과 혼모노 보통과진짜는누가판정하는가",
-            "link": "wiki/bookclub/lectures/편의점인간과_혼모노_보통과진짜는누가판정하는가"
+            "title": "모순과 희랍어시간 말은 왜 사람을 구하지 못하는가",
+            "link": "wiki/bookclub/lectures/모순과_희랍어시간_말은_왜_사람을_구하지_못하는가"
+          },
+          {
+            "title": "자유로부터의도피와 빛과실 타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_빛과실_타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가"
+          },
+          {
+            "title": "코스모스와 희랍어시간 불완전한 신호를 읽는 법",
+            "link": "wiki/bookclub/lectures/코스모스와_희랍어시간_불완전한_신호를_읽는_법"
           }
         ],
-        "closeReadingLinks": []
+        "closeReadingLinks": [
+          {
+            "title": "01 중간태로 읽는 희랍어 시간",
+            "link": "wiki/bookclub/books/희랍어시간/01_중간태로_읽는_희랍어_시간"
+          },
+          {
+            "title": "02 마지막 챕터는 왜 0번인가",
+            "link": "wiki/bookclub/books/희랍어시간/02_마지막_챕터는_왜_0번인가"
+          }
+        ]
       },
       {
         "title": "그리스인조르바",
@@ -2185,118 +2769,6 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "먼저온미래",
-        "cardPath": "wiki/bookclub/books/먼저온미래/00_책카드",
-        "axis": "AI가 특정 영역에서 인간보다 더 잘 판단할 때, 인간은 경쟁자인가 수용자인가?",
-        "closeReadings": 5,
-        "questionLinks": 5,
-        "lectureLinks": 0,
-        "writingLinks": 40,
-        "derivedNotes": 0,
-        "readingScore": 47,
-        "topQuestions": [
-          {
-            "title": "기술은 인간의 판단을 어떻게 바꾸는가",
-            "link": "wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가"
-          },
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": [
-          {
-            "title": "01 실수라고 불렀던 수가 정답이 되었다",
-            "link": "wiki/bookclub/books/먼저온미래/01_실수라고_불렀던_수가_정답이_되었다"
-          },
-          {
-            "title": "02 공존은 강요됩니다",
-            "link": "wiki/bookclub/books/먼저온미래/02_공존은_강요됩니다"
-          },
-          {
-            "title": "03 좋은 삶을 모르겠습니다",
-            "link": "wiki/bookclub/books/먼저온미래/03_좋은_삶을_모르겠습니다"
-          },
-          {
-            "title": "04 마찰면이 필요합니다",
-            "link": "wiki/bookclub/books/먼저온미래/04_마찰면이_필요합니다"
-          },
-          {
-            "title": "05 좋은 상상이 시스템이 되어야 합니다",
-            "link": "wiki/bookclub/books/먼저온미래/05_좋은_상상이_시스템이_되어야_합니다"
-          }
-        ]
-      },
-      {
-        "title": "백년의고독",
-        "cardPath": "wiki/bookclub/books/백년의고독/00_책카드",
-        "axis": "이름을 붙이는 일은 세계를 이해하는 일인가, 세계를 반복의 굴레에 묶는 일인가?",
-        "closeReadings": 5,
-        "questionLinks": 5,
-        "lectureLinks": 0,
-        "writingLinks": 46,
-        "derivedNotes": 0,
-        "readingScore": 47,
-        "topQuestions": [
-          {
-            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
-            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
-          },
-          {
-            "title": "기록은 무엇을 남기고 무엇을 지우는가",
-            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
-          },
-          {
-            "title": "기억은 어떤 매개를 통해 살아남는가",
-            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
-          },
-          {
-            "title": "반복은 어떻게 삶을 지탱하는가",
-            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": [
-          {
-            "title": "01 불면증과 이름표",
-            "link": "wiki/bookclub/books/백년의고독/01_불면증과_이름표"
-          },
-          {
-            "title": "02 바나나 학살은 일어나지 않았다",
-            "link": "wiki/bookclub/books/백년의고독/02_바나나_학살은_일어나지_않았다"
-          },
-          {
-            "title": "03 양피지는 왜 너무 늦게 읽히는가",
-            "link": "wiki/bookclub/books/백년의고독/03_양피지는_왜_너무_늦게_읽히는가"
-          },
-          {
-            "title": "04 같은 이름은 왜 같은 운명을 반복시키는가",
-            "link": "wiki/bookclub/books/백년의고독/04_같은_이름은_왜_같은_운명을_반복시키는가"
-          },
-          {
-            "title": "05 죽음은 잊혀질 때 옵니다",
-            "link": "wiki/bookclub/books/백년의고독/05_죽음은_잊혀질_때_옵니다"
-          }
-        ]
-      },
-      {
         "title": "섬에있는서점",
         "cardPath": "wiki/bookclub/books/섬에있는서점/00_책카드",
         "axis": "사람은 어떤 공간을 통해 고립에서 관계로 이동하는가?",
@@ -2349,62 +2821,6 @@ window.VAULT_DATA = {
           {
             "title": "05 희귀본은 어떻게 이름과 수술비가 되는가",
             "link": "wiki/bookclub/books/섬에있는서점/05_희귀본은_어떻게_이름과_수술비가_되는가"
-          }
-        ]
-      },
-      {
-        "title": "위대한개츠비",
-        "cardPath": "wiki/bookclub/books/위대한개츠비/00_책카드",
-        "axis": "과거를 되돌리고 싶다는 욕망은 언제 사랑이 아니라 현재 사람을 지우는 폭력이 되는가?",
-        "closeReadings": 5,
-        "questionLinks": 5,
-        "lectureLinks": 0,
-        "writingLinks": 38,
-        "derivedNotes": 0,
-        "readingScore": 47,
-        "topQuestions": [
-          {
-            "title": "기억은 왜 책임을 대신할 수 없는가",
-            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
-          },
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": [
-          {
-            "title": "01 빈말 초대는 왜 계급의 언어인가",
-            "link": "wiki/bookclub/books/위대한개츠비/01_빈말_초대는_왜_계급의_언어인가"
-          },
-          {
-            "title": "02 파티 명단과 장례식 명단",
-            "link": "wiki/bookclub/books/위대한개츠비/02_파티_명단과_장례식_명단"
-          },
-          {
-            "title": "03 데이지의 목소리는 왜 돈으로 가득 차 있는가",
-            "link": "wiki/bookclub/books/위대한개츠비/03_데이지의_목소리는_왜_돈으로_가득_차_있는가"
-          },
-          {
-            "title": "04 과거를 되돌릴 수 있다고요",
-            "link": "wiki/bookclub/books/위대한개츠비/04_과거를_되돌릴_수_있다고요"
-          },
-          {
-            "title": "05 그들이 만든 쓰레기는 다른 사람이 치운다",
-            "link": "wiki/bookclub/books/위대한개츠비/05_그들이_만든_쓰레기는_다른_사람이_치운다"
           }
         ]
       },
@@ -2465,98 +2881,129 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "희랍어시간",
-        "cardPath": "wiki/bookclub/books/희랍어시간/00_책카드",
-        "axis": "언어는 감정과 감각을 표현하지만 완전한 진실을 담지 못하고, 상대를 위로하면서 동시에 상처 입힌다. 『희랍어 시간』에서 말은 단순 소통 수단이 ",
-        "closeReadings": 2,
+        "title": "흰고래의흼에대하여",
+        "cardPath": "wiki/bookclub/books/흰고래의흼에대하여/00_책카드",
+        "axis": "완벽한 번역이 불가능하다면, 좋은 번역은 무엇을 목표로 해야 하는가?",
+        "closeReadings": 0,
         "questionLinks": 5,
-        "lectureLinks": 2,
-        "writingLinks": 55,
-        "derivedNotes": 0,
-        "readingScore": 45,
+        "lectureLinks": 1,
+        "writingLinks": 23,
+        "derivedNotes": 20,
+        "readingScore": 44,
+        "topQuestions": [
+          {
+            "title": "기록은 무엇을 남기고 무엇을 지우는가",
+            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+          },
+          {
+            "title": "말은 언제 출처보다 삶으로 진짜가 되는가",
+            "link": "wiki/shared/questions/말은 언제 출처보다 삶으로 진짜가 되는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "의미 이전의 리듬은 어떻게 사건이 되는가",
+            "link": "wiki/shared/questions/의미 이전의 리듬은 어떻게 사건이 되는가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 모비딕 상처는어떻게공동체의명령이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모비딕_상처는어떻게공동체의명령이되는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "빛과실",
+        "cardPath": "wiki/bookclub/books/빛과실/00_책카드",
+        "axis": "한강 문학의 가장 깊은 질문은 세계는 왜 폭력적인가인가, 아니면 그럼에도 사랑은 어디에 있는가인가?",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 3,
+        "writingLinks": 9,
+        "derivedNotes": 7,
+        "readingScore": 43,
         "topQuestions": [
           {
             "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
             "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
           },
           {
-            "title": "기록은 무엇을 남기고 무엇을 지우는가",
-            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
+            "title": "기억은 어떤 매개를 통해 살아남는가",
+            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
           },
           {
             "title": "언어는 왜 관계를 구하지 못하는가",
             "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
           },
+          {
+            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
+            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "빛과실과 작별하지않는다 북클럽 구어체",
+            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_북클럽_구어체"
+          },
+          {
+            "title": "빛과실과 작별하지않는다 사랑은 작별하지 않는가",
+            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_사랑은_작별하지_않는가"
+          },
+          {
+            "title": "자유로부터의도피와 빛과실 타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_빛과실_타인의일인칭을상상하는일은언제사랑이고언제대신말하기인가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "부활",
+        "cardPath": "wiki/bookclub/books/부활/00_책카드",
+        "axis": "사람에게도 봄이 올 수 있는가?",
+        "closeReadings": 0,
+        "questionLinks": 2,
+        "lectureLinks": 7,
+        "writingLinks": 0,
+        "derivedNotes": 0,
+        "readingScore": 41,
+        "topQuestions": [
           {
             "title": "자각은 왜 사건이 되지 못하는가",
             "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
           },
           {
-            "title": "좋은 말은 어떻게 폭력의 재료가 되는가",
-            "link": "wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가"
+            "title": "제도는 인간을 어떻게 지우는가",
+            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
           }
         ],
         "topLectures": [
           {
-            "title": "모순과 희랍어시간 말은 왜 사람을 구하지 못하는가",
-            "link": "wiki/bookclub/lectures/모순과_희랍어시간_말은_왜_사람을_구하지_못하는가"
+            "title": "자유로부터의도피와 모든것이산산이부서지다 약함의공포는어떻게가족과공동체의권위가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모든것이산산이부서지다_약함의공포는어떻게가족과공동체의권위가되는가"
           },
           {
-            "title": "코스모스와 희랍어시간 불완전한 신호를 읽는 법",
-            "link": "wiki/bookclub/lectures/코스모스와_희랍어시간_불완전한_신호를_읽는_법"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 중간태로 읽는 희랍어 시간",
-            "link": "wiki/bookclub/books/희랍어시간/01_중간태로_읽는_희랍어_시간"
+            "title": "자유로부터의도피와 무진기행 부끄러움은왜자유로이어지지못하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_무진기행_부끄러움은왜자유로이어지지못하는가"
           },
           {
-            "title": "02 마지막 챕터는 왜 0번인가",
-            "link": "wiki/bookclub/books/희랍어시간/02_마지막_챕터는_왜_0번인가"
-          }
-        ]
-      },
-      {
-        "title": "한국이란무엇인가",
-        "cardPath": "wiki/bookclub/books/한국이란무엇인가/00_책카드",
-        "axis": "한국은 본질인가, 기억과 망각과 선택의 결과인가?",
-        "closeReadings": 0,
-        "questionLinks": 8,
-        "lectureLinks": 2,
-        "writingLinks": 5,
-        "derivedNotes": 5,
-        "readingScore": 44,
-        "topQuestions": [
-          {
-            "title": "공동체는 무엇을 기억하고 무엇을 잊는가",
-            "link": "wiki/shared/questions/공동체는 무엇을 기억하고 무엇을 잊는가"
+            "title": "자유로부터의도피와 부활 자기구원은언제타인을다시이용하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_부활_자기구원은언제타인을다시이용하는가"
           },
           {
-            "title": "공동체는 언제 더 이상 우리라고 말하지 못하는가",
-            "link": "wiki/shared/questions/공동체는 언제 더 이상 우리라고 말하지 못하는가"
+            "title": "자유로부터의도피와 소송 법은붙잡지않는데왜나는돌아서는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_소송_법은붙잡지않는데왜나는돌아서는가"
           },
           {
-            "title": "부끄러움은 왜 행동이 되지 못하는가",
-            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
-          },
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "모든것이산산이부서지다와 한국이란무엇인가 공동체는 자기이야기를 어떻게 되찾는가",
-            "link": "wiki/bookclub/lectures/모든것이산산이부서지다와_한국이란무엇인가_공동체는_자기이야기를_어떻게_되찾는가"
-          },
-          {
-            "title": "작별하지않는다와 한국이란무엇인가 국가는 무엇을 기억해야 하는가",
-            "link": "wiki/bookclub/lectures/작별하지않는다와_한국이란무엇인가_국가는_무엇을_기억해야_하는가"
+            "title": "자유로부터의도피와 시지프신화 구원을거부하는반항은적극적자유가될수있는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_시지프신화_구원을거부하는반항은적극적자유가될수있는가"
           }
         ],
         "closeReadingLinks": []
@@ -2611,76 +3058,90 @@ window.VAULT_DATA = {
         ]
       },
       {
-        "title": "흰고래의흼에대하여",
-        "cardPath": "wiki/bookclub/books/흰고래의흼에대하여/00_책카드",
-        "axis": "완벽한 번역이 불가능하다면, 좋은 번역은 무엇을 목표로 해야 하는가?",
-        "closeReadings": 0,
-        "questionLinks": 5,
-        "lectureLinks": 0,
-        "writingLinks": 23,
-        "derivedNotes": 20,
-        "readingScore": 39,
-        "topQuestions": [
-          {
-            "title": "기록은 무엇을 남기고 무엇을 지우는가",
-            "link": "wiki/shared/questions/기록은 무엇을 남기고 무엇을 지우는가"
-          },
-          {
-            "title": "말은 언제 출처보다 삶으로 진짜가 되는가",
-            "link": "wiki/shared/questions/말은 언제 출처보다 삶으로 진짜가 되는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "의미 이전의 리듬은 어떻게 사건이 되는가",
-            "link": "wiki/shared/questions/의미 이전의 리듬은 어떻게 사건이 되는가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "빛과실",
-        "cardPath": "wiki/bookclub/books/빛과실/00_책카드",
-        "axis": "한강 문학의 가장 깊은 질문은 세계는 왜 폭력적인가인가, 아니면 그럼에도 사랑은 어디에 있는가인가?",
-        "closeReadings": 0,
+        "title": "브람스를좋아하세요",
+        "cardPath": "wiki/bookclub/books/브람스를좋아하세요/00_책카드",
+        "axis": "사랑받는 것과 필요되는 것은 왜 다르게 느껴지는가?",
+        "closeReadings": 1,
         "questionLinks": 4,
-        "lectureLinks": 2,
-        "writingLinks": 9,
-        "derivedNotes": 7,
+        "lectureLinks": 4,
+        "writingLinks": 2,
+        "derivedNotes": 0,
         "readingScore": 38,
         "topQuestions": [
           {
-            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
-            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
+            "title": "부끄러움은 왜 행동이 되지 못하는가",
+            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
           },
           {
-            "title": "기억은 어떤 매개를 통해 살아남는가",
-            "link": "wiki/shared/questions/기억은 어떤 매개를 통해 살아남는가"
+            "title": "사랑은 왜 필요와 습관이 되는가",
+            "link": "wiki/shared/questions/사랑은 왜 필요와 습관이 되는가"
           },
           {
             "title": "언어는 왜 관계를 구하지 못하는가",
             "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
           },
           {
-            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
-            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
           }
         ],
         "topLectures": [
           {
-            "title": "빛과실과 작별하지않는다 북클럽 구어체",
-            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_북클럽_구어체"
+            "title": "사강과 반스 시간과 회한 비교",
+            "link": "wiki/bookclub/lectures/사강과_반스_시간과_회한_비교"
           },
           {
-            "title": "빛과실과 작별하지않는다 사랑은 작별하지 않는가",
-            "link": "wiki/bookclub/lectures/빛과실과_작별하지않는다_사랑은_작별하지_않는가"
+            "title": "자유로부터의도피와 무진기행 부끄러움은왜자유로이어지지못하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_무진기행_부끄러움은왜자유로이어지지못하는가"
+          },
+          {
+            "title": "자유로부터의도피와 위대한개츠비 욕망은어떻게계급의목소리를자기꿈으로듣는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_위대한개츠비_욕망은어떻게계급의목소리를자기꿈으로듣는가"
+          },
+          {
+            "title": "자유로부터의도피와 참을수없는존재의가벼움 떠날수있는자유와함께머무는자유는어떻게다른가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_참을수없는존재의가벼움_떠날수있는자유와함께머무는자유는어떻게다른가"
+          }
+        ],
+        "closeReadingLinks": [
+          {
+            "title": "01 브람스를좋아하세요 질문해설",
+            "link": "wiki/bookclub/books/브람스를좋아하세요/01_브람스를좋아하세요_질문해설"
+          }
+        ]
+      },
+      {
+        "title": "센스의철학",
+        "cardPath": "wiki/bookclub/books/센스의철학/00_책카드",
+        "axis": "지바는 “센스가 나쁘다”를 “센스가 자각되지 않은 상태”로 바꾼다. 센스를 인격 판정이나 타고난 계급 감각이 아니라 훈련 가능한 자각의 문제로 ",
+        "closeReadings": 0,
+        "questionLinks": 1,
+        "lectureLinks": 4,
+        "writingLinks": 8,
+        "derivedNotes": 5,
+        "readingScore": 36,
+        "topQuestions": [
+          {
+            "title": "의미 이전의 리듬은 어떻게 사건이 되는가",
+            "link": "wiki/shared/questions/의미 이전의 리듬은 어떻게 사건이 되는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "달리기와 센스의철학 반복과 변주의 리듬",
+            "link": "wiki/bookclub/lectures/달리기와_센스의철학_반복과_변주의_리듬"
+          },
+          {
+            "title": "서사의위기와 센스의철학 의미를 늦추는 두가지 방법",
+            "link": "wiki/bookclub/lectures/서사의위기와_센스의철학_의미를_늦추는_두가지_방법"
+          },
+          {
+            "title": "자유로부터의도피와 달리기를말할때내가하고싶은말 자기규칙은언제자발성이되고언제내면감독자가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_달리기를말할때내가하고싶은말_자기규칙은언제자발성이되고언제내면감독자가되는가"
+          },
+          {
+            "title": "자유로부터의도피와 코뿔소 좋은말과 익명권위는 어떻게동조를만드는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_코뿔소_좋은말과_익명권위는_어떻게동조를만드는가"
           }
         ],
         "closeReadingLinks": []
@@ -2717,80 +3178,213 @@ window.VAULT_DATA = {
         "closeReadingLinks": []
       },
       {
-        "title": "무진기행",
-        "cardPath": "wiki/bookclub/books/무진기행/00_책카드",
-        "axis": "「무진기행」의 마지막 “심한 부끄러움”은 이 선집 전체의 중심 감정이다. 윤희중은 하인숙을 버렸다는 것을 안다. 편지를 찢는 일이 배반이라는 것",
-        "closeReadings": 4,
-        "questionLinks": 3,
-        "lectureLinks": 0,
-        "writingLinks": 8,
-        "derivedNotes": 0,
+        "title": "사생활의역사",
+        "cardPath": "wiki/bookclub/books/사생활의역사/00_책카드",
+        "axis": "사생활은 혼자 있을 권리인가, 아니면 무엇을 누구에게 보여줄지 결정하는 통제권인가.",
+        "closeReadings": 0,
+        "questionLinks": 5,
+        "lectureLinks": 2,
+        "writingLinks": 5,
+        "derivedNotes": 5,
+        "readingScore": 35,
+        "topQuestions": [
+          {
+            "title": "관심은 어떻게 현실을 다시 렌더링하는가",
+            "link": "wiki/shared/questions/관심은 어떻게 현실을 다시 렌더링하는가"
+          },
+          {
+            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
+            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
+          },
+          {
+            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
+            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
+          },
+          {
+            "title": "사생활은 무엇을 누구에게 보여줄지 결정하는 힘인가",
+            "link": "wiki/shared/questions/사생활은 무엇을 누구에게 보여줄지 결정하는 힘인가"
+          },
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
+          },
+          {
+            "title": "자유로부터의도피와 사생활의역사 닫힌문은언제자유를지키고언제고립을가두는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사생활의역사_닫힌문은언제자유를지키고언제고립을가두는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "노인과바다",
+        "cardPath": "wiki/bookclub/books/노인과바다/00_책카드",
+        "axis": "결과가 거의 사라졌을 때, 행위의 존엄은 어디에 남는가.",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 2,
+        "writingLinks": 6,
+        "derivedNotes": 5,
         "readingScore": 33,
         "topQuestions": [
           {
-            "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
-            "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
+            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
+            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
+          },
+          {
+            "title": "반복은 어떻게 삶을 지탱하는가",
+            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+          },
+          {
+            "title": "불완전함은 어떻게 결함이 아니라 조건이 되는가",
+            "link": "wiki/shared/questions/불완전함은 어떻게 결함이 아니라 조건이 되는가"
+          },
+          {
+            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
+            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 노인과바다 끝까지버티는일은언제존엄이고언제자기파괴의명령인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_노인과바다_끝까지버티는일은언제존엄이고언제자기파괴의명령인가"
+          },
+          {
+            "title": "자유로부터의도피와 모비딕 상처는어떻게공동체의명령이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모비딕_상처는어떻게공동체의명령이되는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "모비딕",
+        "cardPath": "wiki/bookclub/books/모비딕/00_책카드",
+        "axis": "인간은 왜 알 수 없는 대상을 그대로 두지 못하고 의미·악·운명으로 고정하려 하는가.",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 2,
+        "writingLinks": 5,
+        "derivedNotes": 5,
+        "readingScore": 32,
+        "topQuestions": [
+          {
+            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
+            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
+          },
+          {
+            "title": "공동체는 언제 더 이상 우리라고 말하지 못하는가",
+            "link": "wiki/shared/questions/공동체는 언제 더 이상 우리라고 말하지 못하는가"
+          },
+          {
+            "title": "알 수 없는 것은 왜 정복 대상이 되는가",
+            "link": "wiki/shared/questions/알 수 없는 것은 왜 정복 대상이 되는가"
+          },
+          {
+            "title": "의미를 서두르지 않는다는 것은 무엇인가",
+            "link": "wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 맥베스 욕망을운명이라고부르면선택의책임은사라지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_맥베스_욕망을운명이라고부르면선택의책임은사라지는가"
+          },
+          {
+            "title": "자유로부터의도피와 모비딕 상처는어떻게공동체의명령이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_모비딕_상처는어떻게공동체의명령이되는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "살인자의기억법",
+        "cardPath": "wiki/bookclub/books/살인자의기억법/00_책카드",
+        "axis": "기억하지 못하는 죄는 사라지는가.",
+        "closeReadings": 0,
+        "questionLinks": 5,
+        "lectureLinks": 3,
+        "writingLinks": 2,
+        "derivedNotes": 0,
+        "readingScore": 32,
+        "topQuestions": [
+          {
+            "title": "기억은 왜 책임을 대신할 수 없는가",
+            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
           },
           {
             "title": "부끄러움은 왜 행동이 되지 못하는가",
             "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
           },
           {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "예방이라는 이름의 폭력",
+            "link": "wiki/shared/questions/예방이라는 이름의 폭력"
+          },
+          {
+            "title": "우연은 왜 운명처럼 느껴지는가",
+            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
           }
         ],
-        "topLectures": [],
-        "closeReadingLinks": [
-          {
-            "title": "02 무진기행 개별카드",
-            "link": "wiki/bookclub/books/무진기행/02_무진기행_개별카드"
-          },
-          {
-            "title": "03 서울 1964년 겨울 개별카드",
-            "link": "wiki/bookclub/books/무진기행/03_서울_1964년_겨울_개별카드"
-          },
-          {
-            "title": "04 생명연습 개별카드",
-            "link": "wiki/bookclub/books/무진기행/04_생명연습_개별카드"
-          },
-          {
-            "title": "05 서울의 달빛 0장 개별카드",
-            "link": "wiki/bookclub/books/무진기행/05_서울의_달빛_0장_개별카드"
-          }
-        ]
-      },
-      {
-        "title": "코뿔소",
-        "cardPath": "wiki/bookclub/books/코뿔소/00_책카드",
-        "axis": "작품 속 사람들은 갑자기 악인이 되지 않는다. 처음에는 말도 안 된다고 웃고, 다음에는 “그럴 수도 있지”라고 말하고, 마지막에는 “그들이 더 ",
-        "closeReadings": 0,
-        "questionLinks": 0,
-        "lectureLinks": 6,
-        "writingLinks": 2,
-        "derivedNotes": 1,
-        "readingScore": 33,
-        "topQuestions": [],
         "topLectures": [
           {
-            "title": "1984와 코뿔소 집단감정과 좋은말의폭력",
-            "link": "wiki/bookclub/lectures/1984와_코뿔소_집단감정과_좋은말의폭력"
+            "title": "맥베스와 살인자의기억법 예언과의심은어떻게예방적폭력이되는가",
+            "link": "wiki/bookclub/lectures/맥베스와_살인자의기억법_예언과의심은어떻게예방적폭력이되는가"
           },
           {
-            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
+            "title": "살인자의기억법과 남아있는나날 붕괴하는기억과반듯한기억",
+            "link": "wiki/bookclub/lectures/살인자의기억법과_남아있는나날_붕괴하는기억과반듯한기억"
           },
           {
-            "title": "자유로부터의도피와 사람장소환대 자아를보존하는소속은 어떻게가능한가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_사람장소환대_자아를보존하는소속은_어떻게가능한가"
+            "title": "자유로부터의도피와 맥베스 욕망을운명이라고부르면선택의책임은사라지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_맥베스_욕망을운명이라고부르면선택의책임은사라지는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "프로젝트헤일메리",
+        "cardPath": "wiki/bookclub/books/프로젝트헤일메리/00_책카드",
+        "axis": "과학은 구원을 가능하게 하지만, 무엇이 그 구원을 실제 선택으로 바꾸는가.",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 2,
+        "writingLinks": 5,
+        "derivedNotes": 5,
+        "readingScore": 32,
+        "topQuestions": [
+          {
+            "title": "정보는 왜 이야기가 되지 못하는가",
+            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
           },
           {
-            "title": "자유로부터의도피와 코뿔소 좋은말과 익명권위는 어떻게동조를만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_코뿔소_좋은말과_익명권위는_어떻게동조를만드는가"
+            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
+            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
           },
           {
-            "title": "자유로부터의도피와 편의점인간 보통인간은 누구의배역인가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_편의점인간_보통인간은_누구의배역인가"
+            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
+            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
+          },
+          {
+            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
+            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
+            "link": "wiki/bookclub/lectures/마션과_궤도_우주는_생존의_문제인가_관점의_문제인가"
+          },
+          {
+            "title": "자유로부터의도피와 프로젝트헤일메리 강제로시작된희생은언제자기선택의책임이되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_프로젝트헤일메리_강제로시작된희생은언제자기선택의책임이되는가"
           }
         ],
         "closeReadingLinks": []
@@ -2831,80 +3425,53 @@ window.VAULT_DATA = {
         "closeReadingLinks": []
       },
       {
-        "title": "달리기를말할때내가하고싶은말",
-        "cardPath": "wiki/bookclub/books/달리기를말할때내가하고싶은말/00_책카드",
-        "axis": "우리는 달리기를 말할 때 사실 무엇을 말하고 있는가.",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 3,
-        "writingLinks": 4,
+        "title": "맥베스",
+        "cardPath": "wiki/bookclub/books/맥베스/00_책카드",
+        "axis": "예언은 운명을 말하는가, 아니면 인간의 욕망을 깨우는가.",
+        "closeReadings": 1,
+        "questionLinks": 5,
+        "lectureLinks": 2,
+        "writingLinks": 2,
         "derivedNotes": 0,
         "readingScore": 31,
         "topQuestions": [
           {
-            "title": "나는 왜 나를 소개하지 못하는가",
-            "link": "wiki/shared/questions/나는 왜 나를 소개하지 못하는가"
+            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
+            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
           },
           {
-            "title": "반복은 어떻게 삶을 지탱하는가",
-            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
           },
           {
-            "title": "의미를 서두르지 않는다는 것은 무엇인가",
-            "link": "wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가"
+            "title": "예방이라는 이름의 폭력",
+            "link": "wiki/shared/questions/예방이라는 이름의 폭력"
           },
           {
-            "title": "제자리는 누가 정하는가",
-            "link": "wiki/shared/questions/제자리는 누가 정하는가"
+            "title": "우연은 왜 운명처럼 느껴지는가",
+            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
+          },
+          {
+            "title": "자기기만은 어떻게 양심의 언어를 빌리는가",
+            "link": "wiki/shared/questions/자기기만은 어떻게 양심의 언어를 빌리는가"
           }
         ],
         "topLectures": [
           {
-            "title": "고래와 달리기 충분히좋은해법과 지속가능한루틴",
-            "link": "wiki/bookclub/lectures/고래와_달리기_충분히좋은해법과_지속가능한루틴"
+            "title": "맥베스와 살인자의기억법 예언과의심은어떻게예방적폭력이되는가",
+            "link": "wiki/bookclub/lectures/맥베스와_살인자의기억법_예언과의심은어떻게예방적폭력이되는가"
           },
           {
-            "title": "궤도와 달리기 반복은 어떻게 현재를 만드는가",
-            "link": "wiki/bookclub/lectures/궤도와_달리기_반복은_어떻게_현재를_만드는가"
-          },
-          {
-            "title": "달리기와 센스의철학 반복과 변주의 리듬",
-            "link": "wiki/bookclub/lectures/달리기와_센스의철학_반복과_변주의_리듬"
+            "title": "자유로부터의도피와 맥베스 욕망을운명이라고부르면선택의책임은사라지는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_맥베스_욕망을운명이라고부르면선택의책임은사라지는가"
           }
         ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "센스의철학",
-        "cardPath": "wiki/bookclub/books/센스의철학/00_책카드",
-        "axis": "지바는 “센스가 나쁘다”를 “센스가 자각되지 않은 상태”로 바꾼다. 센스를 인격 판정이나 타고난 계급 감각이 아니라 훈련 가능한 자각의 문제로 ",
-        "closeReadings": 0,
-        "questionLinks": 1,
-        "lectureLinks": 3,
-        "writingLinks": 8,
-        "derivedNotes": 5,
-        "readingScore": 31,
-        "topQuestions": [
+        "closeReadingLinks": [
           {
-            "title": "의미 이전의 리듬은 어떻게 사건이 되는가",
-            "link": "wiki/shared/questions/의미 이전의 리듬은 어떻게 사건이 되는가"
+            "title": "01 여자가 낳은 자",
+            "link": "wiki/bookclub/books/맥베스/01_여자가_낳은_자"
           }
-        ],
-        "topLectures": [
-          {
-            "title": "달리기와 센스의철학 반복과 변주의 리듬",
-            "link": "wiki/bookclub/lectures/달리기와_센스의철학_반복과_변주의_리듬"
-          },
-          {
-            "title": "서사의위기와 센스의철학 의미를 늦추는 두가지 방법",
-            "link": "wiki/bookclub/lectures/서사의위기와_센스의철학_의미를_늦추는_두가지_방법"
-          },
-          {
-            "title": "자유로부터의도피와 코뿔소 좋은말과 익명권위는 어떻게동조를만드는가",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_코뿔소_좋은말과_익명권위는_어떻게동조를만드는가"
-          }
-        ],
-        "closeReadingLinks": []
+        ]
       },
       {
         "title": "고래는물에서숨쉬지않는다",
@@ -2943,311 +3510,15 @@ window.VAULT_DATA = {
         "closeReadingLinks": []
       },
       {
-        "title": "사생활의역사",
-        "cardPath": "wiki/bookclub/books/사생활의역사/00_책카드",
-        "axis": "사생활은 혼자 있을 권리인가, 아니면 무엇을 누구에게 보여줄지 결정하는 통제권인가.",
-        "closeReadings": 0,
-        "questionLinks": 5,
-        "lectureLinks": 1,
-        "writingLinks": 5,
-        "derivedNotes": 5,
-        "readingScore": 30,
-        "topQuestions": [
-          {
-            "title": "관심은 어떻게 현실을 다시 렌더링하는가",
-            "link": "wiki/shared/questions/관심은 어떻게 현실을 다시 렌더링하는가"
-          },
-          {
-            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
-            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
-          },
-          {
-            "title": "디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가",
-            "link": "wiki/shared/questions/디지털 시대의 그림자는 무엇을 사람으로 보이게 하는가"
-          },
-          {
-            "title": "사생활은 무엇을 누구에게 보여줄지 결정하는 힘인가",
-            "link": "wiki/shared/questions/사생활은 무엇을 누구에게 보여줄지 결정하는 힘인가"
-          },
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "자유로부터의도피와 1984 강제된복종과 자유롭게느껴지는순응",
-            "link": "wiki/bookclub/lectures/자유로부터의도피와_1984_강제된복종과_자유롭게느껴지는순응"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "살인자의기억법",
-        "cardPath": "wiki/bookclub/books/살인자의기억법/00_책카드",
-        "axis": "기억하지 못하는 죄는 사라지는가.",
-        "closeReadings": 0,
-        "questionLinks": 5,
-        "lectureLinks": 2,
-        "writingLinks": 2,
-        "derivedNotes": 0,
-        "readingScore": 27,
-        "topQuestions": [
-          {
-            "title": "기억은 왜 책임을 대신할 수 없는가",
-            "link": "wiki/shared/questions/기억은 왜 책임을 대신할 수 없는가"
-          },
-          {
-            "title": "부끄러움은 왜 행동이 되지 못하는가",
-            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "예방이라는 이름의 폭력",
-            "link": "wiki/shared/questions/예방이라는 이름의 폭력"
-          },
-          {
-            "title": "우연은 왜 운명처럼 느껴지는가",
-            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "맥베스와 살인자의기억법 예언과의심은어떻게예방적폭력이되는가",
-            "link": "wiki/bookclub/lectures/맥베스와_살인자의기억법_예언과의심은어떻게예방적폭력이되는가"
-          },
-          {
-            "title": "살인자의기억법과 남아있는나날 붕괴하는기억과반듯한기억",
-            "link": "wiki/bookclub/lectures/살인자의기억법과_남아있는나날_붕괴하는기억과반듯한기억"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "프로젝트헤일메리",
-        "cardPath": "wiki/bookclub/books/프로젝트헤일메리/00_책카드",
-        "axis": "과학은 구원을 가능하게 하지만, 무엇이 그 구원을 실제 선택으로 바꾸는가.",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 1,
-        "writingLinks": 5,
-        "derivedNotes": 5,
-        "readingScore": 27,
-        "topQuestions": [
-          {
-            "title": "정보는 왜 이야기가 되지 못하는가",
-            "link": "wiki/shared/questions/정보는 왜 이야기가 되지 못하는가"
-          },
-          {
-            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
-            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
-          },
-          {
-            "title": "타인의 고통 앞에서 어디까지 함께 있을 수 있는가",
-            "link": "wiki/shared/questions/타인의 고통 앞에서 어디까지 함께 있을 수 있는가"
-          },
-          {
-            "title": "풀리지 않는 문제가 인간이라면 무엇을 해야 하는가",
-            "link": "wiki/shared/questions/풀리지 않는 문제가 인간이라면 무엇을 해야 하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "마션과 궤도 우주는 생존의 문제인가 관점의 문제인가",
-            "link": "wiki/bookclub/lectures/마션과_궤도_우주는_생존의_문제인가_관점의_문제인가"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "맥베스",
-        "cardPath": "wiki/bookclub/books/맥베스/00_책카드",
-        "axis": "예언은 운명을 말하는가, 아니면 인간의 욕망을 깨우는가.",
-        "closeReadings": 1,
-        "questionLinks": 5,
-        "lectureLinks": 1,
-        "writingLinks": 2,
-        "derivedNotes": 0,
-        "readingScore": 26,
-        "topQuestions": [
-          {
-            "title": "권력은 어떻게 언어와 기억을 다시 쓰는가",
-            "link": "wiki/shared/questions/권력은 어떻게 언어와 기억을 다시 쓰는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "예방이라는 이름의 폭력",
-            "link": "wiki/shared/questions/예방이라는 이름의 폭력"
-          },
-          {
-            "title": "우연은 왜 운명처럼 느껴지는가",
-            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
-          },
-          {
-            "title": "자기기만은 어떻게 양심의 언어를 빌리는가",
-            "link": "wiki/shared/questions/자기기만은 어떻게 양심의 언어를 빌리는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "맥베스와 살인자의기억법 예언과의심은어떻게예방적폭력이되는가",
-            "link": "wiki/bookclub/lectures/맥베스와_살인자의기억법_예언과의심은어떻게예방적폭력이되는가"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 여자가 낳은 자",
-            "link": "wiki/bookclub/books/맥베스/01_여자가_낳은_자"
-          }
-        ]
-      },
-      {
-        "title": "노인과바다",
-        "cardPath": "wiki/bookclub/books/노인과바다/00_책카드",
-        "axis": "결과가 거의 사라졌을 때, 행위의 존엄은 어디에 남는가.",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 0,
-        "writingLinks": 6,
-        "derivedNotes": 5,
-        "readingScore": 23,
-        "topQuestions": [
-          {
-            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
-            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
-          },
-          {
-            "title": "반복은 어떻게 삶을 지탱하는가",
-            "link": "wiki/shared/questions/반복은 어떻게 삶을 지탱하는가"
-          },
-          {
-            "title": "불완전함은 어떻게 결함이 아니라 조건이 되는가",
-            "link": "wiki/shared/questions/불완전함은 어떻게 결함이 아니라 조건이 되는가"
-          },
-          {
-            "title": "충분히 좋은 해법은 어떻게 삶을 지속시키는가",
-            "link": "wiki/shared/questions/충분히 좋은 해법은 어떻게 삶을 지속시키는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "브람스를좋아하세요",
-        "cardPath": "wiki/bookclub/books/브람스를좋아하세요/00_책카드",
-        "axis": "사랑받는 것과 필요되는 것은 왜 다르게 느껴지는가?",
-        "closeReadings": 1,
-        "questionLinks": 4,
-        "lectureLinks": 1,
-        "writingLinks": 2,
-        "derivedNotes": 0,
-        "readingScore": 23,
-        "topQuestions": [
-          {
-            "title": "부끄러움은 왜 행동이 되지 못하는가",
-            "link": "wiki/shared/questions/부끄러움은 왜 행동이 되지 못하는가"
-          },
-          {
-            "title": "사랑은 왜 필요와 습관이 되는가",
-            "link": "wiki/shared/questions/사랑은 왜 필요와 습관이 되는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "사강과 반스 시간과 회한 비교",
-            "link": "wiki/bookclub/lectures/사강과_반스_시간과_회한_비교"
-          }
-        ],
-        "closeReadingLinks": [
-          {
-            "title": "01 브람스를좋아하세요 질문해설",
-            "link": "wiki/bookclub/books/브람스를좋아하세요/01_브람스를좋아하세요_질문해설"
-          }
-        ]
-      },
-      {
-        "title": "모비딕",
-        "cardPath": "wiki/bookclub/books/모비딕/00_책카드",
-        "axis": "인간은 왜 알 수 없는 대상을 그대로 두지 못하고 의미·악·운명으로 고정하려 하는가.",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 0,
-        "writingLinks": 5,
-        "derivedNotes": 5,
-        "readingScore": 22,
-        "topQuestions": [
-          {
-            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
-            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
-          },
-          {
-            "title": "공동체는 언제 더 이상 우리라고 말하지 못하는가",
-            "link": "wiki/shared/questions/공동체는 언제 더 이상 우리라고 말하지 못하는가"
-          },
-          {
-            "title": "알 수 없는 것은 왜 정복 대상이 되는가",
-            "link": "wiki/shared/questions/알 수 없는 것은 왜 정복 대상이 되는가"
-          },
-          {
-            "title": "의미를 서두르지 않는다는 것은 무엇인가",
-            "link": "wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "시지프신화",
-        "cardPath": "wiki/bookclub/books/시지프신화/00_책카드",
-        "axis": "삶이 살 가치가 있는지 없는지를 묻는 것이 왜 철학의 첫 질문인가?",
-        "closeReadings": 0,
-        "questionLinks": 2,
-        "lectureLinks": 1,
-        "writingLinks": 5,
-        "derivedNotes": 5,
-        "readingScore": 21,
-        "topQuestions": [
-          {
-            "title": "개인은 언제 세계를 부조리하다고 느끼는가",
-            "link": "wiki/shared/questions/개인은 언제 세계를 부조리하다고 느끼는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          }
-        ],
-        "topLectures": [
-          {
-            "title": "카뮈와 카프카 부조리 비교",
-            "link": "wiki/bookclub/lectures/카뮈와_카프카_부조리_비교"
-          }
-        ],
-        "closeReadingLinks": []
-      },
-      {
         "title": "사탄탱고",
         "cardPath": "wiki/bookclub/books/사탄탱고/00_책카드",
         "axis": "사람들은 왜 거짓이라는 낌새를 느끼면서도 “구원자”의 말에 돈과 몸을 맡기는가?",
         "closeReadings": 0,
         "questionLinks": 5,
-        "lectureLinks": 0,
+        "lectureLinks": 1,
         "writingLinks": 4,
         "derivedNotes": 0,
-        "readingScore": 19,
+        "readingScore": 24,
         "topQuestions": [
           {
             "title": "구원은 왜 기다림을 더 깊게 만드는가",
@@ -3270,7 +3541,76 @@ window.VAULT_DATA = {
             "link": "wiki/shared/questions/좋은 말은 어떻게 폭력의 재료가 되는가"
           }
         ],
-        "topLectures": [],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 사탄탱고 떠날수없는사람은왜구원자에게길을맡기는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_사탄탱고_떠날수없는사람은왜구원자에게길을맡기는가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "제자리에있다는것",
+        "cardPath": "wiki/bookclub/books/제자리에있다는것/00_책카드",
+        "axis": "“모든 것이 제자리에 있는 세계”는 언뜻 아름답다. 어수선함도 없고, 충돌도 없고, 각자가 자기 자리를 아는 세계. 그러나 마랭은 그 이면에 분",
+        "closeReadings": 0,
+        "questionLinks": 1,
+        "lectureLinks": 2,
+        "writingLinks": 4,
+        "derivedNotes": 0,
+        "readingScore": 17,
+        "topQuestions": [
+          {
+            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
+            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 제자리에있다는것 자유는자리를벗어나는힘인가자리를만드는힘인가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_제자리에있다는것_자유는자리를벗어나는힘인가자리를만드는힘인가"
+          },
+          {
+            "title": "자유로부터의도피와 한국이란무엇인가 국가가준우리와시민이쓰는우리는어떻게다른가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_한국이란무엇인가_국가가준우리와시민이쓰는우리는어떻게다른가"
+          }
+        ],
+        "closeReadingLinks": []
+      },
+      {
+        "title": "참을수없는존재의가벼움",
+        "cardPath": "wiki/bookclub/books/참을수없는존재의가벼움/00_책카드",
+        "axis": "한 번뿐인 삶은 가벼운가, 무거운가?",
+        "closeReadings": 0,
+        "questionLinks": 4,
+        "lectureLinks": 1,
+        "writingLinks": 0,
+        "derivedNotes": 0,
+        "readingScore": 17,
+        "topQuestions": [
+          {
+            "title": "사랑은 왜 필요와 습관이 되는가",
+            "link": "wiki/shared/questions/사랑은 왜 필요와 습관이 되는가"
+          },
+          {
+            "title": "언어는 왜 관계를 구하지 못하는가",
+            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
+          },
+          {
+            "title": "우연은 왜 운명처럼 느껴지는가",
+            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
+          },
+          {
+            "title": "자각은 왜 사건이 되지 못하는가",
+            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
+          }
+        ],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 참을수없는존재의가벼움 떠날수있는자유와함께머무는자유는어떻게다른가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_참을수없는존재의가벼움_떠날수있는자유와함께머무는자유는어떻게다른가"
+          }
+        ],
         "closeReadingLinks": []
       },
       {
@@ -3309,90 +3649,25 @@ window.VAULT_DATA = {
         "closeReadingLinks": []
       },
       {
-        "title": "참을수없는존재의가벼움",
-        "cardPath": "wiki/bookclub/books/참을수없는존재의가벼움/00_책카드",
-        "axis": "한 번뿐인 삶은 가벼운가, 무거운가?",
-        "closeReadings": 0,
-        "questionLinks": 4,
-        "lectureLinks": 0,
-        "writingLinks": 0,
-        "derivedNotes": 0,
-        "readingScore": 12,
-        "topQuestions": [
-          {
-            "title": "사랑은 왜 필요와 습관이 되는가",
-            "link": "wiki/shared/questions/사랑은 왜 필요와 습관이 되는가"
-          },
-          {
-            "title": "언어는 왜 관계를 구하지 못하는가",
-            "link": "wiki/shared/questions/언어는 왜 관계를 구하지 못하는가"
-          },
-          {
-            "title": "우연은 왜 운명처럼 느껴지는가",
-            "link": "wiki/shared/questions/우연은 왜 운명처럼 느껴지는가"
-          },
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "제자리에있다는것",
-        "cardPath": "wiki/bookclub/books/제자리에있다는것/00_책카드",
-        "axis": "“모든 것이 제자리에 있는 세계”는 언뜻 아름답다. 어수선함도 없고, 충돌도 없고, 각자가 자기 자리를 아는 세계. 그러나 마랭은 그 이면에 분",
-        "closeReadings": 0,
-        "questionLinks": 1,
-        "lectureLinks": 0,
-        "writingLinks": 4,
-        "derivedNotes": 0,
-        "readingScore": 7,
-        "topQuestions": [
-          {
-            "title": "선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가",
-            "link": "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
-        "title": "부활",
-        "cardPath": "wiki/bookclub/books/부활/00_책카드",
-        "axis": "사람에게도 봄이 올 수 있는가?",
-        "closeReadings": 0,
-        "questionLinks": 2,
-        "lectureLinks": 0,
-        "writingLinks": 0,
-        "derivedNotes": 0,
-        "readingScore": 6,
-        "topQuestions": [
-          {
-            "title": "자각은 왜 사건이 되지 못하는가",
-            "link": "wiki/shared/questions/자각은 왜 사건이 되지 못하는가"
-          },
-          {
-            "title": "제도는 인간을 어떻게 지우는가",
-            "link": "wiki/shared/questions/제도는 인간을 어떻게 지우는가"
-          }
-        ],
-        "topLectures": [],
-        "closeReadingLinks": []
-      },
-      {
         "title": "이방인",
         "cardPath": "wiki/bookclub/books/이방인/00_책카드",
         "axis": "감정을 표현하지 않는 사람은 정말 감정이 없는 사람인가?",
         "closeReadings": 0,
         "questionLinks": 0,
-        "lectureLinks": 1,
+        "lectureLinks": 3,
         "writingLinks": 0,
         "derivedNotes": 0,
-        "readingScore": 5,
+        "readingScore": 15,
         "topQuestions": [],
         "topLectures": [
+          {
+            "title": "자유로부터의도피와 소송 법은붙잡지않는데왜나는돌아서는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_소송_법은붙잡지않는데왜나는돌아서는가"
+          },
+          {
+            "title": "자유로부터의도피와 이방인 의당느껴야하는감정을거부하면자유로운가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_이방인_의당느껴야하는감정을거부하면자유로운가"
+          },
           {
             "title": "편의점인간과 이방인 정상성의 법정",
             "link": "wiki/bookclub/lectures/편의점인간과_이방인_정상성의_법정"
@@ -3406,17 +3681,22 @@ window.VAULT_DATA = {
         "axis": "「종이 동물원」에서 엄마의 사랑은 종이 동물과 편지에 남지만, 살아 있는 관계는 이미 실패했다. 「역사에 종지부를 찍은 사람들」에서 과거를 직접",
         "closeReadings": 0,
         "questionLinks": 1,
-        "lectureLinks": 0,
+        "lectureLinks": 1,
         "writingLinks": 2,
         "derivedNotes": 0,
-        "readingScore": 5,
+        "readingScore": 10,
         "topQuestions": [
           {
             "title": "감정은 어떤 몸과 물건을 통해 도착하는가",
             "link": "wiki/shared/questions/감정은 어떤 몸과 물건을 통해 도착하는가"
           }
         ],
-        "topLectures": [],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 종이동물원 사랑의언어를버리는일은언제자유가되고언제자기삭제가되는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_종이동물원_사랑의언어를버리는일은언제자유가되고언제자기삭제가되는가"
+          }
+        ],
         "closeReadingLinks": []
       },
       {
@@ -3425,12 +3705,17 @@ window.VAULT_DATA = {
         "axis": "예술은 돈과 욕망의 게임이라는 사실을 인정한 뒤에도, 여전히 우리 삶을 바꿀 수 있는가?",
         "closeReadings": 0,
         "questionLinks": 0,
-        "lectureLinks": 0,
+        "lectureLinks": 1,
         "writingLinks": 2,
         "derivedNotes": 0,
-        "readingScore": 2,
+        "readingScore": 7,
         "topQuestions": [],
-        "topLectures": [],
+        "topLectures": [
+          {
+            "title": "자유로부터의도피와 혼모노 진짜자아는누가판정하는가",
+            "link": "wiki/bookclub/lectures/자유로부터의도피와_혼모노_진짜자아는누가판정하는가"
+          }
+        ],
         "closeReadingLinks": []
       },
       {
@@ -3678,17 +3963,17 @@ window.VAULT_DATA = {
     "instruments": [
       {
         "label": "A 사이클 — 채점",
-        "value": "채점 970 · 미채점 35",
+        "value": "채점 1013 · 미채점 34",
         "status": "ok"
       },
       {
         "label": "B 사이클 — 구조",
-        "value": "설계 38 · 대기 3",
+        "value": "설계 47 · 대기 3",
         "status": "standby"
       },
       {
         "label": "C 사이클 — 원고",
-        "value": "조립 4 · 개작 2",
+        "value": "조립 4 · 개작 3",
         "status": "attention"
       }
     ]
@@ -3701,16 +3986,8 @@ window.VAULT_DATA = {
       "label": "사이클 1회차"
     },
     "coverage": {
-      "scored": 970,
+      "scored": 1013,
       "unscoredFiles": [
-        {
-          "title": "계속 내가 밥을 샀다",
-          "link": "wiki/writing/notes/계속_내가_밥을_샀다"
-        },
-        {
-          "title": "고개를 끄덕이지 않는 사람",
-          "link": "wiki/writing/notes/고개를_끄덕이지_않는_사람"
-        },
         {
           "title": "공개커뮤니티 선택2 독립2차장면 2026-07-18",
           "link": "wiki/writing/notes/공개커뮤니티_선택2_독립2차장면_2026-07-18"
@@ -3718,6 +3995,10 @@ window.VAULT_DATA = {
         {
           "title": "공개커뮤니티 선택3 독립쓰기탐색 2026-07-18",
           "link": "wiki/writing/notes/공개커뮤니티_선택3_독립쓰기탐색_2026-07-18"
+        },
+        {
+          "title": "공개커뮤니티 선택4 독립쓰기탐색 2026-07-23",
+          "link": "wiki/writing/notes/공개커뮤니티_선택4_독립쓰기탐색_2026-07-23"
         },
         {
           "title": "공개커뮤니티 추가선택4 독립쓰기탐색 2026-07-18",
@@ -3744,8 +4025,20 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/꿈에서는_먹고_깨어서는_남긴다_독립쓰기탐색_2026-07-19"
         },
         {
-          "title": "날마다 소실의 욕구에 맞섭니다",
-          "link": "wiki/writing/notes/날마다_소실의_욕구에_맞섭니다"
+          "title": "나무는 아무 설명도 하지 않았습니다",
+          "link": "wiki/writing/notes/나무는_아무_설명도_하지_않았습니다"
+        },
+        {
+          "title": "나무는 아무 설명도 하지 않았습니다 독립쓰기탐색 2026-07-21",
+          "link": "wiki/writing/notes/나무는_아무_설명도_하지_않았습니다_독립쓰기탐색_2026-07-21"
+        },
+        {
+          "title": "네 사람이 들어야 움직이는 꽃가마 독립쓰기탐색 2026-07-20",
+          "link": "wiki/writing/notes/네_사람이_들어야_움직이는_꽃가마_독립쓰기탐색_2026-07-20"
+        },
+        {
+          "title": "독립했던 살림이 돌아온 집 독립쓰기탐색 2026-07-20",
+          "link": "wiki/writing/notes/독립했던_살림이_돌아온_집_독립쓰기탐색_2026-07-20"
         },
         {
           "title": "몇 시에 일어나면 좋을지 모르겠습니다 네조각 1차압축 2026-07-12",
@@ -3764,22 +4057,6 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/몸이_약하다는_말은_이제_안_됩니다_두장면_연결본_2026-07-12"
         },
         {
-          "title": "믿어야 보통이 됩니까",
-          "link": "wiki/writing/notes/믿어야_보통이_됩니까"
-        },
-        {
-          "title": "벌거벗은 사람도 무언가를 입고 있습니다",
-          "link": "wiki/writing/notes/벌거벗은_사람도_무언가를_입고_있습니다"
-        },
-        {
-          "title": "보통으로 보이려면 진짜여야 합니다",
-          "link": "wiki/writing/notes/보통으로_보이려면_진짜여야_합니다"
-        },
-        {
-          "title": "사진에서 빠진 사람이 사진을 찍었습니다",
-          "link": "wiki/writing/notes/사진에서_빠진_사람이_사진을_찍었습니다"
-        },
-        {
           "title": "서명칸 계보 낭독 점검표 2026-07-13",
           "link": "wiki/writing/notes/서명칸_계보_낭독_점검표_2026-07-13"
         },
@@ -3792,16 +4069,20 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/세_문제_중_하나의_답이_다르다_1-2차_연결본_2026-07-18"
         },
         {
-          "title": "손가락으로 가리키던 것이 같은 이름이 됩니다",
-          "link": "wiki/writing/notes/손가락으로_가리키던_것이_같은_이름이_됩니다"
+          "title": "세 시간 뒤에 죽은 사람의 옷",
+          "link": "wiki/writing/notes/세_시간_뒤에_죽은_사람의_옷"
+        },
+        {
+          "title": "세 시간 뒤에 죽은 사람의 옷 2차장면탐색 2026-07-23",
+          "link": "wiki/writing/notes/세_시간_뒤에_죽은_사람의_옷_2차장면탐색_2026-07-23"
+        },
+        {
+          "title": "세 시간 뒤에 죽은 사람의 옷 독립쓰기탐색 2026-07-21",
+          "link": "wiki/writing/notes/세_시간_뒤에_죽은_사람의_옷_독립쓰기탐색_2026-07-21"
         },
         {
           "title": "손님이 술을 사와야 하는 식당 1-2차 연결본 2026-07-18",
           "link": "wiki/writing/notes/손님이_술을_사와야_하는_식당_1-2차_연결본_2026-07-18"
-        },
-        {
-          "title": "아무도 생일이 아닌데 축하합니다",
-          "link": "wiki/writing/notes/아무도_생일이_아닌데_축하합니다"
         },
         {
           "title": "아무도 생일이 아닌데 축하합니다 2차장면 2026-07-12",
@@ -3812,24 +4093,24 @@ window.VAULT_DATA = {
           "link": "wiki/writing/notes/아직까지는_영혼의_선장입니다_확장검토_2026-07-12"
         },
         {
-          "title": "죽은 사람이 방을 물려줍니다",
-          "link": "wiki/writing/notes/죽은_사람이_방을_물려줍니다"
+          "title": "윗집 발소리와 엘리베이터 포스트잇 독립쓰기탐색 2026-07-20",
+          "link": "wiki/writing/notes/윗집_발소리와_엘리베이터_포스트잇_독립쓰기탐색_2026-07-20"
+        },
+        {
+          "title": "의식은 면죄부가 아닙니다",
+          "link": "wiki/writing/notes/의식은_면죄부가_아닙니다"
+        },
+        {
+          "title": "의식은 면죄부가 아닙니다 독립쓰기탐색 2026-07-21",
+          "link": "wiki/writing/notes/의식은_면죄부가_아닙니다_독립쓰기탐색_2026-07-21"
         },
         {
           "title": "죽음에 동의하지 않겠습니다 확장검토 2026-07-13",
           "link": "wiki/writing/notes/죽음에_동의하지_않겠습니다_확장검토_2026-07-13"
         },
         {
-          "title": "집을 먹여 살린 사람이 사라진 뒤",
-          "link": "wiki/writing/notes/집을_먹여_살린_사람이_사라진_뒤"
-        },
-        {
           "title": "태풍을 먼저 봐도 바꿀 수 없습니다 2차장면 2026-07-12",
           "link": "wiki/writing/notes/태풍을_먼저_봐도_바꿀_수_없습니다_2차장면_2026-07-12"
-        },
-        {
-          "title": "판정자는 자리에 없습니다",
-          "link": "wiki/writing/notes/판정자는_자리에_없습니다"
         },
         {
           "title": "편의점인간 선택3 독립쓰기탐색 2026-07-12",
@@ -3866,6 +4147,14 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "두 가지 도망이 같은 방에 있습니다",
+          "lineage": "기록 — 유류품/애도",
+          "star": true,
+          "link": "wiki/writing/notes/두_가지_도망이_같은_방에_있습니다",
+          "role": "배치51 합류",
+          "note": null
+        },
+        {
           "title": "기타에 체크하겠습니다",
           "lineage": "기록 — 관계자격",
           "star": true,
@@ -3898,6 +4187,14 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "습관이 멈춘 사람의 몫",
+          "lineage": "소송/시지프",
+          "star": true,
+          "link": "wiki/writing/notes/습관이_멈춘_사람의_몫",
+          "role": "배치51 합류",
+          "note": null
+        },
+        {
           "title": "각자의 방으로 들어가는 사람들",
           "lineage": "공동체 실패 — 타인",
           "star": true,
@@ -3911,6 +4208,14 @@ window.VAULT_DATA = {
           "star": true,
           "link": "wiki/writing/notes/서로_더_신경_써야_한다는_거예요",
           "role": "운반체",
+          "note": null
+        },
+        {
+          "title": "벌거벗은 사람도 무언가를 입고 있습니다",
+          "lineage": "자리/환대",
+          "star": true,
+          "link": "wiki/writing/notes/벌거벗은_사람도_무언가를_입고_있습니다",
+          "role": "배치51 합류",
           "note": null
         },
         {
@@ -3946,11 +4251,27 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "집을 먹여 살린 사람이 사라진 뒤",
+          "lineage": "노동 — 몸/비용",
+          "star": true,
+          "link": "wiki/writing/notes/집을_먹여_살린_사람이_사라진_뒤",
+          "role": "배치51 합류",
+          "note": null
+        },
+        {
           "title": "기억교실 퇴실 시간",
           "lineage": "애도/운영",
           "star": true,
           "link": "wiki/writing/notes/기억교실_퇴실_시간",
           "role": "운반체",
+          "note": null
+        },
+        {
+          "title": "죽은 사람이 방을 물려줍니다",
+          "lineage": "애도/운영",
+          "star": true,
+          "link": "wiki/writing/notes/죽은_사람이_방을_물려줍니다",
+          "role": "배치51 합류",
           "note": null
         },
         {
@@ -3970,11 +4291,35 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "해결하려면 한 사람을 지워야 합니다",
+          "lineage": "공동체/명단",
+          "star": true,
+          "link": "wiki/writing/notes/해결하려면_한_사람을_지워야_합니다",
+          "role": "배치51 합류",
+          "note": null
+        },
+        {
+          "title": "사진에서 빠진 사람이 사진을 찍었습니다",
+          "lineage": "공동 작업",
+          "star": true,
+          "link": "wiki/writing/notes/사진에서_빠진_사람이_사진을_찍었습니다",
+          "role": "배치51 합류",
+          "note": null
+        },
+        {
           "title": "없는 말을 지어내야 합니다",
           "lineage": "말/작별",
           "star": true,
           "link": "wiki/writing/notes/없는_말을_지어내야_합니다",
           "role": "운반체",
+          "note": null
+        },
+        {
+          "title": "설교 없이 하루를 보냅니다",
+          "lineage": "말/작별",
+          "star": true,
+          "link": "wiki/writing/notes/설교_없이_하루를_보냅니다",
+          "role": "배치51 합류",
           "note": null
         },
         {
@@ -4031,6 +4376,14 @@ window.VAULT_DATA = {
           "star": true,
           "link": "wiki/writing/notes/그들이_만든_쓰레기는_다른_사람이_치웁니다",
           "role": "운반체",
+          "note": null
+        },
+        {
+          "title": "미래가 없는 작품의 철거",
+          "lineage": "무대/작별",
+          "star": true,
+          "link": "wiki/writing/notes/미래가_없는_작품의_철거",
+          "role": "운반체 후보",
           "note": null
         },
         {
@@ -4224,6 +4577,14 @@ window.VAULT_DATA = {
           "note": null
         },
         {
+          "title": "끊어진 뒤에만 이어지는 관계",
+          "lineage": "기록 — 관계자격",
+          "star": true,
+          "link": "wiki/writing/draft-candidates/끊어진_뒤에만_이어지는_관계_구조맵",
+          "role": "극 후보 (C3 개작)",
+          "note": null
+        },
+        {
           "title": "구조맵",
           "lineage": "반공간/연결",
           "star": true,
@@ -4327,6 +4688,33 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
+      "name": "기록 — 관계자격",
+      "annotation": null,
+      "carrier": "수정된 보호자",
+      "stars": 5,
+      "members": 6,
+      "parts": 1,
+      "state": "개작"
+    },
+    {
+      "name": "기록 — 유류품/애도",
+      "annotation": null,
+      "carrier": "폐기 전 확인",
+      "stars": 5,
+      "members": 4,
+      "parts": 2,
+      "state": "조립"
+    },
+    {
+      "name": "노동 — 몸/비용",
+      "annotation": "신규 — ★ 3편 밀집",
+      "carrier": "교대자를 찾으셔야 합니다",
+      "stars": 5,
+      "members": 5,
+      "parts": 1,
+      "state": "설계"
+    },
+    {
       "name": "서명칸 계보",
       "annotation": "횡단 발견 — 사이클 2~3",
       "carrier": "만장일치가 아니면 가지 않습니다",
@@ -4336,31 +4724,13 @@ window.VAULT_DATA = {
       "state": "무대"
     },
     {
-      "name": "기록 — 관계자격",
+      "name": "자리/환대",
       "annotation": null,
-      "carrier": "수정된 보호자",
-      "stars": 4,
-      "members": 5,
+      "carrier": "큰 불편은 없습니다",
+      "stars": 5,
+      "members": 6,
       "parts": 1,
-      "state": "개작"
-    },
-    {
-      "name": "기록 — 유류품/애도",
-      "annotation": null,
-      "carrier": "폐기 전 확인",
-      "stars": 4,
-      "members": 3,
-      "parts": 2,
-      "state": "조립"
-    },
-    {
-      "name": "노동 — 몸/비용",
-      "annotation": "신규 — ★ 3편 밀집",
-      "carrier": "교대자를 찾으셔야 합니다",
-      "stars": 4,
-      "members": 4,
-      "parts": 1,
-      "state": "설계"
+      "state": "대기"
     },
     {
       "name": "몸/결행",
@@ -4372,13 +4742,13 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
-      "name": "자리/환대",
+      "name": "소송/시지프",
       "annotation": null,
-      "carrier": "큰 불편은 없습니다",
+      "carrier": "대기 바위",
       "stars": 4,
       "members": 5,
       "parts": 1,
-      "state": "대기"
+      "state": "조립"
     },
     {
       "name": "공동체 실패 — 타인",
@@ -4388,6 +4758,15 @@ window.VAULT_DATA = {
       "members": 2,
       "parts": 1,
       "state": "대기"
+    },
+    {
+      "name": "공동체/명단",
+      "annotation": "신규",
+      "carrier": null,
+      "stars": 3,
+      "members": 3,
+      "parts": 1,
+      "state": "설계"
     },
     {
       "name": "반복/기억",
@@ -4426,6 +4805,15 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
+      "name": "말/작별",
+      "annotation": "신규 — 김애란 유입",
+      "carrier": "없는 말을 지어내야 합니다",
+      "stars": 2,
+      "members": 5,
+      "parts": 0,
+      "state": "설계"
+    },
+    {
       "name": "반공간/연결",
       "annotation": "섬에있는서점",
       "carrier": "전임자의 메모를 먼저 읽습니다",
@@ -4435,13 +4823,13 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
-      "name": "소송/시지프",
-      "annotation": null,
-      "carrier": "대기 바위",
+      "name": "애도/운영",
+      "annotation": "신규 — 민감 소재 처방 계열",
+      "carrier": "기억교실 퇴실 시간",
       "stars": 2,
       "members": 4,
       "parts": 1,
-      "state": "조립"
+      "state": "설계"
     },
     {
       "name": "진짜/출처",
@@ -4462,8 +4850,8 @@ window.VAULT_DATA = {
       "state": "설계"
     },
     {
-      "name": "공동체/명단",
-      "annotation": "신규",
+      "name": "공동 작업",
+      "annotation": "신규 — 헤일메리 유입",
       "carrier": null,
       "stars": 1,
       "members": 2,
@@ -4480,11 +4868,11 @@ window.VAULT_DATA = {
       "state": "대기"
     },
     {
-      "name": "말/작별",
-      "annotation": "신규 — 김애란 유입",
-      "carrier": "없는 말을 지어내야 합니다",
+      "name": "무대/작별",
+      "annotation": "신규 — 배치 51 시지프신화 유입",
+      "carrier": "실패들만 모아 둡니다",
       "stars": 1,
-      "members": 4,
+      "members": 5,
       "parts": 0,
       "state": "설계"
     },
@@ -4496,15 +4884,6 @@ window.VAULT_DATA = {
       "members": 2,
       "parts": 1,
       "state": "무대"
-    },
-    {
-      "name": "애도/운영",
-      "annotation": "신규 — 민감 소재 처방 계열",
-      "carrier": "기억교실 퇴실 시간",
-      "stars": 1,
-      "members": 3,
-      "parts": 1,
-      "state": "설계"
     },
     {
       "name": "회고/자기기만",
@@ -4567,15 +4946,6 @@ window.VAULT_DATA = {
       "stars": 0,
       "members": 1,
       "parts": 0,
-      "state": "설계"
-    },
-    {
-      "name": "공동 작업",
-      "annotation": "신규 — 헤일메리 유입",
-      "carrier": null,
-      "stars": 0,
-      "members": 1,
-      "parts": 1,
       "state": "설계"
     },
     {
