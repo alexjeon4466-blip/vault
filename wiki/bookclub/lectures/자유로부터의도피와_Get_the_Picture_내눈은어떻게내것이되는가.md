@@ -11,12 +11,12 @@ subtitle:
 linked_books:
   - "wiki/bookclub/books/자유로부터의도피/00_책카드.md"
   - "wiki/bookclub/books/getthepicture/00_책카드.md"
-linked_questions:
-  - "wiki/shared/questions/취향은 어떻게 권력이 되는가.md"
-  - "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md"
-  - "wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가.md"
-  - "wiki/shared/questions/제자리는 누가 정하는가.md"
-  - "wiki/shared/questions/작품은 언제 관객을 설득하고 언제 관객의 결론을 미리 설계하는가.md"
+connected_questions:
+  - "[[wiki/shared/questions/취향은 어떻게 권력이 되는가]]"
+  - "[[wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가]]"
+  - "[[wiki/shared/questions/의미를 서두르지 않는다는 것은 무엇인가]]"
+  - "[[wiki/shared/questions/제자리는 누가 정하는가]]"
+  - "[[wiki/shared/questions/작품은 언제 관객을 설득하고 언제 관객의 결론을 미리 설계하는가]]"
 sources:
   - wiki/bookclub/books/자유로부터의도피/00_책카드.md
   - wiki/bookclub/books/자유로부터의도피/01_자동인형적_순응은_왜_자유처럼_느껴지는가.md

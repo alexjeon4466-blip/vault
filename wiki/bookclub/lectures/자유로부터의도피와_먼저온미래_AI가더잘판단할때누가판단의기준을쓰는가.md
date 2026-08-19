@@ -11,10 +11,10 @@ subtitle:
 linked_books:
   - "wiki/bookclub/books/자유로부터의도피/00_책카드.md"
   - "wiki/bookclub/books/먼저온미래/00_책카드.md"
-linked_questions:
-  - "wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가.md"
-  - "wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가.md"
-  - "wiki/shared/questions/제도는 인간을 어떻게 지우는가.md"
+connected_questions:
+  - "[[wiki/shared/questions/기술은 인간의 판단을 어떻게 바꾸는가]]"
+  - "[[wiki/shared/questions/선택지가 있다는 것과 선택지를 만들 수 있다는 것은 어떻게 다른가]]"
+  - "[[wiki/shared/questions/제도는 인간을 어떻게 지우는가]]"
 sources:
   - wiki/bookclub/books/자유로부터의도피/00_책카드.md
   - wiki/bookclub/books/먼저온미래/00_책카드.md

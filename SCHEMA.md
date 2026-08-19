@@ -32,6 +32,7 @@ wiki/
     to-triage/       # 분류는 되었지만 승격/폐기 판정이 남은 항목.
   bookclub/
     books/           # 책별 카드. 한 권을 다시 붙잡는 기억 장치.
+    exhibitions/     # 전시별 노트. 관람 기억과 설치·해설·제도 질문을 한 장으로 붙잡는다.
     authors/         # 작가론이 반복적으로 중요할 때.
     themes/          # 책모임 안에서만 유효한 주제.
     reading-flow/    # 장기 독서 흐름, 월별/연도별 지도.
@@ -42,6 +43,9 @@ wiki/
     aesthetics/      # 내 희곡의 반복 미학/장면 감각.
     contest/         # 신춘문예 투고, 당선작 분석, 심사 기준.
     references/      # 기성 희곡, 연극론, 작법 자료.
+    seeds/           # 글감 채집의 역할별 장기 정본.
+      harvests/      # 회차 범위·접근·수율 정본과 A1 전건 원문 열람 정본.
+      notes/         # A1 pass 뒤 비식별화한 사용자 미선택 개별 글감.
     decisions/       # 희곡/집필/퇴고/투고 관련 결정 노트.
   shared/
     questions/       # 핵심. 책과 책, 책과 희곡을 잇는 질문형 노트.
@@ -61,6 +65,54 @@ _templates/          # Obsidian 템플릿.
 
 ## 4. 문서 타입
 
+## 4.0 타입 레지스트리 (2026-08-20 신설)
+
+> **왜 신설했나.** `type`이 닫힌 enum으로 선언돼 있었으나 실사용은 **47종이 미선언 상태**였고 그중 둘(`writing-note` 1,067건 · `writing-note-evaluation` 896건)이 vault 최대 문서군이었다. 선언과 실사용이 어긋난 채로는 폴더보다 `type`을 우선 해석하는 구조가 성립하지 않는다. **닫힌 목록을 지키는 척하는 대신 실사용을 등재하고 확장 규칙을 명시한다.**
+
+**규칙: 새 `type` 값을 쓰기 전에 이 절에 등재한다.** 등재 없이 새 값을 만들지 않는다.
+
+### 독서·전시 (bookclub / shared)
+
+`book-card` · `exhibition-note` · `question-note` · `close-reading-note` · `lecture-script` · `short-story-card` · `anthology-index` · `theme-note` · `shared-theme-note`
+
+### 집필 — 산출물 (writing)
+
+`play-card` · `play-draft` · `draft-scene` · `draft-candidate` · `revision-note` · `draft-revision-note` · `revision-log` · `writing-note`
+
+### 집필 — 평가·진단
+
+`writing-note-evaluation` · `writing-evaluation` · `dramaturgy-diagnostic` · `structure-test` · `stage-test` · `doctrine-behavior-test`
+
+### 집필 — 교리·도구 (진실원 층)
+
+`writing-doctrine` · `writing-tool` · `writing-router` · `writing-checklist`
+
+### 지도·기록
+
+`map` · `map-note` · `writing-map` · `draft-map` · `draft-candidate-map` · `writing-device-map` · `checkpoint-map` · `work-ledger` · `gate-record` · `writing-log` · `weekly-review`
+
+### 씨앗·수집
+
+`seed-harvest` · `seed-note` · `inbox-capture` · `exploration` · `research-development`
+
+### 운영
+
+`decision-note` · `reference` · `contest-note` · `index`
+
+### 통합 대기 (1~3건짜리 변종 — 새로 쓰지 않는다)
+
+`draft` · `draft-structure` · `draft-material-note` · `decision` · `play` · `question` · `playwriting-development` · `playwriting-probe` · `playwriting-note` · `project-checkpoint` · `work-brief` · `revision-cue-sheet` · `revision-directive` · `reading-kit` · `review-note`
+
+위 값들은 이미 등재된 정식 타입과 의미가 겹친다(예: `draft` ↔ `draft-scene`, `decision` ↔ `decision-note`, `play` ↔ `play-card`). **기존 문서는 소급 수정하지 않되 새 문서에 쓰지 않는다.** 통합은 별도 작업으로 다룬다.
+
+### 타입 외 관계 필드
+
+- `connected_questions` — 질문형 노트 링크. **wikilink 형식**(`"[[wiki/shared/questions/...]]"`)이 표준이다. (2026-08-20에 강의 73편의 `linked_questions`를 이 필드로 이관했다.)
+- `linked_books` — `lecture-script` 전용. 그 강의가 다루는 책카드를 가리킨다. `related_to`와 달리 "이 강의의 대상"이라는 특정 관계이므로 별도 필드로 유지한다.
+- `related_to` / `belongs_to` / `has` — 관계가 명확할 때만 추가한다(AGENTS.md §8).
+- `authority_scope` — 교리 문서가 관할하는 범위. `writing-doctrine`에서만 쓴다.
+
+
 ### book-card
 책 한 권을 다시 떠올리기 위한 장기 기억 장치. 줄거리보다 강독의 흐름과 핵심 질문을 우선한다.
 
@@ -76,6 +128,19 @@ _templates/          # Obsidian 템플릿.
 - 아직 찜찜한 점
 - 콘텐츠로 바꿀 수 있는 각도
 - 근거 자료
+
+### exhibition-note
+예술 전시 한 회차를 다시 붙잡기 위한 장기 기억 장치. 전시 전체를 작품 목록으로 요약하기보다, 실제 관람에서 남은 감각·판단·망각을 설치·해설·제도와 대조하고 기존 질문망으로 확장한다.
+
+필수 섹션:
+- 이 전시를 다시 떠올리는 한 문장
+- 왜 지금 이 전시인가
+- 전시 기본 정보와 관람 조건
+- 실제로 남은 장면·문장·감각
+- 작가/작품별 핵심과 강한 반례
+- 내 해석과 AI 가설의 구분
+- 기존 책·질문과 연결되는 지점
+- 아직 찜찜한 점과 근거 자료
 
 ### question-note
 v2의 중심 문서. 추상 주제어보다 질문형 제목을 우선한다.
@@ -126,13 +191,49 @@ v2의 중심 문서. 추상 주제어보다 질문형 제목을 우선한다.
 - 미학을 해칠 위험
 - 다음 버전에서 실험할 것
 
+### seed-harvest
+한 회차의 글감 채집 범위·접근 경계·실제 수율·선별 과정을 보존하는 배치 정본. A1 고정 표본이 있으면 pass 여부와 관계없이 전건의 공개 원문과 사용자용 판정 이유를 보존하는 companion harvest를 둘 수 있다. 개별 글감의 개발 승인 문서가 아니다.
+
+필수 내용:
+- 고정 cutoff와 채집 범위
+- 사이트·레인별 후보 우주와 실제 원글 열기 수
+- 공개 본문과 댓글·응답 경계
+- provisional과 부모 재독의 차이
+- 최종 수율과 제외·보류 이유
+- 사용자 선택·개발 권한의 미개방 상태
+- 원시 자료와 전건 심사 package의 Vault 밖 보존 경계
+
+A1 전건 원문 열람 companion의 필수 내용:
+- 제목·사이트·게시 시각·canonical URL
+- 접을 수 있는 공개 원글 전체
+- A1까지 온 이유와 원문에서 확실히 남는 연극적 요소
+- AI 확장·참고 아이디어와 상태별 판정 이유
+- 작가가 다음에 볼 것
+- 직접 식별자·키/서명 블록 마스킹과 사용자 선택 미개방 상태
+
+Source-hidden은 심사자 입력에만 적용하며 사용자용 harvest에는 적용하지 않는다. 원시 HTML·A0 전건 body·댓글/답변본문·hash/evidence/review receipt는 계속 Vault 밖에 둔다. 세부 운영은 [[wiki/writing/decisions/A1_전건_원문열람_정본_운영_2026-08-17|A1 전건 원문 열람 정본 운영]]을 따른다.
+
+### seed-note
+A1 pass 뒤 장기 보존하는 sanitized 개별 글감. 원문 사연의 반입이나 draft candidate 승격이 아니라, 비발명 구조 메모의 최소 projection이다.
+
+필수 내용:
+- 다시 붙잡는 한 문장과 sanitized A0 anchor
+- 보호 핵심과 source distance
+- 공연 운반체와 긴장 topology
+- 시간 규칙·temporal operation·terminal condition
+- audience route
+- 윤리 거리와 기존 글감과의 차이
+- 다음 사용자 선택 질문
+- opaque A1/residue lineage
+- `a1-pass-unselected`와 `derived_permissions: []`
+
 ## 5. Frontmatter 규칙
 
 모든 wiki 문서는 YAML frontmatter를 가진다. 이 vault는 Tolaria식 `filesystem-first / convention over configuration` 원칙을 일부 흡수한다. 즉, 마크다운 파일이 단일 진실 공급원이고, frontmatter는 AI와 사람이 같은 방식으로 문서를 찾고 연결하기 위한 최소 규칙이다.
 
 ```yaml
 ---
-type: book-card | question-note | play-card | revision-note | close-reading-note | lecture-script | map | reference | contest-note | inbox-capture | decision-note | weekly-review
+type: <아래 §4.0 타입 레지스트리의 값 하나>
 status: draft | stable | needs-review
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -163,6 +264,16 @@ club_date: YYYY-MM-DD 또는 unknown
 source_folder: bookclub/...
 ```
 
+전시노트 추가 필드:
+
+```yaml
+exhibition: 전시명
+venue: 전시장
+exhibition_period: "YYYY-MM-DD–YYYY-MM-DD"
+visit_date: YYYY-MM-DD 또는 unknown
+source_folder: bookclub/전시감상/...
+```
+
 희곡카드 추가 필드:
 
 ```yaml
@@ -172,6 +283,27 @@ latest_version: 파일명
 source_folder: script
 submission_target: 신춘문예
 ```
+
+글감 노트 추가 필드:
+
+```yaml
+type: seed-note
+status: stable
+seed_state: a1-pass-unselected
+a1_state: pass
+novelty_state: distinct | drift_warning
+source_handling: clear | transform_only
+derived_permissions: []
+_a1_record_id: opaque-id
+_residue_id: opaque-id
+sources: []
+connected_questions: []
+related_to: []
+```
+
+- `seed-harvest`는 출처 감사를 위해 안전한 최소 canonical을 둘 수 있지만 원시 cache와 전건 심사 자료는 넣지 않는다.
+- `seed-note`의 `sources`는 기본적으로 비운다. URL·사이트·작성자·게시물 제목·exact evidence·재식별 단서는 외부 private archive에만 둔다.
+- A1 pass는 카드·사용자 선택·장면·형식·길이·B2를 허가하지 않는다. 사용자 선택 전에는 `derived_permissions: []`를 유지한다.
 
 ## 6. 링크 규칙
 
