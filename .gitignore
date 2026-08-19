@@ -1,6 +1,7 @@
 # OS / editor noise
 .DS_Store
 Thumbs.db
+desktop.ini
 *.tmp
 *.temp
 ~$*
@@ -33,3 +34,4 @@ __pycache__/
 
 # Hermes automation workspace (PC-local agent plans)
 .hermes/
+.hermes-tmp.*
