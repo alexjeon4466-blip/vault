@@ -4717,3 +4717,17 @@
 - **교훈: 점수는 진단을 대체하지 않는다.** 여덟 회차 중 일곱을 점수 서식만 돌린 것이 관측 손실이었다. §1 라우터가 이미 옳게 정해 두었는데 실행이 따르지 않았다.
 - 진단 렌즈가 **내 패킷의 미비**를 지적했다 — 진단 서식에 `P0/P1/P2` 척도와 `상세=OFF|ON`의 정의를 넣지 않았다. 6영역 서식에는 넣고 진단 서식에서 빠뜨렸다.
 - 리뷰 반영: 대조실험 노트와 국수 노트를 index에 등록했다.
+
+## [2026-08-19] harvest,verify | 배치 75 일본 공개 커뮤니티 v3 A0→A1
+
+- `오늘`을 2026-08-18 23:08:01~2026-08-19 23:08:01 JST로 잠그고 Yahoo!知恵袋·はてな匿名ダイアリー·発言小町를 현행 v3 계약으로 실행했다. 최종 계약 표본은 Yahoo 25 · Hatena 22 · 発言小町 28 = 75건이며 A0는 yes 74 · no 1, 전건 handling은 clear 38 · transform-only 26 · source-archive 7 · blocked 4다.
+- Yahoo는 승인되지 않은 다른 Yahoo 속성으로 canonicalized된 1건을, Hatena는 반복 body hash가 안정되지 않은 1건을 최종 제거하고 백필하지 않았다. Hatena first snapshot과 replay 사이 신선도 ID 1건 소실은 late-index drift로 보존했다.
+- 직전 외부 장부 exact URL 재등장 11건을 A1-eligible pool에서 제외한 뒤 `clear 5 / transform-only 5 / blocked 2`를 다시 고정했다. authoring `drafted 2 / a0_recheck 8 / blocked 2`, 구조·계보 각 `pass 1 / fail 1`, 최종 `resting 2 / a0_recheck 8 / blocked 2 / pass 0`이다.
+- [[wiki/writing/seeds/harvests/글감_채집_2026-08-19_해외커뮤니티_일본v3_A0-A1_230801|배치 75 정본]]과 [[wiki/writing/seeds/harvests/글감_채집_2026-08-19_해외커뮤니티_일본v3_A1전건_원문열람_230801|A1 전건 원문 열람]]을 저장했다. 최종 live gate 12/12·A1 validator 오류 0·파생 권한 0·final card 0이며 commit/push는 하지 않았다.
+
+## [2026-08-19] harvest,verify | 배치 76 한국 공개 커뮤니티 A0→A1
+
+- `오늘`을 2026-08-18 23:06:13~2026-08-19 23:06:13 KST로 잠그고 인스티즈 `일상`·클리앙·오늘의유머 `freeboard`·82cook `bn=15`를 실행했다. 공개 원문은 인스티즈 492 · 클리앙 40 · 82cook 122 = 654건, 오늘의유머는 공개 block page로 0건이며 댓글 사용은 0건이다.
+- 인스티즈 body selector의 회원 전용 안내 139건을 A0 `no`가 아니라 모집단 밖으로 정정하고, 82cook의 숫자 링크·일반 게시판명 대신 목록 실제 제목을 복구했다. A0는 `yes 420 / no 234`, fresh A1은 `clear 12 / transform-only 12`다.
+- Evidence-lock `pass 1 / fail 23`, 메모 1건의 구조·계보는 pass였지만 novelty `merge_candidate`에 유효한 active pass target이 없어 최종 `a0_recheck 23 / resting 1 / pass 0`이다. 반대심사 수정 0, live gate 22/24, final card·사용자 선택·파생 권한 0이다.
+- [[wiki/writing/seeds/harvests/글감_채집_2026-08-19_한국공개커뮤니티_A0-A1_230613|배치 76 정본]]과 [[wiki/writing/seeds/harvests/글감_채집_2026-08-19_한국공개커뮤니티_A1전건_원문열람_230613|A1 전건 원문 열람]]을 저장했다. 채집 스킬 v1.7.5 회귀 테스트 22/22, A1 validator 오류 0이며 commit/push는 하지 않았다.
