@@ -36,6 +36,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 | A1 전건 원문 열람 정본의 항목 순서·마스킹·저장 경계 | `wiki/writing/decisions/A1_전건_원문열람_정본_운영_2026-08-17.md` |
 | 한국 공개 커뮤니티 채집풀 운영 규칙 | `wiki/writing/decisions/공개커뮤니티_채집풀_운영규칙_2026-07-18.md` |
 | 일본 공개 커뮤니티 표본 레인·상한·A0→A1 계약 v3 | `wiki/writing/decisions/일본_공개커뮤니티_표본선정_2026-08-09.md` |
+| Hermes 수집 → Claude 판정 분업, 핸드오프 폴더·`HANDOFF.json`·재독 요청, 막힌 사이트 원문의 Claude 판정 허용과 직접 요청 금지 | `wiki/writing/decisions/Hermes_Claude_글감채집_협업체계_2026-10-31.md` |
 | 폴더 역할, 상태 흐름, `seed-harvest`/`seed-note` 문서 계약, 저장 경계, 현재 체크포인트 | `wiki/writing/seeds/README.md` |
 | frontmatter `type` 레지스트리와 관계 필드 | `SCHEMA.md` §4.0 |
 
@@ -158,14 +159,16 @@ python -B scripts/community-collector.py profiles
 python -B scripts/community-collector.py all --run-dir <Vault·Git 밖 절대경로> --actor hermes|claude \
   --window-hours 168 --page-budget 24 --per-day-cap 4 --max-posts 40 --site ruliweb --site 82cook ...
 python -B scripts/community-collector.py status --run-dir <같은 경로> --site ruliweb
-python -B scripts/test-community-collector.py   # 오프라인 회귀 47개
+python -B scripts/test-community-collector.py   # 오프라인 회귀 49개
+python -B scripts/verify-handoff.py "$SEED_HARVEST_RUNS/<batch>"   # Hermes 핸드오프 기계 검증(판정 전)
+python -B scripts/test-verify-handoff.py        # 오프라인 회귀 12개
 ```
 
 - **단계:** `robots → discover → freeze → fetch → status`. 각 단계는 `<run-dir>/<site>/`에 영수증을 남긴다. 같은 명령을 다시 실행하면 이어서 진행한다. 처음 실행할 때 `contract.json`에 실행 주체·UA·창을 고정하며, 주체를 바꾸려면 새 run-dir을 쓴다.
 - **discover:** 목록 날짜를 읽어 창의 날짜마다 도달하도록 페이지를 이분·보간 탐색한다. 7일 창을 전부 덮는다는 보장은 없다 — 페이지 예산 소진, 프로필 페이지 상한, 목록 날짜 해석 실패로 빈 날짜가 남을 수 있고, 그 결과는 `in_window_days`의 0으로 드러난다. 0인 날은 미달로 보고하고 다른 날로 채우지 않는다. 날짜 칸은 프로필에 적힌 우선순위대로 시도해 처음 해석되는 값을 쓴다. 날짜를 못 읽은 행은 같은 날의 이웃 ID 사이에 있을 때만 그 날로 보간하고, 나머지는 `date_unresolved`로 센다. 버리지 않는다.
 - **freeze:** 날짜별 상한 안에서 ID를 균등 간격으로 고른다. 제목은 쓰지 않고, 보충하지 않는다.
 - **fetch는 글 단위 판정이 원칙이다.** 회원 전용·삭제(404)·빈 본문·창 밖·리다이렉트·robots 개별 금지(`robots_denied`)·본문이 닫히기 전 응답 종료(`truncated_body`)·문자셋 오판으로 깨진 본문(`encoding_error`)·canonical이 다른 글을 가리킴(`canonical_mismatch`, scheme·끝 `/` 차이는 같은 글로 본다) 글은 **그 글만** 상태를 기록하고 넘어간다. 이들은 `eligible_bodies`에 들어가지 않는다. 사이트를 멈추는 것은 다음 경우뿐이다.
-  - robots가 목록 페이지를 금지·도달 불가, robots.txt 429/430
+  - robots가 목록 페이지를 금지·도달 불가, robots.txt 429/430, robots.txt 자리의 봇 확인 HTML(`challenge`). 확인 화면이 아닌 HTML(소프트 404)은 규칙 없음으로 읽고 `robots.json`에 `robots_html: true`로 남긴다
   - 403/429/430/451, 봇 챌린지
   - 목록의 다른 호스트 리다이렉트
   - 연속 3회 selector 미검출 또는 댓글 경계 걸림(`parser_drift`)

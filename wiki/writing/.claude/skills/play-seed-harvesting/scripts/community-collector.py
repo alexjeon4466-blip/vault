@@ -608,7 +608,9 @@ class UrllibTransport:
         return Response(raw.status, raw.url, {k.lower(): v for k, v in raw.headers.items()}, chunks(), raw.close)
 
 
-CHALLENGE = re.compile(r"just a moment|cf-chl|challenge-platform|captcha|ddos-guard|attention required", re.I)
+CHALLENGE = re.compile(r"just a moment|cf-chl|challenge-platform|captcha|ddos-guard|attention required"
+                       r"|anubis_challenge|/\.within\.website/", re.I)
+HTML_DOC = re.compile(r"^\s*(?:<!doctype html|<html|<head|<body)", re.I)
 
 
 def sniff_encoding(headers: dict[str, str], head: bytes) -> str:
@@ -784,6 +786,14 @@ class SiteRun:
                 text = body.decode(sniff_encoding(response.headers, body), "replace")
         except NetworkError as exc:
             status = f"network {exc.layer}"
+        # An HTML page where robots.txt should be has no rules, so it would read as "allow everything".
+        # A bot challenge there (PGR21's Anubis page, 2026-10-31) is an access wall, not a permission.
+        robots_html = status == 200 and bool(HTML_DOC.match(text))
+        if robots_html and CHALLENGE.search(text):
+            write_json(self.dir / "robots.json", {"url": url, "status": status, "fetched_at": self.clock(),
+                                                  "actor": self.actor, "robots_html": True, "judgments": {},
+                                                  "text": text[:2000]})
+            self.stop("challenge", f"robots.txt returned a bot challenge page at {url}")
         if status in RATE_LIMIT_STATUS:
             write_json(self.dir / "robots.json", {"url": url, "status": status, "fetched_at": self.clock(),
                                                   "actor": self.actor, "judgments": {}, "text": ""})
@@ -794,6 +804,8 @@ class SiteRun:
                      for k, v in paths.items()}
         result = {"url": url, "status": status, "fetched_at": self.clock(), "actor": self.actor,
                   "tokens": ACTORS[self.actor]["robots_tokens"],
+                  # HTML without a challenge (e.g. a soft 404) carries no rules: RFC 9309 parsing allows.
+                  "robots_html": robots_html,
                   "content_signal": sorted(set(re.findall(r"(?im)^content-signal:\s*(.+)$", text))),
                   "anthropic_named": sorted({a for g in parse_robots(text) for a in g["agents"]
                                              if re.search(r"claude|anthropic", a)}),

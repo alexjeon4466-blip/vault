@@ -1209,3 +1209,11 @@ title: "Writing log"
   - 남긴 한계: 표준 HTML 파서의 닫히지 않은 내부 태그 처리. 수락 전 직접 열람 검증으로 거른다.
 - 사용자 승인으로 루리웹 목록 계약을 개정했다. 1페이지는 query 없는 경로, 2페이지부터 `?page=N`만 허용한다(결정문서 2026-10-31 절). 수집기 페이지 상한 1을 해제했다.
 - 회귀 테스트: collector 47개, note 8개, A1 11개, spider 22개(Scrapy 2.17 고정 런타임) 모두 통과. commit·push는 하지 않았다.
+
+## 2026-10-31 — Hermes·Claude 글감 채집 협업 체계 결정
+
+- Claude 직접 수집용 레인을 검토했다. 한국 23곳·일본 16곳의 robots를 Anthropic 토큰 기준으로 판정하고, 통과한 게시판(루리웹 300145·300561, 보배드림 bbstory, ママスタ 등)은 표본을 뽑았다. 본문만으로 글감이 서는 곳이 거의 없어 Claude 전용 레인을 두지 않기로 했다. 상세는 스킬 참조 `사이트별_접근경로.md`의 2026-10-31 Claude 레인 후보 조사 절에 있다.
+- 사용자 결정으로 [[wiki/writing/decisions/Hermes_Claude_글감채집_협업체계_2026-10-31|협업 체계]]를 신설했다. 수집은 Hermes, 판정·기록은 Claude가 맡고 3단계로 도입한다. 현행은 1단계(수동 핸드오프)다. Hermes가 정당하게 수집한 막힌 사이트 원문은 Claude가 판정할 수 있게 했고, 그 URL을 Claude가 직접 요청하는 것은 금지했다. Hermes는 같은 PC에 있고, 공유 폴더는 환경변수 `SEED_HARVEST_RUNS`로만 가리킨다.
+- 수집기를 고쳤다. robots.txt 자리에 봇 확인 HTML이 오면 `challenge`로 멈춘다(PGR21). 확인 화면이 아닌 HTML은 규칙 없음으로 읽되 `robots_html`로 기록한다.
+- 1단계 기계 검증 스크립트 `verify-handoff.py`를 추가했다. 회귀 테스트는 collector 49개, verify-handoff 12개, note 8개, A1 11개 모두 통과했다.
+- 남은 작업: `SEED_HARVEST_RUNS` 설정, 첫 Hermes 배치와 핸드오프 판정.

@@ -132,6 +132,26 @@ class Robots(unittest.TestCase):
             self.assertEqual(t.calls, ["https://www.instiz.net/robots.txt"], "no list request after denial")
             self.assertFalse((Path(tmp) / "ruliweb").exists())
 
+    # PGR21 (2026-10-31): robots.txt answered 200 with an Anubis challenge page, which parses as "no rules"
+    def test_challenge_page_in_place_of_robots_stops_the_site(self):
+        page = ('<!doctype html><html><head><title>Oh noes!</title></head><body>'
+                '<script id="anubis_challenge" type="application/json">null</script></body></html>')
+        with tempfile.TemporaryDirectory() as tmp:
+            t = FakeTransport({"https://www.bobaedream.co.kr/robots.txt": (200, {}, page)})
+            site = make_site(tmp, "bobaedream", t)
+            with self.assertRaises(cc.SiteStopped) as ctx:
+                site.discover(page_budget=3)
+            self.assertEqual(ctx.exception.state, "challenge")
+            self.assertEqual(t.calls, ["https://www.bobaedream.co.kr/robots.txt"])
+
+    def test_plain_html_in_place_of_robots_is_recorded_and_parsed_as_no_rules(self):
+        page = "<!DOCTYPE html><html><body><h1>Not found</h1></body></html>"
+        with tempfile.TemporaryDirectory() as tmp:
+            t = FakeTransport({"https://www.bobaedream.co.kr/robots.txt": (200, {}, page)})
+            result = make_site(tmp, "bobaedream", t).robots()
+            self.assertTrue(result["robots_html"])
+            self.assertTrue(all(j["allowed"] for j in result["judgments"].values()))
+
 
 class Selectors(unittest.TestCase):
     def test_compound_and_descendant(self):
