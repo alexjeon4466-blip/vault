@@ -19,7 +19,7 @@ PROFILES: dict[str, dict[str, Any]] = {
         "allowed_hosts": ("www.instiz.net", "instiz.net"),
     },
     "clien": {
-        "list_url": "https://www.clien.net/service/group/community?od=T31&po={page0}",
+        "list_url": "https://www.clien.net/service/board/park?od=T31&po={page0}",
         "allowed_hosts": ("www.clien.net", "clien.net"),
     },
     "ruliweb": {

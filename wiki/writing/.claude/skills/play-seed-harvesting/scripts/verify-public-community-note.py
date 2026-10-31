@@ -15,7 +15,9 @@ from collections import Counter
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-CURRENT_POOL_VERSION = "2026-08-29"
+CURRENT_POOL_VERSION = "2026-10-31"
+# 2026-08-29 has the same hosts as current but any Clien board; 2026-10-31 pins Clien to park.
+BOARD_AGNOSTIC_POOL_VERSION = "2026-08-29"
 PREVIOUS_POOL_VERSION = "2026-08-15"
 ACTIVE_HOSTS = {
     "www.instiz.net": "Instiz",
@@ -89,7 +91,7 @@ def approved_site(url: str, *, policy_mode: str) -> str | None:
 
     hosts = (
         ACTIVE_HOSTS
-        if policy_mode == "current"
+        if policy_mode in ("current", BOARD_AGNOSTIC_POOL_VERSION)
         else PREVIOUS_ACTIVE_HOSTS
         if policy_mode == PREVIOUS_POOL_VERSION
         else {**PREVIOUS_ACTIVE_HOSTS, **ACTIVE_HOSTS}
@@ -98,7 +100,8 @@ def approved_site(url: str, *, policy_mode: str) -> str | None:
     if site == "Instiz":
         return site if re.fullmatch(r"/name/\d+/?", parsed.path) else None
     if site == "Clien":
-        return site if re.fullmatch(r"/service/board/[^/]+/\d+/?", parsed.path) else None
+        board = r"park" if policy_mode == "current" else r"[^/]+"
+        return site if re.fullmatch(rf"/service/board/{board}/\d+/?", parsed.path) else None
     if site == "TodayHumor":
         if host == "todayhumor.com":
             return site if parsed.path in {"", "/"} and re.fullmatch(
@@ -150,8 +153,8 @@ def main() -> int:
         policy_mode = "legacy-compatible"
     elif pool_version == CURRENT_POOL_VERSION:
         policy_mode = "current"
-    elif pool_version == PREVIOUS_POOL_VERSION:
-        policy_mode = PREVIOUS_POOL_VERSION
+    elif pool_version in (BOARD_AGNOSTIC_POOL_VERSION, PREVIOUS_POOL_VERSION):
+        policy_mode = pool_version
     else:
         policy_mode = "unknown"
         errors.append(
@@ -208,7 +211,7 @@ def main() -> int:
     all_urls = re.findall(r"https?://[^\s)\]>]+", text)
     excluded_host_parts = (
         CURRENT_EXCLUDED_HOST_PARTS
-        if policy_mode == "current"
+        if policy_mode in ("current", BOARD_AGNOSTIC_POOL_VERSION)
         else PREVIOUS_EXCLUDED_HOST_PARTS
         if policy_mode == PREVIOUS_POOL_VERSION
         else ()

@@ -1,5 +1,7 @@
 # Scrapy Local Community Crawler — Unimplemented Design Targets
 
+> **2026-10-31 vault note:** the runnable collector is now `scripts/community-collector.py` (stdlib, resumable, actor-aware robots, date-targeted discovery, per-post skip, body-only streaming; offline suite `scripts/test-community-collector.py`). Its list/body parsers are separate from this Scrapy spider's, so a selector fix must be made in both if the spider is still used. This document remains the historical Scrapy design contract.
+
 **Distribution status:** the bundled code implements construction, fixed profiles, list parsing and body parsing only. `start()` is an empty async generator. Scheduling, live collection, date-window enforcement, close receipts, accounting files and resume orchestration are NOT implemented. The specifications below are design targets, not shipped behavior or completed acceptance tests. Do not use `runspider` as a working collection recipe. See `references/portable-setup.md`.
 
 This design does not register Scrapy as a Hermes `web_search`/`web_extract` provider.

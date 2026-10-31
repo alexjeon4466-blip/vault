@@ -57,13 +57,16 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 
 ## robots·접근 게이트 — 수집 전 필수
 
-**실행할 때마다 각 사이트 robots.txt를 다시 읽는다.** 캐시된 판단이나 지난 배치의 결과를 재사용하지 않는다.
+**실행할 때마다 각 사이트 robots.txt를 다시 읽는다.** 캐시된 판단이나 지난 배치의 결과를 재사용하지 않는다. 같은 run-dir을 이어 실행할 때도 호출마다 새로 읽고, 직전 영수증은 `robots_history.jsonl`로 넘긴다. 판정은 대표 경로 하나가 아니라 **실제로 요청하는 목록·본문 URL(경로+query) 각각**에 대해 요청 직전에 한다. robots.txt가 429/430이면 RFC 9309의 4xx 허용이 아니라 요청 제한으로 보고 그 사이트를 멈춘다.
 
-**접근 기준선 고정:** 새 한국·일본 계약은 `access_policy_version: 2026-10-30-verified-baseline-v1`을 쓴다(정본: 채집풀 운영규칙 2026-10-30 절). 실제 요청 주체와 그에 해당하는 robots 그룹·wildcard 경로 규칙만 적용한다. `ChatGPT-User`·`OAI-SearchBot`·`GPTBot` 등 **다른 이름의 봇 제한을 확대 적용하지 않고**, 모든 봇 이름이 허용해야 한다는 AND 조건을 만들지 않는다. "더 안전하게"를 이유로 중단 조건·진입 경로·요청 예산·채택 조건을 임의로 좁히지 않는다 — 재량적 변경은 사용자 명시 승인이 필요하다. 실제 현재 제한(해당 robots 거부·로그인 벽·403/challenge·429)은 해당 요청/사이트에만 적용하고 URL·주체·규칙/상태·시각을 남긴다. 이전 배치를 재사용할 때 그 배치의 `extra_conservative_rule`·`provider_policy_conservative_stop`·전 봇 AND 게이트를 새 계약에 복제하지 않는다.
+**접근 기준선 고정:** 새 한국·일본 계약은 `access_policy_version: 2026-10-30-verified-baseline-v1`을 쓴다(정본: 채집풀 운영규칙 2026-10-30 절). 실제 요청 주체와 그에 해당하는 robots 그룹·wildcard 경로 규칙만 적용한다. `ChatGPT-User`·`OAI-SearchBot`·`GPTBot` 등 **다른 이름의 봇 제한을 확대 적용하지 않고**, 모든 봇 이름이 허용해야 한다는 AND 조건을 만들지 않는다. **명시적 예외 하나:** 실행 주체가 Claude일 때는 Anthropic 계열 토큰 다섯 개를 모두 자기 이름으로 보고, 그중 하나라도 금지하면 따른다(아래 1번, 2026-10-31 사용자 결정 — 결정문서 2026-10-30 절에 근거 기록). 이 예외는 다른 회사 봇이나 Hermes로 확대하지 않는다. "더 안전하게"를 이유로 중단 조건·진입 경로·요청 예산·채택 조건을 임의로 좁히지 않는다 — 재량적 변경은 사용자 명시 승인이 필요하다. 실제 현재 제한(해당 robots 거부·로그인 벽·403/challenge·429)은 해당 요청/사이트에만 적용하고 URL·주체·규칙/상태·시각을 남긴다. 이전 배치를 재사용할 때 그 배치의 `extra_conservative_rule`·`provider_policy_conservative_stop`·전 봇 AND 게이트를 새 계약에 복제하지 않는다.
 
 판정 순서:
 
-1. **에이전트 이름이 명시 차단되었는가.** robots에 `anthropic-ai`, `ClaudeBot`, `Claude-Web` 가운데 하나라도 `Disallow: /`로 있으면 그 사이트는 **에이전트 수집 대상에서 제외**한다. `safety_state=blocked` 사유로 기록하고, 그 사이트 몫은 미달로 남긴다.
+1. **실행 주체별로 판정한다(2026-10-31 사용자 결정, 접근 기준선의 명시적 예외).**
+   - **Hermes**(`HermesAgent-PublicResearch/1.0`): 자기 제품 토큰에 해당하는 그룹, 없으면 `*` 그룹만 적용한다. 다른 이름의 봇 제한은 확대 적용하지 않는다(접근 기준선).
+   - **Claude**(Claude Code 등 Anthropic 모델이 직접 요청): `Claude-User`·`ClaudeBot`·`Claude-Web`·`anthropic-ai`·`Claude-SearchBot` 가운데 **하나라도** 해당 경로를 금지하면 그 사이트는 Claude 수집에서 제외한다. 학습용 토큰만 지목된 경우도 Anthropic 계열 전체에 대한 반대 의사로 존중한다.
+   - 제외된 사이트는 `robots_denied`로 기록하고 그 몫은 미달로 남긴다. 같은 사이트를 다른 주체가 정당하게 수집할 수는 있지만, Claude가 Hermes UA를 빌리는 것은 2번의 우회다.
 2. **UA를 바꿔 우회하지 않는다.** 사이트가 이 에이전트 계열을 지목해 거부했는데 브라우저 UA로 갈아타 200을 받는 것은 접근 성공이 아니라 거부 우회다. `curl -A`, playwright, TLS 지문 위장 모두 같다. 열린다는 사실이 열어도 된다는 뜻은 아니다.
 3. **사람이 직접 읽은 것은 다른 경로다.** 사용자가 공개 페이지를 자기 브라우저로 읽고 본문을 가져오는 것은 에이전트 크롤링이 아니다. 이 경로로 들어온 원문은 출처와 열람 주체를 `_access_route`에 남긴다.
 4. **`*` 그룹만 보고 판단하지 않는다.** `Disallow: /`와 더 구체적인 `Allow`가 함께 있으면 raw 그룹을 열어 longest-match 우선순위를 직접 확인한다. `*` 그룹이 아예 없는 robots도 있다 — 그때도 이름이 지목되었는지가 기준이다.
@@ -75,16 +78,16 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 
 ## 현행 한국 풀
 
-`community_pool_version: "2026-08-29"` — **핵심 2 + 보조 2**. 사이트당 최대 `5`, 전체 최대 `20`. 미달 허용.
+`community_pool_version: "2026-10-31"` — **핵심 2 + 보조 2**. 사이트당 최대 `5`, 전체 최대 `20`. 미달 허용.
 
 | 사이트 | 경로 | 비고 |
 |---|---|---|
 | Instiz `일상` (핵심) | `/name` 목록 · `/name/<id>` 본문 | 회원 전용 안내 페이지를 공개 본문으로 오인하지 않는다 |
-| Clien (핵심) | robots가 허용한 `/service/board/` 아래 | |
+| Clien 모두의공원 (핵심) | `/service/board/park` 목록 · `/service/board/park/<id>` 본문 | 2026-10-31 진입점 교정. robots가 Anthropic 계열을 지목하므로 Hermes 레인 전용 |
 | 82cook 자유게시판 (보조 B) | `bn=15` 한정 · **본문만** | 댓글은 수집·판정 대상이 아니다 |
-| Ruliweb `고민상담 300147` (보조 B) | query 없는 board 경로 · `/community/board/300147/read/<id>` | 댓글·답글·JSON-LD 댓글 본문 제외 |
+| Ruliweb `고민상담 300147` (보조 B) | query 없는 board 경로 · `/community/board/300147/read/<id>` | 댓글·답글·JSON-LD 댓글 본문 제외. 목록 2페이지부터는 `?page=N`만 붙인다(2026-10-31 개정). `cate=` 등 다른 query는 금지 |
 
-TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), FMKorea·MLBPARK는 은퇴했다. `2026-08-15` 풀이나 풀 버전 없는 과거 노트는 당시 계약의 역사 자료로 보존하고 소급 무효화하지 않는다. 기본 풀 제외: 보배드림(예비 B)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
+TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), FMKorea·MLBPARK는 은퇴했다. `2026-08-29`(클리앙 게시판 무관)·`2026-08-15` 풀이나 풀 버전 없는 과거 노트는 당시 계약의 역사 자료로 보존하고 소급 무효화하지 않는다. 기본 풀 제외: 보배드림(예비 B, 2026-10-31 재평가 텍스트 독립 6/11)·인벤 오픈이슈(`C`)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
 
 이 네 곳은 학교·직장·가족·나이·건강·돈·위치 단서가 섞인 사적 노출을 자주 담는다. 자동 수락하지 말고 지속 사용 전에 해당 단서를 제거하거나 강하게 변형한다.
 
@@ -93,7 +96,7 @@ TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), FMKorea·
 1. **스코프 잠금** — 위 절대로 기록한다. 카드마다 합법 레인 하나가 필요하다.
 2. **라이브 상태 점검** — 현행 결정문서, 기존 노트·중복, `seeds/README.md` 체크포인트, git status를 읽는다. 활성·보류·완료·자기복제 가지를 파악한다.
 3. **robots 게이트** — 위 절을 실행한다. 제외된 사이트는 미달로 남긴다.
-4. **재현 가능하게 수집** — 사이트별로 스냅샷·큐·영수증·카운터를 분리한다. 한 사이트 실패가 뒤 사이트를 지우지 못하게 격리한다. 차단은 이름을 붙여 기록하고 대체하지 않는다.
+4. **재현 가능하게 수집** — `scripts/community-collector.py`로 사이트별 스냅샷·큐·영수증·카운터를 분리한다. 한 사이트 실패가 뒤 사이트를 지우지 못하게 격리한다. 차단은 이름을 붙여 기록하고 대체하지 않는다. **글 하나의 벽·삭제는 레인 중단 사유가 아니다.**
 5. **수락 전 검증** — 직접 페이지를 열어 현행 제목·날짜·본문·접근 상태와 지지 문구를 확인한다. `listed / title-filtered / opened / current-range / non-empty / accepted`를 각각 따로 센다.
 6. **A0 — 넓은 잔여 회수** — 원 사건을 버린 뒤 명명 가능한 잔여가 남는지만 본다. **주제·민감성은 탈락 사유가 아니다.** `residue: yes/no`와 `source_handling`을 분리한다. A0 yes마다 현행 본문 안의 **서로 다른 exact span 2개**를 잠근다. 판정 단위는 `(source_id, source_version_id, residue_id)`다.
 7. **Evidence-lock 게이트** — 메모 작성 **전에**, 계보 레인이 두 span이 현행 본문에 있고 상속된 잔여를 의미적으로 지지하는지 확인한다. span이나 잔여가 흔들리면 A0 결정을 버전하고 `a0_recheck`로 멈춘다. **메모 작성자가 대체 근거를 조용히 고르게 하지 않는다.**
@@ -144,7 +147,35 @@ seeds/harvests/글감_채집_<YYYY-MM-DD>_<풀이름>_A1전건_원문열람_<HHM
 
 검증기 자체 테스트는 스킬 디렉토리에서 `python -B scripts/test-verify-public-community-note.py`, `python -B scripts/test-verify-public-community-a1.py`로 돌린다(각 5개·11개 통과가 정상). 파서 테스트는 Scrapy가 필요하다: `uv run --no-project --with 'Scrapy==2.17.0' python -B scripts/test-public-community-spider.py`(22개).
 
-`scripts/public-community-spider.py`는 **완성 크롤러가 아니다.** 목록/본문 파서와 인자 검사만 있고 `start()`가 요청을 만들지 않는다. 종료 코드 0을 채집 성공으로 보고하지 않는다. 설계 계약은 `references/scrapy-local-community-crawler.md`(미구현 표시).
+`scripts/public-community-spider.py`는 **완성 크롤러가 아니다.** 목록/본문 파서와 인자 검사만 있고 `start()`가 요청을 만들지 않는다. 종료 코드 0을 채집 성공으로 보고하지 않는다. 설계 계약은 `references/scrapy-local-community-crawler.md`(미구현 표시). 실제 수집은 아래 `community-collector.py`를 쓴다.
+
+## 수집기 — `scripts/community-collector.py`
+
+표준 라이브러리만 쓰는 재개형 수집기다(Python 3.10+). 배치마다 수집기를 새로 짜지 않는다. 사이트 DOM이 바뀌면 `PROFILES`의 selector만 고치고 테스트를 추가한다.
+
+```bash
+python -B scripts/community-collector.py profiles
+python -B scripts/community-collector.py all --run-dir <Vault·Git 밖 절대경로> --actor hermes|claude \
+  --window-hours 168 --page-budget 24 --per-day-cap 4 --max-posts 40 --site ruliweb --site 82cook ...
+python -B scripts/community-collector.py status --run-dir <같은 경로> --site ruliweb
+python -B scripts/test-community-collector.py   # 오프라인 회귀 47개
+```
+
+- **단계:** `robots → discover → freeze → fetch → status`. 각 단계는 `<run-dir>/<site>/`에 영수증을 남긴다. 같은 명령을 다시 실행하면 이어서 진행한다. 처음 실행할 때 `contract.json`에 실행 주체·UA·창을 고정하며, 주체를 바꾸려면 새 run-dir을 쓴다.
+- **discover:** 목록 날짜를 읽어 창의 날짜마다 도달하도록 페이지를 이분·보간 탐색한다. 7일 창을 전부 덮는다는 보장은 없다 — 페이지 예산 소진, 프로필 페이지 상한, 목록 날짜 해석 실패로 빈 날짜가 남을 수 있고, 그 결과는 `in_window_days`의 0으로 드러난다. 0인 날은 미달로 보고하고 다른 날로 채우지 않는다. 날짜 칸은 프로필에 적힌 우선순위대로 시도해 처음 해석되는 값을 쓴다. 날짜를 못 읽은 행은 같은 날의 이웃 ID 사이에 있을 때만 그 날로 보간하고, 나머지는 `date_unresolved`로 센다. 버리지 않는다.
+- **freeze:** 날짜별 상한 안에서 ID를 균등 간격으로 고른다. 제목은 쓰지 않고, 보충하지 않는다.
+- **fetch는 글 단위 판정이 원칙이다.** 회원 전용·삭제(404)·빈 본문·창 밖·리다이렉트·robots 개별 금지(`robots_denied`)·본문이 닫히기 전 응답 종료(`truncated_body`)·문자셋 오판으로 깨진 본문(`encoding_error`)·canonical이 다른 글을 가리킴(`canonical_mismatch`, scheme·끝 `/` 차이는 같은 글로 본다) 글은 **그 글만** 상태를 기록하고 넘어간다. 이들은 `eligible_bodies`에 들어가지 않는다. 사이트를 멈추는 것은 다음 경우뿐이다.
+  - robots가 목록 페이지를 금지·도달 불가, robots.txt 429/430
+  - 403/429/430/451, 봇 챌린지
+  - 목록의 다른 호스트 리다이렉트
+  - 연속 3회 selector 미검출 또는 댓글 경계 걸림(`parser_drift`)
+  - 백오프 재시도 뒤 연속 3회 네트워크 실패(`network_unreachable`). 재시도 단위는 연결부터 본문을 다 읽을 때까지다. 응답 전 연결 끊김·RST·잘못된 상태줄·읽는 도중 끊김·Content-Length보다 짧은 본문 모두 같은 요청을 다시 한다.
+  - 그 밖의 예기치 못한 오류는 `collector_error`로 그 사이트만 멈추고 다음 사이트를 계속한다.
+- **멈춘 사이트는 조용히 재개하지 않는다.** `stop.json`을 사람이 확인한 뒤 새 run-dir로 다시 시작한다. 시작 영수증만 있고 완료 영수증이 없는 글은 `unresolved_attempts`로 남기고 자동으로 재요청하지 않는다.
+- **본문만 받는다.** 본문 요소가 닫히면 연결을 끊는다. 모든 프로필은 댓글 컨테이너 selector(`comment_guard`)를 선언하고, 본문이 닫히기 전에 그것이 나오면 그 태그에서 파싱을 멈추고 `boundary_error`로 그 글을 제외한다. 그래서 영수증의 `comments_parsed=false`는 고정값이 아니라 검사 결과다(가드가 없으면 `null`). 가드는 댓글을 담을 수 있는 블록 요소(div·ul·table 등)에만 걸리고 `script`·`link`·인라인 배지는 무시한다. 82cook 가드는 Scrapy spider의 "class·id에 comment 포함" 규칙을 옮긴 것이라 실측 전이다 — 첫 실행에서 `boundary_error`가 몰리면(연속 3회면 `parser_drift`로 멈춘다) 영수증의 태그를 보고 가드를 좁힌다.
+- **알려진 한계:** 표준 라이브러리 HTML 파서는 본문 안의 닫히지 않은 내부 태그나 짝 없는 닫는 태그를 바로잡지 못한다. 그러면 본문이 주변 광고·사이드바를 삼키거나 앞부분만 남은 채 `eligible`이 될 수 있다. `eligible`은 수집 영수증일 뿐이고, 수락 전 직접 열람 검증(채집 루프 5번)이 이 경우를 잡는다.
+- **`accepted`는 항상 0이다.** `eligible`은 창 안의 공개 본문이라는 뜻이다. A0 판정·윤리·두 문구 근거 게이트는 수집 뒤의 별도 단계다.
+- **아직 부족한 것:** 일본 사이트 프로필은 아직 없다(기존 Hermes 배치 수집기를 쓴다). 인스티즈·클리앙·82cook 목록 날짜 selector는 Claude가 실측하지 못했다. Hermes 첫 실행에서 `discover` 영수증의 `date_unresolved`를 확인하고, 0이 아니면 selector를 고친다.
 
 ## 참조 색인
 
@@ -206,3 +237,7 @@ vault 인증 변경·commit·push는 **명시 요청이 있을 때만** 한다. 
 10. 선택·조사 깊이·무대화 가능성·한 번의 성공한 시험을 B2·형식·승격 승인으로 취급한다.
 11. A0 yes를 A1 pass로 취급한다. masked 구조 레인에 앵커·출처를 보여 준다. `speculative` 메모 줄을 남긴 채 pass한다. `archive_only`·`blocked`·`merge`를 하나의 일반 거절 상태로 뭉갠다.
 12. 카드노트 검증기를 배치 정본에 걸고 그 출력을 실제 오류로 보고한다.
+13. 회원 전용 글 1건이나 selector 미검출 1건으로 사이트 레인 전체를 멈춘다. 글 단위 상태로 기록하고 계속한다(2026-10-31 인스티즈 22건 중단 사례).
+14. 목록 날짜를 연도 하드코딩·단일 형식으로 읽어 행을 조용히 버린다(2026-10-31 인스티즈 107건 유실). `parse_list_day`로 읽고 `date_unresolved`를 보고한다.
+15. 승인 진입점이 robots로 막혔는데 원인을 사이트 차단으로 적고 끝낸다. 같은 사이트의 허용 경로(예: 클리앙 `/service/board/park`)가 있으면 풀 개정 후보로 사용자에게 올린다. 사용자 승인 전 조용히 바꾸지 않는다.
+16. TCP 타임아웃을 정책 차단으로 기록한다. 네트워크 계층(`tcp_connect`·`tls`·`dns`·`read_timeout`)을 남기고 백오프 뒤 재시도한다.

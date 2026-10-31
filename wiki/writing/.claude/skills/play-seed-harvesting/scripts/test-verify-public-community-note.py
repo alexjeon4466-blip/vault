@@ -12,7 +12,8 @@ import unittest
 from pathlib import Path
 
 TARGET = Path(__file__).with_name("verify-public-community-note.py")
-CURRENT_POOL_VERSION = "2026-08-29"
+CURRENT_POOL_VERSION = "2026-10-31"
+BOARD_AGNOSTIC_POOL_VERSION = "2026-08-29"
 PREVIOUS_POOL_VERSION = "2026-08-15"
 
 
@@ -101,6 +102,37 @@ class CurrentPoolContractTests(unittest.TestCase):
             any("unapproved source URLs" in error for error in report["errors"]),
             report,
         )
+
+
+    def test_current_pool_pins_clien_to_park_board(self) -> None:
+        urls = ["https://www.clien.net/service/board/kin/9002"]
+        returncode, report = run_verifier(urls, pool_version=CURRENT_POOL_VERSION)
+        self.assertEqual(returncode, 1)
+        self.assertTrue(
+            any("unapproved source URLs" in error for error in report["errors"]),
+            report,
+        )
+
+    def test_current_pool_keeps_bobaedream_and_inven_out(self) -> None:
+        urls = [
+            "https://www.bobaedream.co.kr/view?code=freeb&No=3448117",
+            "https://www.inven.co.kr/board/webzine/2097/2747181",
+        ]
+        returncode, report = run_verifier(urls, pool_version=CURRENT_POOL_VERSION)
+        self.assertEqual(returncode, 1)
+        self.assertTrue(
+            any("unapproved source URLs" in error for error in report["errors"]),
+            report,
+        )
+
+    def test_2026_08_29_notes_keep_any_clien_board_valid(self) -> None:
+        urls = [
+            "https://www.clien.net/service/board/kin/9002",
+            "https://bbs.ruliweb.com/community/board/300147/read/91000001",
+        ]
+        returncode, report = run_verifier(urls, pool_version=BOARD_AGNOSTIC_POOL_VERSION)
+        self.assertEqual(returncode, 0, report)
+        self.assertEqual(report["policy_mode"], "2026-08-29")
 
 
 class LegacyCompatibilityTests(unittest.TestCase):
