@@ -159,6 +159,20 @@ class SetInvariantTests(unittest.TestCase):
             report,
         )
 
+    # 2026-10-31 amendment: a title span may stand in for one of the two A0 spans
+    def test_accepts_one_title_span(self) -> None:
+        package = valid_package()
+        package["a0_manifest"][0]["evidence_kinds"] = {"ev-1": "title", "ev-2": "body"}
+        returncode, report = run_verifier(package)
+        self.assertEqual(returncode, 0, report)
+
+    def test_rejects_two_title_spans(self) -> None:
+        package = valid_package()
+        package["a0_manifest"][0]["evidence_kinds"] = {"ev-1": "title", "ev-2": "title"}
+        returncode, report = run_verifier(package)
+        self.assertEqual(returncode, 1, report)
+        self.assertTrue(any("both A0 evidence spans are title" in e for e in report["errors"]), report)
+
 
 class PassContractTests(unittest.TestCase):
     def test_rejects_invalid_pass_proof(self) -> None:

@@ -88,6 +88,12 @@ def validate_audit_integrity(manifest: list[dict], records: list[dict]) -> list[
     duplicate_manifest_ids = duplicates(manifest_residue_ids)
     if duplicate_manifest_ids:
         errors.append(f"duplicate A0 residue_id: {duplicate_manifest_ids}")
+    # 2026-10-31 amendment: one of the two A0 spans may be the post title, never both.
+    for item in manifest:
+        kinds = item.get("evidence_kinds") or {}
+        evidence_ids = item.get("evidence_ids") or []
+        if evidence_ids and all(kinds.get(eid) == "title" for eid in evidence_ids):
+            errors.append(f"{item.get('residue_id')}: both A0 evidence spans are title spans; one must be body")
     manifest_by_residue = {
         item.get("residue_id"): item
         for item in manifest

@@ -100,8 +100,8 @@ TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), MLBPARK�
 3. **robots 게이트** — 위 절을 실행한다. 제외된 사이트는 미달로 남긴다.
 4. **재현 가능하게 수집** — `scripts/community-collector.py`로 사이트별 스냅샷·큐·영수증·카운터를 분리한다. 한 사이트 실패가 뒤 사이트를 지우지 못하게 격리한다. 차단은 이름을 붙여 기록하고 대체하지 않는다. **글 하나의 벽·삭제는 레인 중단 사유가 아니다.**
 5. **수락 전 검증** — 직접 페이지를 열어 현행 제목·날짜·본문·접근 상태와 지지 문구를 확인한다. `listed / title-filtered / opened / current-range / non-empty / accepted`를 각각 따로 센다.
-6. **A0 — 넓은 잔여 회수** — 원 사건을 버린 뒤 명명 가능한 잔여가 남는지만 본다. **주제·민감성은 탈락 사유가 아니다.** `residue: yes/no`와 `source_handling`을 분리한다. A0 yes마다 현행 본문 안의 **서로 다른 exact span 2개**를 잠근다. 판정 단위는 `(source_id, source_version_id, residue_id)`다.
-7. **Evidence-lock 게이트** — 메모 작성 **전에**, 계보 레인이 두 span이 현행 본문에 있고 상속된 잔여를 의미적으로 지지하는지 확인한다. span이나 잔여가 흔들리면 A0 결정을 버전하고 `a0_recheck`로 멈춘다. **메모 작성자가 대체 근거를 조용히 고르게 하지 않는다.**
+6. **A0 — 넓은 잔여 회수** — 원 사건을 버린 뒤 명명 가능한 잔여가 남는지만 본다. **주제·민감성은 탈락 사유가 아니다.** `residue: yes/no`와 `source_handling`을 분리한다. A0 yes마다 **서로 다른 exact span 2개**를 잠근다. 하나는 게시물 제목이어도 되지만(`evidence_kind: title`, 2026-10-31 개정), 다른 하나는 반드시 현행 본문이다. 판정 단위는 `(source_id, source_version_id, residue_id)`다.
+7. **Evidence-lock 게이트** — 메모 작성 **전에**, 계보 레인이 두 span이 현행 본문(제목 근거는 현행 열람 제목)에 글자 그대로 있고 상속된 잔여를 의미적으로 지지하는지 확인한다. span이나 잔여가 흔들리면 A0 결정을 버전하고 `a0_recheck`로 멈춘다. **메모 작성자가 대체 근거를 조용히 고르게 하지 않는다.**
 8. **A1 — 비발명 구조 증명** — evidence-lock을 통과한 runnable 레코드만 상속한다. 원문에 없던 동기·사건·결과를 더하지 않고 5~10줄 공연 규칙을 기술할 수 있는지만 묻는다. 줄마다 `supported_abstraction / entailed / speculative`를 붙인다. **`speculative`가 한 줄이라도 있으면 pass할 수 없다.** 잔여는 지지되는데 메모가 발명했으면 `resting`, A0 근거·잔여 오판이면 `a0_recheck`다. 상태 정의와 파생 우선순위는 판정설계 v0.2 §7을 따른다.
 9. **두 독립 리뷰** — masked 구조 리뷰(앵커·URL·사이트·handling·기존 카드 여부를 가림)와 source-open 계보 리뷰를 둘 다 통과해야 `structure_state=proven`이다. 불일치는 부모 재심으로 보낸다.
 10. **자기복제 검사는 구조 추출 뒤에** — 사전 탈락은 순환 논리다. 메모가 만들어진 뒤 무대 문법을 비교한다. 일부만 비슷하면 `drift_warning`을 남기고 pass할 수 있다.
@@ -147,7 +147,7 @@ seeds/harvests/글감_채집_<YYYY-MM-DD>_<풀이름>_A1전건_원문열람_<HHM
 
 위 표의 `scripts/`는 **이 스킬 디렉토리 기준**이다. 작업 디렉토리가 `wiki/writing`이면 `.claude/skills/play-seed-harvesting/scripts/...`로 부른다.
 
-검증기 자체 테스트는 스킬 디렉토리에서 `python -B scripts/test-verify-public-community-note.py`, `python -B scripts/test-verify-public-community-a1.py`로 돌린다(각 5개·11개 통과가 정상). 파서 테스트는 Scrapy가 필요하다: `uv run --no-project --with 'Scrapy==2.17.0' python -B scripts/test-public-community-spider.py`(22개).
+검증기 자체 테스트는 스킬 디렉토리에서 `python -B scripts/test-verify-public-community-note.py`, `python -B scripts/test-verify-public-community-a1.py`로 돌린다(각 8개·13개 통과가 정상). 파서 테스트는 Scrapy가 필요하다: `uv run --no-project --with 'Scrapy==2.17.0' python -B scripts/test-public-community-spider.py`(22개).
 
 `scripts/public-community-spider.py`는 **완성 크롤러가 아니다.** 목록/본문 파서와 인자 검사만 있고 `start()`가 요청을 만들지 않는다. 종료 코드 0을 채집 성공으로 보고하지 않는다. 설계 계약은 `references/scrapy-local-community-crawler.md`(미구현 표시). 실제 수집은 아래 `community-collector.py`를 쓴다.
 
