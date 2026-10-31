@@ -112,6 +112,22 @@ class Robots(unittest.TestCase):
         self.assertIn("claudebot", verdict["basis"])
         self.assertFalse(cc.judge_actor(self.CLIEN_LIKE, 200, "claude", "/service/board/park")["allowed"])
 
+    # 2026-10-31 amendment: a named Claude-User group governs user-directed Claude runs
+    GEEKNEWS_LIKE = ("User-agent: ClaudeBot\nUser-agent: anthropic-ai\nDisallow: /\n\n"
+                     "User-agent: Claude-SearchBot\nUser-agent: Claude-User\nAllow: /\n\n"
+                     "User-agent: *\nAllow: /\nDisallow: /api/\n")
+    KOMACHI_LIKE = "User-agent: ClaudeBot\nUser-agent: Claude-User\nDisallow: /\n"
+
+    def test_named_claude_user_group_governs_claude(self):
+        verdict = cc.judge_actor(self.GEEKNEWS_LIKE, 200, "claude", "/topic?id=1")
+        self.assertTrue(verdict["allowed"], verdict)
+        self.assertEqual([t["token"] for t in verdict["tokens"]], ["claude-user"])
+        self.assertFalse(cc.judge_actor(self.KOMACHI_LIKE, 200, "claude", "/x")["allowed"])
+
+    def test_without_claude_user_group_any_anthropic_denial_still_excludes(self):
+        self.assertFalse(cc.judge_actor(self.INSTIZ_LIKE, 200, "claude", "/name")["allowed"])
+        self.assertFalse(cc.judge_actor(self.CLIEN_LIKE, 200, "claude", "/service/board/park")["allowed"])
+
     def test_longest_match_and_wildcard_group(self):
         self.assertTrue(cc.judge_actor(self.CLIEN_LIKE, 200, "hermes", "/service/board/park/1")["allowed"])
         self.assertFalse(cc.judge_actor(self.CLIEN_LIKE, 200, "hermes", "/service/group/community")["allowed"])
@@ -366,6 +382,43 @@ class PostFetching(unittest.TestCase):
                              "<article><h1>제목</h1><time datetime='x'>t</time></article></body></html>")
         self.assertEqual(cc.dom_outline(root), ["2 meta[property=og:title]", "2 article", "3 h1",
                                                 "3 time[datetime]"])
+
+    # 2026-10-31 fmkorea probe profile: /best rows carry relative times; the body sits in <article>
+    def test_fmkorea_list_reads_relative_times_and_only_best_links(self):
+        page = ("<ul><li class='li'><h3 class='title'><a href='/index.php?mid=best2&amp;document_srl=9'>"
+                "<span>다른 목록</span></a></h3></li>"
+                "<li class='li'><h3 class='title'><a href='/best/101'><span>제목</span>"
+                "<span class='comment_count'>[3]</span></a></h3>"
+                "<span class='regdate'> 7 분 전 <!-- 11:53 --> </span></li>"
+                "<li class='li'><h3 class='title'><a href='/best/100'>어제 글</a></h3>"
+                "<span class='regdate'> 13 시간 전 </span></li></ul>")
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(tmp, "fmkorea", FakeTransport({}))
+            rows = site.parse_list(page, "https://www.fmkorea.com/best", FETCHED)
+        self.assertEqual([(r["id"], r["day"]) for r in rows], [("101", "2026-10-31"), ("100", "2026-10-30")])
+        self.assertEqual(rows[0]["title"], "제목")
+        p = cc.PROFILES["fmkorea"]
+        self.assertEqual((p.list_url(1), p.list_url(2)),
+                         ("https://www.fmkorea.com/best", "https://www.fmkorea.com/best?page=2"))
+
+    def test_fmkorea_post_body_stops_before_comments(self):
+        page = ("<html><head><link rel='canonical' href='https://www.fmkorea.com/best/1'></head><body>"
+                "<div class='top_area'><span class='date'>2026.10.31 10:00</span>"
+                "<h1><span class='np_18px_span'>글 제목</span></h1></div>"
+                "<article><div class='document_1 xe_content'><p>본문</p></div></article>"
+                "<div class='fdb_lst_wrp'><ul class='fdb_lst_ul'><li class='fdb_itm'>"
+                "<div class='xe_content'>댓글</div></li></ul></div></body></html>")
+        url = "https://www.fmkorea.com/best/1"
+        with tempfile.TemporaryDirectory() as tmp:
+            t = FakeTransport({"https://www.fmkorea.com/robots.txt": OPEN_ROBOTS, url: (200, {}, page)})
+            site = make_site(tmp, "fmkorea", t)
+            cc.write_json(site.dir / "queue.json", {"receipt": {}, "queue": [
+                {"id": "1", "url": url, "day": "2026-10-31", "title": "글 제목"}]})
+            site.fetch(max_posts=1)
+            record = cc.read_jsonl(site.dir / "posts.jsonl")[0]
+        self.assertEqual(record["state"], "eligible", record)
+        self.assertEqual((record["body"], record["opened_title"]), ("본문", "글 제목"))
+        self.assertEqual(record["published_at"], "2026-10-31T10:00:00+09:00")
 
     def test_resume_skips_done_and_never_repeats_unresolved(self):
         site, t = self.site_with_queue({

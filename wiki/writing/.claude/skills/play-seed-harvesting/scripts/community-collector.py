@@ -267,6 +267,7 @@ _FULL = re.compile(
     r"(?:\s*\([^)\d]{1,4}\))?\s*\(?(?:(?P<H>\d{1,2}):(?P<M>\d{2})(?::(?P<S>\d{2}))?)?"
 )
 _MONTH_DAY = re.compile(r"(?<!\d)(?P<m>\d{1,2})[.\-/](?P<d>\d{1,2})(?![.\-/]?\d)")
+_RELATIVE = re.compile(r"(?P<n>\d+)\s*(?P<unit>분|시간|일)\s*전")
 _TIME = re.compile(r"(?<![\d.\-/])(?P<H>\d{1,2}):(?P<M>\d{2})(?::(?P<S>\d{2}))?(?![\d])")
 
 
@@ -300,6 +301,9 @@ def parse_list_day(raw: str | None, fetched_at: datetime) -> date | None:
         return None
     text = " ".join(raw.split())
     local = fetched_at.astimezone(KST)
+    if (m := _RELATIVE.search(text)) is not None:  # fmkorea: "7 시간 전", "13 분 전"
+        unit = {"분": "minutes", "시간": "hours", "일": "days"}[m.group("unit")]
+        return (local - timedelta(**{unit: int(m.group("n"))})).date()
     m = _FULL.search(text)
     if m:
         year = int(m.group("y"))
@@ -497,6 +501,23 @@ PROFILES: dict[str, Profile] = {
         live_verified="2026-10-31 list+post (Claude probe)",
         note="Reserve B (2026-10-31 re-evaluation); not in the approved pool.",
     ),
+    "fmkorea": Profile(
+        name="fmkorea", label="에펨코리아 포텐 터짐(/best)", host="www.fmkorea.com",
+        # robots: Hermes falls under `*`, which allows only paths starting with /best, so the site's
+        # own pager (/index.php?mid=best&page=N) is off limits; /best?page=N serves the same pages.
+        list_url=lambda p: "https://www.fmkorea.com/best" if p == 1 else f"https://www.fmkorea.com/best?page={p}",
+        read_url=lambda i: f"https://www.fmkorea.com/best/{i}",
+        row="li.li", link='h3.title a[href^="/best/"]',
+        id_from_url=_path_id(r"/best/(\d+)"),
+        row_date=("span.regdate",),
+        title_exclude=".comment_count",
+        body="article div.xe_content",
+        comment_guard="div.fdb_lst_wrp, ul.fdb_lst_ul, li.fdb_itm, #cmtPosition",
+        title_sources=["css:h1 span.np_18px_span", "meta:og:title"],
+        date_sources=["css:div.top_area span.date"],
+        live_verified="2026-10-31 /best p1+p2 and one post (Claude-User, HTTP 200, no 430)",
+        note="Retired from the pool (2026-08-29: HTTP 430 on stateless re-reads). Probe profile only.",
+    ),
     "inven": Profile(
         name="inven", label="인벤 오픈이슈갤러리", host="www.inven.co.kr",
         list_url=lambda p: f"https://www.inven.co.kr/board/webzine/2097?p={p}",
@@ -570,7 +591,13 @@ def judge_actor(robots_text: str | None, status: int | str, actor: str, path: st
     if status != 200:
         return {"allowed": False, "basis": f"robots unreachable ({status}): treated as full disallow", "tokens": []}
     groups = parse_robots(robots_text or "")
-    tokens = [judge_token(groups, t, path) for t in ACTORS[actor]["robots_tokens"]]
+    names = ACTORS[actor]["robots_tokens"]
+    # 2026-10-31 amendment (user decision): a group that names Claude-User itself is the site's
+    # rule for user-directed Claude fetches, so it alone governs (GeekNews allows it while denying
+    # ClaudeBot/anthropic-ai). Without such a group every Anthropic token must allow.
+    if actor == "claude" and any("claude-user" in g["agents"] for g in groups):
+        names = ["claude-user"]
+    tokens = [judge_token(groups, t, path) for t in names]
     allowed = all(t["allowed"] for t in tokens)
     denied = [t["token"] for t in tokens if not t["allowed"]]
     return {"allowed": allowed, "tokens": tokens,

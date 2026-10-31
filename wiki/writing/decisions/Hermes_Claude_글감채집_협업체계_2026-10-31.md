@@ -49,7 +49,7 @@ Anthropic 계열 토큰 다섯 개(`claude-user`·`claudebot`·`claude-web`·`an
 
 - Claude는 Hermes가 정당하게 수집해 로컬에 넘긴 원문을 판정·인용·기록할 수 있다. Claude가 직접 막힌 사이트(인스티즈·클리앙·일본 기존 풀 등)의 원문도 포함한다. robots는 크롤링 규칙이고, 사용자가 넘긴 로컬 자료의 판정은 크롤링이 아니라는 해석이다.
 - **선:** Claude는 자신에게 막힌 사이트의 URL을 직접 요청하지 않는다. 본문·목록·robots·이미지 모두 마찬가지다. 현행 확인이 필요하면 재독 요청으로 Hermes에 넘긴다. Hermes UA를 빌리거나 Hermes 세션을 통해 Claude 요청을 대리 실행하는 것도 금지한다.
-- 이 결정은 robots 판정 규칙을 바꾸지 않는다. Claude가 직접 수집할 때의 Anthropic 계열 전체 규칙과 Hermes의 자기 토큰·`*` 규칙은 그대로다.
+- 이 결정은 robots 판정 규칙을 바꾸지 않는다. Claude가 직접 수집할 때의 Anthropic 계열 전체 규칙과 Hermes의 자기 토큰·`*` 규칙은 그대로다. 단, 같은 날 뒤에 승인된 개정으로 `Claude-User`를 이름으로 지목한 robots 그룹이 있으면 사용자 지시 Claude 수집은 그 그룹을 따른다([[wiki/writing/decisions/공개커뮤니티_채집풀_운영규칙_2026-07-18|운영 규칙]] 2026-10-30 절).
 - 원문 본문은 vault·Git에 넣지 않는다. vault에는 기존 노트 규칙대로 exact span·URL·시각·해시만 남긴다.
 
 ## 공유 폴더

@@ -1217,3 +1217,14 @@ title: "Writing log"
 - 수집기를 고쳤다. robots.txt 자리에 봇 확인 HTML이 오면 `challenge`로 멈춘다(PGR21). 확인 화면이 아닌 HTML은 규칙 없음으로 읽되 `robots_html`로 기록한다.
 - 1단계 기계 검증 스크립트 `verify-handoff.py`를 추가했다. 회귀 테스트는 collector 49개, verify-handoff 12개, note 8개, A1 11개 모두 통과했다.
 - 남은 작업: `SEED_HARVEST_RUNS` 설정, 첫 Hermes 배치와 핸드오프 판정.
+
+## 2026-10-31 — Claude-User 지목 그룹 개정 · 조건 레인 파일럿
+
+- 사용자 승인으로 Claude robots 규칙을 개정했다. robots에 `Claude-User`를 이름으로 지목한 그룹이 있으면, 사용자 지시 Claude 수집은 그 그룹만 따른다(예: GeekNews는 학습용 토큰을 막고 `Claude-User`를 허용한다). 그런 그룹이 없으면 기존 다섯 토큰 규칙을 그대로 쓴다. Claude의 예약 자율 수집에는 적용하지 않는다.
+  - 반영 위치: 채집풀 운영규칙 2026-10-30 절, 협업 결정문서, SKILL.md, 수집기 `judge_actor`
+  - 회귀 테스트: collector 55개 통과
+- 비발명 원칙 밖의 새 레인을 파일럿했다: [[wiki/writing/seeds/harvests/글감_채집_2026-10-31_조건레인_GeekNews_파일럿_223000|조건 레인 파일럿(GeekNews)]].
+  - 규칙: 뉴스에서 조건을 회수하고, 인물·장면 발명을 허용하며, `사실 / 외삽 / 발명` 층을 표시한다.
+  - 결과: 첫 화면 20건 중 C0 통과 4·보류 1(원출처 403)·이해 충돌 제외 3이다. 통과 4건은 C1을 모두 통과했다.
+  - 레인 결정문서는 아직 쓰지 않았다. commit하지 않았다.
+- 같은 날 후속: 수집기에 에펨코리아 `/best` 재현 시험용 프로필을 추가했다. Claude-User로 `/best` 1·2쪽과 글 1건을 읽었고 셋 다 HTTP 200이었다(430 미재현). Hermes는 `*` 그룹상 `/best` 경로만 허용되므로 2쪽부터는 `/best?page=N`을 쓴다. 목록의 상대 시각("N 시간 전")을 해석하도록 날짜 파서를 넓혔다. 회귀 테스트 collector 57개가 통과했다. 풀 편입은 하지 않았다.

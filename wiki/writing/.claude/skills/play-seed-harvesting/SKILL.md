@@ -66,7 +66,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 
 1. **실행 주체별로 판정한다(2026-10-31 사용자 결정, 접근 기준선의 명시적 예외).**
    - **Hermes**(`HermesAgent-PublicResearch/1.0`): 자기 제품 토큰에 해당하는 그룹, 없으면 `*` 그룹만 적용한다. 다른 이름의 봇 제한은 확대 적용하지 않는다(접근 기준선).
-   - **Claude**(Claude Code 등 Anthropic 모델이 직접 요청): `Claude-User`·`ClaudeBot`·`Claude-Web`·`anthropic-ai`·`Claude-SearchBot` 가운데 **하나라도** 해당 경로를 금지하면 그 사이트는 Claude 수집에서 제외한다. 학습용 토큰만 지목된 경우도 Anthropic 계열 전체에 대한 반대 의사로 존중한다.
+   - **Claude**(Claude Code 등 Anthropic 모델이 직접 요청): `Claude-User`·`ClaudeBot`·`Claude-Web`·`anthropic-ai`·`Claude-SearchBot` 가운데 **하나라도** 해당 경로를 금지하면 그 사이트는 Claude 수집에서 제외한다. 학습용 토큰만 지목된 경우도 Anthropic 계열 전체에 대한 반대 의사로 존중한다. **단, robots에 `Claude-User`를 이름으로 지목한 그룹이 있으면 사용자 지시 수집은 그 그룹만 따른다**(2026-10-31 사용자 승인 개정. 예: GeekNews. 예약 작업의 자율 수집에는 적용하지 않는다). 수집기 `judge_actor`가 이 규칙을 구현한다.
    - 제외된 사이트는 `robots_denied`로 기록하고 그 몫은 미달로 남긴다. 같은 사이트를 다른 주체가 정당하게 수집할 수는 있지만, Claude가 Hermes UA를 빌리는 것은 2번의 우회다.
 2. **UA를 바꿔 우회하지 않는다.** 사이트가 이 에이전트 계열을 지목해 거부했는데 브라우저 UA로 갈아타 200을 받는 것은 접근 성공이 아니라 거부 우회다. `curl -A`, playwright, TLS 지문 위장 모두 같다. 열린다는 사실이 열어도 된다는 뜻은 아니다.
 3. **사람이 직접 읽은 것은 다른 경로다.** 사용자가 공개 페이지를 자기 브라우저로 읽고 본문을 가져오는 것은 에이전트 크롤링이 아니다. 이 경로로 들어온 원문은 출처와 열람 주체를 `_access_route`에 남긴다.
@@ -88,7 +88,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 | 82cook 자유게시판 (보조 B) | `bn=15` 한정 · **본문만** | 댓글은 수집·판정 대상이 아니다 |
 | Ruliweb `고민상담 300147` (보조 B) | query 없는 board 경로 · `/community/board/300147/read/<id>` | 댓글·답글·JSON-LD 댓글 본문 제외. 목록 2페이지부터는 `?page=N`만 붙인다(2026-10-31 개정). `cate=` 등 다른 query는 금지 |
 
-TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), FMKorea·MLBPARK는 은퇴했다. `2026-08-29`(클리앙 게시판 무관)·`2026-08-15` 풀이나 풀 버전 없는 과거 노트는 당시 계약의 역사 자료로 보존하고 소급 무효화하지 않는다. 기본 풀 제외: 보배드림(예비 B, 2026-10-31 재평가 텍스트 독립 6/11)·인벤 오픈이슈(`C`)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
+TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), FMKorea·MLBPARK는 은퇴했다. 수집기에는 FMKorea `/best` 재현 시험용 프로필(`fmkorea`)이 있다(2026-10-31). Hermes는 `*` 그룹상 `/best`로 시작하는 경로만 허용되므로 목록 2쪽부터 `/best?page=N`을 쓴다. 이 프로필은 풀 편입이 아니며, 편입하려면 표본 평가와 사용자 승인이 필요하다. `2026-08-29`(클리앙 게시판 무관)·`2026-08-15` 풀이나 풀 버전 없는 과거 노트는 당시 계약의 역사 자료로 보존하고 소급 무효화하지 않는다. 기본 풀 제외: 보배드림(예비 B, 2026-10-31 재평가 텍스트 독립 6/11)·인벤 오픈이슈(`C`)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
 
 이 네 곳은 학교·직장·가족·나이·건강·돈·위치 단서가 섞인 사적 노출을 자주 담는다. 자동 수락하지 말고 지속 사용 전에 해당 단서를 제거하거나 강하게 변형한다.
 
@@ -159,7 +159,7 @@ python -B scripts/community-collector.py profiles
 python -B scripts/community-collector.py all --run-dir <Vault·Git 밖 절대경로> --actor hermes|claude \
   --window-hours 168 --page-budget 24 --per-day-cap 4 --max-posts 40 --site ruliweb --site 82cook ...
 python -B scripts/community-collector.py status --run-dir <같은 경로> --site ruliweb
-python -B scripts/test-community-collector.py   # 오프라인 회귀 51개
+python -B scripts/test-community-collector.py   # 오프라인 회귀 57개
 python -B scripts/verify-handoff.py "$SEED_HARVEST_RUNS/<batch>"   # Hermes 핸드오프 기계 검증(판정 전)
 python -B scripts/test-verify-handoff.py        # 오프라인 회귀 12개
 ```
