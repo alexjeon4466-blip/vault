@@ -1,0 +1,2 @@
+# Optional: only for the bundled parser regression suite, not the stdlib validators.
+Scrapy==2.17.0
