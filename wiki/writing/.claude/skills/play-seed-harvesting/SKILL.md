@@ -36,6 +36,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 | A1 전건 원문 열람 정본의 항목 순서·마스킹·저장 경계 | `wiki/writing/decisions/A1_전건_원문열람_정본_운영_2026-08-17.md` |
 | 한국 공개 커뮤니티 채집풀 운영 규칙 | `wiki/writing/decisions/공개커뮤니티_채집풀_운영규칙_2026-07-18.md` |
 | 일본 공개 커뮤니티 표본 레인·상한·A0→A1 계약 v3 | `wiki/writing/decisions/일본_공개커뮤니티_표본선정_2026-08-09.md` |
+| 조건 레인(뉴스·사고 기록·제도 문서): 층 표시, 사실 출처 등급, C0/C1, 이해 충돌, 원천과 주기 | `wiki/writing/decisions/조건레인_운영규칙_2026-10-31.md` |
 | Hermes 수집 → Claude 판정 분업, 핸드오프 폴더·`HANDOFF.json`·재독 요청, 막힌 사이트 원문의 Claude 판정 허용과 직접 요청 금지 | `wiki/writing/decisions/Hermes_Claude_글감채집_협업체계_2026-10-31.md` |
 | 폴더 역할, 상태 흐름, `seed-harvest`/`seed-note` 문서 계약, 저장 경계, 현재 체크포인트 | `wiki/writing/seeds/README.md` |
 | frontmatter `type` 레지스트리와 관계 필드 | `SCHEMA.md` §4.0 |
