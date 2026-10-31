@@ -159,15 +159,15 @@ python -B scripts/community-collector.py profiles
 python -B scripts/community-collector.py all --run-dir <Vault·Git 밖 절대경로> --actor hermes|claude \
   --window-hours 168 --page-budget 24 --per-day-cap 4 --max-posts 40 --site ruliweb --site 82cook ...
 python -B scripts/community-collector.py status --run-dir <같은 경로> --site ruliweb
-python -B scripts/test-community-collector.py   # 오프라인 회귀 49개
+python -B scripts/test-community-collector.py   # 오프라인 회귀 51개
 python -B scripts/verify-handoff.py "$SEED_HARVEST_RUNS/<batch>"   # Hermes 핸드오프 기계 검증(판정 전)
 python -B scripts/test-verify-handoff.py        # 오프라인 회귀 12개
 ```
 
 - **단계:** `robots → discover → freeze → fetch → status`. 각 단계는 `<run-dir>/<site>/`에 영수증을 남긴다. 같은 명령을 다시 실행하면 이어서 진행한다. 처음 실행할 때 `contract.json`에 실행 주체·UA·창을 고정하며, 주체를 바꾸려면 새 run-dir을 쓴다.
 - **discover:** 목록 날짜를 읽어 창의 날짜마다 도달하도록 페이지를 이분·보간 탐색한다. 7일 창을 전부 덮는다는 보장은 없다 — 페이지 예산 소진, 프로필 페이지 상한, 목록 날짜 해석 실패로 빈 날짜가 남을 수 있고, 그 결과는 `in_window_days`의 0으로 드러난다. 0인 날은 미달로 보고하고 다른 날로 채우지 않는다. 날짜 칸은 프로필에 적힌 우선순위대로 시도해 처음 해석되는 값을 쓴다. 날짜를 못 읽은 행은 같은 날의 이웃 ID 사이에 있을 때만 그 날로 보간하고, 나머지는 `date_unresolved`로 센다. 버리지 않는다.
-- **freeze:** 날짜별 상한 안에서 ID를 균등 간격으로 고른다. 제목은 쓰지 않고, 보충하지 않는다.
-- **fetch는 글 단위 판정이 원칙이다.** 회원 전용·삭제(404)·빈 본문·창 밖·리다이렉트·robots 개별 금지(`robots_denied`)·본문이 닫히기 전 응답 종료(`truncated_body`)·문자셋 오판으로 깨진 본문(`encoding_error`)·canonical이 다른 글을 가리킴(`canonical_mismatch`, scheme·끝 `/` 차이는 같은 글로 본다) 글은 **그 글만** 상태를 기록하고 넘어간다. 이들은 `eligible_bodies`에 들어가지 않는다. 사이트를 멈추는 것은 다음 경우뿐이다.
+- **freeze:** 날짜별 상한 안에서 ID를 균등 간격으로 고른다. 제목은 쓰지 않고, 보충하지 않는다. 목록 칸에 시각이 있으면 분 단위로 창 밖이 확실한 행을 먼저 뺀다(`excluded_by_list_time`). 날짜만 있는 행과 경계 분의 행은 남기고 글 자체 시각으로 판정한다.
+- **fetch는 글 단위 판정이 원칙이다.** selector를 못 찾은 글(`selector_missing`)은 텍스트 없이 `page_title`·`dom_outline`(태그·id·class 구조)만 남겨, Claude가 열 수 없는 사이트도 영수증으로 selector를 고칠 수 있게 한다. 회원 전용·삭제(404)·빈 본문·창 밖·리다이렉트·robots 개별 금지(`robots_denied`)·본문이 닫히기 전 응답 종료(`truncated_body`)·문자셋 오판으로 깨진 본문(`encoding_error`)·canonical이 다른 글을 가리킴(`canonical_mismatch`, scheme·끝 `/` 차이는 같은 글로 본다) 글은 **그 글만** 상태를 기록하고 넘어간다. 이들은 `eligible_bodies`에 들어가지 않는다. 사이트를 멈추는 것은 다음 경우뿐이다.
   - robots가 목록 페이지를 금지·도달 불가, robots.txt 429/430, robots.txt 자리의 봇 확인 HTML(`challenge`). 확인 화면이 아닌 HTML(소프트 404)은 규칙 없음으로 읽고 `robots.json`에 `robots_html: true`로 남긴다
   - 403/429/430/451, 봇 챌린지
   - 목록의 다른 호스트 리다이렉트

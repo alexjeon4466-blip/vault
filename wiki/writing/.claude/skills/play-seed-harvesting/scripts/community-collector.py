@@ -323,6 +323,40 @@ def parse_list_day(raw: str | None, fetched_at: datetime) -> date | None:
     return None
 
 
+def list_datetime(raw: str | None, day: str | None) -> datetime | None:
+    """A list cell's minute, when the cell shows a clock time (``10.30 14:49``, ``1:56``, full stamps)."""
+
+    if not raw or not day:
+        return None
+    m = _TIME.search(" ".join(raw.split()))
+    if not m:
+        return None
+    d = date.fromisoformat(day)
+    return datetime(d.year, d.month, d.day, int(m.group("H")), int(m.group("M")), tzinfo=KST)
+
+
+def dom_outline(root: "Node", limit: int = 150) -> list[str]:
+    """Element structure only (``depth tag#id.class``), never text, for diagnosing a missing selector."""
+
+    out: list[str] = []
+
+    def walk(node: Node, depth: int) -> None:
+        for child in node.children:
+            if len(out) >= limit or isinstance(child, str):
+                continue
+            ident = child.attrs.get("id")
+            classes = sorted(child.classes)
+            if ident or classes:
+                sig = f"{depth} {child.tag}" + (f"#{ident}" if ident else "") + "".join(f".{c}" for c in classes)
+                if not out or out[-1] != sig:
+                    out.append(sig)
+            if child.tag not in RAW_TEXT:
+                walk(child, depth + 1)
+
+    walk(root, 0)
+    return out
+
+
 # ---------------------------------------------------------------------- profiles
 
 
@@ -1010,8 +1044,17 @@ class SiteRun:
         days = [d.isoformat() for d in self.window_days()]
         queue: list[dict[str, Any]] = []
         by_day: dict[str, int] = {}
+        # A list cell with a clock time already shows the post is before or after a partial window day
+        # (2026-10-31 Hermes batch: 4 of 8 instiz picks fell outside the 24h window). Minute precision,
+        # so only rows certainly outside are dropped; the post's own timestamp still decides at fetch.
+        outside: set[str] = set()
+        for r in data["rows"]:
+            at = list_datetime(r.get("date_raw"), r.get("day"))
+            if at and (at + timedelta(seconds=59) < self.window_start or at > self.window_end):
+                outside.add(r["id"])
         for day in days:
-            group = sorted((r for r in data["rows"] if r["day"] == day), key=lambda r: int(r["id"]))
+            group = sorted((r for r in data["rows"] if r["day"] == day and r["id"] not in outside),
+                           key=lambda r: int(r["id"]))
             k = min(per_day_cap, len(group))
             if k == 1:
                 picks = [group[len(group) // 2]]
@@ -1020,7 +1063,9 @@ class SiteRun:
             picks = list({r["id"]: r for r in picks}.values())
             by_day[day] = len(picks)
             queue.extend(picks)
+        excluded = sum(r["day"] in days and r["id"] in outside for r in data["rows"])
         receipt = {"frozen_at": self.clock(), "per_day_cap": per_day_cap, "queued": len(queue), "by_day": by_day,
+                   "excluded_by_list_time": excluded,
                    "selection": "per window day, evenly spaced by post ID; titles not used; no replenishment"}
         write_json(self.dir / "queue.json", {"receipt": receipt, "queue": queue})
         return receipt
@@ -1127,6 +1172,9 @@ class SiteRun:
                 record["state"] = "deleted"
             else:
                 record["state"] = "selector_missing"
+                # Structure only, so a site Claude may not open can still be repaired from the receipt.
+                title = root.select_one("title")
+                record.update(page_title=title.text()[:120] if title else None, dom_outline=dom_outline(root))
             return record
         body = builder.watched.text(lines=True)
         record.update(self.extract_post(root, head_text, row))

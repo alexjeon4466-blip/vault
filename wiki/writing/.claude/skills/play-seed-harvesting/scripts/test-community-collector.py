@@ -327,6 +327,18 @@ class PostFetching(unittest.TestCase):
             site.fetch(max_posts=5)
         self.assertEqual(site.stopped()["state"], "parser_drift")
 
+    # 2026-10-31 Hermes batch: clien stopped on selector_missing, and Claude may not open clien itself
+    def test_selector_missing_records_structure_but_no_text(self):
+        page = (200, {}, "<html><head><title>글 제목</title></head><body><div id='wrap' class='b a'>"
+                         "<section class='post_view'><p>비밀 본문</p></section></div></body></html>")
+        site, _ = self.site_with_queue({"https://www.bobaedream.co.kr/view?code=freeb&No=1": page})
+        site.fetch(max_posts=1)
+        record = cc.read_jsonl(site.dir / "posts.jsonl")[0]
+        self.assertEqual(record["state"], "selector_missing")
+        self.assertEqual(record["dom_outline"], ["2 div#wrap.a.b", "3 section.post_view"])
+        self.assertEqual(record["page_title"], "글 제목")
+        self.assertNotIn("비밀", str(record))
+
     def test_resume_skips_done_and_never_repeats_unresolved(self):
         site, t = self.site_with_queue({
             f"https://www.bobaedream.co.kr/view?code=freeb&No={i}": (200, {}, bobae_post(f"본문 {i}"))
@@ -419,6 +431,24 @@ class Discovery(unittest.TestCase):
         (site.dir / "queue.json").unlink()
         site.freeze(per_day_cap=4)
         self.assertEqual(first, cc.read_json(site.dir / "queue.json")["queue"])
+
+    # 2026-10-31 Hermes batch: 4 of 8 instiz picks were before the 24h window start on a partial day
+    def test_freeze_drops_rows_whose_list_time_is_outside_the_window(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        site = make_site(tmp.name, "instiz", FakeTransport({}), hours=24)
+        start = site.window_start.astimezone(cc.KST)
+        before = (start - timedelta(hours=3)).strftime("%m.%d %H:%M")
+        edge = start.strftime("%m.%d %H:%M")
+        after = (start + timedelta(hours=1)).strftime("%m.%d %H:%M")
+        day = start.date().isoformat()
+        rows = [{"id": "1", "day": day, "date_raw": before}, {"id": "2", "day": day, "date_raw": edge},
+                {"id": "3", "day": day, "date_raw": after}, {"id": "4", "day": day, "date_raw": "2026.10.30"}]
+        cc.write_json(site.dir / "discovered.json", {"receipt": {}, "rows": rows})
+        receipt = site.freeze(per_day_cap=10)
+        queued = [r["id"] for r in cc.read_json(site.dir / "queue.json")["queue"]]
+        self.assertEqual(queued, ["2", "3", "4"], "minute-edge and date-only rows stay; the post time decides")
+        self.assertEqual(receipt["excluded_by_list_time"], 1)
 
     def test_unresolved_list_dates_are_interpolated_by_id(self):
         tmp = tempfile.TemporaryDirectory()
