@@ -335,8 +335,14 @@ def list_datetime(raw: str | None, day: str | None) -> datetime | None:
     return datetime(d.year, d.month, d.day, int(m.group("H")), int(m.group("M")), tzinfo=KST)
 
 
+OUTLINE_TAGS = {"article", "main", "h1", "h2", "h3", "time", "meta"}
+
+
 def dom_outline(root: "Node", limit: int = 150) -> list[str]:
-    """Element structure only (``depth tag#id.class``), never text, for diagnosing a missing selector."""
+    """Element structure only (``depth tag#id.class``), never text, for diagnosing a missing selector.
+
+    Elements without id/class are listed only for structural tags (headings, ``time``, ``article``) and
+    ``meta`` keys (``meta[property=...]``), since titles and dates usually sit there."""
 
     out: list[str] = []
 
@@ -346,8 +352,11 @@ def dom_outline(root: "Node", limit: int = 150) -> list[str]:
                 continue
             ident = child.attrs.get("id")
             classes = sorted(child.classes)
-            if ident or classes:
+            key = child.attrs.get("property") or child.attrs.get("name") if child.tag == "meta" else None
+            if ident or classes or (child.tag in OUTLINE_TAGS and (child.tag != "meta" or key)):
                 sig = f"{depth} {child.tag}" + (f"#{ident}" if ident else "") + "".join(f".{c}" for c in classes)
+                sig += f"[property={key}]" if key else ""
+                sig += "[datetime]" if "datetime" in child.attrs else ""
                 if not out or out[-1] != sig:
                     out.append(sig)
             if child.tag not in RAW_TEXT:
@@ -431,9 +440,14 @@ PROFILES: dict[str, Profile] = {
         row="div.list_item", link="a.list_subject[href]",
         id_from_url=_path_id(r"/service/board/park/(\d+)"),
         row_date=("span.timestamp", ".list_time"), skip_row=".notice",
-        body="div.post_article", comment_guard="div.comment_row, div.comment_view",
-        title_sources=["css:h3.post_subject", "meta:og:title"],
-        date_sources=["css:div.post_author span.date", "css:.post_date"],
+        # 2026-10-31 Hermes probe: the Hermes UA receives a plain layout (article.post > div.content,
+        # comments in section#comments) instead of div.post_article. Both layouts are accepted.
+        body="div.post_article, article.post div.content",
+        comment_guard="div.comment_row, div.comment_view, section#comments, section.comments, div.comment",
+        title_sources=["css:h3.post_subject", "css:article.post h1", "meta:og:title", "title"],
+        title_strip=r"\s*:\s*클리앙\s*$",
+        date_sources=["css:div.post_author span.date", "css:.post_date", "attr:article.post time:datetime",
+                      "css:article.post time", "meta:article:published_time", "css:article.post p.meta"],
         note="Pool 2026-10-31 entry; replaces the robots-denied /service/group/community. Hermes lane only.",
     ),
     "82cook": Profile(

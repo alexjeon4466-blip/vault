@@ -339,6 +339,34 @@ class PostFetching(unittest.TestCase):
         self.assertEqual(record["page_title"], "글 제목")
         self.assertNotIn("비밀", str(record))
 
+    # 2026-10-31 Hermes probe: clien serves the Hermes UA a plain layout (outline from the receipt)
+    def test_clien_plain_layout_reads_body_and_guards_comments(self):
+        page = ("<html><head><title>새 글 제목 : 클리앙</title></head><body><header class='site'></header>"
+                "<nav class='breadcrumb'></nav><article class='post'><h1>새 글 제목</h1>"
+                "<p class='meta'><span class='author'>a</span><time datetime='2026-10-31T10:00:00+09:00'>"
+                "10-31</time></p><p class='stats'>1</p><div class='content'><p>본문 첫 줄</p><p>둘째 줄</p></div>"
+                "</article><section id='comments' class='comments'><div class='comment'>댓글</div></section>"
+                "</body></html>")
+        url = "https://www.clien.net/service/board/park/1"
+        with tempfile.TemporaryDirectory() as tmp:
+            t = FakeTransport({"https://www.clien.net/robots.txt": OPEN_ROBOTS, url: (200, {}, page)})
+            site = make_site(tmp, "clien", t)
+            cc.write_json(site.dir / "queue.json", {"receipt": {}, "queue": [
+                {"id": "1", "url": url, "day": "2026-10-31", "title": "새 글 제목"}]})
+            site.fetch(max_posts=1)
+            record = cc.read_jsonl(site.dir / "posts.jsonl")[0]
+        self.assertEqual(record["state"], "eligible", record)
+        self.assertEqual(record["body"].splitlines(), ["본문 첫 줄", "둘째 줄"])
+        self.assertEqual(record["opened_title"], "새 글 제목")
+        self.assertEqual(record["published_at"], "2026-10-31T10:00:00+09:00")
+        self.assertNotIn("댓글", record["body"])
+
+    def test_dom_outline_lists_untagged_headings_times_and_meta_keys(self):
+        root = cc.parse_html("<html><head><meta property='og:title' content='비밀'></head><body>"
+                             "<article><h1>제목</h1><time datetime='x'>t</time></article></body></html>")
+        self.assertEqual(cc.dom_outline(root), ["2 meta[property=og:title]", "2 article", "3 h1",
+                                                "3 time[datetime]"])
+
     def test_resume_skips_done_and_never_repeats_unresolved(self):
         site, t = self.site_with_queue({
             f"https://www.bobaedream.co.kr/view?code=freeb&No={i}": (200, {}, bobae_post(f"본문 {i}"))
