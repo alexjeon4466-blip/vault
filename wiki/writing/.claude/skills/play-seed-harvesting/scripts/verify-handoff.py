@@ -8,7 +8,8 @@ Contract: wiki/writing/decisions/Hermes_Claude_글감채집_협업체계_2026-10
 Checks, without opening the network:
   * HANDOFF.json exists (the batch is finished) and names actor ``hermes``.
   * Korean batches (``contract.json`` present): the run contract's actor is hermes and the
-    collector hash in HANDOFF.json matches the collector in this skill.
+    collector hash in HANDOFF.json matches this skill's collector, either the current file or a
+    version committed to Git (a run that started before a later commit is still a known version).
   * Every site listed in HANDOFF.json has a folder, its done/stopped status agrees with stop.json,
     and the eligible count agrees with accounting.json when that exists.
   * Every record carrying a body has the required fields and its body_sha256 matches the body.
@@ -22,6 +23,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -42,6 +44,21 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def committed_versions(path: Path) -> dict[str, str]:
+    """SHA-256 of every committed version of ``path`` -> short commit id (empty outside Git)."""
+
+    def git(where: Path | str, *args: str) -> bytes:
+        return subprocess.run(["git", "-C", str(where), *args], capture_output=True, check=True).stdout
+
+    try:
+        top = git(path.parent, "rev-parse", "--show-toplevel").decode().strip()
+        rel = path.resolve().relative_to(Path(top).resolve()).as_posix()
+        commits = git(top, "log", "--format=%h", "--", rel).decode().split()
+        return {hashlib.sha256(git(top, "show", f"{c}:{rel}")).hexdigest(): c for c in commits}
+    except (OSError, ValueError, subprocess.CalledProcessError):
+        return {}
+
+
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
@@ -60,7 +77,7 @@ def read_jsonl(path: Path, errors: list[str]) -> list[dict[str, Any]]:
     return rows
 
 
-def verify(batch: Path, collector: Path = COLLECTOR) -> dict[str, Any]:
+def verify(batch: Path, collector: Path = COLLECTOR, committed: dict[str, str] | None = None) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
     report: dict[str, Any] = {"batch": batch.name, "checked_at": datetime.now().astimezone().isoformat(),
@@ -83,10 +100,21 @@ def verify(batch: Path, collector: Path = COLLECTOR) -> dict[str, Any]:
     if contract:
         if contract.get("actor") != "hermes":
             errors.append(f"contract.json actor is {contract.get('actor')!r}, expected 'hermes'")
-        expected = sha256_file(collector)
-        if handoff.get("collector_sha256") != expected:
-            errors.append("collector_sha256 differs from this skill's community-collector.py "
-                          "(Hermes ran another collector version or a copy)")
+        ran = handoff.get("collector_sha256")
+        known = committed_versions(collector) if committed is None else committed
+        if ran == sha256_file(collector):
+            report["collector"] = "current"
+        elif ran in known:
+            # Python reads the module once at start, so the start hash is the code that ran.
+            report["collector"] = f"committed {known[ran]}"
+            warnings.append(f"collector was committed version {known[ran]}, not the current file "
+                            "(edited after the run started); judge by that version's behaviour")
+        else:
+            errors.append("collector_sha256 matches neither the current community-collector.py nor any "
+                          "committed version (Hermes ran an uncommitted copy or edited file)")
+        if handoff.get("collector_changed_during_run"):
+            warnings.append("collector file changed during the run; the start hash governs "
+                            f"(after: {str(handoff.get('collector_sha256_after'))[:12]})")
         report["window"] = [contract.get("window_start"), contract.get("window_end")]
     fields = KR_FIELDS if contract else JP_FIELDS
 
@@ -151,7 +179,7 @@ def main(argv: list[str] | None = None) -> int:
     if not batch.is_dir():
         print(f"not a folder: {batch}", file=sys.stderr)
         return 2
-    report = verify(batch, Path(args.collector))
+    report = verify(batch, Path(args.collector))  # committed versions come from Git
     out = batch / "claude" / "verify.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

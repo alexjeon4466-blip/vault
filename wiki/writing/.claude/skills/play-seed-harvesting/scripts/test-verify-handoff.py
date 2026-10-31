@@ -57,7 +57,7 @@ class HandoffTest(unittest.TestCase):
                                         "unresolved_attempts": []})
 
     def run_verify(self):
-        return vh.verify(self.batch, self.collector)
+        return vh.verify(self.batch, self.collector, {})
 
     def test_clean_korean_batch_passes(self):
         self.kr_batch()
@@ -86,7 +86,19 @@ class HandoffTest(unittest.TestCase):
 
     def test_other_collector_version_fails(self):
         self.kr_batch(collector_sha="0" * 64)
-        self.assertTrue(any("collector_sha256" in e for e in self.run_verify()["errors"]))
+        self.assertTrue(any("collector_sha256" in e for e in vh.verify(self.batch, self.collector, {})["errors"]))
+
+    # 2026-10-31_kr_r2: the shared collector was committed again while Hermes was running
+    def test_committed_older_version_passes_with_warning(self):
+        self.kr_batch(collector_sha="a" * 64)
+        report = vh.verify(self.batch, self.collector, {"a" * 64: "ed31a5e"})
+        self.assertTrue(report["ok"], report["errors"])
+        self.assertEqual(report["collector"], "committed ed31a5e")
+        self.assertTrue(any("not the current file" in w for w in report["warnings"]))
+
+    def test_this_skill_collector_history_is_readable(self):
+        history = vh.committed_versions(vh.COLLECTOR)
+        self.assertTrue(history, "the vault collector has committed versions in Git")
 
     def test_stop_must_agree_with_handoff(self):
         self.kr_batch()

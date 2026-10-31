@@ -516,7 +516,7 @@ PROFILES: dict[str, Profile] = {
         title_sources=["css:h1 span.np_18px_span", "meta:og:title"],
         date_sources=["css:div.top_area span.date"],
         live_verified="2026-10-31 /best p1+p2 and one post (Claude-User, HTTP 200, no 430)",
-        note="Retired from the pool (2026-08-29: HTTP 430 on stateless re-reads). Probe profile only.",
+        note="Claude lane only (2026-10-31): the Hermes UA gets HTTP 430, Claude-User gets 200.",
     ),
     "inven": Profile(
         name="inven", label="인벤 오픈이슈갤러리", host="www.inven.co.kr",
