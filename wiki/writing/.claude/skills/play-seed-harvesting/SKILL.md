@@ -86,7 +86,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 |---|---|---|
 | Instiz `일상` (핵심) | `/name` 목록 · `/name/<id>` 본문 | 회원 전용 안내 페이지를 공개 본문으로 오인하지 않는다 |
 | Clien 모두의공원 (핵심) | `/service/board/park` 목록 · `/service/board/park/<id>` 본문 | 2026-10-31 진입점 교정. robots가 Anthropic 계열을 지목하므로 Hermes 레인 전용 |
-| 82cook 자유게시판 (보조 B) | `bn=15` 한정 · **본문만** | 댓글은 수집·판정 대상이 아니다 |
+| 82cook 자유게시판 (보조 B) | `bn=15` 한정 · **본문만** | 댓글은 수집·판정 대상이 아니다. **2026-11-01부터 휴면:** 이 PC의 IP가 TCP 80·443에서 걸러지는 것으로 보인다. 정기 배치에서 빼고, 2026-11-08 이후 연결 시험만 한다. 우회 금지 |
 | Ruliweb `고민상담 300147` (보조 B) | query 없는 board 경로 · `/community/board/300147/read/<id>` | 댓글·답글·JSON-LD 댓글 본문 제외. 목록 2페이지부터는 `?page=N`만 붙인다(2026-10-31 개정). `cate=` 등 다른 query는 금지 |
 | FMKorea 연애상담 `/love` · 직장/알바/사업 `/job` (Claude 레인) | `/<게시판>` · `/index.php?mid=<게시판>&page=N` 목록 · `/<id>` 본문 | 2026-11-01 `/best`에서 교체(72시간 표본 A0 유사 잔여 약 10/14·9/14). 사용자 지시 때만 `--actor claude --site fm_love --site fm_job`. 댓글 제외 |
 
@@ -101,7 +101,7 @@ TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), MLBPARK�
 3. **robots 게이트** — 위 절을 실행한다. 제외된 사이트는 미달로 남긴다.
 4. **재현 가능하게 수집** — `scripts/community-collector.py`로 사이트별 스냅샷·큐·영수증·카운터를 분리한다. 한 사이트 실패가 뒤 사이트를 지우지 못하게 격리한다. 차단은 이름을 붙여 기록하고 대체하지 않는다. **글 하나의 벽·삭제는 레인 중단 사유가 아니다.**
 5. **수락 전 검증** — 직접 페이지를 열어 현행 제목·날짜·본문·접근 상태와 지지 문구를 확인한다. `listed / title-filtered / opened / current-range / non-empty / accepted`를 각각 따로 센다.
-6. **A0 — 넓은 잔여 회수** — 원 사건을 버린 뒤 명명 가능한 잔여가 남는지만 본다. **주제·민감성은 탈락 사유가 아니다.** `residue: yes/no`와 `source_handling`을 분리한다. A0 yes마다 **서로 다른 exact span 2개**를 잠근다. 하나는 게시물 제목이어도 되지만(`evidence_kind: title`, 2026-10-31 개정), 다른 하나는 반드시 현행 본문이다. 판정 단위는 `(source_id, source_version_id, residue_id)`다.
+6. **A0 — 넓은 잔여 회수** — 원 사건을 버린 뒤 명명 가능한 잔여가 남는지만 본다. **주제·민감성은 탈락 사유가 아니다.** `residue: yes/no`와 `source_handling`을 분리한다. A0 yes마다 **서로 다른 exact span 2개**를 잠근다. 하나는 게시물 제목이어도 되지만(`evidence_kind: title`, 2026-10-31 개정), 다른 하나는 반드시 현행 본문이다. 같은 문장(연결어미로 이어진 절) 안의 두 span은 각 절이 잔여의 서로 다른 요소(원인·결과, 기대·실제 등)를 받칠 때만 인정한다. 한 생각을 쪼갠 것은 형식 우회다(2026-11-01 개정). 판정 단위는 `(source_id, source_version_id, residue_id)`다.
 7. **Evidence-lock 게이트** — 메모 작성 **전에**, 계보 레인이 두 span이 현행 본문(제목 근거는 현행 열람 제목)에 글자 그대로 있고 상속된 잔여를 의미적으로 지지하는지 확인한다. span이나 잔여가 흔들리면 A0 결정을 버전하고 `a0_recheck`로 멈춘다. **메모 작성자가 대체 근거를 조용히 고르게 하지 않는다.**
 8. **A1 — 비발명 구조 증명** — evidence-lock을 통과한 runnable 레코드만 상속한다. 원문에 없던 동기·사건·결과를 더하지 않고 5~10줄 공연 규칙을 기술할 수 있는지만 묻는다. 줄마다 `supported_abstraction / entailed / speculative`를 붙인다. **`speculative`가 한 줄이라도 있으면 pass할 수 없다.** 잔여는 지지되는데 메모가 발명했으면 `resting`, A0 근거·잔여 오판이면 `a0_recheck`다. 상태 정의와 파생 우선순위는 판정설계 v0.2 §7을 따른다.
 9. **두 독립 리뷰** — masked 구조 리뷰(앵커·URL·사이트·handling·기존 카드 여부를 가림)와 source-open 계보 리뷰를 둘 다 통과해야 `structure_state=proven`이다. 불일치는 부모 재심으로 보낸다.
