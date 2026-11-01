@@ -80,7 +80,7 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 
 ## 현행 한국 풀
 
-`community_pool_version: "2026-10-31"` — **핵심 2 + 보조 2**(Hermes 레인) + **Claude 레인 1**(에펨코리아 `/best`, 사용자 지시 때만). 사이트당 최대 `5`, 전체 최대 `20`. 미달 허용.
+`community_pool_version: "2026-10-31"` — **핵심 2 + 보조 2**(Hermes 레인) + **Claude 레인**(에펨코리아 연애상담·직장/알바/사업, 사용자 지시 때만). 1차 수집 모수는 Hermes 사이트당 최대 20, Claude 게시판당 최대 10(수집기 프로필 `per_day_cap`, 2026-11-01). 최종 카드 상한은 사이트당 `5`, 전체 `20`. 미달 허용.
 
 | 사이트 | 경로 | 비고 |
 |---|---|---|
@@ -88,9 +88,9 @@ A1 pass의 직접 권한은 **구조 메모가 존재한다는 기록** 하나�
 | Clien 모두의공원 (핵심) | `/service/board/park` 목록 · `/service/board/park/<id>` 본문 | 2026-10-31 진입점 교정. robots가 Anthropic 계열을 지목하므로 Hermes 레인 전용 |
 | 82cook 자유게시판 (보조 B) | `bn=15` 한정 · **본문만** | 댓글은 수집·판정 대상이 아니다 |
 | Ruliweb `고민상담 300147` (보조 B) | query 없는 board 경로 · `/community/board/300147/read/<id>` | 댓글·답글·JSON-LD 댓글 본문 제외. 목록 2페이지부터는 `?page=N`만 붙인다(2026-10-31 개정). `cate=` 등 다른 query는 금지 |
-| FMKorea `포텐 터짐 /best` (Claude 레인) | `/best` · `/best?page=N` 목록 · `/best/<id>` 본문 | 2026-10-31 편입. 사용자 지시 때만 `--actor claude`로 수집한다. Hermes UA는 430. 댓글 제외. 2026-08-29 품질 `C`라 첫 배치 A0 회계가 재평가 자료다 |
+| FMKorea 연애상담 `/love` · 직장/알바/사업 `/job` (Claude 레인) | `/<게시판>` · `/index.php?mid=<게시판>&page=N` 목록 · `/<id>` 본문 | 2026-11-01 `/best`에서 교체(72시간 표본 A0 유사 잔여 약 10/14·9/14). 사용자 지시 때만 `--actor claude --site fm_love --site fm_job`. 댓글 제외 |
 
-TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), MLBPARK는 은퇴했다. FMKorea는 Hermes 레인에서는 비활성이고, `/best`만 2026-10-31 Claude 레인으로 편입됐다(Hermes UA는 430, Claude-User는 200). 수집기 프로필은 `fmkorea`다. 목록 2쪽부터 `/best?page=N`을 쓴다. `2026-08-29`(클리앙 게시판 무관)·`2026-08-15` 풀이나 풀 버전 없는 과거 노트는 당시 계약의 역사 자료로 보존하고 소급 무효화하지 않는다. 기본 풀 제외: 보배드림(예비 B, 2026-10-31 재평가 텍스트 독립 6/11)·인벤 오픈이슈(`C`)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
+TodayHumor는 2026-08-29부터 비활성(공개 본문 재현 불가), MLBPARK는 은퇴했다. FMKorea는 Hermes 레인에서는 비활성이고, Claude 레인은 2026-11-01 `/best`(이미지·영상 위주, 은퇴)에서 연애상담·직장 게시판으로 교체됐다. 인스티즈는 2026-11-01 Hermes UA에도 robots·목록 HTTP 403(봇 차단)을 냈다. 우회하지 않고 미달로 기록한다. 기본 풀 제외: 보배드림(예비 B, 2026-10-31 재평가 텍스트 독립 6/11)·인벤 오픈이슈(`C`)·뽐뿌·더쿠·루리웹 `300147` 외 게시판. 뉴스는 주장 교차 확인에만 쓰고 커뮤니티 슬롯을 메우지 않는다.
 
 이 네 곳은 학교·직장·가족·나이·건강·돈·위치 단서가 섞인 사적 노출을 자주 담는다. 자동 수락하지 말고 지속 사용 전에 해당 단서를 제거하거나 강하게 변형한다.
 
@@ -159,9 +159,9 @@ seeds/harvests/글감_채집_<YYYY-MM-DD>_<풀이름>_A1전건_원문열람_<HHM
 ```bash
 python -B scripts/community-collector.py profiles
 python -B scripts/community-collector.py all --run-dir <Vault·Git 밖 절대경로> --actor hermes|claude \
-  --window-hours 168 --page-budget 24 --per-day-cap 4 --max-posts 40 --site ruliweb --site 82cook ...
+  --window-hours 24 --site instiz --site clien --site 82cook --site ruliweb   # 하루 표본은 프로필 per_day_cap(기본 10)
 python -B scripts/community-collector.py status --run-dir <같은 경로> --site ruliweb
-python -B scripts/test-community-collector.py   # 오프라인 회귀 57개
+python -B scripts/test-community-collector.py   # 오프라인 회귀 59개
 python -B scripts/verify-handoff.py "$SEED_HARVEST_RUNS/<batch>"   # Hermes 핸드오프 기계 검증(판정 전)
 python -B scripts/test-verify-handoff.py        # 오프라인 회귀 12개
 ```

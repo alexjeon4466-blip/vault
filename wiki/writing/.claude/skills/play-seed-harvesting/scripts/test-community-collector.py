@@ -420,6 +420,28 @@ class PostFetching(unittest.TestCase):
         self.assertEqual((record["body"], record["opened_title"]), ("본문", "글 제목"))
         self.assertEqual(record["published_at"], "2026-10-31T10:00:00+09:00")
 
+    # 2026-11-01: fmkorea /best clips came through as "eligible" bodies of fallback text only
+    def test_video_fallback_text_alone_is_an_empty_body(self):
+        page = (200, {}, bobae_post("Video 태그를 지원하지 않는 브라우저입니다.\nVideo 태그를 지원하지 않는 브라우저입니다."))
+        site, _ = self.site_with_queue({"https://www.bobaedream.co.kr/view?code=freeb&No=1": page})
+        site.fetch(max_posts=1)
+        self.assertEqual(cc.read_jsonl(site.dir / "posts.jsonl")[0]["state"], "empty_body")
+
+    # 2026-11-01 Claude lane: fmkorea text boards use a table list and /<id> post paths
+    def test_fmkorea_text_board_list(self):
+        page = ("<table><tbody><tr class='notice'><td class='title'><a href='/1111111'>규칙</a></td>"
+                "<td class='time'>21.05.11</td></tr>"
+                "<tr><td class='title'><a href='/10499497976'>고백할까</a> <span class='comment_count'>[4]</span></td>"
+                "<td class='time'>11:20</td></tr></tbody></table>")
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(tmp, "fm_love", FakeTransport({}), actor="claude")
+            rows = site.parse_list(page, "https://www.fmkorea.com/love", FETCHED)
+        self.assertEqual([(r["id"], r["title"], r["day"]) for r in rows], [("10499497976", "고백할까", "2026-10-31")])
+        p = cc.PROFILES["fm_job"]
+        self.assertEqual((p.list_url(2), p.read_url("1"), p.per_day_cap),
+                         ("https://www.fmkorea.com/index.php?mid=job&page=2", "https://www.fmkorea.com/1", 5))
+        self.assertEqual(cc.PROFILES["clien"].per_day_cap, 10, "first pass is wide: up to 20 per 24h")
+
     def test_resume_skips_done_and_never_repeats_unresolved(self):
         site, t = self.site_with_queue({
             f"https://www.bobaedream.co.kr/view?code=freeb&No={i}": (200, {}, bobae_post(f"본문 {i}"))

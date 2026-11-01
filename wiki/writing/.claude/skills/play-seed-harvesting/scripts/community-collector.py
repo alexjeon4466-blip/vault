@@ -339,6 +339,10 @@ def list_datetime(raw: str | None, day: str | None) -> datetime | None:
     return datetime(d.year, d.month, d.day, int(m.group("H")), int(m.group("M")), tzinfo=KST)
 
 
+# <video> fallback text that fmkorea and others put where a clip would play; not post text.
+VIDEO_PLACEHOLDER = re.compile(r"Video 태그를 지원하지 않는 브라우저입니다\.?")
+
+
 OUTLINE_TAGS = {"article", "main", "h1", "h2", "h3", "time", "meta"}
 
 
@@ -396,6 +400,9 @@ class Profile:
     deleted_markers: tuple[str, ...] = ("삭제된 게시물", "존재하지 않는 게시물", "삭제되었거나")
     canonical_aliases: tuple[str, ...] = ()
     max_page: int = 500
+    # Daily sample size when --per-day-cap is not given. The first pass is deliberately wide
+    # (2026-11-01 user decision): A0/A1 filter afterwards, so a 24h window opens up to 2x this.
+    per_day_cap: int = 10
     live_verified: str = ""
     note: str = ""
 
@@ -516,8 +523,25 @@ PROFILES: dict[str, Profile] = {
         title_sources=["css:h1 span.np_18px_span", "meta:og:title"],
         date_sources=["css:div.top_area span.date"],
         live_verified="2026-10-31 /best p1+p2 and one post (Claude-User, HTTP 200, no 430)",
-        note="Claude lane only (2026-10-31): the Hermes UA gets HTTP 430, Claude-User gets 200.",
+        note="Retired 2026-11-01: image/video heavy, 0 text bodies in the first Claude-lane batch.",
     ),
+    **{f"fm_{mid}": Profile(
+        name=f"fm_{mid}", label=f"에펨코리아 {label}", host="www.fmkorea.com",
+        # Claude lane (2026-11-01): Claude-User is allowed site-wide; Hermes is not used here.
+        list_url=(lambda mid: lambda p: f"https://www.fmkorea.com/{mid}" if p == 1 else
+                  f"https://www.fmkorea.com/index.php?mid={mid}&page={p}")(mid),
+        read_url=lambda i: f"https://www.fmkorea.com/{i}",
+        row="tbody tr", link='td.title a[href^="/"]', skip_row=".notice",
+        id_from_url=_path_id(r"/(\d{6,})"),
+        row_date=("td.time",), title_exclude=".comment_count",
+        body="article div.xe_content",
+        comment_guard="div.fdb_lst_wrp, ul.fdb_lst_ul, li.fdb_itm, #cmtPosition",
+        title_sources=["css:h1 span.np_18px_span", "meta:og:title"],
+        date_sources=["css:div.top_area span.date"],
+        per_day_cap=5,
+        live_verified="2026-11-01 72h sample: 14 text bodies, 430 none (Claude-User)",
+        note="Claude lane, cap 10 per 24h batch.",
+    ) for mid, label in (("love", "연애상담"), ("job", "직장/알바/사업"))},
     "inven": Profile(
         name="inven", label="인벤 오픈이슈갤러리", host="www.inven.co.kr",
         list_url=lambda p: f"https://www.inven.co.kr/board/webzine/2097?p={p}",
@@ -1229,8 +1253,8 @@ class SiteRun:
             record["state"] = "members_only"
         elif not builder.closed:
             record["state"] = "truncated_body"  # response ended before the body element closed
-        elif not body.strip():
-            record["state"] = "empty_body"
+        elif not VIDEO_PLACEHOLDER.sub("", body).strip():
+            record["state"] = "empty_body"  # nothing but whitespace or a video fallback line
         elif body.count("\ufffd") > 2:
             record["state"] = "encoding_error"  # charset guessed wrong; text is not the original
         elif record.get("canonical_identity") == "mismatch":
@@ -1363,7 +1387,7 @@ def main(argv: list[str] | None = None, transport_factory: Callable[[str], Any] 
     parser.add_argument("--window-end", help="ISO timestamp; default now (KST)")
     parser.add_argument("--window-hours", type=int, default=24)
     parser.add_argument("--page-budget", type=int, default=24, help="max list pages per site")
-    parser.add_argument("--per-day-cap", type=int, default=4)
+    parser.add_argument("--per-day-cap", type=int, default=None, help="default: the profile's per_day_cap")
     parser.add_argument("--max-posts", type=int, default=40, help="max post opens per site per invocation")
     parser.add_argument("--delay", type=float, default=2.5, help="seconds between requests (min 2.0)")
     args = parser.parse_args(argv)
@@ -1389,7 +1413,7 @@ def main(argv: list[str] | None = None, transport_factory: Callable[[str], Any] 
             if args.stage in ("discover", "all"):
                 print(name, "discover", json.dumps(site.discover(args.page_budget), ensure_ascii=False))
             if args.stage in ("freeze", "all"):
-                print(name, "freeze", json.dumps(site.freeze(args.per_day_cap), ensure_ascii=False, default=str))
+                print(name, "freeze", json.dumps(site.freeze(args.per_day_cap or site.p.per_day_cap), ensure_ascii=False, default=str))
             if args.stage in ("fetch", "all"):
                 site.fetch(args.max_posts)
         except SiteStopped as exc:
